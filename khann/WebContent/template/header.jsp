@@ -17,7 +17,7 @@
 				
 				<tr height="100">
 					<td align="center" width="1000">
-						<a href="#"><h1>Khann</h1></a>
+						<a href="/khann/index.jsp"><h1>Khann</h1></a>
 						
 					</td>
 
