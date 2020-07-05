@@ -12,8 +12,8 @@
 		<%for(int i =1; i <= 3; i++) {%>	
 			
 			<td>
-				<a href ="#">
-				<img src="http://placehold.it/240x130?text=movie" />
+				<a href ="/khann/movie/movie_content.jsp">
+				<img src="http://placehold.it/200x100?text=movie" />
 				</a>
 			</td> 
 			<%} %>
@@ -24,10 +24,10 @@
 
 
 	<tfoot>
-	<tr>
-		<td align="center"  colspan="3">
-			<a href="#">광고</a>
-		</td>
+		<tr>
+			<td align="center"  colspan="3">
+				<a href="/khann/movie/movie_insert.jsp">영화 등록</a>
+			</td>
 		</tr>
 	</tfoot>	
 	

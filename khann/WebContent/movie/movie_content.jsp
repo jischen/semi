@@ -19,8 +19,9 @@
 			<td colspan="3">영화 개봉일</td>
 		</tr>
 		<tr>
-
-			<td colspan="4">줄거리</td>
+			<td colspan="3">
+				<textarea rows="8" cols="80" placeholder="욕설 등은 자제하세요!">줄거리</textarea>
+			</td>
 		</tr>
 
 
