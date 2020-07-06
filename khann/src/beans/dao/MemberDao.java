@@ -2,6 +2,7 @@ package beans.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -58,7 +59,12 @@ public class MemberDao {
 			ps.execute();
 			
 			con.close();
-		}		
+		}
+
+	
+	
+		
+		
 		
 	
 }
