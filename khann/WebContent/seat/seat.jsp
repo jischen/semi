@@ -34,7 +34,7 @@
 
 
                 <div class="cinema-seat" data-row="1" data-column="11"></div>
-                <div class="cinema-seat" data-row="1" data-column="12"></div>
+                <div cla	ss="cinema-seat" data-row="1" data-column="12"></div>
                 <div class="cinema-seat" data-row="1" data-column="13"></div>
                 <div class="cinema-seat" data-row="1" data-column="14"></div>
 

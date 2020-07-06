@@ -133,7 +133,7 @@
 				</tr>
 				<tr align="center">
 					<td colspan="2">
-						<a href="find_id.jsp">아이디가 기억나지 않습니다</a>
+						<a href="http://localhost:8080/khann/member/find_Id.jsp">아이디가 기억나지 않습니다</a>
 						<br>
 						<a href="#">비밀번호가 기억나지 않습니다</a>
 					</td>
