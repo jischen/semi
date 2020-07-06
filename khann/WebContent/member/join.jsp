@@ -36,9 +36,9 @@
 					</td>
 				</tr>
 				<tr>
-					<th>닉네임</th>
+					<th>이름</th>
 					<td>
-						<input type="text" name="member_nick" required placeholder="한글 8자 이내">
+						<input type="text" name="member_name" required placeholder="한글 8자 이내">
 					</td>
 				</tr>
 				<tr>
@@ -71,13 +71,6 @@
 					<th>생년월일</th>
 					<td>
 						<input type="date" name="member_birth" required>
-					</td>
-				</tr>
-				<tr>
-					<th>자기소개</th>
-					<td>
-						<!-- rows는 표시할 최소 줄 수, cols는 표시할 최소 칸 수 -->
-						<textarea name="member_intro" rows="7" cols="50" placeholder="욕설 등은 자제하세요!"></textarea>
 					</td>
 				</tr>
 			</tbody>
