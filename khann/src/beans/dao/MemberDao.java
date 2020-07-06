@@ -2,6 +2,7 @@ package beans.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -58,7 +59,55 @@ public class MemberDao {
 			ps.execute();
 			
 			con.close();
-		}		
+		}
+
+		//로그인 메소드
+		public MemberDto Login(MemberDto mdto) throws Exception{
+			Connection con = getConnection();
+			
+			String sql = "SELECT * FROM member WHERE member_id=? AND member_pw=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, mdto.getMember_id());
+			ps.setString(2, mdto.getMember_pw());
+			ResultSet rs = ps.executeQuery();
+			
+//			rs에는 데이터가 1개 있거나 아니면 없거나 둘 중 하나이므로 그에 따라 MemberDto를 준비하여 반환
+//			MemberDto user = 객체 or null;
+			MemberDto user;
+			if(rs.next()) {//데이터가 있으면
+				user = new MemberDto();
+				
+				user.setMember_id(rs.getString("member_id"));
+				user.setMember_pw(rs.getString("member_pw"));
+				user.setMember_name(rs.getString("member_name"));
+				user.setPost(rs.getString("post"));
+				user.setBase_addr(rs.getString("base_addr"));
+				user.setExtra_addr(rs.getString("extra_addr"));
+				user.setMember_birth(rs.getString("member_birth"));
+				user.setMember_phone(rs.getString("member_phone"));
+				user.setGrade(rs.getString("grade"));
+				user.setMember_join(rs.getString("member_join"));
+				user.setMember_login(rs.getString("member_login"));
+			}
+			else {
+				user = null;
+			}
+			
+			con.close();
+			
+			return user;
+		}
 		
+		//로그인 시각 갱신 메소드
+		public void updateLoginTime(String id) throws Exception{
+			Connection con = getConnection();
+			
+			String sql = "UPDATE member SET member_login=sysdate WHERE member_id=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.execute();
+			
+			con.close();
+		}
 	
 }
