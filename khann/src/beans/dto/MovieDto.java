@@ -1,5 +1,8 @@
 package beans.dto;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class MovieDto {
 
 	private int movie_no;
@@ -13,10 +16,25 @@ public class MovieDto {
 	private String movie_content;
 	
 	
+	
+	
 	public MovieDto() {
 		super();
-		
 	}
+
+
+	public MovieDto(ResultSet rs) throws SQLException {
+		this.setMovie_no(rs.getInt("movie_no"));
+		this.setMovie_type(rs.getString("movie_name"));
+		this.setMovie_age(rs.getString("movie_age"));
+		this.setMovie_runtime(rs.getString("movie_runtime"));
+		this.setMovie_open(rs.getString("movie_open"));
+		this.setMovie_director(rs.getString("movie_director"));
+		this.setMovie_ac(rs.getString("movie_ac"));
+		this.setMovie_content(rs.getString("movie_content"));
+	}
+	
+	
 	public int getMovie_no() {
 		return movie_no;
 	}
