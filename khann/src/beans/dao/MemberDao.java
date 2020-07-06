@@ -29,7 +29,7 @@ public class MemberDao {
 		public Connection getConnection() throws Exception {
 //			Class.forName("oracle.jdbc.OracleDriver");
 //			return DriverManager.getConnection(
-//					"jdbc:oracle:thin:@localhost:1521:xe", "c##kh", "c##kh");
+//					"jdbc:oracle:thin:@localhost:1521:xe", "c##semi", "c##semi");
 			return src.getConnection();
 
 		}
