@@ -3,6 +3,110 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>쿠팡 로그인</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .login-wrap {
+            width:460px;
+            text-align: center;
+            margin: 0px auto;
+        }
+        
+        /* 태그 4개를 한 번에 부른다 */
+        .form-input {
+            width:100%;
+            margin: 10px 0px;
+            padding:10px;
+            font-size: 17px;
+            font-family: 고딕;
+        }
+        
+        /* 공통점이 아닌 차이점은 각각의 영역에 구현 */
+        .login-id {
+            padding-left: 50px;
+            
+            background-image: url("https://placehold.it/35x35");
+            background-repeat: no-repeat;
+            background-size: 35px;
+            background-position: 4px 4px;
+        }
+        .login-pw {
+            padding-left: 50px;
+            
+            background-image: url("https://placehold.it/35x35");
+            background-repeat: no-repeat;
+            background-size: 35px;
+            background-position: 4px 4px;
+        }
+        .login-submit {
+            color: white;
+            background-color: dodgerblue;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+        .login-button {
+            background-color: white;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+        .login-checkbox-wrap{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrap">
+        <!-- 제목 -->
+        <h1 class="logo">
+            <font color="maroon">cou</font
+            ><font color="red">p</font
+            ><font color="orange">a</font
+            ><font color="lightgreen">n</font
+            ><font color="lightskyblue">g</font>
+        </h1>        
+        
+        <!-- 폼 -->
+        <form action="?" method="post">
+            <!-- 아이디 입력창 -->
+            <input class="form-input login-id" type="text" name="member_id" required>
+
+            <!-- 비밀번호 입력창 -->
+            <input class="form-input login-pw" type="password" name="member_pw" required>                                    
+            
+            <!-- 
+            자동로그인 선택 체크박스 
+            - 여러 항목으로 구성된 경우 div 등으로 감싸 한 덩어리로 묶어준다
+            -->
+            <div class="login-checkbox-wrap">
+            <input class="login-checkbox" type="checkbox" name="autologin"> 자동로그인
+            </div>
+            
+            <!-- 로그인 버튼 -->
+            <input class="form-input login-submit" type="submit" value="로그인">
+        </form>
+        
+        <hr>
+        
+        <!-- 가입 버튼 -->
+        <input class="form-input login-button" type="button" value="회원가입">
+        
+        <!-- 쿠팡 저작권 글자 : 글자는 무조건 태그 내에 사용 -->
+        <div class="login-copyright">
+            &copy; Coupang Corp. All right reserved.            
+        </div>
+        
+    </div>
+</body>
+</html>
+
 <div align="center">
 	
 	<h2>로그인</h2>
@@ -11,21 +115,19 @@
 		<table border="0">
 			<tbody>
 				<tr>
-					<th>아이디</th>
 					<td>
 						<input type="text" name="member_id" required>
 					</td>
 				</tr>
 				<tr>
-					<th>비밀번호</th>
 					<td>
-						<input type="password" name="member_pw" required>
+						<!-- paddind으로 그림넣기 --><input type="password" name="member_pw" required>
 					</td>
 				</tr>
 			</tbody>
 			<tfoot>
 				<tr align="center">
-					<td colspan="2">
+					<td colspan="3">
 						<input type="submit" value="Login">
 					</td>
 				</tr>
