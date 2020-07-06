@@ -7,20 +7,20 @@
 	
 	<table border="1">
 		<tbody>
+		
 		<%for(int j=0; j<3; j++){ %>
 		<tr>
-		<%for(int i =1; i <= 3; i++) {%>	
-			
-			<td>
-				<a href ="/khann/movie/movie_content.jsp">
-				<img src="http://placehold.it/200x100?text=movie" />
-				</a>
-			</td> 
-			<%} %>
+		<%for(int i =1; i<=3; i++) {%>
+		<td>
+			<a href ="/khann/movie/movie_content.jsp">
+				<img src="/khann/image/movie<%=i+"_"+j %>.jpg" width="170" height=200">
+			</a>
+		</td> 
+		<%} %>
 		</tr>
 		<%} %>
-			</tbody>
-
+	
+	</tbody>
 
 
 	<tfoot>

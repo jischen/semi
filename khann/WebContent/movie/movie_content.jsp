@@ -15,7 +15,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div align="center">
-
+<form action="movie_content.do?movie_no=?">
 	<table border="1" >
 		<tbody>
 		<tr>
@@ -90,6 +90,7 @@
 			
 		
 	</table>
+	</form>
 
 </div>
 

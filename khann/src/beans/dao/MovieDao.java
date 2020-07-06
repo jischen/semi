@@ -36,7 +36,7 @@ public void insert(MovieDto mdto) throws Exception{
 
 }	
 
-//단일조회 메소드
+
 	public MovieDto get(int movie_no) throws Exception{
 		Connection con = getConnection();
 		
