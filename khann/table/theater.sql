@@ -22,5 +22,5 @@ seat_row char(1) NOT NULL,
 seat_col NUMBER NOT NULL
 );
 
-
+CREATE SEQUENCE seat_seq nocache;
 
