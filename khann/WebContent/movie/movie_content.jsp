@@ -1,50 +1,96 @@
+<%@page import="beans.dao.MovieDao"%>
+<%@page import="beans.dto.MovieDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%
+	int movie_no = Integer.parseInt(request.getParameter("movie_no"));
+
+	MovieDao mdao = new MovieDao();
+	MovieDto mdto = mdao.get(movie_no);
+%>
+
+	
+	
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div align="center">
-
-	<table border="1">
+<form action="movie_content.do?movie_no=?">
+	<table border="1" >
+		<tbody>
 		<tr>
-			<td rowspan="4"><img
-				src="http://placehold.it/300x400?text=movie" /></td>
-
-			<td colspan="3">영화제목</td>
-		<tr>
-			<td colspan="3">영화감독/배우</td>
-		</tr>
-		<tr>
-			<td colspan="3">영화장르/상영등급</td>
-		<tr>
-			<td colspan="3">영화 개봉일</td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				<textarea rows="8" cols="80" placeholder="욕설 등은 자제하세요!">줄거리</textarea>
+			<td rowspan="4">
+				<img src="http://placehold.it/250x250?text=movie" />
 			</td>
-		</tr>
-
-
-		<tr>
-			<td rowspan="3" colspan="1">영화 리뷰</td>
-			<br>
-			<td colspan="3">
-				리뷰1 <br><hr>
-				 리뷰2
+			<td>
+				제목
+				: <%=mdto.getMovie_name()%>
 			</td>
 			
 		</tr>
-
-
-
-
-
-
-
-
+		
+		<tr>
+			<td>
+				감독/배우
+				: <%=mdto.getMovie_director()%>/<%=mdto.getMovie_ac()%>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				장르/상영등급
+				: <%=mdto.getMovie_type()%>/<%=mdto.getMovie_age() %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				개봉일
+				: <%=mdto.getMovie_open() %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				줄거리
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<textarea rows="" cols=""><%=mdto.getMovie_content() %></textarea>	
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td rowspan="2">
+				리뷰
+			</td>
+			<td>
+				리뷰1
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				리뷰2
+			</td>
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+			<td>[이전]  [다음]</td>
+			<td align="right" >
+				<input type="submit" value="리뷰 더보기">
+			</td>
+			</tr>
+		</tfoot>
+			
+		
 	</table>
-
-
+	</form>
 
 </div>
 
