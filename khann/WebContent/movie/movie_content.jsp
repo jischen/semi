@@ -15,7 +15,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div align="center">
-<form action="movie_content.do?movie_no=?">
+
 	<table border="1" >
 		<tbody>
 		<tr>
@@ -59,7 +59,7 @@
 		
 		<tr>
 			<td colspan="2">
-				<textarea rows="" cols=""><%=mdto.getMovie_content() %></textarea>	
+				<textarea rows="3" cols="70"><%=mdto.getMovie_content() %></textarea>	
 			</td>
 			
 		</tr>
@@ -90,7 +90,7 @@
 			
 		
 	</table>
-	</form>
+
 
 </div>
 
