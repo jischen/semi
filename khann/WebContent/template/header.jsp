@@ -9,10 +9,10 @@
 <body>
 
 	<div align="center">
-		<table border="1" width="1400">
+		<table border="1" width="1200">
 			<tbody>
 				<tr align="right">
-							<td width="400"> 로그임</td>
+							<td width="400"> 로그인</td>
 				</tr>				
 				
 				<tr height="100">
