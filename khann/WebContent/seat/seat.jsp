@@ -15,6 +15,8 @@
     </script>
 </head>
 
+
+
 <body>
     <form action="cinema-seat.html" method="get">
         <div class="cinema-wrap" data-name="seat" data-rowsize="5" data-colsize="20">
@@ -34,7 +36,7 @@
 
 
                 <div class="cinema-seat" data-row="1" data-column="11"></div>
-                <div cla	ss="cinema-seat" data-row="1" data-column="12"></div>
+                <div class="cinema-seat" data-row="1" data-column="12"></div>
                 <div class="cinema-seat" data-row="1" data-column="13"></div>
                 <div class="cinema-seat" data-row="1" data-column="14"></div>
 

@@ -15,7 +15,7 @@ public class MovieDao {
 	
 public Connection getConnection() throws Exception{
 	Class.forName("oracle.jdbc.OracleDriver");
-	return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "C##semi", "C##semi");
+	return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##semi", "c##semi");
 
 }
 
