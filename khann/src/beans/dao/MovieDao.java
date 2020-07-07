@@ -103,5 +103,27 @@ public void insert(MovieDto mdto) throws Exception{
 		
 	}
 	
+	public void changeMovie(MovieDto mdto) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "update movie "
+				+ "set movie_name=?, movie_director=?, movie_ac=?, movie_type=?, movie_age=?, movie_runtime=?, movie_open=to_date(?, 'YYYY-MM-DD HH24:MI:SS'), movie_content=? where movie_no=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		
+		ps.setString(1, mdto.getMovie_name());
+		ps.setString(2, mdto.getMovie_director());
+		ps.setString(3, mdto.getMovie_ac());
+		ps.setString(4, mdto.getMovie_type());
+		ps.setString(5, mdto.getMovie_age());
+		ps.setString(6, mdto.getMovie_runtime());
+		ps.setString(7, mdto.getMovie_open());
+		ps.setString(8, mdto.getMovie_content());
+		ps.setInt(9, mdto.getMovie_no());
+		ps.execute();
+		
+		con.close();
+		
+	}
+	
 
 }
