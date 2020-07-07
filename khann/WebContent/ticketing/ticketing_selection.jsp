@@ -4,7 +4,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-   
 <%
 	
     MovieDao mdao = new MovieDao();
@@ -18,35 +17,30 @@
 <div align="center">
 	
 	<table border="1">
+		<thead>
+			<h2>영화 선택하세요</h2>
+		</thead>
 		<tbody>
 		
 		<tr>
 		<%for(MovieDto mdto : list) {%>
 		<td>
-			<a href ="movie_content.jsp?movie_no=<%=mdto.getMovie_no() %>">
+			<a href ="ticketing_reservation.jsp"><!-- ?movie_no=<%=mdto.getMovie_no() %> -->
 				<img src="/khann/image/<%=mdto.getMovie_no()%>.jpg" width="170" height="200">
 			</a>
 		</td> 
 		
 		<%} %>
 		</tr>
-		
-	
+
 	</tbody>
 
 
-	<tfoot>
-		<tr>
-			<td align="center"  colspan="9">
-				<a href="/khann/movie/movie_insert.jsp">영화 등록</a>
-				<a href="/khann/movie/movie_delete.jsp">영화 삭제</a>
-			</td>
-		</tr>
-	</tfoot>	
 	
 	</table>
-</div>
+	
+	</div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
+	
 
-    
