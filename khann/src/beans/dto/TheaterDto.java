@@ -8,6 +8,7 @@ public class TheaterDto {
 	private int theater_col;
 	
 	public TheaterDto() {
+		super();
 	}
 	public int getTheater_no() {
 		return theater_no;
@@ -39,5 +40,7 @@ public class TheaterDto {
 	public void setTheater_col(int theater_col) {
 		this.theater_col = theater_col;
 	}
+	
+	
 	
 }

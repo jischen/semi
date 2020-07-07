@@ -19,8 +19,6 @@ public class MovieInsertServlet extends HttpServlet{
 		req.setCharacterEncoding("UTF-8");
 		MovieDto mdto = new MovieDto();
 		
-	
-
 		mdto.setMovie_name(req.getParameter("movie_name"));
 		mdto.setMovie_type(req.getParameter("movie_type"));
 		mdto.setMovie_age(req.getParameter("movie_age"));

@@ -1,7 +1,3 @@
-
-
-
-
 <!--상영관 생성 테이블 -->
 
 CREATE TABLE Theater(
