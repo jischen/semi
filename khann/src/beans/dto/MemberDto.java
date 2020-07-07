@@ -2,6 +2,9 @@ package beans.dto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MemberDto {
 
@@ -86,7 +89,17 @@ public class MemberDto {
 	public String getMember_birth() {
 		return member_birth;
 	}
-
+	//member_birth에서 시각을 제외하고 보고 싶을 때 사용할 getter 추가
+	public String getMember_birthday() {
+		return member_birth.substring(0, 10);
+	}
+	//Y년 M월 D일 형식으로 나올 수 있도록 getter 추가
+	public String getMember_birthdayFormat() throws ParseException {
+		SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//읽어올 형식
+		Date d = s.parse(member_birth);//s라는 형식으로 member_birth를 읽어서 날짜화 시켜라
+		SimpleDateFormat f = new SimpleDateFormat("y년 M월 d일");//변환할 형식
+		return f.format(d);//f를 이용해서 d를 변환하여 반환하라!
+	}
 	public void setMember_birth(String member_birth) {
 		this.member_birth = member_birth;
 	}
