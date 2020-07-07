@@ -130,4 +130,17 @@ public class MemberDao {
 
 		return member_id;
 	}
+	
+	//탈퇴 메소드
+	public void exit(String member_id) throws Exception{
+		Connection con = getConnection();
+
+		String sql = "DELETE member WHERE member_id = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, member_id);
+		ps.execute();
+
+		con.close();
+	}
+	
 }
