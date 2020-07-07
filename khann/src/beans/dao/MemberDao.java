@@ -129,6 +129,29 @@ public class MemberDao {
 		con.close();
 
 		return member_id;
+	}	
+		//단일조회 메소드
+		public MemberDto get(String member_id) throws Exception{
+			Connection con = getConnection();
+			
+			String sql = "SELECT * FROM member WHERE member_id=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, member_id);
+			ResultSet rs = ps.executeQuery();
+			
+//			MemberDto mdto = 객체 or null;
+			MemberDto mdto;
+			if(rs.next()) {
+				mdto = new MemberDto(rs);
+			}
+			else {
+				mdto = null;
+			}
+			
+			con.close();
+			
+			return mdto;
+			
 	}
 	
 	//탈퇴 메소드
