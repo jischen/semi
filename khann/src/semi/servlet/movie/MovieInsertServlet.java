@@ -17,8 +17,10 @@ public class MovieInsertServlet extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	try {
 		req.setCharacterEncoding("UTF-8");
-		
 		MovieDto mdto = new MovieDto();
+		
+	
+
 		mdto.setMovie_name(req.getParameter("movie_name"));
 		mdto.setMovie_type(req.getParameter("movie_type"));
 		mdto.setMovie_age(req.getParameter("movie_age"));
@@ -30,12 +32,13 @@ public class MovieInsertServlet extends HttpServlet{
 		
 		
 		MovieDao mdao = new MovieDao();
+	
+		
 		mdao.insert(mdto);
 		
 		resp.sendRedirect("movie_chart.jsp");
 		
-		
-		
+	
 		
 	} catch (Exception e) {
 		e.printStackTrace();

@@ -83,7 +83,8 @@
 			<tr>
 			<td>[이전]  [다음]</td>
 			<td align="right" >
-				<input type="submit" value="리뷰 더보기">
+			<a href="/khann/movie/movie_change.jsp?movie_no=<%=mdto.getMovie_no()%>"><input type="submit" value="영화수정"></a>
+			<a href="#"><input type="submit" value="리뷰 더보기"></a>
 			</td>
 			</tr>
 		</tfoot>
