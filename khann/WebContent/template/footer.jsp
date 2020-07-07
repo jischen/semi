@@ -7,14 +7,14 @@
 				<tr height="100">
 					<td align="center">
 					
-						<h5>
-							<i>copy right by 고지</i>
-						</h5>
 						
 						<!-- 사용자의 로그인 정보를 분석하는 코드 작성(연습용) -->
 						<h6>세션ID : <%=session.getId()%></h6>
 						<h6>userinfo : <%=session.getAttribute("userinfo")%></h6>
 						<h6>로그인 : <%=session.getAttribute("userinfo") != null%></h6>
+						<h6>(07212)서울 영등포구 선유동2로 57 이레빌딩 </h6>
+						<h6>대표이사 : 고지선 | 사업자등록번호 : 1004-82-49105 </h6>
+						<h6>&copy;KH.KHANN.All Rights Reserved</h6>
 					</td>
 				</tr>
 			</tbody>
