@@ -44,7 +44,7 @@
 		<tr>
 			<td align="center"  colspan="9">
 				<a href="/khann/movie/movie_insert.jsp">영화 등록</a>
-				<a href="/khann/movie/movie_insert.jsp">영화 삭제</a>
+				<a href="/khann/movie/movie_delete.jsp">영화 삭제</a>
 			</td>
 		</tr>
 	</tfoot>	
