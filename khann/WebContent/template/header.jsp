@@ -29,7 +29,7 @@
 							if (!isLogin) {
 						%>
 						<a href="<%=rootPath%>/member/login.jsp">로그인</a> 
-						<a href="<%=rootPath%>/member/join.jsp">회원가입</a> 
+						<a href="<%=rootPath%>/member/join_term_check.jsp">회원가입</a> 
 					
 						<%} %>
 						

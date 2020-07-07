@@ -133,13 +133,13 @@
 				</tr>
 				<tr align="center">
 					<td colspan="2">
-						<a href="http://localhost:8080/khann/member/find_Id.jsp">아이디가 기억나지 않습니다</a>
+						<a href="http://localhost:8080/khann/member/find_id.jsp">아이디가 기억나지 않습니다</a>
 						<br>
 						<a href="#">비밀번호가 기억나지 않습니다</a>
 						<br>
 						<input type="checkbox">아이디 저장
 						<br>
-						<a href="http://localhost:8080/khann/member/join.jsp">회원가입</a>
+						<a href="../member/join_term_check.jsp">회원가입</a>
 					</td>
 				</tr>
 			</tfoot>
