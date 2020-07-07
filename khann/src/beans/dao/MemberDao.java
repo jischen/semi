@@ -165,5 +165,22 @@ public class MemberDao {
 
 		con.close();
 	}
+
+	//정보 변경 메소드
+	public void changeInfo(MemberDto mdto) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "UPDATE member SET post=?, base_addr=?, extra_addr=?, member_phone=? WHERE member_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, mdto.getPost());
+		ps.setString(2, mdto.getBase_addr());
+		ps.setString(3, mdto.getExtra_addr());
+		ps.setString(4, mdto.getMember_phone());
+		ps.setString(5, mdto.getMember_id());
+		ps.execute();
+
+		con.close();
+	}
+
 	
 }

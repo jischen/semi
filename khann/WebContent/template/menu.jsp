@@ -1,5 +1,13 @@
+<%@page import="beans.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+		String rootPath = request.getContextPath();
+
+		MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
+		boolean isLogin = mdto != null;
+
+%>
 
 	<a href="/khann/movie/movie_chart.jsp">영화</a>
 	<a href="/khann/ticketing/ticketing_selection.jsp">예매</a>
