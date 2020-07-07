@@ -10,35 +10,35 @@
 	<tr>
 		<td>제목</td>
 		<td>
-		<input name="movie_name" type="text">
+		<input name="movie_name" type="text" required>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>장르</td>
 		<td>
-		<input name="movie_type" type="text">
+		<input name="movie_type" type="text" required>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>상영등급</td>
 		<td>
-		<input name="movie_age" type="text">
+		<input name="movie_age" type="text" required>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>상영시간</td>
 		<td>
-		<input name="movie_runtime" type="text">
+		<input name="movie_runtime" type="text" required>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>개봉일</td>
 		<td>
-		<input name="movie_open" type="text">
+		<input name="movie_open" type="text" required>
 		</td>	
 	</tr>
 	
