@@ -90,5 +90,18 @@ public void insert(MovieDto mdto) throws Exception{
 		return list;
 		
 	}	
+	
+	public void delete(String movie_name) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "delete movie where movie_name = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, movie_name);
+		ps.execute();
+		
+		con.close();
+		
+	}
+	
 
 }
