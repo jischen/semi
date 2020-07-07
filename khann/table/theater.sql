@@ -6,7 +6,7 @@
 
 CREATE TABLE Theater(
 Theater_no NUMBER PRIMARY KEY, 
-Theater_name char(5) NOT NULL,
+Theater_name varchar2(30) NOT NULL,
 Theater_type varchar2(30) NOT null,
 Theater_row NUMBER NOT null, 
 Theater_col NUMBER NOT null 
