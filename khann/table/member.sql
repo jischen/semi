@@ -16,3 +16,4 @@ member_login DATE     -- null / sysdate가 아니기 때문에
 
 CREATE SEQUENCE member_seq nocache;
 
+INSERT INTO MEMBER values(MEMBER_seq.nextval,'system','system1234','고지선','98765','','','1995-11-25','01088889999','관리자',sysdate,'');
