@@ -21,7 +21,7 @@ public class MovieChanegeServlet extends HttpServlet {
 			req.setCharacterEncoding("UTF-8");
 
 			MovieDto mdto = new MovieDto();
-
+		
 			mdto.setMovie_no(Integer.parseInt(req.getParameter("movie_no")));
 			mdto.setMovie_name(req.getParameter("movie_name"));
 			mdto.setMovie_director(req.getParameter("movie_director"));
@@ -39,7 +39,7 @@ public class MovieChanegeServlet extends HttpServlet {
 			mdao.changeMovie(mdto);
 
 			// 출력
-			resp.sendRedirect("movie_chart.jsp");
+			resp.sendRedirect("movie_content.jsp?movie_no="+mdto.getMovie_no());
 
 		} catch (Exception e) {
 			e.printStackTrace();
