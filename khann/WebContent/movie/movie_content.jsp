@@ -18,7 +18,11 @@
 
 	<table border="1" >
 		<tbody>
+		
+
+		
 		<tr>
+		
 			<td rowspan="4">
 				<img src="http://placehold.it/250x250?text=movie" />
 			</td>
@@ -66,15 +70,17 @@
 		
 		<tr>
 			<td rowspan="2">
-				리뷰
+				리뷰1
 			</td>
 			<td>
-				리뷰1
+				<input type="text" name="review_no">
+	
 			</td>
 		</tr>
 		
 		<tr>
 			<td>
+			<input type="text" name="review_no">
 				리뷰2
 			</td>
 		</tr>
@@ -84,7 +90,7 @@
 			<td>[이전]  [다음]</td>
 			<td align="right" >
 			<a href="/khann/movie/movie_change.jsp?movie_no=<%=mdto.getMovie_no()%>"><input type="submit" value="영화수정"></a>
-			<a href="/khann/review/review_write.jsp"><input type="submit" value="리뷰 작성"></a>
+			<a href="/khann/review/review_write.jsp"><input type="submit" value="리뷰작성"></a>
 			<a href="#"><input type="submit" value="리뷰 더보기"></a>
 			</td>
 			</tr>
