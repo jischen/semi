@@ -1,20 +1,13 @@
-
-<%@page import="beans.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<title>KHANN</title>
-   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/base.css">
-   <link rel="stylesheet" href="<%=request.getContextPath()%>/swiper/css/swiper.min.css">
+    
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <style>
-	/*메인페이지 스와이퍼 스타일 */    
-
         .swiper-container {
-            width:50%;
+            width: 100%;
             min-height: 200px;
             max-height: 300px;
         }
@@ -28,7 +21,7 @@
         
     </style>
     
-    <script src="<%=request.getContextPath()%>/swiper/js/swiper.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script>
         //창의 로딩이 완료되었을 때 실행할 코드를 예약
         window.onload = function(){
@@ -71,59 +64,39 @@
     
 </head>
 <body>
-	<%
-		//rootPath에는 프로젝트 rootpath(/home)가 자동을 계산되어 저장된다.
-		//이는 절대경로 작성 시 활용 할 수 있다.
-		String rootPath = request.getContextPath();
+    
+    <!-- 이미지 슬라이더 영역 -->
+    <div class="swiper-container">
+        <!-- 필수 영역 -->
+        <div class="swiper-wrapper">
+            <!-- 배치되는 이미지 또는 화면 -->
+            <div class="swiper-slide">
+                <img src="https://placeimg.com/600/300/architecture">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://placeimg.com/600/300/tech">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://placeimg.com/600/300/people">
+            </div>
+        </div>
+        
+        <!-- 페이지 위치 표시 영역(선택) -->
+        <div class="swiper-pagination"></div>
 
-		//로그인 여부에 따른 메뉴 구성 변경
-		//-세션에 "userinfo"라는 데이터가 있으면 로그인, 없으면 로그아웃 상태-의사코드
-		MemberDto mdto = (MemberDto) session.getAttribute("userinfo"); // 다운 캐스팅(down-casting)
-		boolean isLogin = mdto != null;
-	%>
-
-		
-			
-				
-					<div align="right">
-						<%
-							if (!isLogin) {
-						%>
-						<a href="<%=rootPath%>/member/login.jsp">로그인</a> 
-						<a href="<%=rootPath%>/member/join_term_check.jsp">회원가입</a> 
-					
-						<%} %>
-						
-						<%
-							if (isLogin) {
-						%>
-						<!-- 로그인 상태일 경우 -->
-							<a href="<%=rootPath%>/member/logout.do">로그아웃</a> 
-							<a href="<%=rootPath%>/member/info.jsp">내정보</a>
-							
-					
-						<!-- 로그인 된 사용자 중에서도 "관리자" 인 경우만 나와야 하는 메뉴 -->
-						<%
-							if (mdto.getGrade().equals("관리자")) {
-						%>
-						<a href="#">관리메뉴</a>
-						<%
-						} else{
-						%>
-
-						
-						<% } }%>
-						
-					</div>
-				
-
-				<a href="/khann/index.jsp"><h1>로고</h1></a>
-
-					
+        <!-- 이전/다음 버튼(선택) -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+               
+        <!-- 스크롤바 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</body>
+</html>
 
 
-				<!-- 메뉴(navigation) 영역 -->
 
-					<jsp:include page="/template/menu.jsp"></jsp:include>
 
-				<!-- 본문(section) 영역 -->
+
+
+
