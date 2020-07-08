@@ -14,7 +14,7 @@
 	<a href="/khann/theater/theater_insert.jsp">상영관등록</a>
 	<a href="#">극장</a>
 	<a href="#">이벤트</a>
-	<a href="#">고객센터</a>
+	<a href="/khann/cs/cs_board.jsp">고객센터</a>
 	
 	
 	
