@@ -10,7 +10,7 @@ public class ReviewDto {
 	private String review_content;
 	private String review_score;
 	private String review_date;
-	
+	private int super_no;
 	public ReviewDto(ResultSet rs) throws SQLException{
 		
 		this.setReview_no(rs.getInt("review_no"));
@@ -54,6 +54,13 @@ public class ReviewDto {
 	}
 	public void setReview_date(String review_date) {
 		this.review_date = review_date;
+	}
+
+	public void setSuper_no(int super_no) {
+		
+		this.super_no=super_no;
+		
+		
 	}
 	
 	
