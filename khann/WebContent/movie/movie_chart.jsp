@@ -1,3 +1,4 @@
+<%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.MovieDto"%>
 <%@page import="java.util.List"%>
 <%@page import="beans.dao.MovieDao"%>
@@ -7,9 +8,13 @@
    
 <%
 	
-    MovieDao mdao = new MovieDao();
-	List<MovieDto> list = mdao.getList();
+
+MovieDao mdao = new MovieDao();
+List<MovieDto> list = mdao.getList();
 	    	 
+
+
+		
 %>
     
     
@@ -36,8 +41,9 @@
 
 
 	<tfoot>
+	
 		<tr>
-			<td align="center"  colspan="9">
+	<td align="center"  colspan="9">
 				<a href="/khann/movie/movie_insert.jsp">영화 등록</a>
 				<a href="/khann/movie/movie_delete.jsp">영화 삭제</a>
 			</td>
