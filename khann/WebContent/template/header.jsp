@@ -8,14 +8,13 @@
 
 <meta charset="UTF-8">
 <title>KHANN</title>
+   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/base.css">
    <link rel="stylesheet" href="<%=request.getContextPath()%>/swiper/css/swiper.min.css">
     <style>
-/*메인페이지 스와이퍼!  */    
-		.swiper-outer{
-			width:1200px;
-		}
+	/*메인페이지 스와이퍼 스타일 */    
+
         .swiper-container {
-            width:100%;
+            width:50%;
             min-height: 200px;
             max-height: 300px;
         }
@@ -73,7 +72,7 @@
 </head>
 <body>
 	<%
-		//rootPath에는 프로젝트 root path(/home)가 자동을 계산되어 저장된다.
+		//rootPath에는 프로젝트 rootpath(/home)가 자동을 계산되어 저장된다.
 		//이는 절대경로 작성 시 활용 할 수 있다.
 		String rootPath = request.getContextPath();
 
@@ -83,10 +82,9 @@
 		boolean isLogin = mdto != null;
 	%>
 
-	<div align="center">
-		<table border="1" width="1200">
-			<tbody>
-				<td>
+		
+			
+				
 					<div align="right">
 						<%
 							if (!isLogin) {
@@ -117,47 +115,15 @@
 						<% } }%>
 						
 					</div>
-				</td>
+				
 
-				<tr height="100">
-					<td align="center" width="1000"><a href="/khann/index.jsp"><h1>Khann</h1></a>
+				<a href="/khann/index.jsp"><h1>로고</h1></a>
 
-					</td>
-
-				</tr>
-				<!-- 메뉴(navigation) 영역 -->
-				<tr>
-					<td><jsp:include page="/template/menu.jsp"></jsp:include></td>
-				</tr>
-				<!-- 본문(section) 영역 -->
-				<tr height="350">
-					<td valign="top">
-					<!--스와이퍼 : 현재는 테이블로 구성되어 있어서 부득이하게 swiper-outer를 이용해서 폭을 제한하였음... 나중에 레이아웃 바꾸면 div만 유지시키면 됨!!!!!!!!-->
-					<div class="swiper-outer">
-						<!-- 이미지 슬라이더 영역 -->
-					    <div class="swiper-container">
-					        <!-- 필수 영역 -->
-					        <div class="swiper-wrapper">
-					            <!-- 배치되는 이미지 또는 화면 -->
-					            <div class="swiper-slide">
-					                <img src="https://placeimg.com/600/300/architecture">
-					            </div>
-					            <div class="swiper-slide">
-					                <img src="https://placeimg.com/600/300/tech">
-					            </div>
-					            <div class="swiper-slide">
-					                <img src="https://placeimg.com/600/300/people">
-					            </div>
-					        </div>
-					        
-					        <!-- 페이지 위치 표시 영역(선택) -->
-					        <div class="swiper-pagination"></div>
 					
-					        <!-- 이전/다음 버튼(선택) -->
-					        <div class="swiper-button-prev"></div>
-					        <div class="swiper-button-next"></div>
-					               
-					        <!-- 스크롤바 -->
-					        <div class="swiper-scrollbar"></div>
-					    </div>
-					</div>
+
+
+				<!-- 메뉴(navigation) 영역 -->
+
+					<jsp:include page="/template/menu.jsp"></jsp:include>
+
+				<!-- 본문(section) 영역 -->
