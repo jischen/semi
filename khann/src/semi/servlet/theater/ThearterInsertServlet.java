@@ -29,8 +29,8 @@ public class ThearterInsertServlet extends HttpServlet{
 			
 			req.getSession().setAttribute("theater", tdto);
 			
-			resp.sendRedirect(req.getContextPath());
-			
+//			resp.sendRedirect(req.getContextPath());
+			resp.sendRedirect("seat_insetrt.jsp");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

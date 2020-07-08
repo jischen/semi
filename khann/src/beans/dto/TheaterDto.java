@@ -1,5 +1,8 @@
 package beans.dto;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class TheaterDto {
 	private int theater_no;
 	private String theater_name;
@@ -10,6 +13,20 @@ public class TheaterDto {
 	public TheaterDto() {
 		super();
 	}
+	
+	public TheaterDto(ResultSet rs) throws SQLException  {
+		this.setTheater_no(rs.getInt("theater_no"));
+		this.setTheater_name(rs.getString("theater_name"));
+		this.setTheater_type(rs.getString("theater_type"));
+		this.setTheater_row(rs.getInt("theater_row"));
+		this.setTheater_col(rs.getInt("theater_col"));
+	
+	}
+	
+	
+	
+	
+	
 	public int getTheater_no() {
 		return theater_no;
 	}
