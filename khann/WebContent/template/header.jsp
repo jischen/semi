@@ -11,6 +11,9 @@
    <link rel="stylesheet" href="<%=request.getContextPath()%>/swiper/css/swiper.min.css">
     <style>
 /*메인페이지 스와이퍼!  */    
+		.swiper-outer{
+			width:1200px;
+		}
         .swiper-container {
             width:100%;
             min-height: 200px;
@@ -129,30 +132,32 @@
 				<!-- 본문(section) 영역 -->
 				<tr height="350">
 					<td valign="top">
-					<!--스와이퍼!!!!!!!!-->
-	<!-- 이미지 슬라이더 영역 -->
-    <div class="swiper-container">
-        <!-- 필수 영역 -->
-        <div class="swiper-wrapper">
-            <!-- 배치되는 이미지 또는 화면 -->
-            <div class="swiper-slide">
-                <img src="https://placeimg.com/600/300/architecture">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://placeimg.com/600/300/tech">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://placeimg.com/600/300/people">
-            </div>
-        </div>
-        
-        <!-- 페이지 위치 표시 영역(선택) -->
-        <div class="swiper-pagination"></div>
-
-        <!-- 이전/다음 버튼(선택) -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-               
-        <!-- 스크롤바 -->
-        <div class="swiper-scrollbar"></div>
-    </div>
+					<!--스와이퍼 : 현재는 테이블로 구성되어 있어서 부득이하게 swiper-outer를 이용해서 폭을 제한하였음... 나중에 레이아웃 바꾸면 div만 유지시키면 됨!!!!!!!!-->
+					<div class="swiper-outer">
+						<!-- 이미지 슬라이더 영역 -->
+					    <div class="swiper-container">
+					        <!-- 필수 영역 -->
+					        <div class="swiper-wrapper">
+					            <!-- 배치되는 이미지 또는 화면 -->
+					            <div class="swiper-slide">
+					                <img src="https://placeimg.com/600/300/architecture">
+					            </div>
+					            <div class="swiper-slide">
+					                <img src="https://placeimg.com/600/300/tech">
+					            </div>
+					            <div class="swiper-slide">
+					                <img src="https://placeimg.com/600/300/people">
+					            </div>
+					        </div>
+					        
+					        <!-- 페이지 위치 표시 영역(선택) -->
+					        <div class="swiper-pagination"></div>
+					
+					        <!-- 이전/다음 버튼(선택) -->
+					        <div class="swiper-button-prev"></div>
+					        <div class="swiper-button-next"></div>
+					               
+					        <!-- 스크롤바 -->
+					        <div class="swiper-scrollbar"></div>
+					    </div>
+					</div>
