@@ -13,7 +13,7 @@
         }
         .swiper-container .swiper-slide,
         .swiper-container .swiper-slide > img{
-            width:99%;
+            width:100%;
             min-height: 200px;
             height:auto;
             max-height: 300px;
