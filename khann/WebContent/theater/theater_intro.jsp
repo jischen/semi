@@ -13,7 +13,7 @@
 </div>
 
 <div align="center">
-	<a href="#"><image alt="극장 이미지" src="../image/theater0.jpg"></a>
+	<image alt="극장 이미지" src="../image/theater0.jpg">
 	<div>극장 설명</div>
 	
 </div>
