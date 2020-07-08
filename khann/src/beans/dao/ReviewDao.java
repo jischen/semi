@@ -55,34 +55,33 @@ public class ReviewDao {
 	}
 	
 	// 리뷰 시퀀스 생성
-	public int getSeq() throws Exception {
-		Connection con = getConnection();
-		String sql = "SELECT review_seq.nextval FROM dual";
-		PreparedStatement ps = con.prepareStatement(sql);
-		ResultSet rs = ps.executeQuery();
-		rs.next();
-		int seq = rs.getInt(1);
-		con.close();
-		return seq;
+	//public int getSeq() throws Exception {
+		//Connection con = getConnection();
+		//String sql = "SELECT review_seq.nextval FROM dual";
+	//	PreparedStatement ps = con.prepareStatement(sql);
+		//ResultSet rs = ps.executeQuery();
+		//rs.next();
+		//int seq = rs.getInt(1);
+		//con.close();
+		//return seq;
 
-	}
+	//}
 	// 리뷰 등록 메소드
 
 	public void register(ReviewDto rdto) throws Exception {
 
 		Connection con = getConnection();
-		String sql = "INSERT INTO review values(?,?,?,?,sysdate)";
+		String sql = "INSERT INTO review values(review_seq.nextval,?,?,?,sysdate)";
 
 		// 아이디
 		// 내용
 		// 점수
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, rdto.getReview_no());
 		ps.setString(1, rdto.getReview_writer());
 		ps.setString(2, rdto.getReview_content());
 		ps.setString(3, rdto.getReview_score());
-
+	
 		ps.execute();
 
 		con.close();

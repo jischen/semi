@@ -90,8 +90,7 @@
 							if (!isLogin) {
 						%>
 						<a href="<%=rootPath%>/member/login.jsp">로그인</a> 
-						<a href="<%=rootPath%>/member/join_term_check.jsp">회원가입</a>
-						 
+						<a href="<%=rootPath%>/member/join_term_check.jsp">회원가입</a> 
 					
 						<%} %>
 						
@@ -101,7 +100,6 @@
 						<!-- 로그인 상태일 경우 -->
 							<a href="<%=rootPath%>/member/logout.do">로그아웃</a> 
 							<a href="<%=rootPath%>/member/info.jsp">내정보</a>
-							
 							
 					
 						<!-- 로그인 된 사용자 중에서도 "관리자" 인 경우만 나와야 하는 메뉴 -->
