@@ -1,6 +1,7 @@
 package beans.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -32,14 +33,26 @@ public class ReviewDao {
 		return src.getConnection();
 	}
 
+	//리뷰 등록 메소드
 
 public void register(ReviewDto rdto) throws Exception{
 	
 	Connection con=getConnection();
-	String sql=""
+	String sql="INSERT INTO review values(review_seq.nextval,'system','재미있다','1점',sysdate)";
 	
-	
-	
+	//아이디
+	//내용
+	//점수
+
+PreparedStatement ps=con.prepareStatement(sql);
+
+ps.setString(1,rdto.getReview_writer());
+ps.setString(2,rdto.getReview_content());
+ps.setString(3,rdto.getReview_score());
+
+ps.execute();
+
+con.close();
 	
 }
 
