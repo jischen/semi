@@ -18,19 +18,19 @@
 	<table border="1">
 
 		<tbody>
+		
 			<tr>
-				<td>영화이름: <input type="text" name="review_name">
-				
+				<td>영화이름
 				</td>
 			</tr>
 			<tr>
 				<td>작성자:<input type="text" name="member_id">
 				<select name="review_score">
-<option value="5">5점</option>
-<option value="4">4점</option>
-<option value="3">3점</option>
-<option value="2">2점</option>
-<option value="1">1점</option>
+<option value="5점">5점</option>
+<option value="4점">4점</option>
+<option value="3점">3점</option>
+<option value="2점">2점</option>
+<option value="1점">1점</option>
 </select>
 </td>
 				</tr>
