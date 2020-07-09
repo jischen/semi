@@ -8,14 +8,16 @@
 		boolean isLogin = mdto != null;
 
 %>
+		    <ul class="menu menu-fixed">
 
-	<a href="/khann/movie/movie_chart.jsp">영화</a>
-	<a href="/khann/ticketing/ticketing_selection.jsp">예매</a>
-	<a href="/khann/theater/theater_insert.jsp">상영관등록</a>
-	<a href="#">극장</a>
-	<a href="#">이벤트</a>
-	<a href="/khann/cs/cs_board.jsp">고객센터</a>
-	
+   
+	<li><a href="/khann/movie/movie_chart.jsp">영화</a></li>
+	<li><a href="/khann/ticketing/ticketing_selection.jsp">예매</a></li>
+	<li><a href="/khann/theater/theater_insert.jsp">상영관등록</a></li>
+	<li><a href="#">극장</a></li>
+	<li><a href="#">이벤트</a></li>
+	<li><a href="/khann/cs/cs_board.jsp">고객센터</a></li>
+	 </ul>
 	
 	
 	
