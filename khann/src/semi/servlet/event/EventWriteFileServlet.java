@@ -22,7 +22,7 @@ import beans.dto.EventFileDto;
 import beans.dto.MemberDto;
 
 
-//@WebServlet(urlPatterns="/event/write.do")
+@WebServlet(urlPatterns="/event/writefile.do")
 public class EventWriteFileServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

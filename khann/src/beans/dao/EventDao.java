@@ -38,7 +38,7 @@ public class EventDao {
 	public List<EventDto> getList(int start, int finish) throws Exception {
 		Connection con = getConnection();
 
-	String sql = "SELECT * FROM event ORDER BY event_no DESC";
+		String sql = "SELECT * FROM event ORDER BY event_no DESC";
 
 //		트리정렬 제외
 
@@ -56,29 +56,27 @@ public class EventDao {
 		return list;
 
 	}
-	
+
 	// 검색 메소드
-	public List<EventDto> search(String type, String keyword) throws Exception{
+	public List<EventDto> search(String type, String keyword) throws Exception {
 		Connection con = getConnection();
-		
-		String sql = "SELECT * FROM event"
-								+ "WHERE instr(#1, ?) > 0 "
-								+ "ORDER BY event_no DESC";
+
+		String sql = "SELECT * FROM event" + "WHERE instr(#1, ?) > 0 " + "ORDER BY event_no DESC";
 		sql = sql.replace("#1", type);
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, keyword);
 		ResultSet rs = ps.executeQuery();
-		
+
 		List<EventDto> list = new ArrayList<>();
-		while(rs.next()) {
+		while (rs.next()) {
 			EventDto edto = new EventDto(rs);
 			list.add(edto);
 		}
-		
+
 		con.close();
 		return list;
 	}
-	
+
 	// 단일조회
 	public EventDto get(int event_no) throws Exception {
 		Connection con = getConnection();
@@ -94,83 +92,92 @@ public class EventDao {
 
 		return edto;
 	}
-	
 
-	//페이지 개수 조회 메소드 x 2
-		public int getCount() throws Exception {
-			Connection con = getConnection();
+	// 페이지 개수 조회 메소드 x 2
+	public int getCount() throws Exception {
+		Connection con = getConnection();
 
-			String sql = "SELECT count(*) FROM event";
-			PreparedStatement ps = con.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			rs.next();// 데이터는 무조건 1개 나오므로 이동
-			int count = rs.getInt(1); 
+		String sql = "SELECT count(*) FROM event";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		rs.next();// 데이터는 무조건 1개 나오므로 이동
+		int count = rs.getInt(1);
 
-			con.close();
+		con.close();
 
-			return count;
+		return count;
 
-		}
+	}
 
-		public int getCount(String type, String keyword) throws Exception {
-			Connection con = getConnection();
+	public int getCount(String type, String keyword) throws Exception {
+		Connection con = getConnection();
 
-			String sql = "SELECT count(*) FROM event WHERE instr(*1,?)>0";
-			sql = sql.replace("*1", type);
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, keyword);
-			ResultSet rs = ps.executeQuery();
-			rs.next();
-			int count = rs.getInt(1);
+		String sql = "SELECT count(*) FROM event WHERE instr(*1,?)>0";
+		sql = sql.replace("*1", type);
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, keyword);
+		ResultSet rs = ps.executeQuery();
+		rs.next();
+		int count = rs.getInt(1);
 
-			con.close();
+		con.close();
 
-			return count;
-		}
+		return count;
+	}
 
+	// 시퀀스 생성
+	// - dual 테이블은 오라클이 제공하는 임시 테이블
+	public int getSequence() throws Exception {
+		Connection con = getConnection();
 
-		
-		// 시퀀스 생성
-		// - dual 테이블은 오라클이 제공하는 임시 테이블
-		public int getSequence() throws Exception {
-			Connection con = getConnection();
+		String sql = "SELECT event_seq.nextval FROM dual";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		rs.next();
+		int seq = rs.getInt(1);// rs.getInt("NEXTVAL");
 
-			String sql = "SELECT event_seq.nextval FROM dual";
-			PreparedStatement ps = con.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			rs.next();
-			int seq = rs.getInt(1);// rs.getInt("NEXTVAL");
+		con.close();
 
-			con.close();
+		return seq;
+	}
 
-			return seq;
-		}
-		
-		// 등록
-	
-		public void write(EventDto edto) throws Exception {
+	// 등록
 
-			Connection con = getConnection();
+	public void write(EventDto edto) throws Exception {
 
-			// 아래와 같이 작성하면 미 작성된 항목들은 default 값이 적용
-			String sql = "INSERT INTO event"
-					+ "("
-						+ "event_no, "
-						+ "event_title, "
-						+ "event_date, "
-						+ "event_condition, "
-						+ "event_content"
-					+ ") "
-			+ "VALUES(?, ?, ?, ?, ?)";
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, edto.getEvent_no());
-			ps.setString(2, edto.getEvent_title());
-			ps.setString(3, edto.getEvent_date());
-			ps.setString(4, edto.getEvent_condition());
-			ps.setString(5, edto.getEvent_content());
-			
-			con.close();
-		}
+		Connection con = getConnection();
 
+		// 아래와 같이 작성하면 미 작성된 항목들은 default 값이 적용
+//			String sql = "INSERT INTO EVENT(데이터 넣을 컬럼 이름) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO EVENT VALUES(?,?,SYSDATE,?,?)";
+
+		PreparedStatement ps = con.prepareStatement(sql);
+
+		ps.setInt(1, edto.getEvent_no());
+		ps.setString(2, edto.getEvent_title());
+		ps.setString(3, edto.getEvent_condition());
+		ps.setString(4, edto.getEvent_content());
+
+		ps.execute();
+
+		con.close();
+	}
+
+	// 수정
+
+	public void edit(EventDto edto) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "UPDATE event SET event_condition=?, event_title=?, event_content=? WHERE event_no=?";
+
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, edto.getEvent_condition());
+		ps.setString(2, edto.getEvent_title());
+		ps.setString(3, edto.getEvent_content());
+		ps.setInt(4, edto.getEvent_no());
+		ps.execute();
+
+		con.close();
+	}
 
 }
