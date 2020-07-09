@@ -24,7 +24,7 @@
     </script>
 </head>
 <body>
-    <form action="cinema-seat.html" method="get">
+    <form action="se" method="get">
         <div class="cinema-wrap" data-name="seat">
             <div class="cinema-screen">스크린</div>
 
