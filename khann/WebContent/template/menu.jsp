@@ -9,7 +9,8 @@
 
 %>
 
-	 <ul class="menu menu-fixed">
+	 <ul class="menu" width="772" height="62">
+	 
 	 
 	<li><a href="<%=rootPath%>/movie/movie_chart.jsp">영화</a></li>
 	<li><a href="<%=rootPath%>/ticketing/ticketing_selection.jsp">예매</a></li>
