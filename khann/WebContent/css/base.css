@@ -231,18 +231,23 @@
 .menu, .menu ul {
     list-style: none;
     padding:0;
+    padding-bottom:0px;
     margin:0;
-    background-color: black;
+    display:inline-block;
+/*      margin-left:200px;*/
+     margin-bottom:100px; */
+
 }
 /* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
 .menu > li {
     display: inline-block;
+    background-color: #9D3434;
 }
 
 /* 모든 li는 relative 설정 */
 .menu li {
     position: relative;
-    padding:0.75rem;
+    padding:0.rem;
     width:150px;
     text-align: center;
     cursor:pointer;
@@ -462,7 +467,87 @@ textarea.form-input {
 .float-box > .float-right {
     float:right;
 }
-
-
+/*  */
+      #dh-container {
+        width: 1240px;
+        margin: 10px auto;
+        padding: 20px;
+       /* border: 1px solid #bcbcbc;*/
+      }
+/*  */      
+      #dh-header {
+        padding: 20px;
+        margin-bottom: 20px;
+      /*  border: 1px solid #bcbcbc; */
+      }
+/*  */      
+      #dh-content {
+        width: 860px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid #bcbcbc;
+      }
+/*사이드 바 로그인창 구현예정*/      
+      #dh-sidebar {
+        width: 260px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 1px solid #bcbcbc;
+      }
+/* 푸터 */
+      .dh-footer {
+        clear: both;
+        padding: 20px;
+      /*  border: 1px solid #bcbcbc; */
+        background-color: #9D3434;
+        color: white;
+        padding: 20px;
+      }
+	.footer_divL  {
+/*  		float:left; */
+		display:inline-block;
+		padding: 20px;
+	}
+	.footer_divC{
+/* 		float:center; */
+		display:inline-block;
+		padding: 20px;
+		width:720px;
+	}
+	.footer_divR{
+/* 		float:right;*/
+		display:inline-block;
+		padding: 20	px;
+		align:"right"
+		
+	}
+	.dh-footer::after{
+		content:""; display:block; clear:both;
+	}
+      
+/*  */      
+      @media ( max-width: 480px ) {
+        #dh-container {
+          width: auto;
+        }
+/*  */        
+        #dh-content {
+          float: none;
+          width: auto;
+        }
+/*  */        
+        #dh-sidebar {
+          float: none;
+          width: auto;
+        }
+      }
+      /*상단 로고 */
+		#top-logo {
+		text-align:center;
+		display:inline-block;
+		width:100%
+}
 
 

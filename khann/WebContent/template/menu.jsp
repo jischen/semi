@@ -9,13 +9,19 @@
 
 %>
 
-	<a href="/khann/movie/movie_chart.jsp">영화</a>
-	<a href="/khann/ticketing/ticketing_selection.jsp">예매</a>
-	<a href="/khann/theater/theater_insert.jsp">상영관등록</a>
-	<a href="/khann/theater/theater_intro.jsp">극장</a>
-	<a href="#">이벤트</a>
-	<a href="/khann/cs/list.jsp">고객센터</a>
+	 <ul class="menu" width="772" height="62">
+	 
+	 
+	<li><a href="<%=rootPath%>/movie/movie_chart.jsp">영화</a></li>
+	<li><a href="<%=rootPath%>/ticketing/ticketing_selection.jsp">예매</a></li>
+	<li><a href="<%=rootPath%>/theater/theater_insert.jsp">상영관등록</a></li>
+	<li><a href="<%=rootPath%>/theater/theater_intro.jsp">극장</a></li>
+	<li><a href="<%=rootPath%>/event/list.jsp">이벤트</a></li>
+	<li><a href="<%=rootPath%>/cs/list.jsp">고객센터</a></li>
+
 	
+	</ul>
+
 	
 	
 	
