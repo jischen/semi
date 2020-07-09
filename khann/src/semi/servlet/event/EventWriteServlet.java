@@ -12,7 +12,7 @@ import beans.dao.EventDao;
 import beans.dto.EventDto;
 import beans.dto.MemberDto;
 
-@WebServlet(urlPatterns="/event/write.do")
+//@WebServlet(urlPatterns="/event/write.do")
 public class EventWriteServlet extends HttpServlet {
 @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
