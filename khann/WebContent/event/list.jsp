@@ -10,7 +10,7 @@
 	/Event/list.jsp : 게시판 목록 겸 검색 페이지
  -->
 <%
-	String type = request.getParameter("type");
+	String type = request.getParameter("type");//condition으로 바꿔야함
 	String keyword = request.getParameter("keyword");
 
 	boolean isSearch = type != null && keyword != null;
@@ -60,7 +60,7 @@
 	}
 
 	//관리자만 글쓰기 버튼 보이게 
-	MemberDto user = (MemberDto) session.getAttribute("userinfo");
+	MemberDto user = (MemberDto)session.getAttribute("userinfo");
 	boolean isAdmin = user.getGrade().equals("관리자");
 %>
 
@@ -89,7 +89,15 @@
 				</tr>
 			</thead>
 			<tbody align="center">
-
+				<%for(EventDto edto : list){ %>
+				<tr>
+					<td><%=edto.getEvent_no() %></td>
+					<td align="left">
+						<a href="content.jsp?event_no=<%=edto.getEvent_no() %>">
+						<%=edto.getEvent_title() %>
+						</a>
+					<td><%=edto.getEvent_date() %></td>
+					<td><%=edto.getEvent_condition() %></td>
 			</tbody>
 
 			<!-- 게시글 제목 넣어야 함-->
@@ -178,7 +186,7 @@
 					if (pageCount > finishBlock) {
 				%>
 			<%
-					if (!isSearch) {
+						if (!isSearch) {
 				%>
 			<a href="list.jsp?page=<%=finishBlock + 1%>">&gt;</a>
 			<%
@@ -192,7 +200,12 @@
 			<%
 					}
 				%>
+	
+			<%
+					}
+				%>
 
+			
 
 		</div>
 	</div>
