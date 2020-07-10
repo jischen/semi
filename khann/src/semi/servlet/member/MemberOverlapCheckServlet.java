@@ -20,7 +20,6 @@ public class MemberOverlapCheckServlet extends HttpServlet{
 			//입력 : member_nick , member_phone , member_birth  -----> MemberDto
 			req.setCharacterEncoding("UTF-8");
 			String request_id = req.getParameter("request_id");
-			System.out.println(request_id);
 			//처리
 			MemberDao mdao = new MemberDao();
 			MemberDto member_id = mdao.checkOverlap(request_id);
@@ -28,11 +27,15 @@ public class MemberOverlapCheckServlet extends HttpServlet{
 			//출력
 			if(member_id != null) {//결과가 있으면(사용이 불가능)
 				
-				resp.sendRedirect("id_overlap_check.jsp?no");
+				req.setAttribute("request_id",request_id);
+				req.getRequestDispatcher("id_overlap_check.jsp?no").forward(req, resp); 
+				
+				
 			}
 			else {//결과가 없으면(사용이가능하다)
-				resp.sendRedirect("id_overlap_check.jsp?ok");
-			
+				req.setAttribute("request_id",request_id);
+				req.getRequestDispatcher("id_overlap_check.jsp?ok").forward(req, resp); 
+							
 			}
 		}
 		catch(Exception e) {

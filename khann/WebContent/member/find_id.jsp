@@ -29,7 +29,7 @@
 					<th>번호</th>
 					<td>
 						<input type="text" name="member_phone" placeholder="-를 제외한 휴대전화 번호를 입력하세요." 
-						pattern="(010)\d{3,4}\d{4}" title="형식 01012345678"
+						pattern="(010)\d{3,4}\d{4}" title="형식 01012345678">
 >
 					</td>
 				</tr>
