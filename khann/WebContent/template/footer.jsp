@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="footer_divC">
-				<span>회사소개</span> <span> | </span> <span>광고/프로모션문의</span> <span>
+				<span>회사소개</a></span> <span> | </span> <span>광고/프로모션문의</span> <span>
 					| </span> <span>제휴문의</span> <span> | </span> <span>출점문의</span>
 				<p>
 					<span>(주)주식회사 KHANN</span> <span> | </span> <span>대표: 미스터 고</span>

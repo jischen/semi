@@ -44,7 +44,7 @@
 }
 
 .login-submit {
-	color: white;
+	color: #9D3434;
 	background-color: dodgerblue;
 	border-width: 1px;
 	border-style: solid;
@@ -52,7 +52,7 @@
 }
 
 .login-button {
-	background-color: white;
+	background-color: ;
 	border-width: 1px;
 	border-style: solid;
 	border-color: black;
@@ -62,13 +62,11 @@
 	text-align: left;
 }
 </style>
-</head>
-<body>
-	<div class="login-wrap">
-		<!-- 제목 -->
-		<h1>로그인</h1>
 
-		<!-- 폼 -->
+
+	 <div class="login-wrap">
+		<h1>로그인</h1>
+		
 		<form action="login.do" method="post">
 			<!-- 아이디 입력창 -->
 			<input class="form-input login-id" type="text" name="member_id"
@@ -77,9 +75,6 @@
 			<!-- 비밀번호 입력창 -->
 			<input class="form-input login-pw" type="password" name="member_pw"
 				required>
-
-
-
 			<%
 				if (request.getParameter("error") != null) {
 			%>
@@ -90,45 +85,38 @@
 			<%
 				}
 			%>
-
-			<!-- 
-            자동로그인 선택 체크박스 
-            - 여러 항목으로 구성된 경우 div 등으로 감싸 한 덩어리로 묶어준다
-            -->
+	
+            
 			<div class="login-checkbox-wrap">
 				<input class="login-checkbox" type="checkbox" name="autologin">
 				자동로그인
 			</div>
-
- 		<div align="center">
-			<a href="http://localhost:8080/khann/member/find_id.jsp">아이디 찾기</a> <a
-				href="#">비밀번호 찾기 </a> <br>
-
-
-
+			
+			<div>
 			<!-- 로그인 버튼 -->
 			<input class="form-input login-submit" type="submit" value="로그인">
-		</form>
-
-		<hr>
-
-
-
-
+		</div>	
+					</form>
+		
+			
+            
+            <div align="center">
+			<a href="http://localhost:8080/khann/member/find_id.jsp">아이디 찾기</a> <a
+				href="#">비밀번호 찾기 </a> <br>
+			</div>
+				</form>
+				<hr>
+   
+   		 <div>
 		<!-- 가입 버튼 -->
 		<button class="form-input login-button" type="button"
 			onclick="location.href='../member/join_term_check.jsp' ">회원가입</button>
 
-	
-
-
-
 		</div>
-</body>
-</html>
-
-
-
+	
+		
+  </div>
+	
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
