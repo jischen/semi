@@ -5,6 +5,54 @@
 	pageEncoding="UTF-8"%>
 
 
+		 <script>
+        function changeCheckbox(){
+            //해야할 일
+            //1. .select-all의 체크상태를 불러온다.
+            var selectAll = document.querySelector(".select-all").checked;
+            
+            //2. 1번에서 불러온 값으로 모든 .select-item에 check 여부를 설정    
+            
+            //(주의) document.querySelector()로는 태그를 1개밖에 선택할 수 없다.
+            // - document.querySelectorAll()로 태그를 모두 선택할 수 있다.
+            // - 위의 명령은 사용 시 결과가 "배열"로 전달된다.
+            var selectItem = document.querySelectorAll(".select-item");
+            //for(var i=0; i < selectItem.length; i++){
+            for(var i in selectItem){
+                selectItem[i].checked = selectAll;    
+            }
+            
+        }
+            
+          //체크박스 여부확인
+        function CheckForm(){
+            
+            //체크박스 체크여부 확인 [하나]
+            var chk1=document.termcheck.Agreement1.checked;
+            var chk2=document.termcheck.Agreement2.checked;
+            var chk3=document.termcheck.Agreement3.checked;
+
+            if(!chk1){
+                alert('모든 약관에 동의해 주세요');
+                return false;
+            } 
+            if(!chk2) {
+                alert('모든 약관에 동의해 주세요');
+                return false;
+                
+            } if(!chk3){
+                alert('모든 약관에 동의해 주세요');
+                return false;
+            }
+
+         
+            }
+            
+            
+    </script>
+
+
+
 
 
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -12,8 +60,10 @@
 <div align="center">
 	<h2>회원이용약관</h2>
 
+
+
 	<br>
-	<form name="#" method="#" action="#" onsubmit="#">
+	<form name="termcheck" method="post" action="http://localhost:8080/khann/member/join.jsp" onSubmit="return CheckForm()" >
 		<table border="0" cellpadding="0" cellspacing="0" class="굴림">
 			<tbody>
 				<tr>
@@ -21,7 +71,7 @@
 							읽어 보시기 바랍니다. 약관에 동의하신다면 아래의 [동의] 버튼을 눌러 주세요.</font></td>
 				</tr>
 				<tr>
-					<td align="center">&nbsp;</td>
+					<td align="center"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -29,9 +79,9 @@
 			<tbody>
 				<tr>
 
-					<td><textarea name="textarea" cols="71" rows="12" class="굴림">																						■ 개인정보의 수집 및 이용목적
+					<td><textarea name="" cols="71" rows="12" class="굴림">																						■ 개인정보의 수집 및 이용목적
 																						회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
-													z									ο 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 - 콘텐츠 제공 , 구매 및 요금 결제
+																						ο 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 - 콘텐츠 제공 , 구매 및 요금 결제
 																						ο 회원 관리 - 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 가입 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인 , 불만처리 등 민원처리
 																						ο 마케팅 및 광고에 활용 - 이벤트 등 광고성 정보 전달
 
@@ -60,13 +110,12 @@
 
 
 				<tr>
-					<td valign="top"><input type="checkbox" name="" id="">
-						동의하십니까?</td>
+					<td valign="top">  <input type="checkbox" class="select-item" id="Agreement1">동의하십니까</td>
 				</tr>
 
 				<tr>
 
-					<td><textarea name="textarea" cols="71" rows="12" class="굴림">	
+					<td><textarea name="" cols="71" rows="12" class="굴림">	
 																																											■ 개인정보 제공
 																					회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
 																					- 이용자들이 사전에 동의한 경우
@@ -77,14 +126,14 @@
 
 
 				<tr>
-					<td valign="top"><input type="checkbox" name="" id="">
-						동의하십니까?</td>
+					<td valign="top"><input type="checkbox" class="select-item" id="Agreement2">동의하십니까?
+					</td>
 				</tr>
 
 
 				<tr>
 
-					<td><textarea name="textarea" cols="71" rows="12" class="굴림">	
+					<td><textarea name="" cols="71" rows="12" class="굴림">	
 																																											■ 개인정보 제공
 																					회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
 																					- 이용자들이 사전에 동의한 경우
@@ -95,22 +144,17 @@
 
 
 				<tr>
-					<td valign="top"><input type="checkbox" name="" id="">
-						동의하십니까?</td>
+					<td valign="top">  <input type="checkbox" class="select-item" id="Agreement3" >동의하십니까?
+					</td>
 				</tr>
-
-
-
-
-
-
-
-
-
+					<tr>
+					<td valign="top"><input type="checkbox" class="select-all" onchange="changeCheckbox();">전부 동의</td>
+				</tr>
+                  
 
 			</tbody>
 		</table>
-		<button type="button" onclick="location.href='http://localhost:8080/khann/member/join.jsp' ">동의</button>
+		<input type="submit" value="동의">
 		<button type="button" onclick="location.href= 'http://localhost:8080/khann/index.jsp' ">동의안함</button>
 		
 

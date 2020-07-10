@@ -16,7 +16,7 @@ public class EventDto {
 	}
 	
 	public EventDto(ResultSet rs) throws SQLException{
-		this.setEvent_no(rs.getInt("evnet_no"));
+		this.setEvent_no(rs.getInt("event_no"));
 		this.setEvent_title(rs.getString("event_title"));
 		this.setEvent_date(rs.getString("event_date"));
 		this.setEvent_condition(rs.getString("event_condition"));

@@ -1,27 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    					<br>
-					</td>
-				</tr>
-				<!-- 하단(footer) 영역 -->
-				<tr height="100">
-					<td align="center">
-					
-						
-						<!-- 사용자의 로그인 정보를 분석하는 코드 작성(연습용) -->
-						<h6>세션ID : <%=session.getId()%></h6>
-						<h6>userinfo : <%=session.getAttribute("userinfo")%></h6>
-						<h6>로그인 : <%=session.getAttribute("userinfo") != null%></h6>
-						<h6>(07212)서울 영등포구 선유동2로 57 이레빌딩 </h6>
-						<h6>대표이사 : 고지선 | 사업자등록번호 : 1004-82-49105 </h6>
-						<h6>&copy;KH.KHANN.All Rights Reserved</h6>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+	pageEncoding="UTF-8"%>
+<br>
+
+<!--하단(footer)영역  -->
+<div class="dh-footer">
+	<div class="footer_divL">
+		<img src="<%=request.getContextPath()%>/img/logo2.png" width="90"
+			height="90">
 	</div>
 
+	<div class="footer_divC">
+		<span><a href="#">회사소개</a></span> <span> | </span> 
+		<span><a href="#">광고/프로모션문의</a></span> <span> | </span> 
+		<span><a href="#">제휴문의</a></span> <span>| </span> 
+		<span><a href="#">출점문의</a></span>
+		<p>
+			<span>(주)주식회사 KHANN</span> <span> | </span> <span>대표: 미스터 고</span> <span>
+				| </span> <span>사업자등록번호 : 123-45-6789</span> <span> | </span>
+		</p>
+		<p>오시는 길: 서울특별시 관악구 서원동 문성로 248</p>
+		<p></p>
+	</div>
+	<div class="footer_divR">&copy; KHANN Corp. All right reserved.</div>
+
+</div>
 </body>
 </html>
-
-
