@@ -10,7 +10,53 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/base.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/swiper/css/swiper.min.css">
+<!--스와이퍼 스크립트-->
+<script src="<%=request.getContextPath()%>/swiper/js/swiper.js"></script>
+<script>
+	//창의 로딩이 완료되었을 때 실행할 코드를 예약
+	window.onload = function() {
+		//var mySwiper = new Swiper(선택자, 옵션);
+		var mySwiper = new Swiper('.swiper-container', {
+			//swiper에 적용할 옵션들을 작성
 
+			direction : 'horizontal' //표시방식(수직:vertical, 수평:horizontal)
+			,
+			loop : true //순환 모드 여부
+
+			//자동재생 옵션그룹
+			,
+			autoplay : {
+				delay : 2000
+			//자동재생 시간(2초)
+			}
+
+			//페이지 네비게이터 옵션그룹
+			,
+			pagination : {
+				el : '.swiper-pagination', //적용 대상의 선택자
+				type : 'bullets',//네비게이터 모양(bullets/fraction/...)
+			},
+
+			//이전/다음 이동버튼 설정그룹
+			navigation : {
+				nextEl : '.swiper-button-next',
+				prevEl : '.swiper-button-prev',
+			}
+
+			//커서 모양을 손모양으로 변경
+			,
+			grabCursor : false
+
+			//슬라이드 전환 효과(effect)
+			//,effect:'coverflow'
+			//,effect:'cube'
+			//,effect:'fade'
+			//,effect:'flip'
+			,
+			effect : 'slide'//기본값
+		});
+	};
+</script>
 
 </head>
 <body>
@@ -30,14 +76,13 @@
 		<div id="dh-header">
 			<!-- 상단 로고 -->
 			<div id="top-logo">
-				<a href="/khann/index.jsp">
-				<img src="<%=rootPath%>/img/logo2.png"
-				 	width="200" height="200">
+				<a href="/khann/index.jsp"> <img
+					src="<%=rootPath%>/img/logo2.png" width="200" height="200">
 				</a>
 			</div>
-			<div align="right" width="779" height="18" display="inline-block">
-
 			<!--헤더메뉴1 로그인/회원가입/내정보-->
+			<div class="lojoin" width="779" height="18">
+
 				<%
 					if (!isLogin) {
 				%>
@@ -58,7 +103,7 @@
 				<%
 					if (mdto.getGrade().equals("관리자")) {
 				%>
-				<a href="#">관리메뉴</a>
+				<a href="<%=rootPath%>/theater/theater_insert.jsp">상영관등록</a>
 				<%
 					} else {
 				%>

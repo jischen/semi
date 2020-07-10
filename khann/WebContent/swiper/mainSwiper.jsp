@@ -2,12 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
+<head>    
     <link rel="stylesheet" href="./css/swiper.min.css">
     <style>
         .swiper-container {
-            width: 100%;
+            width:100%;
             min-height: 200px;
             max-height: 300px;
         }
