@@ -12,6 +12,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import beans.dto.MovieDto;
+import beans.dto.SeatDto;
 import beans.dto.TheaterDto;
 
 public class TheaterDao {
@@ -53,6 +54,7 @@ public class TheaterDao {
 		
 		con.close();
 	}
+	
 	
 	
 	public List<TheaterDto> getList() throws Exception{

@@ -6,7 +6,7 @@
 <div align="center">
 	
 	
-	<form action="theater_insert.do" method="post">
+	<form action="insert2.jsp" method="post">
 	<table border="1">
 	
 		<tr>
@@ -28,7 +28,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td> 상영관 칸 </td>
+			<td> 상영관 열 </td>
 			<td>
 			<input name="theater_col" type="text">
 			</td>

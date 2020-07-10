@@ -194,4 +194,36 @@ public class MemberDao {
 		con.close();
 	}
 	
+	
+	
+
+	//아이디 중복확인 메소드
+	public MemberDto checkOverlap(String request_id) throws Exception{
+		Connection con = getConnection();
+			
+		String sql = "SELECT * FROM member WHERE member_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, request_id);
+		ResultSet rs = ps.executeQuery();
+		
+		
+		MemberDto mdto;
+		if(rs.next()) {
+			mdto = new MemberDto(rs);
+		}
+		else {
+			mdto = null;
+		}
+		
+		con.close();
+		
+		return mdto;
+		
+	}
+	
+	
+	
+	
+	
+	
 }

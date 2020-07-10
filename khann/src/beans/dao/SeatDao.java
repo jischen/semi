@@ -36,6 +36,21 @@ private static DataSource src;
 	}
 	
 	
+	//등록 메소드
+	public void register(SeatDto sdto) throws Exception {
+		Connection con = getConnection();
+		
+		String sql = "INSERT INTO seat values(seat_seq.nextval, ?, ?, ?)";
+		
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, sdto.getTheater_no());
+		ps.setInt(2, sdto.getSeat_row());
+		ps.setInt(3, sdto.getSeat_col());
+		
+		ps.execute();
+		con.close();
+		
+	}
 	
 	
 }

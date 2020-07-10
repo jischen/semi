@@ -3,6 +3,21 @@
     
 <jsp:include page="/template/header.jsp"></jsp:include>
 
+<script>
+
+function idCheck(){ 
+	window.name = "parent"
+	window.open("id_overlap_check.jsp", "idwin", "width=400, height=350"); }
+
+
+
+
+</script>
+
+
+
+
+
 <div align="center">
 	
 	<h2>회원가입</h2>    
@@ -26,7 +41,9 @@
 				<tr>
 					<th>아이디</th>
 					<td>
-						<input type="text" name="member_id" required placeholder="5~20자 영문 또는 숫자">
+						<input type="text" name="member_id" required placeholder="5~20자 영문 또는 숫자 " id="parent">
+						<input type="button" value="ID중복확인" onclick="idCheck()">
+
 					</td>
 				</tr>
 				<tr>
