@@ -100,7 +100,7 @@ boolean isAdmin=user.getGrade().equals("관리자");
 					<%} %>
 					
 					<a href="list.jsp">
-					<input type="button" value="목록">
+					<input type="button" value="목록" >
 					</a>
 				</td>
 			</tr>

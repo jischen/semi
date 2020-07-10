@@ -33,6 +33,6 @@
 					        <div class="swiper-scrollbar"></div>
 					    </div>
 					</div>	
-
+</div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

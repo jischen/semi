@@ -28,6 +28,7 @@
 					</td>
 				</tr>
 				<tr>
+				
 					<th>제목</th>
 					<td>
 						<input type="text" name="event_title" size="70" required>

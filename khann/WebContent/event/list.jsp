@@ -60,9 +60,10 @@
 	}
 
 	//관리자만 글쓰기 버튼 보이게 
-	MemberDto user = (MemberDto)session.getAttribute("userinfo");
+	MemberDto user = (MemberDto) session.getAttribute("userinfo");
 	boolean isAdmin = user.getGrade().equals("관리자");
 %>
+
 
 
 
@@ -79,8 +80,8 @@
 	<div class="row">
 
 		<!-- 테이블 -->
-		<table border="1" align="center" width="60%" height="800px">
-			<thead>
+		<table border="1" align="center" width="60%" height="80px">
+			<thead align="center">
 				<tr>
 					<th>번호</th>
 					<th width="40%">제목</th>
@@ -88,127 +89,47 @@
 					<th>진행</th>
 				</tr>
 			</thead>
-			<tbody align="center">
-				<%for(EventDto edto : list){ %>
+			<tbody>
+				<%
+					for (EventDto edto : list) {
+				%>
 				<tr>
-					<td><%=edto.getEvent_no() %></td>
-					<td align="left">
-						<a href="content.jsp?event_no=<%=edto.getEvent_no() %>">
-						<%=edto.getEvent_title() %>
-						</a>
-					<td><%=edto.getEvent_date() %></td>
-					<td><%=edto.getEvent_condition() %></td>
+					<td><%=edto.getEvent_no()%></td>
+					<td align="center"><a
+						href="content.jsp?event_no=<%=edto.getEvent_no()%>"> <%=edto.getEvent_title()%>
+					</a>
+					<td><%=edto.getEvent_date()%></td>
+					<td><%=edto.getEvent_condition()%></td>
+				</tr>
+				<%
+					}
+				%>
 			</tbody>
 
 			<!-- 게시글 제목 넣어야 함-->
 
 		</table>
 
-		<%if (user != null) {
-				if(isAdmin) {%>
+		<%
+			if (user != null) {
+				if (isAdmin) {
+		%>
 		<div align="right">
+		
 			<a href="write.jsp"> <input type="button" value="글쓰기">
 			</a>
 		</div>
-		<%} %>
-	<%} %>
+		
+		<%
+			}
+		%>
+	<%
+			}
+		%>
+
 	</div>
 
 
-	<!-- 페이지 네비게이터 -->
-	<div class="row center">
-		<div class="pagination">
-			<!-- 
-			이전 버튼을 누르면 startBlock - 1 에 해당하는 페이지로 이동해야 한다
-			(주의) startBlock이 1인 경우에는 출력하지 않는다
-		 -->
-			<%
-					if (startBlock > 1) {
-				%>
-
-			<%
-					if (!isSearch) {
-				%>
-			<a href="list.jsp?page=<%=startBlock - 1%>">&lt;</a>
-			<%
-					} else {
-				%>
-			<a
-				href="list.jsp?page=<%=startBlock - 1%>&type=<%=type%>&keyword=<%=keyword%>">&lt;</a>
-			<%
-					}
-				%>
-
-			<%
-					}
-				%>
-
-			<!-- 
-			이동 숫자에 반복문을 적용 
-			범위는 startBlock부터 finishBlock까지로 설정
-		-->
-			<%
-					for (int i = startBlock; i <= finishBlock; i++) {
-				%>
-			<%
-					//현재 페이지에 해당하는 블록은 class="on"을 추가하여 출력하면 디자인 효과를 볼 수 있다.
-						String prop;
-						if (i == pageNo) {
-							prop = "class='on'";
-						} else {
-							prop = "";
-						}
-				%>
-
-			<%
-					if (!isSearch) {
-				%>
-			<!-- 목록일 경우 페이지 번호만 전달 -->
-			<a href="list.jsp?page=<%=i%>" <%=prop%>><%=i%></a>
-			<%
-					} else {
-				%>
-			<!-- 검색일 경우 페이지 번호와 검색 분류(type), 검색어(keyword)를 전달 -->
-			<a href="list.jsp?page=<%=i%>&type=<%=type%>&keyword=<%=keyword%>"
-				<%=prop%>><%=i%></a>
-			<%
-					}
-				%>
-			<%
-					}
-				%>
-
-			<!-- 
-			다음 버튼을 누르면 finishBlock + 1 에 해당하는 페이지로 이동해야 한다
-			(주의!) 다음이 없는 경우에는 출력하지 않는다(pageCount <= finishBlock)
-		 -->
-			<%
-					if (pageCount > finishBlock) {
-				%>
-			<%
-						if (!isSearch) {
-				%>
-			<a href="list.jsp?page=<%=finishBlock + 1%>">&gt;</a>
-			<%
-					} else {
-				%>
-			<a
-				href="list.jsp?page=<%=finishBlock + 1%>&type=<%=type%>&keyword=<%=keyword%>">&gt;</a>
-			<%
-					}
-				%>
-			<%
-					}
-				%>
-	
-			<%
-					}
-				%>
-
-			
-
-		</div>
-	</div>
 
 	<!-- 검색창 -->
 	<div class="row center">
