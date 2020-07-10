@@ -11,7 +11,9 @@
 
 MovieDao mdao = new MovieDao();
 List<MovieDto> list = mdao.getList();
-	    	 
+//로그인 정보 확인 
+MemberDto mdto = (MemberDto)session.getAttribute("userinfo");
+boolean isLogin = mdto != null;	 
 
 
 		
@@ -26,10 +28,10 @@ List<MovieDto> list = mdao.getList();
 		<tbody>
 		
 		<tr>
-		<%for(MovieDto mdto : list) {%>
+		<%for(MovieDto moivedto : list) {%>
 		<td>
-			<a href ="movie_content.jsp?movie_no=<%=mdto.getMovie_no() %>">
-				<img src="/khann/image/<%=mdto.getMovie_no()%>.jpg" width="170" height="200">
+			<a href ="movie_content.jsp?movie_no=<%=moivedto.getMovie_no() %>">
+				<img src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="170" height="200">
 			</a>
 		</td> 
 		
@@ -41,13 +43,20 @@ List<MovieDto> list = mdao.getList();
 
 
 	<tfoot>
+	<%if(isLogin){ %>
+		<%if(mdto.getGrade().equals("관리자")){ %>
 	
-		<tr>
+		<tr>	
 	<td align="center"  colspan="9">
 				<a href="/khann/movie/movie_insert.jsp">영화 등록</a>
 				<a href="/khann/movie/movie_delete.jsp">영화 삭제</a>
 			</td>
 		</tr>
+			<%} %>
+		
+			<%} %>
+		
+		
 	</tfoot>	
 	
 	</table>
