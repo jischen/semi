@@ -688,9 +688,9 @@ span a {
 	text-align: left;
 }
 
-/*스와이퍼  */
+/*스와이퍼 */
         .swiper-container {
-            width:100%;
+            width:80%;
             min-height: 200px;
             max-height: 300px;
         }
