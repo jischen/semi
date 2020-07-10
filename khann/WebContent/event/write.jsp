@@ -9,23 +9,21 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div align="center">
-	
+	<!-- enctype="multipart/form-data" -->
 	<h2>이벤트 작성</h2>
 	
 	<!-- 게시글 전송 폼 -->
-	<form action="write.do" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="event_no" value="<%=request.getParameter("event_no")%>">
-		
+	<form action="write.do" method="get">
 		<table border="1">
 			<tbody>
 				<tr>
 					<th>말머리</th>
 					<td>
-						<select name="event_no">
+						<select name="event_condition">
 							<option value="">상황 선택</option>
-							<option value="정보">예정</option>
-							<option value="공지">진행</option>
-							<option value="유머">마감</option>
+							<option value="예정">예정</option>
+							<option value="진행">진행</option>
+							<option value="마감">마감</option>
 						</select>
 					</td>
 				</tr>
@@ -46,7 +44,7 @@
 				<tr>
 					<th>첨부파일</th>
 					<td>
-						<input type="file" name="event_file" multiple accept=".jpg, .png, .gif">
+						<!-- <input type="file" name="event_file" multiple accept=".jpg, .png, .gif"> -->
 					</td>
 				</tr>
 			</tbody>
