@@ -235,7 +235,7 @@
     margin:0;
     display:inline-block;
 /*      margin-left:200px;*/
-     margin-bottom:100px; */
+/*    margin-bottom:100px; */
 
 }
 /* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
@@ -247,8 +247,8 @@
 /* 모든 li는 relative 설정 */
 .menu li {
     position: relative;
-    padding:0.rem;
-    width:150px;
+    padding:0.5rem;
+    width:180px;
     text-align: center;
     cursor:pointer;
 }
@@ -486,8 +486,9 @@ textarea.form-input {
         padding: 20px;
         margin-bottom: 20px;
         float: left;
-        border: 1px solid #bcbcbc;
+        border: 1px solid #bcbcbc;        
       }
+
 /*사이드 바 로그인창 구현예정*/      
       #dh-sidebar {
         width: 260px;
@@ -549,5 +550,76 @@ textarea.form-input {
 		display:inline-block;
 		width:100%
 }
+	/*헤더메뉴1 로그인/회원가입/내정보-->*/
+		.lojoin{
+		text-align:right;
+		}
+		.lojoin>a{
+		text-decoration:none;
+		color:black;
+		display:inline-block;
+		font-weight: bold;
+		
+		}
+	
+		span a {
+		text-decoration: none;
+		color:white;
+		}
+* {
+   box-sizing: border-box;
+}
 
+.login-wrap {
+   width: 460px;
+   text-align: center;
+   margin: 0px auto;
+}
 
+/* 태그 4개를 한 번에 부른다 */
+.form-input {
+   width: 100%;
+   margin: 10px 0px;
+   padding: 10px;
+   font-size: 17px;
+   font-family: 고딕;
+}
+
+/* 공통점이 아닌 차이점은 각각의 영역에 구현 */
+.login-id {
+   padding-left: 50px;
+   background-image:
+      url("https://cdn.icon-icons.com/icons2/1248/PNG/256/user_84308.png");
+   background-repeat: no-repeat;
+   background-size: 35px;
+   background-position: 4px 4px;
+}
+
+.login-pw {
+   padding-left: 50px;
+   background-image:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcThsF5jb5cpiZ_PVtF0peEBGIhFjNyNXq7jlQ&usqp=CAU");
+   background-repeat: no-repeat;
+   background-size: 35px;
+   background-position: 4px 4px;
+}
+
+.login-submit {
+   color: #9D3434;
+   background-color: dodgerblue;
+   border-width: 1px;
+   border-style: solid;
+   border-color: black;
+}
+
+.login-button {
+   background-color: ;
+   border-width: 1px;
+   border-style: solid;
+   border-color: black;
+}
+
+.login-checkbox-wrap {
+   text-align: left;
+}
+		

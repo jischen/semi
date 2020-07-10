@@ -35,9 +35,9 @@
 				 	width="200" height="200">
 				</a>
 			</div>
-			<div align="right" width="779" height="18" display="inline-block">
+		<!--헤더메뉴1 로그인/회원가입/내정보-->
+			<div class="lojoin" width="779" height="18">
 
-			<!--헤더메뉴1 로그인/회원가입/내정보-->
 				<%
 					if (!isLogin) {
 				%>
