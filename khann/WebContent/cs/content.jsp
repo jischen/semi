@@ -57,15 +57,15 @@
 		<tfoot>
 			<tr>
 				<td align="right">
+					<%if(user!=null){ 
+						if(isAdmin || isMine){ %>
 					<a href="write.jsp"><input type="button" value="글쓰기"></a>
-					<%if(user!=null){ %>
-					<%if(isAdmin || isMine){ %>
 					<a href="edit.jsp?cs_no=<%=cs_no%>"><input type="button" value="수정"></a>
 					<a href="<%=request.getContextPath()%>/member/check.jsp?go=<%=request.getContextPath()%>/cs/delete.do?cs_no=<%=cs_no%>">
 					<input type="button" value="삭제">
 					</a>
-					<%} %>
-					<%} %>
+					<%} 
+					} %>
 					
 					<a href="list.jsp"><input type="button" value="목록"></a>
 				</td>

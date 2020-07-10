@@ -66,13 +66,14 @@ public class CsDao {
 	public void write(CsDto cdto) throws Exception{
 		Connection con = getConnection();
 		
-		String sql = "INSERT INTO cs(cs_no, cs_title, cs_writer, cs_content) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO cs(cs_no, cs_head, cs_title, cs_writer, cs_content) VALUES(?,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 	
 		ps.setInt(1, cdto.getCs_no());
-		ps.setString(2, cdto.getCs_title());
-		ps.setString(3, cdto.getCs_writer());
-		ps.setString(4, cdto.getCs_content());
+		ps.setString(2, cdto.getCs_head());
+		ps.setString(3, cdto.getCs_title());
+		ps.setString(4, cdto.getCs_writer());
+		ps.setString(5, cdto.getCs_content());
 		ps.execute();
 		
 		con.close();
@@ -108,6 +109,24 @@ public class CsDao {
 		con.close();
 		return list;
 	}
+	//검색1 메소드
+	public List<CsDto> searchHead(String head) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM cs WHERE instr(cs_head, ?) > 0 ORDER BY cs_no DESC";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, head);
+		ResultSet rs = ps.executeQuery();
+		
+		List<CsDto> list = new ArrayList<>();
+		while(rs.next()) {
+			CsDto cdto = new CsDto(rs);
+			list.add(cdto);
+		}
+		
+		con.close();
+		return list;
+	}
 	
 	//조회수 증가
 		public void plusReadcount(int cs_no, String member_id) throws Exception {
@@ -126,16 +145,17 @@ public class CsDao {
 		}
 		
 		//게시글 수정
-		public void edit(CsDto bdto) throws Exception {
+		public void edit(CsDto cdto) throws Exception {
 			Connection con = getConnection();
 			
 			String sql = "UPDATE cs SET "
-								+ "cs_title=?, cs_content=? "
+								+ "cs_title=?, cs_head=?, cs_content=? "
 								+ "where cs_no=?";
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, bdto.getCs_title());
-			ps.setString(2, bdto.getCs_content());
-			ps.setInt(3, bdto.getCs_no());
+			ps.setString(1, cdto.getCs_title());
+			ps.setString(2, cdto.getCs_head());
+			ps.setString(3, cdto.getCs_content());
+			ps.setInt(4, cdto.getCs_no());
 			ps.execute();
 			
 			con.close();
