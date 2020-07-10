@@ -21,6 +21,7 @@ public class CsEditServlet extends HttpServlet {
 							
 			CsDto cdto = new CsDto();
 			cdto.setCs_no(Integer.parseInt(req.getParameter("cs_no")));
+			cdto.setCs_head(req.getParameter("cs_head"));
 			cdto.setCs_title(req.getParameter("cs_title"));
 			cdto.setCs_content(req.getParameter("cs_content"));
 

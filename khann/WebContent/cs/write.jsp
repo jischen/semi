@@ -9,6 +9,19 @@
 	<table border="1">
 		<tbody>
 				<tr>
+					<th>말머리</th>
+					<td>
+						<select name="cs_head">
+							<option value="">말머리 선택</option>
+							<option value="영화예매">영화예매</option>
+							<option value="회원제도">회원제도</option>
+							<option value="회원정보">회원정보</option>
+							<option value="카드할인">카드할인</option>
+							<option value="기타">기타</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
 					<th>제목</th>
 					<td><input type="text" name="cs_title" size="75" required></td>
 				</tr>

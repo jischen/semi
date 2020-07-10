@@ -12,7 +12,16 @@ public class CsDto {
 	private String cs_content;
 	private String cs_date;
 	private int cs_read;
+	private String cs_head;
 	
+	public String getCs_head() {
+		return cs_head;
+	}
+
+	public void setCs_head(String cs_head) {
+		this.cs_head = cs_head;
+	}
+
 	public CsDto() {
 		super();
 	}
@@ -67,6 +76,7 @@ public class CsDto {
 
 	public CsDto(ResultSet rs) throws SQLException {
 		this.setCs_no(rs.getInt("cs_no"));
+		this.setCs_head(rs.getString("cs_head"));
 		this.setCs_title(rs.getString("cs_title"));
 		this.setCs_writer(rs.getString("cs_writer"));
 		this.setCs_content(rs.getString("cs_content"));
