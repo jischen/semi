@@ -54,8 +54,11 @@
 	}
  
 	//관리자만 글쓰기 버튼 보이게 
+
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
+
 %>
+
 
 
 
@@ -72,8 +75,8 @@
 	<div class="row">
 
 		<!-- 테이블 -->
-		<table border="1" align="center" width="60%" height="800px">
-			<thead>
+		<table border="1" align="center" width="60%" height="80px">
+			<thead align="center">
 				<tr>
 					<th>번호</th>
 					<th width="40%">제목</th>
@@ -81,8 +84,10 @@
 					<th>진행</th>
 				</tr>
 			</thead>
-			<tbody align="center">
-				<%for(EventDto edto : list){ %>
+			<tbody>
+				<%
+					for (EventDto edto : list) {
+				%>
 				<tr>
 					<td><%=edto.getEvent_no() %></td>
 					<td align="left"><a
@@ -92,16 +97,21 @@
 					<td><%=edto.getEvent_condition() %></td>
 				</tr>
 				<%} %>
+
 			</tbody>
 		</table>
+
 
 		<%if (user != null) {
 				if(user.getGrade().equals("관리자")) {%>
 		<!--isAdmin -->
+
 		<div align="right">
+		
 			<a href="write.jsp"> <input type="button" value="글쓰기">
 			</a>
 		</div>
+
 		<%} %>
 		<%} %>
 	</div>

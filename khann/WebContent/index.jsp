@@ -6,6 +6,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div>
+
 	<!-- 이미지 슬라이더 영역 -->
 	<div class="swiper-container">
 		<!-- 필수 영역 -->
@@ -33,6 +34,7 @@
 		<div class="swiper-scrollbar"></div>
 	</div>
 </div>
+
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
