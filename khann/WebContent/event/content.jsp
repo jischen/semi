@@ -23,7 +23,6 @@ edto = edao.get(event_no);
 
 //관리자만 글 작성 가능
 MemberDto user=(MemberDto) session.getAttribute("userinfo");
-boolean isAdmin=user.getGrade().equals("관리자");
 %>
 
 
@@ -80,6 +79,7 @@ boolean isAdmin=user.getGrade().equals("관리자");
 		
 	
 		<!-- 각종 버튼들 구현 -->
+		<table>
 		<tfoot>
 			<tr>
 				<td colspan="2" align="right">
@@ -88,7 +88,7 @@ boolean isAdmin=user.getGrade().equals("관리자");
 					</a>
 					
 					
-					<%if(isAdmin){ %>
+					<%if(user.getGrade().equals("관리자")){ %>
 					
 					<a href="edit.jsp?event_no=<%=event_no%>">
 					<input type="button" value="수정">
