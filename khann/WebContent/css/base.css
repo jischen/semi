@@ -4,15 +4,14 @@
 - html에서 사용할 수 있는 공용 디자인 코드를 작성
 - style 태그 내부에 작성하는 내용만 기입
 */
-
 @charset "UTF-8";
 
 /*
 	웹 폰트 등록
 */
 @font-face {
-    font-family: nanumBarunPen;
-    src: url("../font/NanumBarunpenR.ttf");
+	font-family: nanumBarunPen;
+	src: url("../font/NanumBarunpenR.ttf");
 }
 
 /* 
@@ -25,8 +24,8 @@
 		- 용량이 커지기 때문에 로딩이 길어지지만 대신 모든 사용자가 동일한 글꼴을 볼 수 있다
 */
 * {
-    box-sizing: border-box;
-    font-family: nanumBarunPen;
+	box-sizing: border-box;
+	font-family: nanumBarunPen;
 }
 
 /*
@@ -40,30 +39,36 @@
     - .img-round : 이미지가 둥근 모서리를 갖도록 구현
 */
 .img {
-    
-}
-.img.img-border {
-    border:1px solid transparent;
-}
-.img.img-border:hover {
-    border-color: black;
-}
-.img.img-shadow:hover {
-    box-shadow: 0px 0px 3px 2px #333;
-}
-.img.img-transparent{
-    opacity: 0.5;
-}
-.img.img-transparent:hover{
-    opacity: 1;
-}
-.img.img-circle {
-    border-radius: 50%;
-}
-.img.img-round {
-    border-radius: 5px;
+	
 }
 
+.img.img-border {
+	border: 1px solid transparent;
+}
+
+.img.img-border:hover {
+	border-color: black;
+}
+
+.img.img-shadow:hover {
+	box-shadow: 0px 0px 3px 2px #333;
+}
+
+.img.img-transparent {
+	opacity: 0.5;
+}
+
+.img.img-transparent:hover {
+	opacity: 1;
+}
+
+.img.img-circle {
+	border-radius: 50%;
+}
+
+.img.img-round {
+	border-radius: 5px;
+}
 
 /* 
     rem 은 글자 1개의 높이에 해당하는 크기
@@ -81,62 +86,59 @@
     .table th : .table 안에 있는 모든 th
 */
 .table {
-    width:100%;
+	width: 100%;
 }
 
-.table > thead > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > th,
-.table > tbody > tr > td,
-.table > tfoot > tr > th,
-.table > tfoot > tr > td {
-    padding:0.5rem;
-    text-align: center;
+.table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td,
+	.table>tfoot>tr>th, .table>tfoot>tr>td {
+	padding: 0.5rem;
+	text-align: center;
 }
 
 /* 확장 스타일 1번 : .table-border 로 테두리를 부여 */
 .table.table-border {
-    /* 테이블에 테두리를 부여*/
-    border:1px solid black;
-    /* 테두리 병합 */
-    border-collapse: collapse;
+	/* 테이블에 테두리를 부여*/
+	border: 1px solid black;
+	/* 테두리 병합 */
+	border-collapse: collapse;
 }
-.table.table-border > thead > tr > th,
-.table.table-border > thead > tr > td,
-.table.table-border > tbody > tr > th,
-.table.table-border > tbody > tr > td,
-.table.table-border > tfoot > tr > th,
-.table.table-border > tfoot > tr > td {
-    /* 칸에 테두리를 부여 */
-    border:1px solid black;
+
+.table.table-border>thead>tr>th, .table.table-border>thead>tr>td, .table.table-border>tbody>tr>th,
+	.table.table-border>tbody>tr>td, .table.table-border>tfoot>tr>th,
+	.table.table-border>tfoot>tr>td {
+	/* 칸에 테두리를 부여 */
+	border: 1px solid black;
 }
 
 /* 확장 스타일 2번 : .table-stripe 로 줄무늬 부여 */
-.table.table-stripe > tbody > tr:nth-child(2n) {
-    /* RGB Hex String */
-    background-color: #ffeaa7;
+.table.table-stripe>tbody>tr:nth-child(2n) {
+	/* RGB Hex String */
+	background-color: #ffeaa7;
 }
-.table.table-stripe > thead > tr {
-    background-color: #fdcb6e;
+
+.table.table-stripe>thead>tr {
+	background-color: #fdcb6e;
 }
 
 /* 확장 스타일 3번 : .table-sideopen 으로 옆트임 테이블 구현 */
 .table.table-sideopen {
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    border-collapse: collapse;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	border-collapse: collapse;
 }
-.table.table-sideopen > tbody {
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+
+.table.table-sideopen>tbody {
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
 }
-.table.table-sideopen > tbody > tr {
-    border-bottom: 1px solid black;
+
+.table.table-sideopen>tbody>tr {
+	border-bottom: 1px solid black;
 }
 
 /* 확장 스타일 4번 : .table-hover 로 마우스 감지 테이블 구현 */
-.table.table-hover > tbody > tr:hover {
-    background-color: #dfe6e9;
+.table.table-hover>tbody>tr:hover {
+	background-color: #dfe6e9;
 }
 
 /*
@@ -156,55 +158,49 @@
     </div>
 */
 .modal-wrap {
-    /* 전체를 가리기 위한 설정 */
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-
-    /* opacity로 투명도를 조절하면 내용물도 적용된다 */
-    /* opacity:0.5; */
-
-    /* 배경색에 알파값을 설정하면 내용물에 영향이 없다 */
-    background-color: rgba(0, 0, 0, 0.5);
-
-    /* 모달은 기본적으로 표시가 되면 안된다 */
-    display: none;
+	/* 전체를 가리기 위한 설정 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* opacity로 투명도를 조절하면 내용물도 적용된다 */
+	/* opacity:0.5; */
+	/* 배경색에 알파값을 설정하면 내용물에 영향이 없다 */
+	background-color: rgba(0, 0, 0, 0.5);
+	/* 모달은 기본적으로 표시가 되면 안된다 */
+	display: none;
 }
 
 .modal-wrap.on {
-    display: block;
+	display: block;
 }
 
 .modal {
-    /* 폭이나 높이는 해당 페이지에서 정의한다(기본값 400x400) */
-    width:400px;
-    height:400px;
-    background-color: white;
-
-    /* 중앙에 배치하기 위한 코드 */
-    position:absolute;
-    top:50%;
-    left:50%;
-    /* 
+	/* 폭이나 높이는 해당 페이지에서 정의한다(기본값 400x400) */
+	width: 400px;
+	height: 400px;
+	background-color: white;
+	/* 중앙에 배치하기 위한 코드 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/* 
     방법 1 : margin 을 활용 : 폭이 고정일 경우 
     - 폭을 반드시 알아야 함
     - 모든 브라우저에서 지원
     */
-    /*
+	/*
     margin-left: -200px;
     margin-top: -200px;
     */
-
-    /* 
+	/* 
     방법2 : 이동 스타일을 사용하는 경우 
     - 이동할 때 기준이 자기자신이므로 폭을 몰라도 됨
     - 지원하지 않는 브라우저가 있음
     */
-    transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
-
 
 /*
     메뉴 스타일
@@ -229,94 +225,88 @@
     </ul>
 */
 .menu, .menu ul {
-    list-style: none;
-    padding:0;
-    padding-bottom:0px;
-    margin:0;
-    display:inline-block;
-/*      margin-left:200px;*/
-     margin-bottom:100px; */
-
+	list-style: none;
+	padding: 0;
+	padding-bottom: 0px;
+	margin: 0;
+	display: inline-block;
+	/*      margin-left:200px;*/
+	/*    margin-bottom:100px; */
 }
 /* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
-.menu > li {
-    display: inline-block;
-    background-color: #9D3434;
+.menu>li {
+	display: inline-block;
+	background-color: #9D3434;
 }
 
 /* 모든 li는 relative 설정 */
 .menu li {
-    position: relative;
-    padding:0.rem;
-    width:150px;
-    text-align: center;
-    cursor:pointer;
+	position: relative;
+	padding: 0.5rem;
+	width: 180px;
+	text-align: center;
+	cursor: pointer;
 }
 /* 2단계 메뉴부터는 position을 absolute로 설정 */
 /* .menu li > ul {*/
-.menu > li ul {
-    position: absolute;
-    left:0;            /* 기준과 왼쪽을 맞춰라 */
-    top:100%;     /* 기준의 바닥에 시작점을 맞춰라 */
+.menu>li ul {
+	position: absolute;
+	left: 0; /* 기준과 왼쪽을 맞춰라 */
+	top: 100%; /* 기준의 바닥에 시작점을 맞춰라 */
 }
 
 .menu li:hover {
-    background-color:gray;
+	background-color: gray;
 }
 /*menu의 링크는 스타일을 다르게 지정*/
 /* .menu > li > a { */
 .menu a {
-    color:white;
-    text-decoration: none;
+	color: white;
+	text-decoration: none;
+	display: block;
 }
-.menu li:hover > a {
-    color:#dfe4ea;
+
+.menu li:hover>a {
+	color: #dfe4ea;
 }
 
 /* 처음에는 2단계 이후의 메뉴가 나오지 않도록 처리 */
 /* 커서가 메뉴에 올라가면 하위 메뉴가 나오도록 처리 */
-.menu > li ul {
-    display: none;
+.menu>li ul {
+	display: none;
 }
-.menu li:hover > ul {
-    display: block;
+
+.menu li:hover>ul {
+	display: block;
 }
 
 /* 3단계 이후부터는 우측에 나오도록 위치를 수정(재정의) */
-.menu > li > ul > li ul {
-    top:0;
-    left:100%;
+.menu>li>ul>li ul {
+	top: 0;
+	left: 100%;
 }
 
 /*
     확장 스타일 : 메뉴를 상단에 붙이고 싶은 경우의 스타일
 */
 .menu.menu-fixed {
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 /* 브라우저마다 다른 설정들을 초기화 */
-html, body{
-    padding:0;
-    margin:0;
+html, body {
+	padding: 0;
+	margin: 0;
 }
 
 /* test 상태일 때 테두리를 설정 */
-body[test] main, 
-body[test] header, 
-body[test] nav, 
-body[test] section, 
-body[test] footer,
-body[test] article, 
-body[test] div, 
-body[test] span, 
-body[test] p, 
-body[test] label, 
-body[test] aside{
-    border:1px dotted black;
+body[test] main, body[test] header, body[test] nav, body[test] section,
+	body[test] footer, body[test] article, body[test] div, body[test] span,
+	body[test] p, body[test] label, body[test] aside {
+	border: 1px dotted black;
 }
 
 /* 
@@ -324,52 +314,103 @@ body[test] aside{
     - 모든 article은 가운데 정렬을 원칙으로 한다.
     - 폭은 w-비율 형태의 class로 5단위로 지원한다.
 */
-article{
-    margin:auto;
+article {
+	margin: auto;
 }
-article.w-100{ width:100%; }
-article.w-95{ width:95%; }
-article.w-90{ width:90%; }
-article.w-85{ width:85%; }
-article.w-80{ width:80%; }
-article.w-75{ width:75%; }
-article.w-70{ width:70%; }
-article.w-65{ width:65%; }
-article.w-60{ width:60%; }
-article.w-55{ width:55%; }
-article.w-50{ width:50%; }
-article.w-45{ width:45%; }
-article.w-40{ width:40%; }
-article.w-35{ width:35%; }
-article.w-30{ width:30%; }
-article.w-25{ width:25%; }
-article.w-20{ width:20%; }
-article.w-15{ width:15%; }
-article.w-10{ width:10%; }
+
+article.w-100 {
+	width: 100%;
+}
+
+article.w-95 {
+	width: 95%;
+}
+
+article.w-90 {
+	width: 90%;
+}
+
+article.w-85 {
+	width: 85%;
+}
+
+article.w-80 {
+	width: 80%;
+}
+
+article.w-75 {
+	width: 75%;
+}
+
+article.w-70 {
+	width: 70%;
+}
+
+article.w-65 {
+	width: 65%;
+}
+
+article.w-60 {
+	width: 60%;
+}
+
+article.w-55 {
+	width: 55%;
+}
+
+article.w-50 {
+	width: 50%;
+}
+
+article.w-45 {
+	width: 45%;
+}
+
+article.w-40 {
+	width: 40%;
+}
+
+article.w-35 {
+	width: 35%;
+}
+
+article.w-30 {
+	width: 30%;
+}
+
+article.w-25 {
+	width: 25%;
+}
+
+article.w-20 {
+	width: 20%;
+}
+
+article.w-15 {
+	width: 15%;
+}
+
+article.w-10 {
+	width: 10%;
+}
 
 /*
 컨텐츠 내부의 줄(row) 스타일
 - 기본 간격을 10px로 설정(상하 margin)
 */
-article > div.row {
-    margin-top: 10px;
-    margin-bottom: 10px;
+article>div.row {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* 여백 설정이 필요할 때 사용할 수 있는 공간 */
 div.row-empty {
-    height:20px;
+	height: 20px;
 }
 
-
 /* article 내에 사용하는 헤더는 가운데 정렬 */
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6{
-    text-align: center;
+article h1, article h2, article h3, article h4, article h5, article h6 {
+	text-align: center;
 }
 
 /*
@@ -377,23 +418,25 @@ article h6{
 - form-input : 100% 크기의 입력창
 - form-btn : 100% 크기의 버튼
 */
+.form-input, .form-btn {
+	width: 100%;
+	padding: 0.5rem;
+	outline: none; /* 선택 시 자동 부여되는 테두리 제거 */
+	border: 1px solid black;
+}
 
-.form-input, .form-btn{
-    width:100%;
-    padding:0.5rem;
-    outline: none;/* 선택 시 자동 부여되는 테두리 제거 */
-    border:1px solid black;
+.form-input:focus {
+	border-color: blue;
 }
-.form-input:focus{
-    border-color: blue;
-}
+
 .form-btn {
-    background-color: #2f3542;
-    color:white;
-    cursor: pointer;
+	background-color: #2f3542;
+	color: white;
+	cursor: pointer;
 }
+
 .form-btn:hover {
-    background-color: #57606f;
+	background-color: #57606f;
 }
 
 /*
@@ -401,53 +444,58 @@ article h6{
 - form-input-image : 좌측에 그림이 들어갈 입력창
 - form-inline : 폭 100%를 사용하지 않겠다!
 */
-
 .form-input.form-input-image {
-    padding-left: 3rem;
+	padding-left: 3rem;
 }
 
-.form-input.form-inline,
-.form-btn.form-inline {
-	width:auto;
+.form-input.form-inline, .form-btn.form-inline {
+	width: auto;
 }
 
 /* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
-.left {text-align: left !important;}
-.center {text-align: center !important;}
-.right {text-align: right !important;}
+.left {
+	text-align: left !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.right {
+	text-align: right !important;
+}
 
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {
-	resize: vertical;	
+	resize: vertical;
 }
-
 
 /*
     pagination 스타일
 */
 .pagination a {
-    color:gray;
-    text-decoration: none;
-    display: inline-block;
-    padding:0.5rem;
-    min-width: 2.5rem;
-    text-align: center;
-    border:1px solid transparent;
+	color: gray;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5rem;
+	min-width: 2.5rem;
+	text-align: center;
+	border: 1px solid transparent;
 }
-.pagination a:hover,/*마우스 올라감*/
-.pagination .on {/*활성화 */
-    border:1px solid gray;
-    color:red;
+
+.pagination a:hover, /*마우스 올라감*/ .pagination .on { /*활성화 */
+	border: 1px solid gray;
+	color: red;
 }
 
 /*
     float 영역 스타일링
     - .float-box 가 끝나면 반드시 clear:both를 실행!
 */
-.float-box::after{
-    content:"";
-    display: block;
-    clear:both;
+.float-box::after {
+	content: "";
+	display: block;
+	clear: both;
 }
 /*
     float 확장 스타일링
@@ -455,107 +503,202 @@ textarea.form-input {
     - .float-right로 오른쪽부터 배치되도록 구현
     - 내부 영역도 자체적으로 left, right를 선택하도록 구현
 */
-.float-box.float-left > * {
-    float:left;
+.float-box.float-left>* {
+	float: left;
 }
-.float-box.float-right > * {
-    float:right;
+
+.float-box.float-right>* {
+	float: right;
 }
-.float-box > .float-left {
-    float:left;
+
+.float-box>.float-left {
+	float: left;
 }
-.float-box > .float-right {
-    float:right;
+
+.float-box>.float-right {
+	float: right;
 }
 /*  */
-      #dh-container {
-        width: 1240px;
-        margin: 10px auto;
-        padding: 20px;
-       /* border: 1px solid #bcbcbc;*/
-      }
-/*  */      
-      #dh-header {
-        padding: 20px;
-        margin-bottom: 20px;
-      /*  border: 1px solid #bcbcbc; */
-      }
-/*  */      
-      #dh-content {
-        width: 860px;
-        padding: 20px;
-        margin-bottom: 20px;
-        float: left;
-        border: 1px solid #bcbcbc;
-      }
-      
-        #dh-content2 {
-        width: 1080px;
-        padding: 20px;
-        margin-bottom: 20px;
-        float: left;
-        border: 1px solid #bcbcbc;        
-      }
-/*사이드 바 로그인창 구현예정*/      
-      #dh-sidebar {
-        width: 260px;
-        padding: 20px;
-        margin-bottom: 20px;
-        float: right;
-        border: 1px solid #bcbcbc;
-      }
-/* 푸터 */
-      .dh-footer {
-        clear: both;
-        padding: 20px;
-      /*  border: 1px solid #bcbcbc; */
-        background-color: #9D3434;
-        color: white;
-        padding: 20px;
-      }
-	.footer_divL  {
-/*  		float:left; */
-		display:inline-block;
-		padding: 20px;
-	}
-	.footer_divC{
-/* 		float:center; */
-		display:inline-block;
-		padding: 20px;
-		width:720px;
-	}
-	.footer_divR{
-/* 		float:right;*/
-		display:inline-block;
-		padding: 20	px;
-		align:"right"
-		
-	}
-	.dh-footer::after{
-		content:""; display:block; clear:both;
-	}
-      
-/*  */      
-      @media ( max-width: 480px ) {
-        #dh-container {
-          width: auto;
-        }
-/*  */        
-        #dh-content {
-          float: none;
-          width: auto;
-        }
-/*  */        
-        #dh-sidebar {
-          float: none;
-          width: auto;
-        }
-      }
-      /*상단 로고 */
-		#top-logo {
-		text-align:center;
-		display:inline-block;
-		width:100%
+#dh-container {
+	width: 1240px;
+	margin: 10px auto;
+	padding: 20px;
+	/* border: 1px solid #bcbcbc;*/
+}
+/*  */
+#dh-header {
+	padding: 20px;
+	margin-bottom: 20px;
+	/*  border: 1px solid #bcbcbc; */
+}
+/*  */
+#dh-content {
+	width: 860px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left;
+	border: 1px solid #bcbcbc;
 }
 
+#dh-content2 {
+	width: 1080px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left;
+	border: 1px solid #bcbcbc;
+}
 
+/*사이드 바 로그인창 구현예정*/
+#dh-sidebar {
+	width: 260px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: right;
+	border: 1px solid #bcbcbc;
+}
+/* 푸터 */
+.dh-footer {
+	clear: both;
+	padding: 20px;
+	/*  border: 1px solid #bcbcbc; */
+	background-color: #9D3434;
+	color: white;
+	padding: 20px;
+}
+
+.footer_divL {
+	/*  		float:left; */
+	display: inline-block;
+	padding: 20px;
+}
+
+.footer_divC {
+	/* 		float:center; */
+	display: inline-block;
+	padding: 20px;
+	width: 720px;
+}
+
+.footer_divR {
+	/* 		float:right;*/
+	display: inline-block;
+	padding: 20 px;
+	align: "right"
+}
+
+.dh-footer::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*  */
+@media ( max-width : 480px ) {
+	#dh-container {
+		width: auto;
+	}
+	/*  */
+	#dh-content {
+		float: none;
+		width: auto;
+	}
+	/*  */
+	#dh-sidebar {
+		float: none;
+		width: auto;
+	}
+}
+/*상단 로고 */
+#top-logo {
+	text-align: center;
+	display: inline-block;
+	width: 100%
+}
+/*헤더메뉴1 로그인/회원가입/내정보-->*/
+.lojoin {
+	text-align: right;
+}
+
+.lojoin>a {
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	font-weight: bold;
+}
+
+span a {
+	text-decoration: none;
+	color: white;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.login-wrap {
+	width: 460px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+/* 태그 4개를 한 번에 부른다 */
+.form-input {
+	width: 100%;
+	margin: 10px 0px;
+	padding: 10px;
+	font-size: 17px;
+	font-family: 고딕;
+}
+
+/* 공통점이 아닌 차이점은 각각의 영역에 구현 */
+.login-id {
+	padding-left: 50px;
+	background-image:
+		url("https://cdn.icon-icons.com/icons2/1248/PNG/256/user_84308.png");
+	background-repeat: no-repeat;
+	background-size: 35px;
+	background-position: 4px 4px;
+}
+
+.login-pw {
+	padding-left: 50px;
+	background-image:
+		url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcThsF5jb5cpiZ_PVtF0peEBGIhFjNyNXq7jlQ&usqp=CAU");
+	background-repeat: no-repeat;
+	background-size: 35px;
+	background-position: 4px 4px;
+}
+
+.login-submit {
+	color: #9D3434;
+	background-color: dodgerblue;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+.login-button {
+	background-color:;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+.login-checkbox-wrap {
+	text-align: left;
+}
+
+/*스와이퍼 */
+        .swiper-container {
+            width:80%;
+            min-height: 200px;
+            max-height: 300px;
+        }
+        .swiper-container .swiper-slide,
+        .swiper-container .swiper-slide > img{
+            width:100%;
+            min-height: 200px;
+            height:auto;
+            max-height: 300px;
+        }
+}

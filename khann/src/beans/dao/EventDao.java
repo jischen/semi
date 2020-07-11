@@ -33,6 +33,8 @@ public class EventDao {
 	public Connection getConnection() throws Exception {
 		return src.getConnection();
 	}
+	
+
 
 	// 목록 메소드
 	public List<EventDto> getList(int start, int finish) throws Exception {
@@ -58,13 +60,12 @@ public class EventDao {
 	}
 
 	// 검색 메소드
-	public List<EventDto> search(String type, String keyword) throws Exception {
+	public List<EventDto> search(String condition) throws Exception {
 		Connection con = getConnection();
 
 		String sql = "SELECT * FROM event" + "WHERE instr(#1, ?) > 0 " + "ORDER BY event_no DESC";
-		sql = sql.replace("#1", type);
+		sql = sql.replace("#1", condition);
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, keyword);
 		ResultSet rs = ps.executeQuery();
 
 		List<EventDto> list = new ArrayList<>();
@@ -100,7 +101,7 @@ public class EventDao {
 		String sql = "SELECT count(*) FROM event";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
-		rs.next();// 데이터는 무조건 1개 나오므로 이동
+		rs.next();
 		int count = rs.getInt(1);
 
 		con.close();
@@ -109,13 +110,12 @@ public class EventDao {
 
 	}
 
-	public int getCount(String type, String keyword) throws Exception {
+	public int getCount(String condition) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "SELECT count(*) FROM event WHERE instr(*1,?)>0";
-		sql = sql.replace("*1", type);
+		String sql = "SELECT count(*) FROM event WHERE instr(#1,?)>0";
+		sql = sql.replace("#1", condition);
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, keyword);
 		ResultSet rs = ps.executeQuery();
 		rs.next();
 		int count = rs.getInt(1);
@@ -147,16 +147,13 @@ public class EventDao {
 
 		Connection con = getConnection();
 
-		// 아래와 같이 작성하면 미 작성된 항목들은 default 값이 적용
-//			String sql = "INSERT INTO EVENT(데이터 넣을 컬럼 이름) VALUES(?,?,?,?)";
-		String sql = "INSERT INTO EVENT VALUES(?,?,SYSDATE,?,?)";
+		String sql = "INSERT INTO EVENT VALUES(event_seq.nextval,?,SYSDATE,?,?)";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 
-		ps.setInt(1, edto.getEvent_no());
-		ps.setString(2, edto.getEvent_title());
-		ps.setString(3, edto.getEvent_condition());
-		ps.setString(4, edto.getEvent_content());
+		ps.setString(1, edto.getEvent_title());
+		ps.setString(2, edto.getEvent_condition());
+		ps.setString(3, edto.getEvent_content());
 
 		ps.execute();
 
