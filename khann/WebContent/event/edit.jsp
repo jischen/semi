@@ -64,7 +64,9 @@ EventDto edto=edao.get(event_no);
 			<tfoot>
 				<tr>
 					<td colspan="3" align="center">
-						<input type="submit" value="작성">
+						<a href="list.jsp">
+						<input type="button" value="작성">
+						</a>
 					</td>
 				</tr>
 			</tfoot>
