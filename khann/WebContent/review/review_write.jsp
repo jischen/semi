@@ -5,6 +5,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%
+
+MovieDto mdto=new MovieDto();
+%>
+
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 <div align="center">
@@ -18,8 +23,10 @@
 		<table border="1">
 			<tr>
 				<th>리뷰 작성자</th>
+				
 				<td><input type="text" name="review_writer"></td>
-			</tr>
+	
+	
 
 			<tr>
 				<th>내용</th>

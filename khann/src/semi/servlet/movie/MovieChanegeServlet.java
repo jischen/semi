@@ -39,7 +39,7 @@ public class MovieChanegeServlet extends HttpServlet {
 			mdao.changeMovie(mdto);
 
 			// 출력
-			resp.sendRedirect("movie_content.jsp?movie_no="+mdto.getMovie_no());
+			resp.sendRedirect("movie_content.jsp");
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -95,19 +95,54 @@ public class ReviewDao {
 		Connection con = getConnection();
 		String sql = "SELECT *FROM review WHERE review_no=?";
 		PreparedStatement ps = con.prepareStatement(sql);
-
 		ps.setInt(1, review_no);
 		ResultSet rs = ps.executeQuery();
 
 		ReviewDto rdto;
 		if (rs.next()) {
 			rdto = new ReviewDto(rs);
+			rdto.setReview_no(Integer.parseInt(rs.getString("review_no")));
+			rdto.setReview_writer(rs.getString("review_writer"));
+			rdto.setReview_content(rs.getString("review_content"));
+			rdto.setReview_score(rs.getString("review_score"));
+			rdto.setReview_date(rs.getString("review_date"));
+			
+			
 		} else {
 			rdto = null;
 
 		}
 		con.close();
+		
 		return rdto;
 	}
+//리뷰 수정 메소드
+	
+	public void reviewedit(ReviewDto rdto) throws Exception{
+		
+		Connection con=getConnection();
+		String sql="UPDATE review SET "
+				+ "review_content=?, review_score=? WHERE review_no=?";
+		PreparedStatement ps= con.prepareStatement(sql);
+	
+		ps.setString(1, rdto.getReview_content());
+		ps.setString(2, rdto.getReview_score());
+		ps.setInt(3, rdto.getReview_no());
 
+		ps.execute();
+		
+		con.close();		
+		
+	}
+
+	public void delete(int review_no) throws Exception{
+		Connection con=getConnection();
+		String sql="DELETE review WHERE review_no=?";
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1, review_no);
+		
+		ps.execute();
+		
+	}
 }
