@@ -1,15 +1,15 @@
 <%@page import="beans.dao.ReviewDao"%>
 <%@page import="beans.dto.ReviewDto"%>
-<%@page import="beans.dto.MovieDto"%>
 <%@page import="beans.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%
 
-MovieDto mdto=new MovieDto();
+<%ReviewDto rdto=new ReviewDto();
+
+MemberDto mdto = (MemberDto)session.getAttribute("userinfo");
+
 %>
-
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 <div align="center">
@@ -26,7 +26,12 @@ MovieDto mdto=new MovieDto();
 				
 				<td><input type="text" name="review_writer"></td>
 	
+	</tr>
+	<tr>
+	<th>영화 번호</th>
+	<td><input type="text" name="review_movie"></td>
 	
+	</tr>
 
 			<tr>
 				<th>내용</th>
@@ -34,7 +39,6 @@ MovieDto mdto=new MovieDto();
 						placeholder="리뷰를 작성해주세요.(욕설금지)">
 </textarea></td>
 			</tr>
-
 			<tr>
 				<th>리뷰 점수</th>
 				<td><select name="review_score">
@@ -49,7 +53,12 @@ MovieDto mdto=new MovieDto();
 
 			<tfoot>
 				<tr>
-					<td align="center" colspan="2"><input type="submit" value="등록"></td>
+					<td align="center" colspan="2">
+					
+					<input type="submit" value="등록">
+					</td>
+					
+					
 				</tr>
 			</tfoot>
 

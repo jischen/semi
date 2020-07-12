@@ -71,16 +71,17 @@ public class ReviewDao {
 	public void register(ReviewDto rdto) throws Exception {
 
 		Connection con = getConnection();
-		String sql = "INSERT INTO review values(review_seq.nextval,?,?,?,sysdate)";
+		String sql = "INSERT INTO review values(review_seq.nextval,?,?,?,?,sysdate)";
 
 		// 아이디
 		// 내용
 		// 점수
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, rdto.getReview_writer());
-		ps.setString(2, rdto.getReview_content());
-		ps.setString(3, rdto.getReview_score());
+		ps.setInt(1, rdto.getReview_movie());
+		ps.setString(2, rdto.getReview_writer());
+		ps.setString(3, rdto.getReview_content());
+		ps.setString(4, rdto.getReview_score());
 	
 		ps.execute();
 
@@ -102,6 +103,7 @@ public class ReviewDao {
 		if (rs.next()) {
 			rdto = new ReviewDto(rs);
 			rdto.setReview_no(Integer.parseInt(rs.getString("review_no")));
+			rdto.setReview_no(Integer.parseInt(rs.getString("review_movie")));
 			rdto.setReview_writer(rs.getString("review_writer"));
 			rdto.setReview_content(rs.getString("review_content"));
 			rdto.setReview_score(rs.getString("review_score"));
@@ -121,13 +123,13 @@ public class ReviewDao {
 	public void reviewedit(ReviewDto rdto) throws Exception{
 		
 		Connection con=getConnection();
-		String sql="UPDATE review SET "
-				+ "review_content=?, review_score=? WHERE review_no=?";
+		String sql="UPDATE review SET review_movie=?, review_content=?, review_score=? WHERE review_no=?";
 		PreparedStatement ps= con.prepareStatement(sql);
-	
-		ps.setString(1, rdto.getReview_content());
-		ps.setString(2, rdto.getReview_score());
-		ps.setInt(3, rdto.getReview_no());
+		
+		ps.setInt(1, rdto.getReview_movie());
+		ps.setString(2, rdto.getReview_content());
+		ps.setString(3, rdto.getReview_score());
+		ps.setInt(4, rdto.getReview_no());
 
 		ps.execute();
 		
@@ -135,6 +137,23 @@ public class ReviewDao {
 		
 	}
 
+	//시퀀스만
+
+	public int getSeq() throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "SELECT review_seq.nextval FROM dual";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		rs.next();
+		int seq = rs.getInt(1);
+		
+		con.close();
+		
+		return seq;
+	}
+	
+	
 	public void delete(int review_no) throws Exception{
 		Connection con=getConnection();
 		String sql="DELETE review WHERE review_no=?";

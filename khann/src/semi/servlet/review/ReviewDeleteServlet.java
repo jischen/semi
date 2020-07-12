@@ -9,19 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.dao.ReviewDao;
-@WebServlet(urlPatterns = "/review/delete.do")
+@WebServlet(urlPatterns = "/review/review_delete.do")
 public class ReviewDeleteServlet extends HttpServlet{
 @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 try {
 	
+	req.setCharacterEncoding("UTF-8");
+	
 	int review_no=Integer.parseInt(req.getParameter("review_no"));
 	
 	ReviewDao rdao=new ReviewDao();
 	rdao.delete(review_no);
 	
-	resp.sendRedirect("review.content.jsp");
+	resp.sendRedirect("review_list.jsp");
 	
 	
 } catch (Exception e) {
@@ -36,3 +38,4 @@ try {
 
 
 }
+

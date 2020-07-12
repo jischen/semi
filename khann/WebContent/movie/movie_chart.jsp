@@ -15,7 +15,6 @@ List<MovieDto> list = mdao.getList();
 MemberDto mdto = (MemberDto)session.getAttribute("userinfo");
 boolean isLogin = mdto != null;	 
 
-
 		
 %>
     
@@ -63,5 +62,4 @@ boolean isLogin = mdto != null;
 </div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
-
     
