@@ -5,7 +5,7 @@
 
 <script>
 
-function idCheck(){ 
+	function idCheck(){ 
 	window.name = "parent"
 	window.open("id_overlap_check.jsp", "idwin", "width=400, height=350"); }
 

@@ -26,6 +26,7 @@ public class ReviewRegistServlet extends HttpServlet {
 
 			
 			rdto.setReview_writer(req.getParameter("review_writer"));
+			rdto.setReview_movie(Integer.parseInt(req.getParameter("review_movie")));
 			rdto.setReview_content(req.getParameter("review_content"));
 			rdto.setReview_score(req.getParameter("review_score"));
 			
@@ -34,10 +35,11 @@ public class ReviewRegistServlet extends HttpServlet {
 			ReviewDao rdao = new ReviewDao();
 			rdao.register(rdto);
 	
-		
-
+			
+			
 			// 출력
-			resp.sendRedirect("review_content.jsp");
+			resp.sendRedirect("review_content.jsp?review_no="+ (rdao.getSeq() -1));
+		
 
 		}
 
