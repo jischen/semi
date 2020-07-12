@@ -21,7 +21,7 @@ List<EventFileDto> fileList = efdao.getList(event_no); */
 // 게시글 번호로 글 조회
 edto = edao.get(event_no);
 
-//관리자만 글 작성 가능
+//관리자만 글 작성,삭제 가능
 MemberDto user=(MemberDto) session.getAttribute("userinfo");
 %>
 
@@ -83,20 +83,19 @@ MemberDto user=(MemberDto) session.getAttribute("userinfo");
 		<tfoot>
 			<tr>
 				<td colspan="2" align="right">
-					<a href="write.jsp">
-					<input type="button" value="글쓰기">
-					</a>
+							
 					
-					
-					<%if(user.getGrade().equals("관리자")){ %>
+					<%if (user != null) {
+						if(user.getGrade().equals("관리자")){%>
 					
 					<a href="edit.jsp?event_no=<%=event_no%>">
 					<input type="button" value="수정">
 					</a>
 					
-					<a href="<%=request.getContextPath()%>/member/check.jsp?go=<%=request.getContextPath()%>/event/delete.do?event_no=<%=event_no%>">
+					<a href="/khann/member/check.jsp?go=/khann/event/delete.do?event_no=<%=event_no%>">
 					<input type="button" value="삭제">
 					</a>
+						<%} %>
 					<%} %>
 					
 					<a href="list.jsp">

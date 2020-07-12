@@ -18,3 +18,32 @@ event_file_origin REFERENCES event(event_no) ON DELETE CASCADE
 
 CREATE SEQUENCE event_file_seq NOCACHE;
 
+
+--test용 게시글 목록--
+
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'진행','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'진행','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'진행','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'마감','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'마감','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'진행','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'진행','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'마감','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'마감','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'마감','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+INSERT INTO event (EVENT_NO,EVENT_TITLE,EVENT_DATE,EVENT_CONDITION,EVENT_CONTENT)values(event_seq.nextval,'네비게이터 테스터중',sysdate,'예정','성공해라!');
+
+
+
