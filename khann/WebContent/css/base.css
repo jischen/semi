@@ -398,7 +398,7 @@ article.w-10 {
 컨텐츠 내부의 줄(row) 스타일
 - 기본 간격을 10px로 설정(상하 margin)
 */
-article>div.row {
+div.row {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -533,7 +533,6 @@ textarea.form-input {
 }
 /*  */
 #dh-content {
-	width: 860px;
 	padding: 20px;
 	margin-bottom: 20px;
 	float: left;
@@ -689,16 +688,59 @@ span a {
 }
 
 /*스와이퍼 */
-        .swiper-container {
-            width:80%;
-            min-height: 200px;
-            max-height: 300px;
-        }
-        .swiper-container .swiper-slide,
-        .swiper-container .swiper-slide > img{
-            width:100%;
-            min-height: 200px;
-            height:auto;
-            max-height: 300px;
-        }
+.swiper-container {
+	width: 80%;
+	min-height: 200px;
+	max-height: 300px;
 }
+
+.swiper-container .swiper-slide, .swiper-container .swiper-slide>img {
+	width: 100%;
+	min-height: 200px;
+	height: auto;
+	max-height: 300px;
+}
+/*회사 소개 폭*/
+.companyIntro {
+	padding: "20";
+	width: "300";
+	display: "inline-block";
+	border: "1px solid black;
+}
+
+/*플렉스 */
+.flex-container-750 {
+	width:750px;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+}
+
+
+
+.flex-item {
+	display: inline-block;
+	width: 33.3333%; /*몇개를 만들거냐? 1/갯수*/
+	height: 100%;
+	border: 1px solid;
+}
+
+.flex-item:nth-child(1) {  
+	flex: 2;
+}
+
+.flex-item:nth-child(2) {
+	flex: 1;
+}
+.flex-item:nth-child(3) {
+	flex: 2;
+}
+
+
+
+
+
+
+
+
+
