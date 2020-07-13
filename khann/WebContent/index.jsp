@@ -5,7 +5,7 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div>
+<div id="dh-content">
 
 	<!-- 이미지 슬라이더 영역 -->
 	<div class="swiper-container">

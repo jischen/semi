@@ -537,7 +537,7 @@ textarea.form-input {
 	padding: 20px;
 	margin-bottom: 20px;
 	float: left;
-	border: 1px solid #bcbcbc;
+	/*border: 1px solid #bcbcbc; */
 }
 
 #dh-content2 {
