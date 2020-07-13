@@ -41,7 +41,7 @@ public class MemberDao {
 	public void join(MemberDto mdto) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "INSERT INTO member VALUES(member_seq.nextval,?, ?, ?, ?, ?, ?, ?, ?, 'Silver', sysdate, null)";
+		String sql = "INSERT INTO member VALUES(member_seq.nextval,?, ?, ?, ?, ?, ?, ?, ?, 'Silver', 10000, sysdate, null)";
 		PreparedStatement ps = con.prepareStatement(sql);
 
 		ps.setString(1, mdto.getMember_id());
@@ -83,6 +83,7 @@ public class MemberDao {
 			user.setMember_birth(rs.getString("member_birth"));
 			user.setMember_phone(rs.getString("member_phone"));
 			user.setGrade(rs.getString("grade"));
+			user.setMember_point(rs.getInt("member_point"));
 			user.setMember_join(rs.getString("member_join"));
 			user.setMember_login(rs.getString("member_login"));
 		} else {

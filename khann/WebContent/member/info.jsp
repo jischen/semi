@@ -55,6 +55,10 @@
 				<td><%=user.getGrade()%></td>
 			</tr>
 			<tr>
+				<th>포인트</th>
+				<td><%=user.getMember_point()%></td>
+			</tr>
+			<tr>
 				<th>가입일</th>
 				<td><%=user.getMember_join()%></td>
 			</tr>
