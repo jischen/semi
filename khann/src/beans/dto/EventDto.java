@@ -55,6 +55,8 @@ public class EventDto {
 		this.event_content = event_content;
 	}
 	
+
+	
 	//메소드 2개를 추가
 	//[1] getBoard_time() : 시간을 반환하는 메소드
 	//[2] getBoard_day() : 날짜를 반환하는 메소드
@@ -71,15 +73,14 @@ public class EventDto {
 //		Date d = new Date();
 //		Format f = new SimpleDateFormat("yyyy-MM-dd");
 //		String today = f.format(d);
-		String today = new SimpleDateFormat("yyyy-MM-dd").format(new Date()); //date는 util로 import 해야함 
-		if(getEvent_date().equals(today)) {//오늘 작성한 글이라면
+		String today = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		if(getEvent_day().equals(today)) {//오늘 작성한 글이라면
 			return getEvent_time();
 		}
 		else {//아니라면
 			return getEvent_day();
 		}
 	}
-	
 
 	
 }
