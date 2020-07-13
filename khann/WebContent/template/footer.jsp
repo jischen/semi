@@ -10,10 +10,12 @@
 	</div>
 
 	<div class="footer_divC">
-		<span><a href="#">회사소개</a></span> <span> | </span> 
-		<span><a href="#">광고/프로모션문의</a></span> <span> | </span> 
-		<span><a href="#">제휴문의</a></span> <span>| </span> 
-		<span><a href="#">출점문의</a></span>
+		<span><a href="/khann/bottom/company_intro.jsp">회사소개</a></span> <span> | </span> 
+		<span><a href="/khann/bottom/partnership_inquiries.jsp">광고/프로모션문의</a></span> 
+		<span><a href="/khann/bottom/partnership_inquiries.jsp">제휴문의</a></span> 
+		<span><a href="/khann/bottom/partnership_inquiries.jsp">출점문의</a></span> 
+		
+		
 		<p>
 			<span>(주)주식회사 KHANN</span> <span> | </span> <span>대표: 미스터 고</span> <span>
 				| </span> <span>사업자등록번호 : 123-45-6789</span> <span> | </span>
