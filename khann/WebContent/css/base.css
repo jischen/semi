@@ -540,14 +540,6 @@ textarea.form-input {
 	/*border: 1px solid #bcbcbc; */
 }
 
-#dh-content2 {
-	width: 1080px;
-	padding: 20px;
-	margin-bottom: 20px;
-	float: left;
-	border: 1px solid #bcbcbc;
-}
-
 /*사이드 바 로그인창 구현예정*/
 #dh-sidebar {
 	width: 260px;
@@ -556,6 +548,15 @@ textarea.form-input {
 	float: right;
 	border: 1px solid #bcbcbc;
 }
+
+#dh-content_withoutSidebar {
+	width: 1240px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left;
+	border: 1px solid #bcbcbc;
+}
+
 /* 푸터 */
 .dh-footer {
 	clear: both;
