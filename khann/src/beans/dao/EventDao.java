@@ -33,18 +33,20 @@ public class EventDao {
 	public Connection getConnection() throws Exception {
 		return src.getConnection();
 	}
-	
-
 
 	// 목록 메소드
 	public List<EventDto> getList(int start, int finish) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "SELECT * FROM event ORDER BY event_no DESC";
+		String sql = "SELECT * FROM (SELECT ROWNUM rn, E.* FROM( "
+					+"SELECT * FROM event ORDER BY event_no DESC )E "
+				    +") WHERE rn BETWEEN ? AND ? ";
 
-//		트리정렬 제외
 
 		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, start);
+		ps.setInt(2, finish);
+		
 		ResultSet rs = ps.executeQuery();
 
 		List<EventDto> list = new ArrayList<>();
@@ -59,24 +61,35 @@ public class EventDao {
 
 	}
 
-	// 검색 메소드
-	public List<EventDto> search(String condition) throws Exception {
+
+	public List<EventDto> test(String column, String keyword, int start, int finish) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "SELECT * FROM event" + "WHERE instr(#1, ?) > 0 " + "ORDER BY event_no DESC";
-		sql = sql.replace("#1", condition);
+		String sql = "SELECT * FROM(SELECT ROWNUM rn, E.* FROM(SELECT * FROM EVENT WHERE instr(#1, ?) > 0 ORDER BY event_no DESC) E ) WHERE rn BETWEEN ? AND ?";
+
+		sql = sql.replace("#1", column);
+
 		PreparedStatement ps = con.prepareStatement(sql);
+
+		ps.setString(1, keyword);
+		ps.setInt(2, start);
+		ps.setInt(3, finish);
+
 		ResultSet rs = ps.executeQuery();
 
-		List<EventDto> list = new ArrayList<>();
+		List<EventDto> list = new ArrayList<EventDto>();
+		
 		while (rs.next()) {
 			EventDto edto = new EventDto(rs);
+			
 			list.add(edto);
 		}
 
 		con.close();
+		
 		return list;
 	}
+
 
 	// 단일조회
 	public EventDto get(int event_no) throws Exception {
@@ -94,7 +107,7 @@ public class EventDao {
 		return edto;
 	}
 
-	// 페이지 개수 조회 메소드 x 2
+	// 페이지 개수 조회 메소드 x 3 - 검색안할때 / keyword검색할 때 / condition 검색 할 때
 	public int getCount() throws Exception {
 		Connection con = getConnection();
 
@@ -110,12 +123,13 @@ public class EventDao {
 
 	}
 
-	public int getCount(String condition) throws Exception {
+	public int getCount(String type, String keyword) throws Exception {
 		Connection con = getConnection();
 
 		String sql = "SELECT count(*) FROM event WHERE instr(#1,?)>0";
-		sql = sql.replace("#1", condition);
+		sql = sql.replace("#1", type);
 		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, keyword);
 		ResultSet rs = ps.executeQuery();
 		rs.next();
 		int count = rs.getInt(1);
@@ -124,6 +138,7 @@ public class EventDao {
 
 		return count;
 	}
+
 
 	// 시퀀스 생성
 	// - dual 테이블은 오라클이 제공하는 임시 테이블
@@ -176,17 +191,17 @@ public class EventDao {
 
 		con.close();
 	}
-	
-	//삭제
-	
+
+	// 삭제
+
 	public void delete(int event_no) throws Exception {
 		Connection con = getConnection();
-		
+
 		String sql = " DELETE event WHERE event_no = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, event_no);
 		ps.execute();
-		
+
 		con.close();
 	}
 }
