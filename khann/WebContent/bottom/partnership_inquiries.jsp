@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+    pageEncoding="UTF-8"%>
 
-</body>
-</html>
+<jsp:include page="/template/header.jsp"></jsp:include>
+
+<div id="dh-content2">
+
+	</div>
+
+
+
+
+
+
+	<jsp:include page="/template/footer.jsp"></jsp:include>
