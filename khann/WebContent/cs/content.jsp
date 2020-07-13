@@ -22,8 +22,10 @@
 	CsDao cdao = new CsDao();
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
 	
-	if(isFirst){
+	if(user != null){
+		if(isFirst){
 		cdao.plusReadcount(cs_no, user.getMember_id());
+		}
 	}
 	
 	CsDto cdto = cdao.get(cs_no);
@@ -31,8 +33,7 @@
 	MemberDao mdao = new MemberDao();
 	MemberDto mdto = mdao.get(cdto.getCs_writer());
 	
-	boolean isAdmin = user.getGrade().equals("관리자");
-	boolean isMine = user.getMember_id().equals(cdto.getCs_writer());
+
 %>    
 
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -58,6 +59,8 @@
 			<tr>
 				<td align="right">
 					<%if(user!=null){ 
+						boolean isAdmin = user.getGrade().equals("관리자");
+						boolean isMine = user.getMember_id().equals(cdto.getCs_writer());
 						if(isAdmin || isMine){ %>
 					<a href="write.jsp"><input type="button" value="글쓰기"></a>
 					<a href="edit.jsp?cs_no=<%=cs_no%>"><input type="button" value="수정"></a>

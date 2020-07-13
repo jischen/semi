@@ -24,7 +24,6 @@
 	}
 	
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
-	boolean isAdmin = user.getGrade().equals("관리자");
 	
 	String rootPath = request.getContextPath();
 %>    
@@ -37,9 +36,9 @@
 	<table border="0">
 		<thead>
 			<tr>
-				<td colspan="5">
-				여러분들이 자주 문의하시는 질문과 답변을 정리하였습니다.<br>
-				FAQ 검색을 이용하시면 궁금하신 내용을 보다 빠르고 편리하게 찾으실 수 있습니다.
+				<td colspan="5" align="center">
+				<p>여러분들이 자주 문의하시는 질문과 답변을 정리하였습니다.<br>
+				FAQ 검색을 이용하시면 궁금하신 내용을 보다 빠르고 편리하게 찾으실 수 있습니다.</p>
 				</td>
 			</tr>
 		</thead>
@@ -47,20 +46,22 @@
 			<tr>
 				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="영화예매"><input type="submit" value="영화예매"></form></td>
 				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원제도"><input type="submit" value="회원제도"></form></td>
-				<td><a href="#">회원정보</a></td>
-				<td><a href="#">카드할인</a></td>
-				<td><a href="#">기타</a></td>
+				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원정보"><input type="submit" value="회원정보"></form></td>
+				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="카드할인"><input type="submit" value="카드할인"></form></td>
+				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="기타"><input type="submit" value="기타"></form></td>
 			</tr>
 		</tbody>
 	</table>
 	
-	<form action="list.jsp" method="get">
-		<label>FAQ 검색</label>
-		<!-- 검색어 -->
-		<input type="text" name="keyword" placeholder="검색어를 입력해주세요" required>
-		<!-- 전송버튼 -->
-		<input type="submit" value="검색">
-	</form>
+	<br><div>
+		<form action="list.jsp" method="get">
+			<label>FAQ 검색</label>
+			<!-- 검색어 -->
+			<input type="text" name="keyword" placeholder="검색어를 입력해주세요" required>
+			<!-- 전송버튼 -->
+			<input type="submit" value="검색">
+		</form>
+	</div><br>
 	
 	<table border="1">
 		<thead align="center">
@@ -86,7 +87,7 @@
 			<%} %>
 		</tbody>
 		<%if(user != null) {
-			if(isAdmin){ %>
+			if(user.getGrade().equals("관리자")){ %>
 		<tfoot>
 			<tr>
 				<td colspan="5" align="right">
