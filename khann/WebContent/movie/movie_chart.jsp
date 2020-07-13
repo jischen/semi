@@ -21,7 +21,7 @@ boolean isLogin = mdto != null;
     
 <jsp:include page="/template/header.jsp"></jsp:include>
 						
-<div align="center">
+<div id="dh-content">
 	
 	<table border="1">
 		<tbody>
