@@ -10,10 +10,10 @@
 	</div>
 
 	<div class="footer_divC">
-		<span><a href="/khann/bottom/company_intro.jsp">회사소개</a></span> <span> | </span> 
-		<span><a href="/khann/bottom/partnership_inquiries.jsp">광고/프로모션문의</a></span> 
-		<span><a href="/khann/bottom/partnership_inquiries.jsp">제휴문의</a></span> 
-		<span><a href="/khann/bottom/partnership_inquiries.jsp">출점문의</a></span> 
+		<span><a href="/khann/partnership/company_intro.jsp">회사소개</a></span> <span> | </span> 
+		<span><a href="/khann/partnership/partnership_inquiries.jsp">광고/프로모션문의</a></span> 
+		<span><a href="/khann/partnership/partnership_inquiries.jsp">제휴문의</a></span> 
+		<span><a href="/khann/partnership/partnership_inquiries.jsp">출점문의</a></span> 
 		
 		
 		<p>
