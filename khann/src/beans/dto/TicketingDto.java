@@ -4,89 +4,80 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TicketingDto {
-	private int show_no, movie_no, theater_no, theater_row, theater_col;
-	private String show_start, theater_name, theater_type;
+	public int tickekting_no, member_no, show_no, seat_no, buy_no,
+				ticketing_peoplenum, ticketing_price;
+	public String ticketing_date;
 	
-	public TicketingDto(ResultSet rs) throws SQLException  {
+	public TicketingDto(ResultSet rs) throws SQLException {
+		this.setTickekting_no(rs.getInt("Ticketing_no"));
+		this.setMember_no(rs.getInt("member_no"));
 		this.setShow_no(rs.getInt("show_no"));
-		this.setMovie_no(rs.getInt("movie_no"));
-		this.setTheater_no(rs.getInt("theater_no"));
-		this.setTheater_row(rs.getInt("theater_row"));
-		this.setTheater_col(rs.getInt("theater_col"));
-		this.setShow_start(rs.getString("show_start"));
-		this.setTheater_name(rs.getString("theater_name"));
-		this.setTheater_type(rs.getString("theater_type"));
-		
-		
+		this.setSeat_no(rs.getInt("seat_no"));
+		this.setSeat_no(rs.getInt("buy_no"));
+		this.setTicketing_peoplenum(rs.getInt("ticketing_peoplenum"));
+		this.setTicketing_price(rs.getInt("ticketing_price"));
+		this.setTicketing_date(rs.getString("ticketing_date"));
 	}
-
-	public int getShow_no() {
-		return show_no;
+	
+	
+	public int getMember_no() {
+		return member_no;
 	}
-
-	public void setShow_no(int show_no) {
-		this.show_no = show_no;
+	
+	
+	
+	
+	public void setMember_no(int member_no) {
+		this.member_no = member_no;
 	}
-
-	public int getMovie_no() {
-		return movie_no;
+	
+	
+	public int getTickekting_no() {
+		return tickekting_no;
 	}
-
-	public void setMovie_no(int movie_no) {
-		this.movie_no = movie_no;
+	public void setTickekting_no(int tickekting_no) {
+		this.tickekting_no = tickekting_no;
 	}
-
-	public int getTheater_no() {
-		return theater_no;
-	}
-
-	public void setTheater_no(int theater_no) {
-		this.theater_no = theater_no;
-	}
-
-	public int getTheater_row() {
-		return theater_row;
-	}
-
-	public void setTheater_row(int theater_row) {
-		this.theater_row = theater_row;
-	}
-
-	public int getTheater_col() {
-		return theater_col;
-	}
-
-	public void setTheater_col(int theater_col) {
-		this.theater_col = theater_col;
-	}
-
-	public String getShow_start() {
-		return show_start;
-	}
-
-	public void setShow_start(String show_start) {
-		this.show_start = show_start;
-	}
-
-	public String getTheater_name() {
-		return theater_name;
-	}
-
-	public void setTheater_name(String theater_name) {
-		this.theater_name = theater_name;
-	}
-
-	public String getTheater_type() {
-		return theater_type;
-	}
-
-	public void setTheater_type(String theater_type) {
-		this.theater_type = theater_type;
-	}
-
 	public TicketingDto() {
 		super();
 	}
 	
+	
+	public int getShow_no() {
+		return show_no;
+	}
+	public void setShow_no(int show_no) {
+		this.show_no = show_no;
+	}
+	public int getSeat_no() {
+		return seat_no;
+	}
+	public void setSeat_no(int seat_no) {
+		this.seat_no = seat_no;
+	}
+	public int getBuy_no() {
+		return buy_no;
+	}
+	public void setBuy_no(int buy_no) {
+		this.buy_no = buy_no;
+	}
+	public int getTicketing_peoplenum() {
+		return ticketing_peoplenum;
+	}
+	public void setTicketing_peoplenum(int ticketing_peoplenum) {
+		this.ticketing_peoplenum = ticketing_peoplenum;
+	}
+	public int getTicketing_price() {
+		return ticketing_price;
+	}
+	public void setTicketing_price(int ticketing_price) {
+		this.ticketing_price = ticketing_price;
+	}
+	public String getTicketing_date() {
+		return ticketing_date;
+	}
+	public void setTicketing_date(String ticketing_date) {
+		this.ticketing_date = ticketing_date;
+	}
 	
 }
