@@ -34,7 +34,7 @@ public class MovieInsertServlet extends HttpServlet{
 		
 		mdao.insert(mdto);
 		
-		resp.sendRedirect("movie_chart.jsp");
+		resp.sendRedirect("index.jsp");
 		
 	
 		

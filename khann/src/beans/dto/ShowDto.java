@@ -1,13 +1,23 @@
 package beans.dto;
 
-public class ShowServletDto {
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ShowDto {
 	private int show_no;
 	private int movie_no;
 	private int theater_no;
 	private String show_start;
+public ShowDto(ResultSet rs)throws SQLException{
+		this.setShow_no(rs.getInt("show_no"));
+		this.setMovie_no(rs.getInt("movie_no"));
+		this.setTheater_no(rs.getInt("theater_no"));
+		this.setShow_start(rs.getString("show_start"));
+		
+		
+	}
 	
-	
-	public ShowServletDto() {
+	public ShowDto() {
 		super();
 	}
 
