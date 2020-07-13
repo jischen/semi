@@ -7,6 +7,7 @@
 	int theater_no = Integer.parseInt(request.getParameter("theater_no"));
 
 	TheaterDao tdao = new TheaterDao();
+	
 	TheaterDto tdto = tdao.get(theater_no);
 %>
     

@@ -32,7 +32,7 @@ public class seatInsertServlet extends HttpServlet{
 			
 			
 			TheaterDto tdto = new TheaterDto();
-			
+		
 			tdto.setTheater_name(req.getParameter("theater_name"));
 			tdto.setTheater_type(req.getParameter("theater_type"));
 			tdto.setTheater_row(Integer.parseInt(req.getParameter("theater_row")));
@@ -44,7 +44,7 @@ public class seatInsertServlet extends HttpServlet{
 			
 			
 			
-			int theater_no = tdto.getTheater_no();
+			int theater_no = tdao.getSeq();
 			
 			
 			//좌석 정보
@@ -58,13 +58,10 @@ public class seatInsertServlet extends HttpServlet{
 				int row = Integer.parseInt(array[0]) + 1;
 				int col = Integer.parseInt(array[1]) + 1;
 //				상영관 번호
-				int thea_no = theater_no;
 				
-				System.out.println(thea_no);
-				System.out.println(row);
-				System.out.println(col);
 				
-				sdto.setTheater_no(theater_no);
+				
+				sdto.setTheater_no(theater_no - 1);
 				sdto.setSeat_row(row);
 				sdto.setSeat_col(col);
 				
@@ -73,6 +70,10 @@ public class seatInsertServlet extends HttpServlet{
 				
 				
 			}
+			
+			
+			
+			resp.sendRedirect("theater_list.jsp");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

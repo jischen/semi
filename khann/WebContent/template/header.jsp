@@ -104,6 +104,7 @@
 					if (mdto.getGrade().equals("관리자")) {
 				%>
 				<a href="<%=rootPath%>/theater/theater_insert.jsp">상영관등록</a>
+				<a href="<%=rootPath%>#">뭐뭐</a>
 				<%
 					} else {
 				%>
