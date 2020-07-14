@@ -17,8 +17,11 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
+
 <div align="center">
 
+
+	
 	<table border="1">
 		<tbody>
 

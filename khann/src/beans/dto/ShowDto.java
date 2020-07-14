@@ -8,7 +8,9 @@ public class ShowDto {
 	private int movie_no;
 	private int theater_no;
 	private String show_start;
+
 public ShowDto(ResultSet rs)throws SQLException{
+	
 		this.setShow_no(rs.getInt("show_no"));
 		this.setMovie_no(rs.getInt("movie_no"));
 		this.setTheater_no(rs.getInt("theater_no"));
@@ -65,3 +67,7 @@ public ShowDto(ResultSet rs)throws SQLException{
 	
 	
 }
+
+	
+	
+	

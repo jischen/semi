@@ -25,10 +25,10 @@ public class seatInsertServlet extends HttpServlet{
 			int theater_row = Integer.parseInt(req.getParameter("theater_row"));
 			int theater_col = Integer.parseInt(req.getParameter("theater_col"));
 			
-			System.out.println("이름"+theater_name);
-			System.out.println("타입"+theater_type);
-			System.out.println("row"+theater_row);
-			System.out.println("col"+theater_col);
+//			System.out.println("이름"+theater_name);
+//			System.out.println("타입"+theater_type);
+//			System.out.println("row"+theater_row);
+//			System.out.println("col"+theater_col);
 			
 			
 			TheaterDto tdto = new TheaterDto();
