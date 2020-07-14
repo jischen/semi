@@ -14,7 +14,7 @@
 	ReviewDao rdao = new ReviewDao();
 	ReviewDto rdto = rdao.get(review_no);
 
-	//System.out.println("번호 = " + review_no);
+
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -28,7 +28,7 @@
 		<table border="1">
 			<tr>
 				<th>리뷰번호</th>
-				<td><%=rdto.getReview_no()%></td>
+				<td><%=review_no%></td>
 
 			</tr>
 

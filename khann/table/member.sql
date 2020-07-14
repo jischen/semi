@@ -10,7 +10,7 @@ extra_addr varchar2(300) ,
 member_birth DATE NOT NULL ,
 member_phone char(11) NOT NULL ,
 grade varchar2(9) NOT NULL check(grade in('Silver', 'Gold', 'VIP', '관리자')),
-member_point number default 10000 not null
+member_point number default 10000 not null,
 member_join DATE  DEFAULT sysdate NOT NULL,
 member_login DATE     -- null / sysdate가 아니기 때문에
 );
