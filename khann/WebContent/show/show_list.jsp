@@ -10,7 +10,7 @@
 <% ShowDao sdao=new ShowDao();
 List<ShowDto>list=sdao.getList();
 
-
+ShowDto edto=new ShowDto();
 
 
 %>
@@ -19,8 +19,10 @@ List<ShowDto>list=sdao.getList();
 
 	<form action="show_list.do" method="post">
 		<table border="1">
+		
 			<h2>상영 리스트</h2>
 			<tbody>
+
 			<%for(ShowDto sdto:list) {%>
 				<tr>
 					<th>상영 번호</th>

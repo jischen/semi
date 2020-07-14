@@ -32,7 +32,7 @@ public class ReviewEditServlet extends HttpServlet{
 			ReviewDao rdao=new ReviewDao();
 			rdao.reviewedit(rdto);
 
-		resp.sendRedirect("review_content.jsp?review_no="+rdto.getReview_no());
+		resp.sendRedirect("review_content.jsp?review_no="+(rdto.getReview_no())+1);
 		
 	} catch (Exception e) {
 		
