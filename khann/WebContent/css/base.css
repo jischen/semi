@@ -534,7 +534,7 @@ textarea.form-input {
 /*  */
 #dh-content {
 	padding: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 100px;
 	float: left;
 	/*border: 1px solid #bcbcbc; */
 }
@@ -557,40 +557,45 @@ textarea.form-input {
 }
 
 /* 푸터 */
-.dh-footer {
+#dh-footer {
 	clear: both;
 	padding: 20px;
 	/*  border: 1px solid #bcbcbc; */
 	background-color: #9D3434;
 	color: white;
 	padding: 20px;
+	display:flex;
+	justify-content: "center";
 }
-
-.footer_divL {
-	/*  		float:left; */
-	display: inline-block;
+.footer_flex_item{
 	padding: 20px;
+	flex-grow: 0;
+	text-align: "center";
 }
-
-.footer_divC {
-	/* 		float:center; */
-	display: inline-block;
+.footer_flex_item:nth-child(1){	
 	padding: 20px;
-	width: 720px;
+	flex-grow: 1;
 }
 
-.footer_divR {
-	/* 		float:right;*/
-	display: inline-block;
-	padding: 20 px;
-	align: "right"
+
+.footer_flex_item:nth-child(2) {
+	padding: 20px;
+	flex-grow:3;
 }
 
-.dh-footer::after {
-	content: "";
-	display: block;
-	clear: both;
+.footer_flex_item:nth-child(3) {
+	padding: 20px;
+	flex-grow:2;
+	margin-top: 100px;
+	margin-left:30px;
 }
+/*이미지 가운데 정렬*/
+.img-align{
+	top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+}
+
 
 /*  */
 @media ( max-width : 480px ) {
@@ -690,9 +695,8 @@ span a {
 
 /*스와이퍼 */
 .swiper-container {
-	width: 80%;
-	min-height: 200px;
-	max-height: 300px;
+	width: 600px;
+	height: 300px;
 }
 
 .swiper-container .swiper-slide, .swiper-container .swiper-slide>img {
@@ -750,6 +754,11 @@ span a {
 	flex: 1;
 
 }
+<<<<<<< HEAD
+.flex-item:nth-child(3) {
+	flex: 2;
+}
+=======
 
 
 
@@ -769,3 +778,4 @@ span a {
 
 
 
+>>>>>>> refs/remotes/origin/master

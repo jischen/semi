@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <br>
 
 <!--하단(footer)영역  -->
+
+
+
 <div class="dh-footer">
 	<div class="footer_divL">
 		<img src="<%=request.getContextPath()%>/img/logo2.png" width="90"
@@ -24,6 +27,7 @@
 		<p></p>
 	</div>
 	<div class="footer_divR">&copy; KHANN Corp. All right reserved.</div>
+
 
 </div>
 </body>
