@@ -1,7 +1,8 @@
 CREATE TABLE show (
-show_no NUMBER PRIMARY KEY,
-movie_no NUMBER REFERENCES movie(movie_no) ON DELETE CASCADE,
-theater_no NUMBER REFERENCES theater(theater_no) ON DELETE CASCADE,
-show_start Date NOT NULL
-
+show_no NUMBER PRIMARY KEY, --시퀀스 
+movie_no NUMBER REFERENCES movie(movie_no) ON DELETE CASCADE, --무비노 참조키
+theater_no NUMBER REFERENCES theater(theater_no) ON DELETE CASCADE, --참조키
+show_start varchar2(20) NOT NULL
 );
+ 
+CREATE SEQUENCE show_seq nocache;

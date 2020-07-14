@@ -9,6 +9,7 @@
 <%
 
 	ReviewDao rdao = new ReviewDao();
+
     List<ReviewDto>list=rdao.getList();
 
 	ReviewDto ldto= new ReviewDto();
@@ -27,7 +28,7 @@ MovieDto mdto=new MovieDto();
 
 <div align="center">
 	<h2>리뷰보기</h2>
-	<form action="review.list.do" method="post">
+	<form action="review_list.do" method="post">
 		<table border="1">
 		
 			<tbody>
