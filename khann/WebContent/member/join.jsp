@@ -90,6 +90,10 @@
 						<input type="date" name="member_birth" required>
 					</td>
 				</tr>
+				
+				
+				
+				
 			</tbody>
 			<tfoot>
 				<tr>

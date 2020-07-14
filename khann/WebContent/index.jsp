@@ -1,11 +1,28 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div>
+
+
+
+
+
+<div id="dh-content">
 
 	<!-- 이미지 슬라이더 영역 -->
 	<div class="swiper-container">
@@ -13,13 +30,13 @@
 		<div class="swiper-wrapper">
 			<!-- 배치되는 이미지 또는 화면 -->
 			<div class="swiper-slide">
-				<img src="https://placeimg.com/600/300/architecture">
+				<img src="<%=request.getContextPath()%>/img/swiper.png"  style="width: 600px; height: 300px;">
 			</div>
 			<div class="swiper-slide">
-				<img src="https://placeimg.com/600/300/tech">
+				<img src="<%=request.getContextPath()%>/img/swiper2.png" style="width: 600px; height: 300px;">
 			</div>
 			<div class="swiper-slide">
-				<img src="https://placeimg.com/600/300/people">
+				<img src="https://placeimg.com/600/300/people" style="width: 1160px; height: 300px;">
 			</div>
 		</div>
 
@@ -35,6 +52,10 @@
 	</div>
 </div>
 
+<div id="dh-sidebar">
+<a href="#"><img src="<%=request.getContextPath()%>"></a>
+
+</div>
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

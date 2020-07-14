@@ -74,6 +74,65 @@ public class TheaterDao {
 		return list;
 		
 	}
+	
+	
+	public void delete(String theater_name) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "delete theater where theater_name = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, theater_name);
+		ps.execute();
+		
+		con.close();
+		
+	}
+	
+	
+	
+	public TheaterDto get(int theater_no) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM theater WHERE theater_no=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, theater_no);
+		ResultSet rs = ps.executeQuery();
+		
+
+		TheaterDto tdto;
+		if(rs.next()) {
+			tdto = new TheaterDto(rs);
+			tdto.setTheater_no(Integer.parseInt(rs.getString("theater_no")));
+			tdto.setTheater_name(rs.getString("theater_name"));
+			tdto.setTheater_type(rs.getString("theater_type"));
+			tdto.setTheater_row(Integer.parseInt(rs.getString("theater_row")));
+			tdto.setTheater_col(Integer.parseInt(rs.getString("theater_col")));
+		}
+		else {
+			tdto = null;
+		}
+		
+		con.close();
+		
+		return tdto;
+	}
+	
+	
+
+		public int getSeq() throws Exception {
+			Connection con = getConnection();
+			String sql = "SELECT theater_seq.nextval FROM dual";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		rs.next();
+		int seq = rs.getInt(1);
+		con.close();
+		return seq;
+
+	}
+	
+	
+	
 
 
 }

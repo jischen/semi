@@ -28,7 +28,7 @@
 			<tr>
 		<th>리뷰 번호</th>
 		<td>
-		<input type="text" name="review_no" value="<%=review_no%>">
+		<input type="text" name="review_no" value="<%=rdto.getReview_no()%>">
 		</td>
 			</tr>
 			
@@ -72,7 +72,7 @@
 			<tfoot>
 				<tr>
 					<td align="center" colspan="2">
-					<a href="/khann/review/review_content.jsp?review_no="<%=rdto.getReview_no()%>>
+					<a href="/khann/review/review_content.jsp?review_no=<%=rdto.getReview_no()%>">
 					<input type="submit" value="수정완료"></a>
 					</td>
 				</tr>

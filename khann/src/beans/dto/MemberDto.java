@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class MemberDto {
 
-	private int member_no;
+	private int member_no, member_point;
 	private String member_id, member_pw, member_name, post, base_addr, extra_addr, member_birth, 
 	member_phone, grade, member_join, member_login;
 
@@ -23,10 +23,19 @@ public class MemberDto {
 		this.setMember_birth(rs.getString("member_birth"));
 		this.setMember_phone(rs.getString("member_phone"));
 		this.setGrade(rs.getString("grade"));
+		this.setMember_point(rs.getInt("member_point"));
 		this.setMember_join(rs.getString("member_join"));
 		this.setMember_login(rs.getString("member_login"));	
 	}
 	
+	public int getMember_point() {
+		return member_point;
+	}
+
+	public void setMember_point(int member_point) {
+		this.member_point = member_point;
+	}
+
 	public MemberDto() {
 	}
 	

@@ -78,8 +78,8 @@ public class ReviewDao {
 		// 점수
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, rdto.getReview_movie());
-		ps.setString(2, rdto.getReview_writer());
+		ps.setString(1, rdto.getReview_writer());
+		ps.setInt(2, rdto.getReview_movie());
 		ps.setString(3, rdto.getReview_content());
 		ps.setString(4, rdto.getReview_score());
 	
@@ -164,4 +164,19 @@ public class ReviewDao {
 		ps.execute();
 		
 	}
+	
+	public int getCount(String type, String keyword) throws Exception{
+		Connection con= getConnection();
+		String sql="SELECT count(*) from review where instr(#1,?)>0";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1, keyword);
+		ResultSet rs=ps.executeQuery();
+		rs.next();
+		
+		int count=rs.getInt(1);
+		
+	con.close();
+	return count;
+	}
+	
 }

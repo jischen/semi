@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/base.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/swiper/css/swiper.min.css">
+
 <!--스와이퍼 스크립트-->
 <script src="<%=request.getContextPath()%>/swiper/js/swiper.js"></script>
 <script>
@@ -58,6 +59,8 @@
 	};
 </script>
 
+
+
 </head>
 <body>
 	<%
@@ -104,6 +107,7 @@
 					if (mdto.getGrade().equals("관리자")) {
 				%>
 				<a href="<%=rootPath%>/theater/theater_insert.jsp">상영관등록</a>
+				<a href="<%=rootPath%>#">뭐뭐</a>
 				<%
 					} else {
 				%>
