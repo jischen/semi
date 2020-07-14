@@ -725,18 +725,57 @@ span a {
 
 .flex-item {
 	display: inline-block;
-	width: 33.3333%; /*몇개를 만들거냐? 1/갯수*/
+	width: 50%; /*몇개를 만들거냐? 1/갯수*/
 	height: 100%;
 	border: 1px solid;
 }
 
+
 .flex-item:nth-child(1) {  
-	flex: 2;
+	flex: 2.8;
 }
 
 .flex-item:nth-child(2) {
-	flex: 1;
+	flex: 1.2;
 }
+
+
+
+  .flex-container_partnership{
+   width:900px;
+	height: auto;
+	display: flex;
+	margin:0px auto;
+	
+	justify-content: space-between;
+}
+
+.flex-item-_partnership{
+	flex: 1;
+
+}
+<<<<<<< HEAD
 .flex-item:nth-child(3) {
 	flex: 2;
 }
+=======
+
+
+
+.ul-none{
+   list-style:none;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> refs/remotes/origin/master
