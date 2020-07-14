@@ -31,7 +31,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div align="center">
-	<h2>FAQ</h2>
+	<a href="<%=rootPath%>/ask/list.jsp"><h2>FAQ</h2></a>
 	
 	<table border="0">
 		<thead>
