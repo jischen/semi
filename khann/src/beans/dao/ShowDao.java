@@ -119,7 +119,7 @@ public class ShowDao {
 
 	public void showedit(ShowDto sdto) throws Exception {
 		Connection con = getConnection();
-		String sql = "UPDATE show SET movie_no=?, theater_no=?, show_start=? WHERE show_no=?";
+		String sql = "UPDATE show SET movie_no=?,theater_no=?,show_start=to_date(?,'YYYY-MM-DD HH24:MI') WHERE show_no=?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 
