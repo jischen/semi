@@ -8,13 +8,14 @@
 <!-- 리뷰 목록 페이지 -->
 <%
 
+
+
 	ReviewDao rdao = new ReviewDao();
 
     List<ReviewDto>list=rdao.getList();
 
 	ReviewDto ldto= new ReviewDto();
 
-MovieDto mdto=new MovieDto();
 	
 
 
@@ -22,10 +23,7 @@ MovieDto mdto=new MovieDto();
 
 %>
 
-
-
 <jsp:include page="/template/header.jsp"></jsp:include>
-
 <div align="center">
 	<h2>리뷰보기</h2>
 	<form action="review_list.do" method="post">
@@ -65,15 +63,16 @@ MovieDto mdto=new MovieDto();
 <%} %>
 	
 	
-		</table>
+		
 		<tfoot>
 		<tr>
-		<td align="right" colspan="6">
+		<td align="right" colspan="8">
 		<a href="#">[이전]</a>
 		 <a href="#">[다음]</a>
 		 </td>
 		 </tr>
 		 </tfoot>
+		 </table>
 	</form>
 </div>
 <jsp:include page="/template/footer.jsp"></jsp:include>

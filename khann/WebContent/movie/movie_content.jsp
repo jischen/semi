@@ -92,8 +92,6 @@
 			<a href="/khann/movie/movie_change.jsp?movie_no=<%=mdto.getMovie_no()%>"><input type="submit" value="영화수정"></a>
 			<a href="/khann/review/review_write.jsp"><input type="submit" value="리뷰작성"></a>
 
-			<a href="/khann/review/review_list.jsp"><input type="button" value="리뷰 더보기"></a>
-
 			<a href="/khann/review/review_list.jsp"><input type="submit" value="리뷰 더보기"></a>
 
 			</td>

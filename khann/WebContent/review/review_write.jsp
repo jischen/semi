@@ -4,12 +4,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%
 
-<%ReviewDto rdto=new ReviewDto();
 
 MemberDto mdto = (MemberDto)session.getAttribute("userinfo");
 
+
 %>
+
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 <div align="center">
