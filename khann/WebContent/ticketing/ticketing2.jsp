@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="beans.dao.ShowDao"%>
 <%@page import="beans.dto.ShowDto"%>
 <%@page import="java.util.List"%>
@@ -8,16 +9,24 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	int movie_no = Integer.parseInt(request.getParameter("movie_no"));
-	// 영화번호로 영화 상영일자를 반환하는 메소드를 만들어서 상영일자를 반환받아요.
+
 	
-	ShowDao sdao = new ShowDao();
-	List<ShowDto> list = sdao.startList(movie_no); 
-	System.out.println(list.size());
+	//movie_no로 상영관 날짜 받아오고
+	//ShowDao sdao = new ShowDao();
+	//List<ShowDto> list = sdao.startList(movie_no); 
+	//새로운 List를 만들고
+	//List<String> dates = new ArrayList<>();
+	//list에 있는 값을 dates에 담기
 	
-	for(ShowDto sdto : list){
-		System.out.println(sdto.getShow_start().substring(0, 10));
+	//영화 시간 출력 확인
+	//for(ShowDto sdto : list){
 		
-	}
+//		System.out.println(sdto.getShow_start());
+	//}
+	
+	//session.setAttribute("moviedate", list);
+	
+	//System.out.println(list);
 	
 	
 %>	
@@ -42,7 +51,9 @@
               numberOfMonths: 1,
          	  
               
-              minDate:setDate, 
+              minDate:new Date(), 
+              maxDate:moment(new Date()).add(7,'days'),             	
+              
               
               inline:true,
               
@@ -61,8 +72,9 @@
 </head>
 <body >
    <form action="ticketing3.jsp">
+   <input type="hidden" value="<%=movie_no%>" name="movie_no">
    
-   <input type="text" class="picker" >
+   <input type="text" class="picker" name="select_date">
     
     
    	

@@ -2,6 +2,9 @@ package beans.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -9,6 +12,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import beans.dto.SeatDto;
+import beans.dto.ShowDto;
 import beans.dto.TheaterDto;
 
 public class SeatDao {
@@ -51,6 +55,54 @@ private static DataSource src;
 		con.close();
 		
 	}
+	
+	
+	
+	public List<SeatDto> getList() throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "select * from seat order by seat_no ASC";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		List<SeatDto> list = new ArrayList<>();
+		while(rs.next()) {
+			SeatDto tdto = new SeatDto(rs);
+			list.add(tdto);
+		}
+		
+		con.close();
+		return list;
+		
+	}
+	
+	
+	public List<SeatDto> seatList(int theater_no) throws Exception{
+		Connection con= getConnection();
+		
+		String sql="SELECT * FROM seat WHERE theater_no=?";
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1, theater_no);
+		ResultSet rs=ps.executeQuery();
+		
+		List<SeatDto> list=new ArrayList<>();
+
+		while(rs.next()) {
+			
+			SeatDto sdto= new SeatDto(rs);
+			list.add(sdto);
+		}	
+	con.close();
+	return list;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
