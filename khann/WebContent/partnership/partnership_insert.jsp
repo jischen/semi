@@ -5,7 +5,7 @@
 
 <div id="dh-content2">
 
-
+        
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
@@ -15,7 +15,6 @@
     </script>
     <script type="text/javascript">
         window.onload = function() {
-
             // form id, #contact-form 안에 있는 것들 전송
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -36,8 +35,11 @@
 
 
         <form id="contact-form">
+      <input type="hidden" name="contact_number">
+        
             <table border="0">
                 <tbody>
+                
                     <tr>
                         <th>회사명</th>
                         <td>
@@ -54,7 +56,7 @@
                     <tr>
                         <th>연락처</th>
                         <td>
-                            <input type="text" name="contact_number">
+                            <input type="text" name="phone_number">
                         </td>
                     </tr>
                     <tr>
@@ -78,13 +80,13 @@
                 <tfoot>
                     <tr>
                         <th colspan="2">
-                            <input type="submit" value="Send"> </th>
+                            <input type="submit" value="전송"> </th>
                     </tr>
                 </tfoot>
             </table>
         </form>
     </div>
-</body></html>
+</body>
 
 
 
