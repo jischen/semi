@@ -22,12 +22,11 @@
                 this.contact_number.value = Math.random() * 100000 | 0;
                 // 서비스 id, 이메일 템플릿
                 emailjs.sendForm('cinemakhann', 'template_HkdZ1sV5', this);
-            });
+                location.href="/khann/partnership/partnership_insert_result.jsp"	
+            }); 
         }
     </script>
-</head>
 
-<body>
 
     <div align="center">
 
@@ -35,7 +34,8 @@
 
 
         <form id="contact-form">
-      <input type="hidden" name="contact_number">
+          <input type="hidden" name="contact_number">  
+        
         
             <table border="0">
                 <tbody>
@@ -50,32 +50,32 @@
                     <tr>
                         <th>문의자명</th>
                         <td>
-                            <input type="text" name="contact_name">
+                            <input type="text" name="contact_name" required>
                         </td>
                     </tr>
                     <tr>
                         <th>연락처</th>
                         <td>
-                            <input type="text" name="phone_number">
+                            <input type="text" name="phone_number" required>
                         </td>
                     </tr>
                     <tr>
                         <th>이메일</th>
                         <td>
-                            <input type="text" name="contact_mail">
+                            <input type="text" name="contact_mail" required>
                         </td>
                     </tr>
                     <tr>
                         <th>제목</th>
                         <td>
-                            <input type="text" name="title">
+                            <input type="text" name="title" required>
                         </td>
                     </tr>
 
                     <tr>
                         <th>내용</th>
                         <td>
-                            <textarea name="message_html"></textarea></td>
+                            <textarea name="message_html" required></textarea></td>
                     </tr>
                 <tfoot>
                     <tr>
@@ -86,7 +86,6 @@
             </table>
         </form>
     </div>
-</body>
 
 
 

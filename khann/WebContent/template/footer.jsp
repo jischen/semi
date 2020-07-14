@@ -14,6 +14,7 @@
 
 	<div class="footer_divC">
 		<span><a href="/khann/partnership/company_intro.jsp">회사소개</a></span> <span> | </span> 
+		<span><a href="/khann/location_Transportation/location.jsp">위치 및 교통편</a></span> <span> | </span> 
 		<span><a href="/khann/partnership/partnership_inquiries.jsp">광고/프로모션문의</a></span> 
 		<span><a href="/khann/partnership/partnership_inquiries.jsp">제휴문의</a></span> 
 		<span><a href="/khann/partnership/partnership_inquiries.jsp">출점문의</a></span> 
