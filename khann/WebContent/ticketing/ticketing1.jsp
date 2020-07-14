@@ -5,7 +5,7 @@
 	pageEncoding="UTF-8"%>
 
 <%
-
+	
 	MovieDao mdao = new MovieDao();
 	List<MovieDto> list = mdao.getList();
 
