@@ -41,7 +41,7 @@ public class MemberDao {
 	public void join(MemberDto mdto) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "INSERT INTO member VALUES(member_seq.nextval,?, ?, ?, ?, ?, ?, ?, ?, 'Silver', 10000, sysdate, null)";
+		String sql = "INSERT INTO member VALUES(member_seq.nextval,?, ?, ?, ?, ?, ?, ?, ?, 'Silver', 10000, sysdate, '')";
 		PreparedStatement ps = con.prepareStatement(sql);
 
 		ps.setString(1, mdto.getMember_id());
