@@ -141,13 +141,13 @@
 			<%} %>
 		<%} %>
 	
-	<%-- 	<%if(pageCount > finishBlock){ %> --%>
+		<%if(pageCount > finishBlock){ %>
 		<%if(!isSearch){ %>
 			<a href="list.jsp?page=<%=finishBlock+1%>">[다음]</a>
 			<%} else { %>
 			<a href="list.jsp?page=<%=finishBlock+1%>&type=<%=type%>&keyword=<%=keyword%>">[다음]</a>
 			<%}%>
-		<%-- <%}%> --%>
+		<%}%>
 	</h4>
 	
 

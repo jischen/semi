@@ -8,12 +8,11 @@
  
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div align="center">
-	<!-- enctype="multipart/form-data" -->
+<div align="center" >
 	<h2>이벤트 작성</h2>
 	
 	<!-- 게시글 전송 폼 -->
-	<form action="write.do" method="get">
+	<form action="write.do" method="post" enctype="multipart/form-data">
 		<table border="1">
 			<tbody>
 				<tr>
@@ -45,7 +44,7 @@
 				<tr>
 					<th>첨부파일</th>
 					<td>
-						<!-- <input type="file" name="event_file" multiple accept=".jpg, .png, .gif"> -->
+						 <input type="file" name="event_file" multiple accept=".jpg, .png, .gif"> 
 					</td>
 				</tr>
 			</tbody>

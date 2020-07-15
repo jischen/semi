@@ -24,7 +24,7 @@ EventDto edto=edao.get(event_no);
 	<form action="edit.do" method="post" >
 	<input type="hidden" name="event_no" value="<%=event_no%>" name="event_no">
 		
-		<table border="1">
+		<table>
 			<tbody>
 				<tr>
 					<th>상황</th>

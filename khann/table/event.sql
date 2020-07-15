@@ -17,7 +17,7 @@ event_file_origin REFERENCES event(event_no) ON DELETE CASCADE
 );
 
 CREATE SEQUENCE event_file_seq NOCACHE;
-
+ALTER TABLE EVENT_FILE MODIFY event_file_origin not NULL;
 
 --test용 게시글 목록--
 
