@@ -640,12 +640,21 @@ span a {
 	color: white;
 }
 
+.decox{
+	text-decoration: none;
+	color: gray;
+}
+
 * {
 	box-sizing: border-box;
 }
-
+/*로그인*/
 .login-wrap {
+<<<<<<< HEAD
 	width: 460px;
+=======
+	width: 460px;	
+>>>>>>> refs/remotes/origin/master
 	text-align: center;
 	margin: 0px auto;
 }
@@ -660,10 +669,15 @@ span a {
 }
 
 /* 공통점이 아닌 차이점은 각각의 영역에 구현 */
+
+.login-logo {
+	text-align:left;
+}
+
 .login-id {
 	padding-left: 50px;
 	background-image:
-		url("https://cdn.icon-icons.com/icons2/1248/PNG/256/user_84308.png");
+		url("../img/login_id.png");
 	background-repeat: no-repeat;
 	background-size: 35px;
 	background-position: 4px 4px;
@@ -672,15 +686,15 @@ span a {
 .login-pw {
 	padding-left: 50px;
 	background-image:
-		url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcThsF5jb5cpiZ_PVtF0peEBGIhFjNyNXq7jlQ&usqp=CAU");
+		url("../img/login_pw.png");
 	background-repeat: no-repeat;
 	background-size: 35px;
 	background-position: 4px 4px;
 }
 
 .login-submit {
-	color: #9D3434;
-	background-color: dodgerblue;
+	color: white;
+	background-color: #9D3434;
 	border-width: 1px;
 	border-style: solid;
 	border-color: black;
@@ -696,6 +710,7 @@ span a {
 .login-checkbox-wrap {
 	text-align: left;
 }
+
 
 /*스와이퍼 */
 .swiper-container {
@@ -784,6 +799,7 @@ span a {
 	color: black;
 }
 
+
 .review_submit {
 	width: 170px;
 	height: 40px;
@@ -798,6 +814,7 @@ span a {
 	font-size: 14px;
 	background-color: black;
 	color: white;
+
 }
 
 .review_score {
@@ -852,3 +869,13 @@ span a {
 .listimg img {
 	width: 30px;
 }
+
+.button-form{
+	color:gray;
+	border:0;
+	outline:0;
+	background-color:white;
+	text-align:left;
+	padding:0;
+	font-size:15;
+	cursor:pointer;

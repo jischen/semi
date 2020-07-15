@@ -7,10 +7,12 @@
 <!-- 상영 목록 -->
 
 
-<% ShowDao sdao=new ShowDao();
-List<ShowDto>list=sdao.getList();
+<% 
 
-ShowDto edto=new ShowDto();
+	ShowDao sdao=new ShowDao();
+	List<ShowDto>list=sdao.getList();
+
+	ShowDto edto=new ShowDto();
 
 
 %>
