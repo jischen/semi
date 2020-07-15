@@ -6,13 +6,13 @@
 
 
 
-<div class="dh-footer">
-	<div class="footer_divL">
+<div id="dh-footer">
+	<div class="footer_flex_item">
 		<img src="<%=request.getContextPath()%>/img/logo2.png" width="90"
 			height="90">
 	</div>
 
-	<div class="footer_divC">
+	<div class="footer_flex_item">
 		<span><a href="/khann/partnership/company_intro.jsp">회사소개</a></span> <span> | </span> 
 		<span><a href="/khann/location_Transportation/location.jsp">위치 및 교통편</a></span> <span> | </span> 
 		<span><a href="/khann/partnership/partnership_inquiries.jsp">광고/프로모션문의</a></span> 
@@ -27,7 +27,7 @@
 		<p>오시는 길: 서울특별시 관악구 서원동 문성로 248</p>
 		<p></p>
 	</div>
-	<div class="footer_divR">&copy; KHANN Corp. All right reserved.</div>
+	<div class="footer_flex_item">&copy; KHANN Corp. All right reserved.</div>
 
 
 </div>
