@@ -575,19 +575,23 @@ textarea.form-input {
 .footer_flex_item:nth-child(1){	
 	padding: 20px;
 	flex-grow: 1;
+	text-align: center;
+	margin-top: 10px;
 }
 
 
 .footer_flex_item:nth-child(2) {
 	padding: 20px;
 	flex-grow:3;
+	text-align: left;
+	margin-top: 15px;
 }
 
 .footer_flex_item:nth-child(3) {
 	padding: 20px;
 	flex-grow:2;
 	margin-top: 100px;
-	margin-left:30px;
+	text-align: right;
 }
 /*이미지 가운데 정렬*/
 .img-align{
