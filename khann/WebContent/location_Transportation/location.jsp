@@ -49,23 +49,19 @@
 <hr>		
 
 
+<div id=dh-container-flex >
+    <div class="map-flex-item"id="map" style="width:700px;height:490px;  margin: 20px" ></div>
+	<div class="map-flex-item">
+	<div class="map-flex-item-column"><div><h2>CINEMAKHANN</h2></div><div>서울특별시 관악구 서원동 문성로 248</div></div> 
+	<div class="map-flex-item-column"><div><h2>고객 센터</h2></div> <div>010-5854-2088</div></div>
+	<div class="map-flex-item-column"><a href="http://kko.to/Z9KBlgfDj"><img src="<%=request.getContextPath()%>/img/kakaomap.jfif"  style="width: 130px; height: 130px;"></a>
+	<a href="http://kko.to/Z9KBlgfDj"><img src="<%=request.getContextPath()%>/img/navermap.jfif"  style="width: 130px; height: 130px;"></a>
+	</div>
+	</div>
+</div>		
 
-   <div	 align ="center"> 
-    <div id="map" style="width:700px;height:490px;  margin: 20px" ></div>
-    <div class=container-700 style="width: 700px;">
-    <div style="text-align: right"><a class="decox" href ="http://kko.to/Z9KBlgfDj ">지도찾기</a></div>
-    </div>
-    <h3>서울특별시 관악구 서원동 문성로 248</h3>
-    <h3>문의 전화 :02-1234-5975</h3>
-   <hr>
-     <div style="padding-right: 170;"><img src="<%=request.getContextPath()%>/img/subway.png"  style="width:50px; height: auto;"><span style="margin-bottom: 100px">2호선 신림역에서 도보 5분<span></span> </div>
-     
-            
-          <div><img src="<%=request.getContextPath()%>/img/bus.png"  style="width:50px; height: auto;"><span> 152, 5516, 5519, 5522B, 5523, 5528, 6512, 6513, 6514</span> <div>탑승후 
-  서원동 문화교 앞 하차 도보 2분</div></div>
-     
-     
-    </div>
+
+
 
 
 

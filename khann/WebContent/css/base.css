@@ -526,13 +526,47 @@ textarea.form-input {
 	/* border: 1px solid #bcbcbc;*/
 }
 
-.container {
+#dh-container-flex{
+	width:1240px;
+	display:flex;
+}
+
+.map-flex-item{
+	margin: 10px auto;
+	padding: 20px;
+
+}
+
+.map-flex-item:nth-child(1){
+	padding: 20px;
+	flex-grow: 2;
+	text-align: "center";
+}
+.map-flex-item:nth-child(2){
+	padding: 20px;
+	flex-grow: 1;
+	text-align: "center";
+		flex-direction:column;
+	display:flex;
 	
+	 
+}
+.map-flex-item-column{
+	flex-grow: 1;
 }
 
 
+.container {
+	
+}
+/*li에 동그라미 ㄴㄴ*/
+#no-disc{
+	list-style-type:none;
+}
 
-
+.ul-none>li{
+	list-style-type:none;
+}
 
 /*  */
 #dh-header {
