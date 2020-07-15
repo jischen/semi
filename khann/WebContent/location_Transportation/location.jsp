@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 
-
+<title>영화관소개</title>
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=83a4809f6c2385e492b99c45abae78ad"></script>
     <script>
         window.onload = function() {
@@ -41,11 +41,34 @@
             infowindow.open(map, marker);
         };
     </script>
+    
+    
+<jsp:include page="/template/header.jsp"></jsp:include>
 
-		<h1>헤더에 있는 스와이프 스크립트가(windows.onload가 먼저 되어서 지도 api가 로딩이 안된다)
-		스와이퍼 api를 먼저 해결해야지 가능 할것으로 보인다 header.jsp </h1>
+<h2>찾아오시는 길 </h2>
+<hr>		
 
-    <div id="map" style="width:500px;height:350px;"></div>
+
+
+   <div	 align ="center"> 
+    <div id="map" style="width:700px;height:490px;  margin: 20px" ></div>
+    <div class=container-700 style="width: 700px;">
+    <div style="text-align: right"><a class="decox" href ="http://kko.to/Z9KBlgfDj ">지도찾기</a></div>
+    </div>
+    <h3>서울특별시 관악구 서원동 문성로 248</h3>
+    <h3>문의 전화 :02-1234-5975</h3>
+   <hr>
+     <div style="padding-right: 170;"><img src="<%=request.getContextPath()%>/img/subway.png"  style="width:50px; height: auto;"><span style="margin-bottom: 100px">2호선 신림역에서 도보 5분<span></span> </div>
+     
+            
+          <div><img src="<%=request.getContextPath()%>/img/bus.png"  style="width:50px; height: auto;"><span> 152, 5516, 5519, 5522B, 5523, 5528, 6512, 6513, 6514</span> <div>탑승후 
+  서원동 문화교 앞 하차 도보 2분</div></div>
+     
+     
+    </div>
+
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
+
+
