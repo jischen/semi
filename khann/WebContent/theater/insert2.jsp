@@ -22,7 +22,7 @@
 <script>
    window.onload = function(){
       var cinema = new Hacademy.Reservation(".cinema-wrap");
-      console.log("finish");
+      window.dispatchEvent(new Event('resize'));
    };
 </script>
 						

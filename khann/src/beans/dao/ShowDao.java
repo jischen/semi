@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import beans.dto.SeatDto;
 import beans.dto.ShowDto;
 import beans.dto.TheaterDto;
 import beans.dto.TicketingDto;
@@ -151,4 +152,29 @@ public class ShowDao {
 	}
 	
 
+	public List<ShowDto> startList(int movie_no) throws Exception{
+		Connection con= getConnection();
+		
+		String sql="SELECT * FROM show WHERE movie_no=?";
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1, movie_no);
+		ResultSet rs=ps.executeQuery();
+		
+		List<ShowDto> list=new ArrayList<>();
+
+		while(rs.next()) {
+			
+			ShowDto sdto= new ShowDto(rs);
+			list.add(sdto);
+		}	
+	con.close();
+	return list;
+	}
+	
+	
+	
+	
+	
+	
 }

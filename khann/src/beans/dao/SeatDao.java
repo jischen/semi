@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
 
 import beans.dto.SeatDto;
 import beans.dto.ShowDto;
@@ -99,8 +100,47 @@ private static DataSource src;
 	
 	
 	
+	public int seatChoice(int theater_no, int seat_row, int seat_col) throws Exception{
+		Connection con= getConnection();
+		String sql = "SELECT seat_no FROM seat WHERE theater_no =? AND seat_row=? AND seat_col=?";
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1, theater_no);
+		ps.setInt(2, seat_row);
+		ps.setInt(3, seat_col);
+		
+		ResultSet rs = ps.executeQuery();
+		
+		rs.next();
+		int seat_no = rs.getInt(1);
+
+		con.close();
+
+		return seat_no;
+		
+	}
 	
 	
+	
+	public List<SeatDto> seat(int seat_no) throws Exception{
+		Connection con= getConnection();
+		
+		String sql="SELECT * FROM seat WHERE seat_no=?";
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1, seat_no);
+		ResultSet rs=ps.executeQuery();
+		
+		List<SeatDto> list=new ArrayList<>();
+
+		while(rs.next()) {
+			
+			SeatDto sdto= new SeatDto(rs);
+			list.add(sdto);
+		}	
+	con.close();
+	return list;
+	}
 	
 	
 	
