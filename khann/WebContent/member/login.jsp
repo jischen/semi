@@ -1,71 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/base.css">
 
-<jsp:include page="/template/header.jsp"></jsp:include>
-
-
-<style>
-* {
-	box-sizing: border-box;
-}
-
-.login-wrap {
-	width: 460px;
-	text-align: center;
-	margin: 0px auto;
-}
-
-/* 태그 4개를 한 번에 부른다 */
-.form-input {
-	width: 100%;
-	margin: 10px 0px;
-	padding: 10px;
-	font-size: 17px;
-	font-family: 고딕;
-}
-
-/* 공통점이 아닌 차이점은 각각의 영역에 구현 */
-.login-id {
-	padding-left: 50px;
-	background-image:
-		url("https://cdn.icon-icons.com/icons2/1248/PNG/256/user_84308.png");
-	background-repeat: no-repeat;
-	background-size: 35px;
-	background-position: 4px 4px;
-}
-
-.login-pw {
-	padding-left: 50px;
-	background-image:
-		url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcThsF5jb5cpiZ_PVtF0peEBGIhFjNyNXq7jlQ&usqp=CAU");
-	background-repeat: no-repeat;
-	background-size: 35px;
-	background-position: 4px 4px;
-}
-
-.login-submit {
-	color: #9D3434;
-	background-color: dodgerblue;
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
-}
-
-.login-button {
-	background-color: ;
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
-}
-
-.login-checkbox-wrap {
-	text-align: left;
-}
-</style>
+<body style="margin-top:100px">
 
 
 	 <div class="login-wrap">
-		<h1>로그인</h1>
+	 <div id="login-logo">
+				<a href="/khann/index.jsp"> <img
+					src="<%=request.getContextPath()%>/img/logo2.png" width="200" height="200">
+				</a>
+				<h1>로그인</h1>
+</div>
+<hr>
+<div style="text-align:left;color:gray;"><a class="decox" href="<%=request.getContextPath()%>">홈</a>>로그인</div>
+
+	 
+
 		
 		<form action="login.do" method="post">
 			<!-- 아이디 입력창 -->
@@ -100,26 +52,29 @@
 		
 			
             
-            <div align="center">
-			<a href="http://localhost:8080/khann/member/find_id.jsp">아이디 찾기</a> <a
-				href="#">비밀번호 찾기 </a> <br>
+            <div  style="text-align:left">
+            <ul>
+            <li>
+			<a class="decox" href="http://localhost:8080/khann/member/find_id.jsp">아이디/비밀번호 찾기</a>
+			</li>
+			<li>
+			<button class="button-form" type="button"
+			onclick="location.href='../member/join_term_check.jsp' ">회원가입</button>
+			</li>
+			</ul>
+			<br>
 			</div>
 				</form>
 				<hr>
-   
+  
    		 <div>
 		<!-- 가입 버튼 -->
-		<button class="form-input login-button" type="button"
-			onclick="location.href='../member/join_term_check.jsp' ">회원가입</button>
+
 
 		</div>
 	
-		
-  </div>
-	
-
-
-<jsp:include page="/template/footer.jsp"></jsp:include>
+</div>
+</body>
 
 
 
