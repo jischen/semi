@@ -449,18 +449,6 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 	width: auto;
 }
 
-/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
-.left {
-	text-align: left !important;
-}
-
-.center {
-	text-align: center !important;
-}
-
-.right {
-	text-align: right !important;
-}
 
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {
@@ -515,6 +503,21 @@ textarea.form-input {
 .float-box>.float-right {
 	float: right;
 }
+body, div, dl, dt, dd, th, td, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, blockquote, button, input, textarea{
+	margin: 0;
+	padding:0;
+}
+
+ul, li, ol{
+	list-style: none;
+}
+.margin-auto{
+	position: relative;
+	margin: 0 auto;
+	width: 1060px;
+}	
+
+
 /*  */
 #dh-container {
 	width: 1240px;
@@ -570,6 +573,10 @@ textarea.form-input {
 	padding: 20px;
 	margin-bottom: 20px;
 	/*  border: 1px solid #bcbcbc; */
+}
+
+#dh-header2 {
+	position:relative;
 }
 /*  */
 #dh-content {
@@ -942,12 +949,31 @@ span a {
         .cb{
             font-family: cb;
         }
+
+
+/*
+float 정렬
+left클래스 왼쪽으로 정렬
+right클래스 오른쪽으로 정렬
+*/	
+.left{
+	float:left;
+}	
+.right{
+	float:right;
+}	
+
 	
-	
-	
-	
-	
-	
+#util{
+	background-color: #e8f0f3;
+}
+
+#util ul:after{
+    content: "";
+    display: block;
+    clear: both;	
+}	
+
 	
 	
 	
