@@ -693,11 +693,8 @@ span a {
 }
 /*로그인*/
 .login-wrap {
-<<<<<<< HEAD
+
 	width: 460px;
-=======
-	width: 460px;	
->>>>>>> refs/remotes/origin/master
 	text-align: center;
 	margin: 0px auto;
 }
