@@ -9,10 +9,7 @@
 /*
 	웹 폰트 등록
 */
-@font-face {
-	font-family: nanumBarunPen;
-	src: url("../font/NanumBarunpenR.ttf");
-}
+
 
 /* 
 공통적으로 적용될 스타일 
@@ -919,3 +916,38 @@ span a {
 	padding:0;
 	font-size:15;
 	cursor:pointer;
+	
+	
+	/*폰트 설정   */
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+        @font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+        @font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
+	
+	
+	
+	
+	
+	
+	
+	
+	
