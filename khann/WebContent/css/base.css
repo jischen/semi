@@ -607,42 +607,42 @@ textarea.form-input {
 	background-color: #9D3434;
 	color: white;
 	padding: 20px;
-	display:flex;
+	display: flex;
 	justify-content: "center";
 }
-.footer_flex_item{
+
+.footer_flex_item {
 	padding: 20px;
 	flex-grow: 0;
 	text-align: "center";
 }
-.footer_flex_item:nth-child(1){	
+
+.footer_flex_item:nth-child(1) {
 	padding: 20px;
 	flex-grow: 1;
 	text-align: center;
 	margin-top: 10px;
 }
 
-
 .footer_flex_item:nth-child(2) {
 	padding: 20px;
-	flex-grow:3;
+	flex-grow: 3;
 	text-align: left;
 	margin-top: 15px;
 }
 
 .footer_flex_item:nth-child(3) {
 	padding: 20px;
-	flex-grow:2;
+	flex-grow: 2;
 	margin-top: 100px;
 	text-align: right;
 }
 /*이미지 가운데 정렬*/
-.img-align{
+.img-align {
 	top: 50%;
-    position: relative;
-    transform: translateY(-50%);
+	position: relative;
+	transform: translateY(-50%);
 }
-
 
 /*  */
 @media ( max-width : 480px ) {
@@ -693,7 +693,11 @@ span a {
 }
 /*로그인*/
 .login-wrap {
+<<<<<<< HEAD
+	width: 460px;
+=======
 	width: 460px;	
+>>>>>>> refs/remotes/origin/master
 	text-align: center;
 	margin: 0px auto;
 }
@@ -773,13 +777,11 @@ span a {
 
 /*플렉스 */
 .flex-container-750 {
-	width:750px;
+	width: 750px;
 	height: auto;
 	display: flex;
 	flex-direction: row;
 }
-
-
 
 .flex-item {
 	display: inline-block;
@@ -788,8 +790,7 @@ span a {
 	border: 1px solid;
 }
 
-
-.flex-item:nth-child(1) {  
+.flex-item:nth-child(1) {
 	flex: 2.8;
 }
 
@@ -797,32 +798,120 @@ span a {
 	flex: 1.2;
 }
 
-
-
-  .flex-container_partnership{
-   width:900px;
+.flex-container_partnership {
+	width: 900px;
 	height: auto;
 	display: flex;
-	margin:0px auto;
-	
+	margin: 0px auto;
 	justify-content: space-between;
 }
 
-.flex-item-_partnership{
+.flex-item-_partnership {
 	flex: 1;
-
 }
-<<<<<<< HEAD
+
 .flex-item:nth-child(3) {
 	flex: 2;
 }
-=======
+/*리뷰 css*/
+.review_wrap {
+	background-color: azure;
+	width: 600px;
+}
+
+.review_title {
+	position: relative;
+	border: 0px solid gray;
+	background-color: #9D3434;
+	top: 2px;
+	font-size: 26px;
+	font-weight: 600;
+	padding: 1rem;
+	letter-spacing: -2px;
+}
+
+.review_amount {
+	border: 0px solid gray;
+	font-size: 16px;
+}
+
+.review_button {
+	position: relative;
+	text-align: center;
+	font-size: 15px;
+	color: black;
+}
 
 
+.review_submit {
+	width: 170px;
+	height: 40px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
+}
 
-.ul-none{
-   list-style:none;
-   }
+.review_cancle {
+	width: 170px;
+	height: 40px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
+
+}
+
+.review_score {
+	height: 20px;
+	line-height: 27px
+}
+
+#rw {
+	border: 2px solid black;
+}
+
+.review_amount #rw:hover {
+	color: floralwhite;
+}
+
+.review_listtitle {
+	position: relative;
+	border: 1px solid gray;
+	background-color: #9D3434;
+	top: 2px;
+	font-size: 26px;
+	font-weight: 600;
+	padding: 1rem;
+	letter-spacing: -2px;
+}
+
+.review_list {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+.listw {
+	height: 30px;
+}
+
+.listm {
+	height: 30px;
+}
+
+.lists {
+	height: 30px;
+}
+
+.listc {
+	height: 30px;
+}
+
+.listd {
+	height: 30px;
+}
+
+.listimg img {
+	width: 30px;
+}
 
 .button-form{
 	color:gray;
@@ -833,16 +922,3 @@ span a {
 	padding:0;
 	font-size:15;
 	cursor:pointer;
-}
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> refs/remotes/origin/master
