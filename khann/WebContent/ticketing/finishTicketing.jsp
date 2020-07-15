@@ -75,15 +75,15 @@
 		<tr>
 			<%
 			
-			String movieStartDay = sdto.getShow_start().substring(0,10);
-			String movieStartTime = sdto.getShow_start().substring(11,18);
+			String movieStartDay = sdto.getShow_start().substring(2,10);
+			String movieStartTime = sdto.getShow_start().substring(11,16);
 			%>
 			<td>상영 날짜 / 시간</td>
 			<td><input type="text"  value="<%=movieStartDay + " / " + movieStartTime %>" ><td>
 		<tr>
 		
 		<tr>
-			<%List<SeatDto> seatList = seat.getList(); %>
+			<%List<SeatDto> seatList = seat.seat(tdto.getSeat_no()); %>
 			<td>좌석</td>	
 			<td>
 			<%for(SeatDto seatno : seatList){ %>
@@ -91,10 +91,6 @@
 			<%} %>
 			<td>
 			
-		<tr>
-		
-		<tr>
-			<td>매점 구매 물품</td>	
 		<tr>
 		
 		<tr>
@@ -106,7 +102,9 @@
 		
 		<tr>
 			<td>금액</td>	
+			<td>
 			<input type="text" value="<%=tdto.getTicketing_price()*tdto.getTicketing_peoplenum()+"원"%>">
+			</td>
 		<tr>
 	
 	</table>
