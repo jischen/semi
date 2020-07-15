@@ -5,69 +5,128 @@
 	pageEncoding="UTF-8"%>
 
 <%
-
-
-MemberDto mdto = (MemberDto)session.getAttribute("userinfo");
-
-
+	MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
 %>
 
 
 <jsp:include page="/template/header.jsp"></jsp:include>
-<div align="center">
+
+<head>
 
 
-	<h2>영화 리뷰 작성</h2>
+<title>리뷰 작성</title>
+<link rel="stylesheet" type="text/css" href="../base">
+<style>
+main {
+	background-color: azure;
+	width: 600px;
+}
 
-	<form action="review_write.do" method="post">
+.review_title {
+	position: relative;
+	border: 0px solid gray;
+	top: 2px;
+	font-size: 26px;
+	font-weight: 600;
+	padding: 1rem;
+	letter-spacing: -2px;
+}
+
+.review_amount {
+	border: 0px solid gray;
+	font-size: 16px;
+}
+
+.review_button {
+	position: relative;
+	text-align: center;
+	font-size: 15px;
+	color: black;
+}
+
+.review_submit {
+	width: 170px;
+	height: 40px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
+}
+
+.review_cancle {
+	width: 170px;
+	height: 40px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
+}
+
+.review_score {
+	height: 20px;
+	line-height: 27px
+}
+</style>
 
 
-		<table border="1">
-			<tr>
-				<th>리뷰 작성자</th>
-				
-				<td><input type="text" name="review_writer"></td>
-	
-	</tr>
-	<tr>
-	<th>영화 번호</th>
-	<td><input type="text" name="review_movie"></td>
-	
-	</tr>
+</head>
 
-			<tr>
-				<th>내용</th>
-				<td><textarea name="review_content" rows="7" cols="60"
-						placeholder="리뷰를 작성해주세요.(욕설금지)">
-</textarea></td>
-			</tr>
-			<tr>
-				<th>리뷰 점수</th>
-				<td><select name="review_score">
+<body>
+
+
+	<div id="dh-content" style="margin-left:320px ">
+		<form action="review_write.do" method="post">
+			<hr>
+
+
+			<div class="review_wrap">
+
+				<div class="review_title">리뷰작성</div>
+				<hr>
+
+				<div class="review_amount">
+					리뷰 작성자 <br> <input type="text" id="rw" name="review_writer">
+				</div>
+				<div class="review_amount">
+					영화 번호 <br> <input type="text" id="rw" name="review_movie">
+				</div>
+
+				<div class="review_amount">
+					리뷰 내용 <br>
+					<textarea name="review_content" id="rw" rows="10" cols="70"
+						placeholder="운영원칙에 어긋나는 게시물로 판단되는 글은 제재 조치를 받을 수 있습니다."></textarea>
+				</div>
+
+				<div class="review_select">
+					리뷰 점수 <select class="review_score">
 						<option value="5점">5점</option>
 						<option value="4점">4점</option>
 						<option value="3점">3점</option>
 						<option value="2점">2점</option>
 						<option value="1점">1점</option>
-				</select></td>
-			</tr>
-		
+					</select>
+				</div>
+				<hr>
+				<div class="review_button">
+					<input type="submit" class="review_submit" value="작성완료">
+				</div>
 
-			<tfoot>
-				<tr>
-					<td align="center" colspan="2">
-					
-					<input type="submit" value="등록">
-					</td>
-					
-					
-				</tr>
-			</tfoot>
+			</div>
+		</form>
+	</div>
 
 
-		</table>
 
-	</form>
+</body>
+</html>
 
-</div>
 <jsp:include page="/template/footer.jsp"></jsp:include>
+
+
+
+
+
+
+
+
+
+
+
