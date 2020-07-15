@@ -13,8 +13,7 @@
 	
 	
 	ShowDao sdao = new ShowDao();
-	List<ShowDto> list = sdao.startList(movie_no); 
-	
+	List<ShowDto> list = sdao.startList(movie_no);
 	List<String> time = new ArrayList<>();
 	
 		
@@ -46,7 +45,7 @@
 		
 		
 		<input type="hidden">
-		<select name="show_no" >
+		<select name="show_no"  >
 			<%for(ShowDto sdto : list){%>
 				<%if(select_date.equals(sdto.getShow_start().substring(0,10))){ %>
 					<option value="<%=sdto.getShow_no()%>" >

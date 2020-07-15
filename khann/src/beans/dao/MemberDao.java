@@ -72,20 +72,7 @@ public class MemberDao {
 //			MemberDto user = 객체 or null;
 		MemberDto user;
 		if (rs.next()) {// 데이터가 있으면
-			user = new MemberDto();
-
-			user.setMember_id(rs.getString("member_id"));
-			user.setMember_pw(rs.getString("member_pw"));
-			user.setMember_name(rs.getString("member_name"));
-			user.setPost(rs.getString("post"));
-			user.setBase_addr(rs.getString("base_addr"));
-			user.setExtra_addr(rs.getString("extra_addr"));
-			user.setMember_birth(rs.getString("member_birth"));
-			user.setMember_phone(rs.getString("member_phone"));
-			user.setGrade(rs.getString("grade"));
-			user.setMember_point(rs.getInt("member_point"));
-			user.setMember_join(rs.getString("member_join"));
-			user.setMember_login(rs.getString("member_login"));
+			user = new MemberDto(rs);
 		} else {
 			user = null;
 		}

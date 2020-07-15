@@ -19,12 +19,13 @@
 
 	int theater_no = sdto.getTheater_no();
 	
-	System.out.println("theater_no = " + theater_no);
+
 	
 	SeatDao issdao = new SeatDao();
 	List<SeatDto> list = issdao.seatList(theater_no);
 	
-	
+	TheaterDao tdao = new TheaterDao();
+	TheaterDto tdto = tdao.get(theater_no);
 	
 %>
 
@@ -36,30 +37,37 @@
 	
 	
 	
-<link rel="stylesheet" type="text/css" href="../css/hacademy-cinema.css">
-
-<script src = "../css/hacademy-cinema.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.9/cinema/hacademy-cinema.css">
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.9/cinema/hacademy-cinema.js"></script>
 
 <script>
    window.onload = function(){
       var cinema = new Hacademy.Reservation(".cinema-wrap");
-      console.log("finish");
+      window.dispatchEvent(new Event('resize'));
    };
 </script>
 		
 		
 						
-		 <form action="cinema-seat.html" method="get">
+		 <form action="ticketing.do" method="get">
+		 
+
         <div class="cinema-wrap" data-name="seat">
             <div class="cinema-screen">스크린</div>
-
-            <div class="cinema-seat-area" data-rowsize="5" data-colsize="15" data-mode="manual">
+            <input type="hidden" name="show_no" value="<%=show_no %>">
+			<input type="hidden" name="theater_no" value="<%=theater_no %>">
+            <div class="cinema-seat-area"
+            		 data-rowsize="<%=tdto.getTheater_row() %>"
+            		 data-colsize="<%=tdto.getTheater_col() %>" 
+            		 data-mode="manual">
 				<!-- 예매 가능 좌석 -->
 				<%for(SeatDto issdto : list){ %>
                 <div class="cinema-seat" 
                 		data-row="<%=issdto.getSeat_row() %>" 
-                		data-col="<%=issdto.getSeat_col()%>">
+                		data-col="<%=issdto.getSeat_col()%>"  >
                 </div>
+						 <%-- <input type="hidden" value="<%=issdto.getSeat_row() %>" name ="seat_row">
+						 <input type="hidden" value="<%=issdto.getSeat_col()%>" name="seat_col"> --%>
 				<%} %>
 				
 				<!-- 선택한 좌석 -->
@@ -68,7 +76,6 @@
                 
 				<!-- 예매 완료 좌석  -->
                 <!-- <div class="cinema-seat disabled" data-row="4" data-col="4"></div> -->
-               
                
                 
             </div>
