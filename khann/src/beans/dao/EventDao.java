@@ -1,10 +1,8 @@
 package beans.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,13 +160,15 @@ public class EventDao {
 
 		Connection con = getConnection();
 
-		String sql = "INSERT INTO EVENT VALUES(event_seq.nextval,?,SYSDATE,?,?)";
+		String sql = "INSERT INTO EVENT(event_no, event_title, event_date, event_condition, event_content) "
+				+ "VALUES(?,?,SYSDATE,?,?)";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-
-		ps.setString(1, edto.getEvent_title());
-		ps.setString(2, edto.getEvent_condition());
-		ps.setString(3, edto.getEvent_content());
+		
+		ps.setInt(1, edto.getEvent_no());
+		ps.setString(2, edto.getEvent_title());
+		ps.setString(3, edto.getEvent_condition());
+		ps.setString(4, edto.getEvent_content());
 
 		ps.execute();
 

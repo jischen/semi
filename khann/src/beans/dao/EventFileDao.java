@@ -51,22 +51,27 @@ public class EventFileDao {
 	}
 
 	// 저장 메소드
-	public void save(EventFileDto bfdto) throws Exception {
+	public void save(EventFileDto efdto) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "insert into event_file VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO event_file VALUES(?,?,?,?,?)";
+		
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, bfdto.getEvent_file_no());
-		ps.setString(2, bfdto.getEvent_file_name());
-		ps.setLong(3, bfdto.getEvent_file_size());
-		ps.setString(4, bfdto.getEvent_file_type());
-		ps.setInt(5, bfdto.getEvent_file_origin());
+		
+		ps.setInt(1, efdto.getEvent_file_no());
+		ps.setString(2, efdto.getEvent_file_name());
+		ps.setLong(3, efdto.getEvent_file_size());
+		ps.setString(4, efdto.getEvent_file_type());
+		ps.setInt(5, efdto.getEvent_file_origin());
 		ps.execute();
 
 		con.close();
 	}
+	
+	
 
-	// 게시글 첨부파일 조회(형식은 댓글 조회와 동일)
+
+	// 게시글 첨부파일 조회
 	public List<EventFileDto> getList(int event_no) throws Exception {
 		Connection con = getConnection();
 
@@ -84,24 +89,25 @@ public class EventFileDao {
 		return list;
 	}
 
+	
 	// 단일조회(get) 기능
 	public EventFileDto get(int event_file_no) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "SELECT*FROM event_file WHERE event_file_no=?";
+		String sql = "SELECT * FROM event_file WHERE event_file_no=?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, event_file_no);
 		ResultSet rs = ps.executeQuery();
 
-		EventFileDto bfdto;
+		EventFileDto efdto;
 		if (rs.next()) {
-			bfdto = new EventFileDto(rs);
+			efdto = new EventFileDto(rs);
 		} else {
-			bfdto = null;
+			efdto = null;
 		}
 
 		con.close();
-		return bfdto;
+		return efdto;
 	}
 }
