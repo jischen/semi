@@ -39,12 +39,12 @@ public class ShowDao {
 
 		Connection con = getConnection();
 
-		String sql = "INSERT INTO show values(show_seq.nextval,?,?,?)";
+		String sql = "INSERT INTO show values(show_seq.nextval,?,?,to_date(?,'YYYY-MM-DD HH24:MI:SS'))";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 
-		ps.setInt(1, sdto.getMovie_no());
-		ps.setInt(2, sdto.getTheater_no());
+		ps.setString(1, sdto.getMovie_name());
+		ps.setString(2, sdto.getTheater_name());
 		ps.setString(3, sdto.getShow_start());
 
 		ps.execute();
@@ -83,6 +83,7 @@ public class ShowDao {
 		PreparedStatement ps = con.prepareStatement(sql);
 
 		ps.setInt(1, show_no);
+		
 		ps.execute();
 
 		con.close();
@@ -102,8 +103,8 @@ public class ShowDao {
 		if (rs.next()) {
 			sdto = new ShowDto(rs);
 			sdto.setShow_no(Integer.parseInt(rs.getString("show_no")));
-			sdto.setMovie_no(Integer.parseInt(rs.getString("movie_no")));
-			sdto.setTheater_no(Integer.parseInt(rs.getString("theater_no")));
+			sdto.setMovie_name(rs.getString("movie_name"));
+			sdto.setTheater_name(rs.getString("theater_name"));
 			sdto.setShow_start(rs.getString("show_start"));
 
 		}
@@ -120,12 +121,12 @@ public class ShowDao {
 
 	public void showedit(ShowDto sdto) throws Exception {
 		Connection con = getConnection();
-		String sql = "UPDATE show SET movie_no=?,theater_no=?,show_start=to_date(?,'YYYY-MM-DD HH24:MI') WHERE show_no=?";
+		String sql = "UPDATE show SET movie_name=?,theater_name=?,show_start=to_date(?, 'YYYY-MM-DD HH24:MI:SS') WHERE show_no=?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 
-		ps.setInt(1, sdto.getMovie_no());
-		ps.setInt(2, sdto.getTheater_no());
+		ps.setString(1, sdto.getMovie_name());
+		ps.setString(2, sdto.getTheater_name());
 		ps.setString(3, sdto.getShow_start());
 		ps.setInt(4, sdto.getShow_no());
 
@@ -152,13 +153,13 @@ public class ShowDao {
 	}
 	
 
-	public List<ShowDto> startList(int movie_no) throws Exception{
+	public List<ShowDto> startList(String movie_name) throws Exception{
 		Connection con= getConnection();
 		
-		String sql="SELECT * FROM show WHERE movie_no=?";
+		String sql="SELECT * FROM show WHERE movie_name=?";
 		
 		PreparedStatement ps=con.prepareStatement(sql);
-		ps.setInt(1, movie_no);
+		ps.setString(1, movie_name);
 		ResultSet rs=ps.executeQuery();
 		
 		List<ShowDto> list=new ArrayList<>();
