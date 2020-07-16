@@ -35,8 +35,10 @@ public class MovieInsertServlet extends HttpServlet{
 		mdto.setMovie_no(movie_no);//번호 설정
 		mdao.insert(mdto);//등록 
 		
+
 		resp.sendRedirect("movie_chart.jsp");
 		
+
 	
 		
 	} catch (Exception e) {

@@ -20,7 +20,6 @@ public class ShowEditServlet extends HttpServlet {
 			resp.setCharacterEncoding("UTF-8");
 
 			ShowDto sdto = new ShowDto();
-
 			sdto.setShow_no(Integer.parseInt(req.getParameter("show_no")));
 			sdto.setMovie_no(Integer.parseInt(req.getParameter("movie_no")));
 			sdto.setTheater_no(Integer.parseInt(req.getParameter("theater_no")));

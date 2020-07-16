@@ -21,7 +21,7 @@
 	<form action="show_edit.do" method="post">
 		<table border="1">
 
-			<h2>상영 시간 삽입</h2>
+			<h2>상영 시간 수정</h2>
 			<tbody>
 				<tr>
 					<th>상영 번호</th>
@@ -34,10 +34,8 @@
 				<tr>
 
 					<td><input type="text" name="show_no" value="<%=show_no%>"></td>
-					<td><input type="text" name="movie_no"
-						value="<%=sdto.getMovie_no()%>"></td>
-					<td><input type="text" name="theater_no"
-						value="<%=sdto.getTheater_no()%>"></td>
+					<td><input type="text" name="movie_no" value="<%=sdto.getMovie_no()%>"></td>
+					<td><input type="text" name="theater_no" value="<%=sdto.getTheater_no()%>"></td>
 					<td><input type="text" name="show_start"
 						value="<%=sdto.getShow_start()%>"></td>
 				</tr>

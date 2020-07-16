@@ -10,6 +10,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import beans.dto.MemberDto;
+import beans.dto.MovieDto;
 
 public class MemberDao {
 	// context.mxl에서 관리하는 자원 객체를 참조할 수 있도록 연결 코드 구현
@@ -72,20 +73,7 @@ public class MemberDao {
 //			MemberDto user = 객체 or null;
 		MemberDto user;
 		if (rs.next()) {// 데이터가 있으면
-			user = new MemberDto();
-
-			user.setMember_id(rs.getString("member_id"));
-			user.setMember_pw(rs.getString("member_pw"));
-			user.setMember_name(rs.getString("member_name"));
-			user.setPost(rs.getString("post"));
-			user.setBase_addr(rs.getString("base_addr"));
-			user.setExtra_addr(rs.getString("extra_addr"));
-			user.setMember_birth(rs.getString("member_birth"));
-			user.setMember_phone(rs.getString("member_phone"));
-			user.setGrade(rs.getString("grade"));
-			user.setMember_point(rs.getInt("member_point"));
-			user.setMember_join(rs.getString("member_join"));
-			user.setMember_login(rs.getString("member_login"));
+			user = new MemberDto(rs);
 		} else {
 			user = null;
 		}
@@ -221,6 +209,47 @@ public class MemberDao {
 		return mdto;
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	public MemberDto getID(String member_id) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM member WHERE member_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, member_id);
+		ResultSet rs = ps.executeQuery();
+		
+
+		MemberDto mdto;
+		if(rs.next()) {
+			mdto = new MemberDto(rs);
+			
+			
+		}
+		else {
+			mdto = null;
+		}
+		
+		con.close();
+		
+		return mdto;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -7,12 +7,36 @@
 @charset "UTF-8";
 
 /*
-	웹 폰트 등록
-*/
-@font-face {
-	font-family: nanumBarunPen;
-	src: url("../font/NanumBarunpenR.ttf");
-}
+	웹 폰트 등록*/
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+        @font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+        @font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
+
+	
+	
+	
+
+
 
 /* 
 공통적으로 적용될 스타일 
@@ -38,8 +62,8 @@
     - .img-circle : 이미지가 원형으로 처리되도록 구현
     - .img-round : 이미지가 둥근 모서리를 갖도록 구현
 */
-.img {
-	
+.sns {
+	height:25px;
 }
 
 .img.img-border {
@@ -230,8 +254,8 @@
 	padding-bottom: 0px;
 	margin: 0;
 	display: inline-block;
-	/*      margin-left:200px;*/
-	/*    margin-bottom:100px; */
+	background-color: #9D3434;
+	/* margin-bottom:100px; */
 }
 /* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
 .menu>li {
@@ -239,13 +263,27 @@
 	background-color: #9D3434;
 }
 
+.menu li>ul {
+	width: 100%;
+}
+
+.menu li>ul>li {
+	width: 100%;
+}
+
+.menu{
+	display: flex;
+	width: 100%;
+}
+
 /* 모든 li는 relative 설정 */
 .menu li {
 	position: relative;
-	padding: 0.5rem;
+	/*  padding: 0.5rem;*/
 	width: 180px;
 	text-align: center;
 	cursor: pointer;
+	flex: 1;
 }
 /* 2단계 메뉴부터는 position을 absolute로 설정 */
 /* .menu li > ul {*/
@@ -253,6 +291,7 @@
 	position: absolute;
 	left: 0; /* 기준과 왼쪽을 맞춰라 */
 	top: 100%; /* 기준의 바닥에 시작점을 맞춰라 */
+	z-index: 1000;
 }
 
 .menu li:hover {
@@ -264,6 +303,7 @@
 	color: white;
 	text-decoration: none;
 	display: block;
+	padding: 2rem;
 }
 
 .menu li:hover>a {
@@ -276,7 +316,7 @@
 	display: none;
 }
 
-.menu li:hover>ul {
+.menu li:hover > ul {
 	display: block;
 }
 
@@ -452,18 +492,6 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 	width: auto;
 }
 
-/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
-.left {
-	text-align: left !important;
-}
-
-.center {
-	text-align: center !important;
-}
-
-.right {
-	text-align: right !important;
-}
 
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {
@@ -518,6 +546,21 @@ textarea.form-input {
 .float-box>.float-right {
 	float: right;
 }
+body, div, dl, dt, dd, th, td, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, blockquote, button, input, textarea{
+	margin: 0;
+	padding:0;
+}
+
+ul, li, ol{
+	list-style: none;
+}
+.margin-auto{
+	position: relative;
+	margin: 0 auto;
+	width: 1060px;
+}	
+
+
 /*  */
 #dh-container {
 	width: 1240px;
@@ -525,11 +568,58 @@ textarea.form-input {
 	padding: 20px;
 	/* border: 1px solid #bcbcbc;*/
 }
+
+#dh-container-flex{
+	width:1240px;
+	display:flex;
+}
+
+.map-flex-item{
+	margin: 10px auto;
+	padding: 20px;
+
+}
+
+.map-flex-item:nth-child(1){
+	padding: 20px;
+	flex-grow: 2;
+	text-align: "center";
+}
+.map-flex-item:nth-child(2){
+	padding: 20px;
+	flex-grow: 1;
+	text-align: "center";
+		flex-direction:column;
+	display:flex;
+	
+	 
+}
+.map-flex-item-column{
+	flex-grow: 1;
+}
+
+
+.flex-container {
+	display:flex;
+}
+/*li에 동그라미 ㄴㄴ*/
+#no-disc{
+	list-style-type:none;
+}
+
+.ul-none>li{
+	list-style-type:none;
+}
+
 /*  */
 #dh-header {
 	padding: 20px;
 	margin-bottom: 20px;
 	/*  border: 1px solid #bcbcbc; */
+}
+
+#dh-header2 {
+	position:relative;
 }
 /*  */
 #dh-content {
@@ -564,42 +654,42 @@ textarea.form-input {
 	background-color: #9D3434;
 	color: white;
 	padding: 20px;
-	display:flex;
+	display: flex;
 	justify-content: "center";
 }
-.footer_flex_item{
+
+.footer_flex_item {
 	padding: 20px;
 	flex-grow: 0;
 	text-align: "center";
 }
-.footer_flex_item:nth-child(1){	
+
+.footer_flex_item:nth-child(1) {
 	padding: 20px;
 	flex-grow: 1;
 	text-align: center;
 	margin-top: 10px;
 }
 
-
 .footer_flex_item:nth-child(2) {
 	padding: 20px;
-	flex-grow:3;
+	flex-grow: 3;
 	text-align: left;
 	margin-top: 15px;
 }
 
 .footer_flex_item:nth-child(3) {
 	padding: 20px;
-	flex-grow:2;
+	flex-grow: 2;
 	margin-top: 100px;
 	text-align: right;
 }
 /*이미지 가운데 정렬*/
-.img-align{
+.img-align {
 	top: 50%;
-    position: relative;
-    transform: translateY(-50%);
+	position: relative;
+	transform: translateY(-50%);
 }
-
 
 /*  */
 @media ( max-width : 480px ) {
@@ -623,30 +713,42 @@ textarea.form-input {
 	display: inline-block;
 	width: 100%
 }
-/*헤더메뉴1 로그인/회원가입/내정보-->*/
-.lojoin {
+/*헤더메뉴좌측 SNS로고 */
+
+
+
+/*헤더메뉴우측 로그인/회원가입/내정보-->*/
+#lojoin {
 	text-align: right;
 }
 
-.lojoin>a {
+#lojoin>a {
 	text-decoration: none;
 	color: black;
 	display: inline-block;
 	font-weight: bold;
 }
 
+
 span a {
 	text-decoration: none;
 	color: white;
+}
+a {
+	text-decoration: none;
+}
+.decox{
+	text-decoration: none;
+	color: gray;
 }
 
 * {
 	box-sizing: border-box;
 }
-
+/*로그인*/
 .login-wrap {
+
 	width: 460px;
-	
 	text-align: center;
 	margin: 0px auto;
 }
@@ -661,10 +763,15 @@ span a {
 }
 
 /* 공통점이 아닌 차이점은 각각의 영역에 구현 */
+
+.login-logo {
+	text-align:left;
+}
+
 .login-id {
 	padding-left: 50px;
 	background-image:
-		url("https://cdn.icon-icons.com/icons2/1248/PNG/256/user_84308.png");
+		url("../img/login_id.png");
 	background-repeat: no-repeat;
 	background-size: 35px;
 	background-position: 4px 4px;
@@ -673,15 +780,15 @@ span a {
 .login-pw {
 	padding-left: 50px;
 	background-image:
-		url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcThsF5jb5cpiZ_PVtF0peEBGIhFjNyNXq7jlQ&usqp=CAU");
+		url("../img/login_pw.png");
 	background-repeat: no-repeat;
 	background-size: 35px;
 	background-position: 4px 4px;
 }
 
 .login-submit {
-	color: #9D3434;
-	background-color: dodgerblue;
+	color: white;
+	background-color: #9D3434;
 	border-width: 1px;
 	border-style: solid;
 	border-color: black;
@@ -698,9 +805,10 @@ span a {
 	text-align: left;
 }
 
+
 /*스와이퍼 */
 .swiper-container {
-	width: 600px;
+	width: 1200px;
 	height: 300px;
 }
 
@@ -720,23 +828,25 @@ span a {
 
 /*플렉스 */
 .flex-container-750 {
-	width:750px;
+	width: 750px;
 	height: auto;
 	display: flex;
 	flex-direction: row;
 }
 
-
-
 .flex-item {
 	display: inline-block;
 	width: 50%; /*몇개를 만들거냐? 1/갯수*/
 	height: 100%;
-	border: 1px solid;
+	border: 1px solid;	
 }
 
+.flex_item {
+	flex-grow: 1;
+	text-align: "center";
+}
 
-.flex-item:nth-child(1) {  
+.flex-item:nth-child(1) {
 	flex: 2.8;
 }
 
@@ -744,43 +854,155 @@ span a {
 	flex: 1.2;
 }
 
-
-
-  .flex-container_partnership{
-   width:900px;
+.flex-container_partnership {
+	width: 900px;
 	height: auto;
 	display: flex;
-	margin:0px auto;
-	
+	margin: 0px auto;
 	justify-content: space-between;
 }
 
-.flex-item-_partnership{
+.flex-item-_partnership {
 	flex: 1;
-
 }
-<<<<<<< HEAD
+
 .flex-item:nth-child(3) {
 	flex: 2;
 }
-=======
+/*리뷰 css*/
+.review_wrap {
+	background-color: azure;
+	width: 600px;
+}
+
+.review_title {
+	position: relative;
+	border: 0px solid gray;
+	background-color: #9D3434;
+	top: 2px;
+	font-size: 26px;
+	font-weight: 600;
+	padding: 1rem;
+	letter-spacing: -2px;
+}
+
+.review_amount {
+	border: 0px solid gray;
+	font-size: 16px;
+}
+
+.review_button {
+	position: relative;
+	text-align: center;
+	font-size: 15px;
+	color: black;
+}
 
 
+.review_submit {
+	width: 170px;
+	height: 40px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
+}
 
-.ul-none{
-   list-style:none;
-   }
+.review_cancle {
+	width: 170px;
+	height: 40px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
 
+}
 
+.review_score {
+	height: 20px;
+	line-height: 27px
+}
 
+#rw {
+	border: 2px solid black;
+}
 
+.review_amount #rw:hover {
+	color: floralwhite;
+}
 
+.review_listtitle {
+	position: relative;
+	border: 1px solid gray;
+	background-color: #9D3434;
+	top: 2px;
+	font-size: 26px;
+	font-weight: 600;
+	padding: 1rem;
+	letter-spacing: -2px;
+}
 
+.review_list {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
 
+.listw {
+	height: 30px;
+}
 
+.listm {
+	height: 30px;
+}
 
+.lists {
+	height: 30px;
+}
 
+.listc {
+	height: 30px;
+}
 
+.listd {
+	height: 30px;
+}
 
+.listimg img {
+	width: 30px;
+}
 
->>>>>>> refs/remotes/origin/master
+.button-form{
+	color:gray;
+	border:0;
+	outline:0;
+	background-color:white;
+	text-align:left;
+	padding:0;
+	font-size:15;
+	cursor:pointer;
+	
+	
+	
+/*
+float 정렬
+left클래스 왼쪽으로 정렬
+right클래스 오른쪽으로 정렬
+*/	
+.left{
+	float:left;
+}	
+.right{
+	float:right;
+}	
+
+	
+#util{
+	background-color: #e8f0f3;
+}
+
+#util ul:after{
+    content: "";
+    display: block;
+    clear: both;	
+}	
+
+	
+	

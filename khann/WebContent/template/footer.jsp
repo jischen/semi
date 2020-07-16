@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <br>
-
+<style>
+span,a,p{
+  font-family: cm;
+  }
+</style>
 <!--하단(footer)영역  -->
 
 

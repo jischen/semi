@@ -12,6 +12,9 @@
 	int theater_row = Integer.parseInt(request.getParameter("theater_row"));
 	int theater_col = Integer.parseInt(request.getParameter("theater_col"));
 	
+	
+	
+	
 
 %>
 
@@ -22,7 +25,7 @@
 <script>
    window.onload = function(){
       var cinema = new Hacademy.Reservation(".cinema-wrap");
-      console.log("finish");
+      window.dispatchEvent(new Event('resize'));
    };
 </script>
 						

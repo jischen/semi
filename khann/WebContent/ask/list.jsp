@@ -19,12 +19,10 @@
 	else{
 		list = adao.getList(); 
 	}
+	String rootPath = request.getContextPath();
 	
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
-	
-	String rootPath = request.getContextPath();
 	boolean isAdmin = user.getGrade().equals("관리자");
-	
 %>    
     
 <jsp:include page="/template/header.jsp"></jsp:include>
