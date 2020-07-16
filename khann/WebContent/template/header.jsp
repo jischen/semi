@@ -34,9 +34,35 @@
 					src="<%=rootPath%>/img/logo2.png" width="200" height="200">
 				</a>
 			</div>
-			<!--헤더메뉴1 로그인/회원가입/내정보-->
-			<div class="lojoin" width="779" height="18">
-
+			<div class="flex-container" style="background-color: #e8f0f3">
+	
+			<!-- 헤더메뉴좌측 SNS로고-->
+			<div class="flex_item">		
+						<ul class="flex-container">
+						<li>
+						<a href="https://www.facebook.com/seoulcinema">
+						<img src="<%=request.getContextPath()%>/img/sns_fb.png">
+						</a>
+						</li>
+						<li>
+						<a href="#">
+						<img src="<%=request.getContextPath()%>/img/sns_insta.png">
+						</a>
+						</li>
+						<li>
+						<a href="#">
+						<img src="<%=request.getContextPath()%>/img/sns_tw.png">
+						</a>
+						</li>						
+						<li>
+						<a href="#">
+						<img src="<%=request.getContextPath()%>/img/sns_kakao.png">
+						</a>
+						</li>								
+					</ul>
+				</div>	
+			<!--헤더메뉴우측 로그인/회원가입/내정보-->
+			<div class="flex_item" id="lojoin">
 				<%
 					if (!isLogin) {
 				%>
@@ -70,7 +96,7 @@
 				%>
 
 			</div>
-
+		</div>
 
 			<!-- 메인 메뉴(navigation) 영역 -->
 

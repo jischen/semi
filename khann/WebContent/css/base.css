@@ -556,8 +556,8 @@ ul, li, ol{
 }
 
 
-.container {
-	
+.flex-container {
+	display:flex;
 }
 /*li에 동그라미 ㄴㄴ*/
 #no-disc{
@@ -670,23 +670,30 @@ ul, li, ol{
 	display: inline-block;
 	width: 100%
 }
-/*헤더메뉴1 로그인/회원가입/내정보-->*/
-.lojoin {
+/*헤더메뉴좌측 SNS로고 */
+
+
+
+/*헤더메뉴우측 로그인/회원가입/내정보-->*/
+#lojoin {
 	text-align: right;
 }
 
-.lojoin>a {
+#lojoin>a {
 	text-decoration: none;
 	color: black;
 	display: inline-block;
 	font-weight: bold;
 }
 
+
 span a {
 	text-decoration: none;
 	color: white;
 }
-
+a {
+	text-decoration: none;
+}
 .decox{
 	text-decoration: none;
 	color: gray;
@@ -788,7 +795,12 @@ span a {
 	display: inline-block;
 	width: 50%; /*몇개를 만들거냐? 1/갯수*/
 	height: 100%;
-	border: 1px solid;
+	border: 1px solid;	
+}
+
+.flex_item {
+	flex-grow: 1;
+	text-align: "center";
 }
 
 .flex-item:nth-child(1) {
