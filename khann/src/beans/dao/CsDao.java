@@ -151,6 +151,10 @@ public class CsDao {
 			String sql = "UPDATE cs SET "
 								+ "cs_title=?, cs_head=?, cs_content=? "
 								+ "where cs_no=?";
+			
+			System.out.println(cdto.getCs_content());
+			System.out.println(cdto.getCs_title());
+			System.out.println(cdto.getCs_no());
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, cdto.getCs_title());
 			ps.setString(2, cdto.getCs_head());

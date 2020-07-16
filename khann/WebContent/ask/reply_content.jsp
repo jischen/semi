@@ -12,6 +12,7 @@
     
 <%
 	int ask_no = Integer.parseInt(request.getParameter("ask_no"));
+	int reply_no = Integer.parseInt(request.getParameter("reply_no"));
 
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
 	
@@ -48,33 +49,40 @@
 			</tr>
 			
 			<!-- 댓글 목록 영역 -->
-			<%for(ReplyDto rdto : replyList){ 
-			if(replyList != null){%>
+			<%for(ReplyDto rdto : replyList){%>
 			<tr>
 				<td>
 					<table width="99%">
 						<tbody>
 							<tr>
+				<%if(reply_no==rdto.getReply_no()){%>
+								<td align="right">
+									<form action="reply_edit.do" method="post">
+									<input type="hidden" name="reply_origin" value="<%=ask_no%>">
+									<input type="hidden" name="reply_no" value="<%=reply_no%>">
+									<textarea name="reply_content" rows="4" cols="120" placeholder="댓글 작성"><%=rdto.getReply_content()%></textarea>
+									<input type="submit" value="등록">
+									</form>
+								</td>
+								<%}else{%>
 								<td>
 									<div><%=rdto.getReply_writer()%></div>
 									<div><%=rdto.getReply_content()%></div>
 									<div><%=rdto.getReply_date()%></div>
 								</td>
-								<%if(isAdmin){%>
 								<td width="15%">
 									<a href="reply_edit.jsp?ask_no=<%=rdto.getReply_origin()%>&reply_no=<%=rdto.getReply_no()%>">
 									수정</a> | 
 									<a href="reply_delete.do?reply_no=<%=rdto.getReply_no()%>&reply_origin=<%=ask_no%>">
 									삭제</a>
 								</td>
-								<%} %>
+								<%}%>
 							</tr>
 						</tbody>
 					</table>
 				</td>
 			</tr>
-			<%} 
-			}%>
+			<%}%>
 			<!-- 댓글 작성 영역 -->
 			<%if(isAdmin){%>
 			<tr>
