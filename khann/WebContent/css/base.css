@@ -7,8 +7,35 @@
 @charset "UTF-8";
 
 /*
-	웹 폰트 등록
-*/
+	웹 폰트 등록*/
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+        @font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+        @font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
+
+	
+	
+	
+
 
 
 /* 
@@ -938,32 +965,7 @@ a {
 	cursor:pointer;
 	
 	
-	/*폰트 설정   */
 	
-	        @font-face {
-            font-family: cm;
-            src: url("../font/cm.ttf");
-        }
-        @font-face {
-            font-family: cl;
-            src: url("../font/cl.ttf");
-        }
-        @font-face {
-            font-family: cb;
-            src: url("../font/cb.ttf");
-        }
-        
-        .cm{
-            font-family: cm;
-        }
-        .cl{
-            font-family: cl;
-        }
-        .cb{
-            font-family: cb;
-        }
-
-
 /*
 float 정렬
 left클래스 왼쪽으로 정렬
