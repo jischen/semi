@@ -21,11 +21,10 @@ public class ShowInsertServlet extends HttpServlet {
 			req.setCharacterEncoding("UTF-8");
 
 			ShowDto sdto = new ShowDto();
-			// 나중에추가
-			sdto.setMovie_no(Integer.parseInt(req.getParameter("movie_no")));
-			sdto.setTheater_no(Integer.parseInt(req.getParameter("theater_no")));
+			// 나중에추가;
+			sdto.setMovie_name(req.getParameter("movie_name"));
+			sdto.setTheater_name(req.getParameter("theater_name"));
 			sdto.setShow_start(req.getParameter("show_start"));
-
 			ShowDao sdao = new ShowDao();
 
 			sdao.insert(sdto);
