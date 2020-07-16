@@ -145,5 +145,36 @@ private static DataSource src;
 	
 	
 	
+	
+	public SeatDto get(int Seat_no) throws Exception {
+		Connection con = getConnection();
+		String sql = "select * from Seat where Seat_no=?";
+
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, Seat_no);
+		ResultSet rs = ps.executeQuery();
+
+		SeatDto sdto;
+		if (rs.next()) {
+			sdto = new SeatDto(rs);
+	
+		}
+
+		else {
+
+			sdto = null;
+
+		}
+		con.close();
+		return sdto;
+
+	}
+	
+	
+	
+	
+	
+	
+	
 }
 
