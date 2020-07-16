@@ -22,7 +22,7 @@ public class ReviewEditServlet extends HttpServlet{
 			ReviewDto rdto= new ReviewDto();
 			
 			rdto.setReview_no(Integer.parseInt(req.getParameter("review_no")));
-			rdto.setReview_movie(Integer.parseInt(req.getParameter("review_movie")));
+			rdto.setReview_movie(req.getParameter("review_movie"));
 			rdto.setReview_writer(req.getParameter("review_writer"));
 			rdto.setReview_content(req.getParameter("review_content"));
 			rdto.setReview_score(req.getParameter("review_score"));

@@ -7,8 +7,35 @@
 @charset "UTF-8";
 
 /*
-	웹 폰트 등록
-*/
+	웹 폰트 등록*/
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+        @font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+        @font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
+
+	
+	
+	
+
 
 
 /* 
@@ -250,6 +277,7 @@
 	position: absolute;
 	left: 0; /* 기준과 왼쪽을 맞춰라 */
 	top: 100%; /* 기준의 바닥에 시작점을 맞춰라 */
+	z-index: 1000;
 }
 
 .menu li:hover {
@@ -274,7 +302,7 @@
 	display: none;
 }
 
-.menu li:hover>ul {
+.menu li:hover > ul {
 	display: block;
 }
 
@@ -938,32 +966,7 @@ a {
 	cursor:pointer;
 	
 	
-	/*폰트 설정   */
 	
-	        @font-face {
-            font-family: cm;
-            src: url("../font/cm.ttf");
-        }
-        @font-face {
-            font-family: cl;
-            src: url("../font/cl.ttf");
-        }
-        @font-face {
-            font-family: cb;
-            src: url("../font/cb.ttf");
-        }
-        
-        .cm{
-            font-family: cm;
-        }
-        .cl{
-            font-family: cl;
-        }
-        .cb{
-            font-family: cb;
-        }
-
-
 /*
 float 정렬
 left클래스 왼쪽으로 정렬
