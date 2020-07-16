@@ -68,7 +68,7 @@
 						</a>
 
 					</td>
-					<%}%>
+				
 				</tr>
 				
 				<tr>
@@ -76,7 +76,7 @@
 						<a href="/khann/review/review_write.jsp">
 						<input type="button" value="다시 작성하기">
 						</a> 
-					
+					<%}%>
 						<a href="/khann/index.jsp"> 
 						<input type="button" value="홈으로">
 						</a>

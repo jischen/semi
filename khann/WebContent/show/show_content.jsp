@@ -24,7 +24,7 @@ boolean isLogin = user != null;
 <div align="center">
 	<form action="show_content.do" method="post">
 		<table border="1">
-			<h2>상영 리스트 확인하기</h2>
+			<h2>영화 등록이 완료되었습니다.</h2>
 			<tbody>
 
 				<tr>
@@ -32,12 +32,12 @@ boolean isLogin = user != null;
 					<td><%=show_no%></td>
 				</tr>
 				<tr>
-					<th>영화 번호</th>
-					<td><%=sdto.getMovie_no()%></td>
+					<th>영화 제목</th>
+					<td><%=sdto.getMovie_name()%></td>
 				</tr>
 				<tr>
-					<th>상영관 번호</th>
-					<td><%=sdto.getTheater_no()%></td>
+					<th>상영관 이름</th>
+					<td><%=sdto.getTheater_name()%></td>
 				</tr>
 				<tr>
 					<th>상영 시작시간</th>

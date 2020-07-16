@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 
-
+<title>영화관소개</title>
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=83a4809f6c2385e492b99c45abae78ad"></script>
     <script>
         window.onload = function() {
@@ -41,11 +41,30 @@
             infowindow.open(map, marker);
         };
     </script>
+    
+    
+<jsp:include page="/template/header.jsp"></jsp:include>
 
-		<h1>헤더에 있는 스와이프 스크립트가(windows.onload가 먼저 되어서 지도 api가 로딩이 안된다)
-		스와이퍼 api를 먼저 해결해야지 가능 할것으로 보인다 header.jsp </h1>
+<h2>찾아오시는 길 </h2>
+<hr>		
 
-    <div id="map" style="width:500px;height:350px;"></div>
+
+<div id=dh-container-flex >
+    <div class="map-flex-item"id="map" style="width:700px;height:490px;  margin: 20px" ></div>
+	<div class="map-flex-item">
+	<div class="map-flex-item-column"><div><h2>CINEMAKHANN</h2></div><div>서울특별시 관악구 서원동 문성로 248</div></div> 
+	<div class="map-flex-item-column"><div><h2>고객 센터</h2></div> <div>010-5854-2088</div></div>
+	<div class="map-flex-item-column"><a href="http://kko.to/Z9KBlgfDj"><img src="<%=request.getContextPath()%>/img/kakaomap.jfif"  style="width: 130px; height: 130px;"></a>
+	<a href="http://kko.to/Z9KBlgfDj"><img src="<%=request.getContextPath()%>/img/navermap.jfif"  style="width: 130px; height: 130px;"></a>
+	</div>
+	</div>
+</div>		
+
+
+
+
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
+
+

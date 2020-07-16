@@ -21,30 +21,28 @@
 <div align="center">
 
 
-	
-	<table border="1">
-		<tbody>
 
-			<tr>
+			
 				<%
 					for (MovieDto moivedto : list) {
 				%>
-				<td><a
+				
+				<a
 					href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>">
 						<img src="/khann/image/<%=moivedto.getMovie_no()%>.jpg"
-						width="170" height="200">
-				</a></td>
+						width="286" height="408" style="margin: 50px;">
+				</a>
 
 				<%
 					}
 				%>
-			</tr>
 
 
-		</tbody>
 
 
-		<tfoot>
+
+
+	
 			<%
 				if (isLogin) {
 			%>
@@ -52,11 +50,11 @@
 				if (mdto.getGrade().equals("관리자")) {
 			%>
 
-			<tr>
-				<td align="center" colspan="9"><a
+
+				<div align="center" colspan="9"><a
 					href="/khann/movie/movie_insert.jsp">영화 등록</a> <a
-					href="/khann/movie/movie_delete.jsp">영화 삭제</a></td>
-			</tr>
+					href="/khann/movie/movie_delete.jsp">영화 삭제</a></div>
+		
 			<%
 				}
 			%>
@@ -65,10 +63,6 @@
 				}
 			%>
 
-
-		</tfoot>
-
-	</table>
 </div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
