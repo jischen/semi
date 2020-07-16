@@ -263,6 +263,19 @@
 	background-color: #9D3434;
 }
 
+.menu li>ul {
+	width: 100%;
+}
+
+.menu li>ul>li {
+	width: 100%;
+}
+
+.menu{
+	display: flex;
+	width: 100%;
+}
+
 /* 모든 li는 relative 설정 */
 .menu li {
 	position: relative;
@@ -270,6 +283,7 @@
 	width: 180px;
 	text-align: center;
 	cursor: pointer;
+	flex: 1;
 }
 /* 2단계 메뉴부터는 position을 absolute로 설정 */
 /* .menu li > ul {*/
