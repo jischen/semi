@@ -43,8 +43,8 @@ public class ShowDao {
 
 		PreparedStatement ps = con.prepareStatement(sql);
 
-		ps.setString(1, sdto.getMovie_name());
-		ps.setString(2, sdto.getTheater_name());
+		ps.setInt(1, sdto.getMovie_no());
+		ps.setInt(2, sdto.getTheater_no());
 		ps.setString(3, sdto.getShow_start());
 
 		ps.execute();
@@ -55,23 +55,25 @@ public class ShowDao {
 
 	// 리스트
 
-	public List<ShowDto> getList() throws Exception {
-		Connection con = getConnection();
-
-		String sql = "SELECT *FROM show ORDER BY show_no ASC";
-
-		PreparedStatement ps = con.prepareStatement(sql);
-		ResultSet rs = ps.executeQuery();
-
-		List<ShowDto> list = new ArrayList<>();
-		while (rs.next()) {
-
-			ShowDto sdto = new ShowDto(rs);
+	public List<ShowDto> getList() throws Exception{
+		Connection con= getConnection();
+		
+		String sql="SELECT *FROM show ORDER BY show_no ASC";
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		
+		List<ShowDto> list=new ArrayList<>();
+		while(rs.next()) {
+			
+			ShowDto sdto= new ShowDto(rs);
 			list.add(sdto);
-
-		}
-		con.close();
-		return list;
+		
+			
+			
+		}	
+	con.close();
+	return list;
 	}
 
 	// 삭제
@@ -89,44 +91,50 @@ public class ShowDao {
 		con.close();
 
 	}
-	// 단일조회
+	
 
-	public ShowDto get(int show_no) throws Exception {
-		Connection con = getConnection();
-		String sql = "select *from show where show_no=?";
-
-		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, show_no);
-		ResultSet rs = ps.executeQuery();
-
-		ShowDto sdto;
-		if (rs.next()) {
-			sdto = new ShowDto(rs);
-			sdto.setShow_no(Integer.parseInt(rs.getString("show_no")));
-			sdto.setMovie_name(rs.getString("movie_name"));
-			sdto.setTheater_name(rs.getString("theater_name"));
-			sdto.setShow_start(rs.getString("show_start"));
-
+	//단일조회
+	
+		public ShowDto get(int show_no) throws Exception{
+			Connection con= getConnection();
+			String sql="select *from show where show_no=?";
+			
+			PreparedStatement ps=con.prepareStatement(sql);
+			ps.setInt(1, show_no);
+			ResultSet rs=ps.executeQuery();
+			
+			ShowDto sdto;
+			if(rs.next()) {
+				sdto=new ShowDto(rs);
+				sdto.setShow_no(Integer.parseInt(rs.getString("show_no")));
+				sdto.setMovie_no(Integer.parseInt(rs.getString("movie_no")));
+				sdto.setTheater_no(Integer.parseInt(rs.getString("theater_no")));
+				sdto.setShow_start(rs.getString("show_start"));
+				
+			}
+			
+			else {
+				
+				sdto=null;
+				
+				
+			}
+			con.close();
+			return sdto;
+			
+			
+			
 		}
 
-		else {
-
-			sdto = null;
-
-		}
-		con.close();
-		return sdto;
-
-	}
 
 	public void showedit(ShowDto sdto) throws Exception {
 		Connection con = getConnection();
-		String sql = "UPDATE show SET movie_name=?,theater_name=?,show_start=to_date(?, 'YYYY-MM-DD HH24:MI:SS') WHERE show_no=?";
+		String sql = "UPDATE show SET movie_no=?, theater_no=?,show_start=to_date(?, 'YYYY-MM-DD HH24:MI:SS') WHERE show_no=?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 
-		ps.setString(1, sdto.getMovie_name());
-		ps.setString(2, sdto.getTheater_name());
+		ps.setInt(1, sdto.getMovie_no());
+		ps.setInt(2, sdto.getTheater_no());
 		ps.setString(3, sdto.getShow_start());
 		ps.setInt(4, sdto.getShow_no());
 
@@ -153,13 +161,13 @@ public class ShowDao {
 	}
 	
 
-	public List<ShowDto> startList(String movie_name) throws Exception{
+	public List<ShowDto> startList(int movie_no) throws Exception{
 		Connection con= getConnection();
 		
-		String sql="SELECT * FROM show WHERE movie_name=?";
+		String sql="SELECT * FROM show WHERE movie_no=?";
 		
 		PreparedStatement ps=con.prepareStatement(sql);
-		ps.setString(1, movie_name);
+		ps.setInt(1, movie_no);
 		ResultSet rs=ps.executeQuery();
 		
 		List<ShowDto> list=new ArrayList<>();

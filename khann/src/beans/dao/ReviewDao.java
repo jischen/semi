@@ -79,7 +79,7 @@ public class ReviewDao {
 
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, rdto.getReview_writer());
-		ps.setInt(2, rdto.getReview_movie());
+		ps.setString(2, rdto.getReview_movie());
 		ps.setString(3, rdto.getReview_content());
 		ps.setString(4, rdto.getReview_score());
 	
@@ -103,7 +103,7 @@ public class ReviewDao {
 		if (rs.next()) {
 			rdto = new ReviewDto(rs);
 			rdto.setReview_no(Integer.parseInt(rs.getString("review_no")));
-			rdto.setReview_no(Integer.parseInt(rs.getString("review_movie")));
+			rdto.setReview_movie(rs.getString("review_movie"));
 			rdto.setReview_writer(rs.getString("review_writer"));
 			rdto.setReview_content(rs.getString("review_content"));
 			rdto.setReview_score(rs.getString("review_score"));
@@ -126,7 +126,7 @@ public class ReviewDao {
 		String sql="UPDATE review SET review_movie=?, review_content=?, review_score=? WHERE review_no=?";
 		PreparedStatement ps= con.prepareStatement(sql);
 		
-		ps.setInt(1, rdto.getReview_movie());
+		ps.setString(1, rdto.getReview_movie());
 		ps.setString(2, rdto.getReview_content());
 		ps.setString(3, rdto.getReview_score());
 		ps.setInt(4, rdto.getReview_no());

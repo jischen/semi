@@ -21,8 +21,8 @@ public class ShowEditServlet extends HttpServlet {
 
 			ShowDto sdto = new ShowDto();
 			sdto.setShow_no(Integer.parseInt(req.getParameter("show_no")));
-			sdto.setMovie_name(req.getParameter("movie_name"));
-			sdto.setTheater_name(req.getParameter("theater_name"));
+			sdto.setMovie_no(Integer.parseInt(req.getParameter("movie_no")));
+			sdto.setTheater_no(Integer.parseInt(req.getParameter("theater_no")));
 			sdto.setShow_start(req.getParameter("show_start"));
 
 			ShowDao sdao = new ShowDao();
