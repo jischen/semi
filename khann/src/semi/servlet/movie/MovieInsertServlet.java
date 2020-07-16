@@ -34,8 +34,7 @@ public class MovieInsertServlet extends HttpServlet{
 		
 		mdao.insert(mdto);
 		
-		resp.sendRedirect("index.jsp");
-		
+		resp.sendRedirect("movie_chart.jsp");
 	
 		
 	} catch (Exception e) {

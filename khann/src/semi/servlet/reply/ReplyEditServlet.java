@@ -21,12 +21,11 @@ public class ReplyEditServlet extends HttpServlet {
 		try {
 			req.setCharacterEncoding("UTF-8");
 			
-			MemberDto mdto = (MemberDto) req.getSession().getAttribute("userinfo");
-			
 			ReplyDto rdto = new ReplyDto();
 			rdto.setReply_origin(Integer.parseInt(req.getParameter("reply_origin")));
-			rdto.setReply_writer(mdto.getMember_id());
+			rdto.setReply_no(Integer.parseInt(req.getParameter("reply_no")));
 			rdto.setReply_content(req.getParameter("reply_content"));
+			rdto.setReply_date(req.getParameter("reply_date"));
 			
 			ReplyDao rdao = new ReplyDao();
 			rdao.edit(rdto);
@@ -34,7 +33,7 @@ public class ReplyEditServlet extends HttpServlet {
 			AskDao adao = new AskDao();
 			adao.editReplycount(rdto.getReply_origin());
 		
-			resp.sendRedirect("reply_edit.jsp?ask_no="+rdto.getReply_origin());
+			resp.sendRedirect("content.jsp?ask_no="+rdto.getReply_origin());
 			
 		}
 		catch(Exception e) {
