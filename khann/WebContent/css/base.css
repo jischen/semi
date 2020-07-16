@@ -62,8 +62,8 @@
     - .img-circle : 이미지가 원형으로 처리되도록 구현
     - .img-round : 이미지가 둥근 모서리를 갖도록 구현
 */
-.img {
-	
+.sns {
+	height:25px;
 }
 
 .img.img-border {

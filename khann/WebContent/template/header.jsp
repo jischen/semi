@@ -42,22 +42,22 @@
                   <ul class="flex-container">
                   <li>
                   <a href="https://www.facebook.com/seoulcinema">
-                  <img src="<%=request.getContextPath()%>/img/sns_fb.png">
+                  <img class="sns" src="<%=request.getContextPath()%>/img/sns_fb.png">
                   </a>
                   </li>
                   <li>
                   <a href="#">
-                  <img src="<%=request.getContextPath()%>/img/sns_insta.png">
+                  <img class="sns" src="<%=request.getContextPath()%>/img/sns_insta.png">
                   </a>
                   </li>
                   <li>
                   <a href="#">
-                  <img src="<%=request.getContextPath()%>/img/sns_tw.png">
+                  <img class="sns" src="<%=request.getContextPath()%>/img/sns_tw.png">
                   </a>
                   </li>                  
                   <li>
                   <a href="#">
-                  <img src="<%=request.getContextPath()%>/img/sns_kakao.png">
+                  <img class="sns" src="<%=request.getContextPath()%>/img/sns_kakao.png">
                   </a>
                   </li>                        
                </ul>
