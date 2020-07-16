@@ -57,7 +57,7 @@
 					<th>작성자</th>
 					<td width="100"><%=rdto.getReview_writer() %></td>
 					<th colspan="3">관람영화 :
-				<%=rdto.getReview_movie() %> 번</th>
+				<%=rdto.getReview_movie() %></th>
 					<th colspan="2">리뷰점수:</th>
 					<td> <%=rdto.getReview_score()%>
 					</td>

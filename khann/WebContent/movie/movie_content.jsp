@@ -68,22 +68,7 @@
 			
 		</tr>
 		
-		<tr>
-			<td rowspan="2">
-				리뷰1
-			</td>
-			<td>
-				<input type="text" name="review_no">
 	
-			</td>
-		</tr>
-		
-		<tr>
-			<td>
-			<input type="text" name="review_no">
-				리뷰2
-			</td>
-		</tr>
 		</tbody>
 		<tfoot>
 			<tr>

@@ -26,7 +26,7 @@ public class ReviewRegistServlet extends HttpServlet {
 
 			
 			rdto.setReview_writer(req.getParameter("review_writer"));
-			rdto.setReview_movie(Integer.parseInt(req.getParameter("review_movie")));
+			rdto.setReview_movie(req.getParameter("review_movie"));
 			rdto.setReview_content(req.getParameter("review_content"));
 			rdto.setReview_score(req.getParameter("review_score"));
 			
