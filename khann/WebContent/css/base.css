@@ -626,7 +626,7 @@ ul, li, ol{
 	padding: 20px;
 	margin-bottom: 100px;
 	float: left;
-	/*border: 1px solid #bcbcbc; */
+	border: 1px solid #bcbcbc; 
 }
 
 /*사이드 바 로그인창 구현예정*/
