@@ -1,13 +1,28 @@
+<%@page import="beans.dto.MovieFileDto"%>
+<%@page import="java.util.List"%>
+<%@page import="beans.dao.MovieFileDao"%>
 <%@page import="beans.dao.MovieDao"%>
 <%@page import="beans.dto.MovieDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
 <%
-	int movie_no = Integer.parseInt(request.getParameter("movie_no"));
 
 	MovieDao mdao = new MovieDao();
-	MovieDto mdto = mdao.get(movie_no);
+	MovieDto mdto = new MovieDto();
+	
+	int movie_no = Integer.parseInt(request.getParameter("movie_no"));
+	System.out.println(movie_no);
+	
+	mdto = mdao.get(movie_no);
+	
+	MovieFileDao mfdao = new MovieFileDao();
+	List<MovieFileDto> fileList = mfdao.getList(movie_no);
+	
+	int movie_file_no = mfdao.getMovieImgNo(movie_no);
+	System.out.println("영화 파일 번호 : " + movie_file_no);
+
+	
 %>
 
 	
@@ -24,7 +39,9 @@
 		<tr>
 		
 			<td rowspan="4">
-				<img src="http://placehold.it/250x250?text=movie" />
+				<!-- <img src="http://placehold.it/250x250?text=movie" /> -->
+				<!-- 다운로드 버튼을 누른다면 해당 파일을 다운로드 할 수 있도록 링크 -->
+				<img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" heigh="250">
 			</td>
 			<td>
 				제목
@@ -66,6 +83,23 @@
 				<textarea rows="3" cols="70"><%=mdto.getMovie_content() %></textarea>	
 			</td>
 			
+		</tr>
+		
+		<tr>
+			<td>첨부파일 
+			</td>
+			<td>
+						<%if(!fileList.isEmpty()){%>
+						<%for(MovieFileDto mfdto2 : fileList){ %>
+						<%=mfdto2.getMovie_file_name()%>
+						(<%=mfdto2.getMovie_file_size()%> bytes)
+						<!-- 다운로드 버튼을 누른다면 해당 파일을 다운로드 할 수 있도록 링크 -->
+						<%-- <a href="download.do?movie_file_no=<%=mfdto.getMovie_file_no()%>">다운로드</a> --%>
+						<%} %>
+						<%} %>
+				
+				
+			</td>
 		</tr>
 		
 		<tr>

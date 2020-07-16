@@ -55,7 +55,7 @@ List<EventFileDto> fileList = efdao.getList(event_no);
 			
 			<!-- 첨부파일 출력 영역 : 첨부파일이 있는 경우만 출력 -->
 			<tr>
-				<td widht="20%">
+				<td width="20%">
 					첨부파일 목록
 				</td>
 				<td >

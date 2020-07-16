@@ -34,7 +34,7 @@
 						<img src="/khann/image/<%=moivedto.getMovie_no()%>.jpg"
 						width="170" height="200">
 				</a></td>
-
+<%-- <img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" heigh="250"> --%>
 				<%
 					}
 				%>

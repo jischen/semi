@@ -31,3 +31,16 @@ INSERT INTO movie values(movie_seq.nextval,'엑시트','코미디','전체','126
 INSERT INTO movie values(movie_seq.nextval,'짱구는 못말려 극장판','키즈','전체','126','2015-02-05','미야자키 하야오','히이라기 루미(치히로/센 목소리)','금지된 세계의 문이 열렸다!');
 INSERT INTO movie values(movie_seq.nextval,'보헤미안 랩소디','음악','전체','126','2015-02-05','미야자키 하야오','히이라기 루미(치히로/센 목소리)','금지된 세계의 문이 열렸다!');
 INSERT INTO movie values(movie_seq.nextval,'국제시장','전쟁','전체','126','2015-02-05','미야자키 하야오','히이라기 루미(치히로/센 목소리)','금지된 세계의 문이 열렸다!');
+
+
+--무비 업로드 파일 테이블
+
+CREATE TABLE MOVIE_FILE(
+			movie_file_no NUMBER PRIMARY KEY,
+			movie_file_name VARCHAR2(256) NOT NULL,
+			movie_file_size NUMBER NOT NULL CHECK(movie_file_size > 0),
+			movie_file_type CHAR(10) NOT NULL,
+			movie_file_origin not null REFERENCES movie(movie_no) ON DELETE CASCADE
+		);
+
+CREATE SEQUENCE movie_file_seq nocache;

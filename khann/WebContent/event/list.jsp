@@ -69,6 +69,7 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
+<div id="dh-content">
 <article class="w-90" align="center">
 	<!-- 제목 -->
 	<div class="row">
@@ -170,7 +171,7 @@
 
 	</div>
 </article>
-
+</div>
 <jsp:include page="/template/footer.jsp"></jsp:include>
 
 
