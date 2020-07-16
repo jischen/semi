@@ -16,7 +16,8 @@
 	List<ShowDto> list = sdao.startList(movie_no);
 	List<String> time = new ArrayList<>();
 	
-		
+	
+	
 %>
 
 

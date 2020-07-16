@@ -8,8 +8,7 @@
 	
 	MovieDao mdao = new MovieDao();
 	List<MovieDto> list = mdao.getList();
-
-		
+	
 %>
 <jsp:include page="/template/header.jsp"></jsp:include>
 

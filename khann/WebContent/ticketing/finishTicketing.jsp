@@ -87,9 +87,10 @@
 			<td>좌석</td>	
 			<td>
 			<%for(SeatDto seatno : seatList){ %>
+			
 			<input type="text"  value="<%=seatno.getSeat_row()+"-"+seatno.getSeat_col()%>" >
-			<%} %>
 			<td>
+			<%} %>
 			
 		<tr>
 		
