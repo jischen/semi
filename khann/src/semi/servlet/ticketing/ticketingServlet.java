@@ -45,7 +45,7 @@ public class ticketingServlet extends HttpServlet{
 			}
 			
 			
-			System.out.println(seat_no);
+			
 			
 			
 			

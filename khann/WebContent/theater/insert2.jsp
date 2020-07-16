@@ -12,6 +12,9 @@
 	int theater_row = Integer.parseInt(request.getParameter("theater_row"));
 	int theater_col = Integer.parseInt(request.getParameter("theater_col"));
 	
+	
+	
+	
 
 %>
 

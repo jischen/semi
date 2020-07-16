@@ -41,7 +41,7 @@ public class TicketingDao {
 	public void register(TicketingDto tdto) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "INSERT INTO ticketing " + "values(ticketing_seq.nextval, ?, ?, ?, NULL, sysdate, ?, 8000)";
+		String sql = "INSERT INTO ticketing " + "values(ticketing_seq.nextval, ?, ?, ?, sysdate, ?, 8000)";
 		PreparedStatement ps = con.prepareStatement(sql);
 
 		ps.setInt(1, tdto.member_no);
@@ -84,6 +84,47 @@ public class TicketingDao {
 		while (rs.next()) {
 			TicketingDto tdto = new TicketingDto(rs);
 			list.add(tdto);
+		}
+
+		con.close();
+		return list;
+
+	}
+	
+	
+	public List<TicketingDto> getList() throws Exception {
+		Connection con = getConnection();
+
+		String sql = "select * from ticketing order by ticketing_no ASC";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+
+		List<TicketingDto> list = new ArrayList<>();
+		while (rs.next()) {
+			TicketingDto tdto = new TicketingDto(rs);
+			list.add(tdto);
+		}
+
+		con.close();
+		return list;
+
+	}
+	
+	
+	
+	public List<Integer> showList(int show_no) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "SELECT TICKETING_NO FROM TICKETING WHERE show_no=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, show_no);
+		ResultSet rs = ps.executeQuery();
+
+		List<Integer> list = new ArrayList<Integer>();
+		while (rs.next()) {
+			Integer ticketing_no = rs.getInt(1);
+			
+			list.add(ticketing_no);
 		}
 
 		con.close();

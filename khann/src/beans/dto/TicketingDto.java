@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TicketingDto {
-	public int tickekting_no, member_no, show_no, seat_no, buy_no,
+	public int tickekting_no, member_no, show_no, seat_no,
 				ticketing_peoplenum, ticketing_price;
 	public String ticketing_date;
 	
@@ -13,7 +13,6 @@ public class TicketingDto {
 		this.setMember_no(rs.getInt("member_no"));
 		this.setShow_no(rs.getInt("show_no"));
 		this.setSeat_no(rs.getInt("seat_no"));
-		this.setBuy_no(rs.getInt("buy_no"));
 		this.setTicketing_date(rs.getString("ticketing_date"));
 		this.setTicketing_peoplenum(rs.getInt("ticketing_peoplenum"));
 		this.setTicketing_price(rs.getInt("ticketing_price"));
@@ -55,13 +54,6 @@ public class TicketingDto {
 		this.seat_no = seat_no;
 	}
 
-	public int getBuy_no() {
-		return buy_no;
-	}
-
-	public void setBuy_no(int buy_no) {
-		this.buy_no = buy_no;
-	}
 
 	public int getTicketing_peoplenum() {
 		return ticketing_peoplenum;
