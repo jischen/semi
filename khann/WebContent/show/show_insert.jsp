@@ -26,7 +26,7 @@ ShowDto sdto=new ShowDto();
 				
 					<td><input type="text" name="movie_no"></td>
 					<td><input type="text" name="theater_no"></td>
-					<td><input type="text" name="show_start"></td>
+					<td><input type="text" name="show_start" placeholder="2017-01-01 00:00:00"></td>
 				</tr>
 
 

@@ -77,11 +77,12 @@ public class ReplyDao {
 				Connection con = getConnection();
 				
 				String sql = "UPDATE reply SET "
-									+ "reply_content=? "
-									+ "WHERE reply_origin=?";
+									+ "reply_content=?, reply_date=sysdate "
+									+ "WHERE reply_no=? and reply_origin=?";
 				PreparedStatement ps = con.prepareStatement(sql);
 				ps.setString(1, rdto.getReply_content());
-				ps.setInt(2, rdto.getReply_origin());
+				ps.setInt(2, rdto.getReply_no());
+				ps.setInt(3, rdto.getReply_origin());
 				ps.execute();
 				
 				con.close();

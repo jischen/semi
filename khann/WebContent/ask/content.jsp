@@ -62,7 +62,7 @@
 								</td>
 								<%if(isAdmin){%>
 								<td width="15%">
-									<a href="reply_edit.jsp?ask_no=<%=rdto.getReply_origin()%>&reply_no=<%=rdto.getReply_no()%>">
+									<a href="reply_content.jsp?ask_no=<%=rdto.getReply_origin()%>&reply_no=<%=rdto.getReply_no()%>">
 									수정</a> | 
 									<a href="reply_delete.do?reply_no=<%=rdto.getReply_no()%>&reply_origin=<%=ask_no%>">
 									삭제</a>
