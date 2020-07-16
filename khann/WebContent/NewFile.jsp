@@ -29,8 +29,8 @@
 			<!--util(배경색상 설정)-->
 			<div id="util">
 				<div class="margin-auto">
-					<ul class="left">
-						<li>
+					<ul>
+						<li >
 						<a href="https://www.facebook.com/seoulcinema">
 						<img src="<%=request.getContextPath()%>/img/sns_fb.png">
 						</a>
@@ -49,8 +49,7 @@
 						<a href="#">
 						<img src="<%=request.getContextPath()%>/img/sns_kakao.png">
 						</a>
-						</li>
-						::after									
+						</li>								
 					</ul>								
 				</div>
 			</div>

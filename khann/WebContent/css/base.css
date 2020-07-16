@@ -227,8 +227,8 @@
 	padding-bottom: 0px;
 	margin: 0;
 	display: inline-block;
-	/*      margin-left:200px;*/
-	/*    margin-bottom:100px; */
+	background-color: #9D3434;
+	/* margin-bottom:100px; */
 }
 /* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
 .menu>li {
@@ -239,7 +239,7 @@
 /* 모든 li는 relative 설정 */
 .menu li {
 	position: relative;
-	padding: 0.5rem;
+	/*  padding: 0.5rem;*/
 	width: 180px;
 	text-align: center;
 	cursor: pointer;
@@ -261,6 +261,7 @@
 	color: white;
 	text-decoration: none;
 	display: block;
+	padding: 2rem;
 }
 
 .menu li:hover>a {
@@ -556,8 +557,8 @@ ul, li, ol{
 }
 
 
-.container {
-	
+.flex-container {
+	display:flex;
 }
 /*li에 동그라미 ㄴㄴ*/
 #no-disc{
@@ -670,23 +671,30 @@ ul, li, ol{
 	display: inline-block;
 	width: 100%
 }
-/*헤더메뉴1 로그인/회원가입/내정보-->*/
-.lojoin {
+/*헤더메뉴좌측 SNS로고 */
+
+
+
+/*헤더메뉴우측 로그인/회원가입/내정보-->*/
+#lojoin {
 	text-align: right;
 }
 
-.lojoin>a {
+#lojoin>a {
 	text-decoration: none;
 	color: black;
 	display: inline-block;
 	font-weight: bold;
 }
 
+
 span a {
 	text-decoration: none;
 	color: white;
 }
-
+a {
+	text-decoration: none;
+}
 .decox{
 	text-decoration: none;
 	color: gray;
@@ -788,7 +796,12 @@ span a {
 	display: inline-block;
 	width: 50%; /*몇개를 만들거냐? 1/갯수*/
 	height: 100%;
-	border: 1px solid;
+	border: 1px solid;	
+}
+
+.flex_item {
+	flex-grow: 1;
+	text-align: "center";
 }
 
 .flex-item:nth-child(1) {
@@ -974,6 +987,5 @@ right클래스 오른쪽으로 정렬
     clear: both;	
 }	
 
-	
 	
 	
