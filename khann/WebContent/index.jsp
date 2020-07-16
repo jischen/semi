@@ -85,10 +85,6 @@
 	</div>
 </div>
 
-<div id="dh-sidebar">
-<a href="#"><img src="<%=request.getContextPath()%>"></a>
-
-</div>
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

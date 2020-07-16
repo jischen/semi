@@ -227,8 +227,8 @@
 	padding-bottom: 0px;
 	margin: 0;
 	display: inline-block;
-	/*      margin-left:200px;*/
-	/*    margin-bottom:100px; */
+	background-color: #9D3434;
+	/* margin-bottom:100px; */
 }
 /* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
 .menu>li {
@@ -239,7 +239,7 @@
 /* 모든 li는 relative 설정 */
 .menu li {
 	position: relative;
-	padding: 0.5rem;
+	/*  padding: 0.5rem;*/
 	width: 180px;
 	text-align: center;
 	cursor: pointer;
@@ -261,6 +261,7 @@
 	color: white;
 	text-decoration: none;
 	display: block;
+	padding: 2rem;
 }
 
 .menu li:hover>a {
@@ -986,6 +987,5 @@ right클래스 오른쪽으로 정렬
     clear: both;	
 }	
 
-	
 	
 	

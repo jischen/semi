@@ -29,16 +29,15 @@
 		<!--헤더 설정-->
 		<div id="dh-header">
 			<!-- 상단 로고 -->
-			<div id="top-logo">
+			<div class="flex-container">
 				<a href="/khann/index.jsp"> <img
 					src="<%=rootPath%>/img/logo2.png" width="200" height="200">
 				</a>
-			</div>
-			<!--로고-->
-			<div class="flex-container" style="background-color: #e8f0f3">
+		
+			<div class="flex-container" style="background-color: #e8f0f3; margin-left:200px;">
 	
 			<!-- 헤더메뉴좌측 SNS로고-->
-			<div>		
+			<div class="flex_item">		
 						<ul class="flex-container">
 						<li>
 						<a href="https://www.facebook.com/seoulcinema">
@@ -102,6 +101,7 @@
 			<!-- 메인 메뉴(navigation) 영역 -->
 
 			<jsp:include page="/template/menu.jsp"></jsp:include>
+			</div>
 			<hr>
 
 			<!-- 본문(section) 영역 -->
