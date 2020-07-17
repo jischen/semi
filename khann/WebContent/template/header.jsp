@@ -71,6 +71,8 @@
 						if (isLogin) {
 					%>
 					<!-- 로그인 상태일 경우 -->
+					<a href="<%=rootPath%>/member/logout.do">예매내역</a> <span>|</span> 
+					
 					<a href="<%=rootPath%>/member/logout.do">로그아웃</a> <span>|</span> <a
 						href="<%=rootPath%>/member/info.jsp">내정보</a> <span>|</span> <a
 						href="<%=rootPath%>">예매 내역</a> <span>|</span>
