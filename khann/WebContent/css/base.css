@@ -8,6 +8,7 @@
 
 /*
 	웹 폰트 등록*/
+
 @font-face {
 	font-family: cm;
 	src: url("../font/cm.ttf");
@@ -26,6 +27,30 @@
 .cm {
 	font-family: cm;
 }
+=======
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+       		@font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+      		@font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
 
 .cl {
 	font-family: cl;
@@ -488,6 +513,12 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 .form-input.form-inline, .form-btn.form-inline {
 	width: auto;
 }
+
+/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
+.left {text-align: left !important;}
+.center {text-align: center !important;}
+.right {text-align: right !important;}
+
 
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {

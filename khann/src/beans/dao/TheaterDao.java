@@ -130,6 +130,35 @@ public class TheaterDao {
 		return seq;
 
 	}
+		
+		
+		
+		
+		public TheaterDto getTheaterName(String theater_name) throws Exception{
+			Connection con = getConnection();
+			
+			String sql = "SELECT * FROM theater WHERE theater_name=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, theater_name);
+			ResultSet rs = ps.executeQuery();
+			
+
+			TheaterDto tdto;
+			if(rs.next()) {
+				tdto = new TheaterDto(rs);
+				
+				
+			}
+			else {
+				tdto = null;
+			}
+			
+			con.close();
+			
+			return tdto;
+		}	
+		
+		
 	
 	
 	

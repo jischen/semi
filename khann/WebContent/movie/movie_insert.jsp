@@ -79,7 +79,6 @@ MovieFileDao mfdao = new MovieFileDao();
 	<input type="file" name="movie_file" multiple accept=".jpg, .png, .gif"> 
 	
 				
-				
 	</div>
 	
 	<div colspan="2" align="center">
