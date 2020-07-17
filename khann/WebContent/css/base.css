@@ -13,11 +13,11 @@
             font-family: cm;
             src: url("../font/cm.ttf");
         }
-        @font-face {
+       		@font-face {
             font-family: cl;
             src: url("../font/cl.ttf");
         }
-        @font-face {
+      		@font-face {
             font-family: cb;
             src: url("../font/cb.ttf");
         }

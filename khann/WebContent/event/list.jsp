@@ -69,7 +69,8 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div id="dh-content">
+
+<div align="center">
 <article class="w-90" align="center">
 	<!-- 제목 -->
 	<div class="row">
@@ -78,19 +79,20 @@
 
 
 	<!-- 글 목록 -->
+
 	<div class="row">
 
 		<!-- 테이블 -->
-		<table border="1" align="center" width="60%" height="80px">
+		<table class="table table-border">
 			<thead align="center">
 				<tr>
 					<th>번호</th>
-					<th width="40%">제목</th>
+					<th width="500">제목</th>
 					<th>작성일</th>
 					<th>진행</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody align = "center">
 				<%
 					for (EventDto edto : list) {
 				%>
