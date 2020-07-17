@@ -18,7 +18,7 @@
 			//자동재생 옵션그룹
 			,
 			autoplay : {
-				delay : 2000
+				delay : 2000	
 			//자동재생 시간(2초)
 			}
 
@@ -50,17 +50,25 @@
 	};
 </script>
 
+
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 
+<div style="background-color:#030401">
+<div align="center" style= "margin: auto;width:70%; height:450px; background-color: black;">
+<iframe width="800" height="450" src="https://www.youtube.com/embed/ZkKobjd9Db0?rel=0;amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
 
-		<h1 align="center" style="
-    margin-bottom: 10px;
-">현 재 상 영 중 인 영 화 </h1>
 		
-<div>
+<div style="background-color:#061310">
+<h1 class="cb" align="center" style="
+    margin-bottom: 10px;
+    padding-top: 50px;
+    color:#9D3434;
+">현 재 상 영 중 인 영 화 </h1>
 	<a href="#"> <img
-		src="<%=request.getContextPath()%>/image/poster/도라에몽극장판.jpg" width="286"
+		src="<%=request.getContextPath()%>/image/poster/밤쉘.jpg" width="286"
 		height="408" style="margin: 50px;">
 	</a>
 	
@@ -70,13 +78,15 @@
 	</a>
 	
 	<a href="#"> <img
-		src="<%=request.getContextPath()%>/image/poster/짱구.jpg" width="286"
+		src="<%=request.getContextPath()%>/image/poster/비바리움.jpg" width="286"
 		height="408" style="margin: 50px;">
 	</a>
 </div>
 
-		<h1 align="center" style="
-    margin-bottom: 50px; margin-top:50px;
+<div style="background-color:#030401;padding-bottom:90px;">
+		<h1 class="cb" align="center" style="
+		padding-top: 50px;
+    margin-bottom: 50px; color:#9D3434;
 ">E V E N T  @=(^ㅇ ^)@</h1> 
 
 
@@ -92,7 +102,7 @@
 				<img src="<%=request.getContextPath()%>/img/showing.jpg"  style="width: 1200px; height: 600px;">
 			</div>
 			<div class="swiper-slide">
-				<img src="<%=request.getContextPath()%>/img/showing.jpg" style="width: 1200px; height: 600px;">
+				<img src="<%=request.getContextPath()%>/img/showing2.jpg" style="width: 1200px; height: 600px;">
 			</div>
 			<div class="swiper-slide">
 				<img src="<%=request.getContextPath()%>/img/showing3.jpg" style="width: 1200px; height: 600px;">
@@ -110,7 +120,7 @@
 		<div class="swiper-scrollbar"></div>
 	</div>
 </div>
-
+</div>
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
