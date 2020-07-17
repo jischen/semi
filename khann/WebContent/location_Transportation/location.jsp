@@ -55,11 +55,10 @@
 	<div class="map-flex-item-column"><div><h2>CINEMAKHANN</h2></div><div>서울특별시 관악구 서원동 문성로 248</div></div> 
 	<div class="map-flex-item-column"><div><h2>고객 센터</h2></div> <div>010-5854-2088</div></div>
 	<div class="map-flex-item-column"><a href="http://kko.to/Z9KBlgfDj"><img src="<%=request.getContextPath()%>/img/kakaomap.jfif"  style="width: 130px; height: 130px;"></a>
-	<a href="http://kko.to/Z9KBlgfDj"><img src="<%=request.getContextPath()%>/img/navermap.jfif"  style="width: 130px; height: 130px;"></a>
+	<a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EC%84%9C%EC%9B%90%EB%8F%99%20%EB%AC%B8%EC%84%B1%EB%A1%9C%20248/place/18730394?c=14129804.8749785,4505998.6734960,18,0,0,0,dh"><img src="<%=request.getContextPath()%>/img/navermap.jfif"  style="width: 130px; height: 130px;"></a>
 	</div>
 	</div>
 </div>		
-
 
 
 
