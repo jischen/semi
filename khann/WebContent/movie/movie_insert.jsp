@@ -63,14 +63,6 @@ MovieFileDao mfdao = new MovieFileDao();
 	</div>
 	<br>
 	
-	<!-- 영화사진 넣는부분 -->
-	<%-- <div >
-	<textarea name="movie_img" >
-				<!-- 다운로드 주소를 img 태그로 지정하면 미리보가 가능 -->
-				<%MovieFileDto mfdto = new MovieFileDto(); %>
-	</textarea>
-	</div> --%>
-	
 	<div>줄거리
 		<textarea name="movie_content"  rows="7" cols="70"></textarea>
 	</div>	

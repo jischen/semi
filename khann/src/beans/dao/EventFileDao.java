@@ -56,9 +56,9 @@ public class EventFileDao {
 		Connection con = getConnection();
 
 		String sql = "INSERT INTO event_file VALUES(?,?,?,?,?)";
-		
+
 		PreparedStatement ps = con.prepareStatement(sql);
-		
+
 		ps.setInt(1, efdto.getEvent_file_no());
 		ps.setString(2, efdto.getEvent_file_name());
 		ps.setLong(3, efdto.getEvent_file_size());
@@ -68,9 +68,6 @@ public class EventFileDao {
 
 		con.close();
 	}
-	
-	
-
 
 	// 게시글 첨부파일 조회
 	public List<EventFileDto> getList(int event_no) throws Exception {
@@ -90,7 +87,6 @@ public class EventFileDao {
 		return list;
 	}
 
-	
 	// 단일조회(get) 기능
 	public EventFileDto get(int event_file_no) throws Exception {
 		Connection con = getConnection();
@@ -110,5 +106,26 @@ public class EventFileDao {
 
 		con.close();
 		return efdto;
+	}
+
+	// 해당 게시글 번호로 해당 이미지 반환
+	public int getEventImgNo(int event_file_origin) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "SELECT EVENT_FILE_NO FROM EVENT_FILE WHERE EVENT_FILE_ORIGIN = ? ";
+
+		PreparedStatement ps = con.prepareStatement(sql);
+
+		ps.setInt(1, event_file_origin);
+
+		ResultSet rs = ps.executeQuery();
+
+		rs.next();
+
+		int result = rs.getInt(1);
+
+		con.close();
+
+		return result;
 	}
 }
