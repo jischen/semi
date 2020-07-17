@@ -4,7 +4,12 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<style>
+	#title{
+		color:black;
+	}
+</style>    
+        
 <%
 	String keyword = request.getParameter("keyword");
 	String head = request.getParameter("head");
@@ -24,11 +29,11 @@
 	
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
 	boolean isAdmin = user.getGrade().equals("관리자");
-%>    
-    
+%>
+
 <jsp:include page="/template/header.jsp"></jsp:include>
 <article class="w-90">
-	<div class="row"><a href="<%=rootPath%>/ask/list.jsp"><h2>문의하기</h2></a></div>
+	<div class="row"><a id="title" href="<%=rootPath%>/ask/list.jsp"><h2>문의하기</h2></a></div>
 	<!-- 답변 종류 버튼 -->
 	<%if(user != null) {
 		if(isAdmin){ %>
@@ -52,7 +57,7 @@
 				<th>진행상황</th>
 			</tr>
 		</thead>
-		<tbody align="center">
+		<tbody class="cl" align="center">
 			<%for(AskDto adto : list){ %>
 		<%boolean isMine = user.getMember_id().equals(adto.getAsk_writer()); 
 		if(isMine || isAdmin){%>

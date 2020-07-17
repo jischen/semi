@@ -54,7 +54,7 @@
 </script>    
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<article class="w-90">
+<article class="w-90 cl">
 	<div class="row"><h2>게시글 수정</h2></div>
 	
 	<!-- 테이블 -->

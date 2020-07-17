@@ -9,7 +9,11 @@
 <%@page import="java.util.Set"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<style>
+	.table>tbody>tr>td{
+		text-align: left !important;
+	}
+</style>     
 <%
 	int ask_no = Integer.parseInt(request.getParameter("ask_no"));
 
@@ -29,7 +33,7 @@
 %>    
 
 <jsp:include page="/template/header.jsp"></jsp:include>
-<article class="w-90">
+<article class="w-90 cl">
 	<div class="row"><h2>게시글 상세보기</h2></div>
 	
 	<!-- 표 -->
@@ -62,7 +66,7 @@
 									<div><%=rdto.getReply_date()%></div>
 								</td>
 								<%if(isAdmin){%>
-								<td align="right">
+								<td style="text-align: right !important;">
 									<a href="reply_content.jsp?ask_no=<%=rdto.getReply_origin()%>&reply_no=<%=rdto.getReply_no()%>">
 									수정</a> | 
 									<a href="reply_delete.do?reply_no=<%=rdto.getReply_no()%>&reply_origin=<%=ask_no%>">
@@ -82,7 +86,7 @@
 				<td align="right">
 					<form action="reply_insert.do" method="post">
 						<input type="hidden" name="reply_origin" value="<%=ask_no%>">
-						<textarea name="reply_content" rows="5" cols="120" placeholder="댓글 작성"></textarea>
+						<textarea class="cl" name="reply_content" rows="5" cols="165" placeholder="댓글 작성"></textarea>
 						<input class="form-btn form-inline" type="submit" value="등록">
 					</form>
 				</td>
