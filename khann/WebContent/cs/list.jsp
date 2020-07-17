@@ -30,40 +30,38 @@
     
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div align="center">
-	<a href="<%=rootPath%>/cs/list.jsp"><h2>FAQ</h2></a>
+<article class="w-90">
+	<!-- 제목 -->
+	<div class="row"><a href="<%=rootPath%>/cs/list.jsp"><h2>FAQ</h2></a></div>
 	
-	<table border="0">
-		<thead>
-			<tr>
-				<td colspan="5" align="center">
-				<p>여러분들이 자주 문의하시는 질문과 답변을 정리하였습니다.<br>
-				FAQ 검색을 이용하시면 궁금하신 내용을 보다 빠르고 편리하게 찾으실 수 있습니다.</p>
-				</td>
-			</tr>
-		</thead>
-		<tbody align="center">
-			<tr>
-				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="영화예매"><input type="submit" value="영화예매"></form></td>
-				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원제도"><input type="submit" value="회원제도"></form></td>
-				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원정보"><input type="submit" value="회원정보"></form></td>
-				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="카드할인"><input type="submit" value="카드할인"></form></td>
-				<td><form action="list.jsp" method="get"><input type="hidden" name="head" value="기타"><input type="submit" value="기타"></form></td>
-			</tr>
-		</tbody>
-	</table>
+	<!-- 안내문 -->	
+	<div class="row center"><p>여러분들이 자주 문의하시는 질문과 답변을 정리하였습니다.<br>
+				FAQ 검색을 이용하시면 궁금하신 내용을 보다 빠르고 편리하게 찾으실 수 있습니다.</p></div>
 	
-	<br><div>
+	<!-- 검색창 -->	
+	<div class="row center">
 		<form action="list.jsp" method="get">
 			<label>FAQ 검색</label>
 			<!-- 검색어 -->
-			<input type="text" name="keyword" placeholder="검색어를 입력해주세요" required>
+			<input class="form-input form-inline" type="text" name="keyword" placeholder="검색어를 입력해주세요" required>
 			<!-- 전송버튼 -->
-			<input type="submit" value="검색">
+			<input class="form-btn form-inline" type="submit" value="검색">
 		</form>
-	</div><br>
+	</div>
 	
-	<table border="1">
+	<!-- 말머리 버튼 -->	
+	<div class="menu-list float-box float-left">
+		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="영화예매"><input type="submit" value="영화예매"></form></div>
+		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원제도"><input type="submit" value="회원제도"></form></div>
+		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원정보"><input type="submit" value="회원정보"></form></div>
+		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="카드할인"><input type="submit" value="카드할인"></form></div>
+		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="기타"><input type="submit" value="기타"></form></div>
+	</div>
+	
+	
+	<!-- 표 -->	
+	<div class="row">
+		<table class="table table-border">
 		<thead align="center">
 			<tr>
 				<td>번호</td>
@@ -97,7 +95,16 @@
 		</tfoot>
 			<%} 
 			} %>
-	</table>
-</div>
+		</table>
+	</div>
+	
+	<!-- 글쓰기 버튼 -->	
+	<%if(user != null) {
+			if(user.getGrade().equals("관리자")){ %>
+	<div class="row right"><a href="write.jsp"><input class="form-btn form-inline" type="button" value="글쓰기"></a></div>
+			<%} 
+	} %>	
+</article>
+
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
