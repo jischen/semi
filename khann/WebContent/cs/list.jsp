@@ -4,6 +4,11 @@
 <%@page import="beans.dao.CsDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<style>
+	#title{
+		color:black;
+	}
+</style>  
 <%
 	String keyword = request.getParameter("keyword");
 	String head = request.getParameter("head");
@@ -34,7 +39,7 @@
 
 <article class="w-90">
 	<!-- 제목 -->
-	<div class="row"><a href="<%=rootPath%>/cs/list.jsp"><h2>FAQ</h2></a></div>
+	<div class="row"><a id="title" href="<%=rootPath%>/cs/list.jsp"><h2>FAQ</h2></a></div>
 	
 	<!-- 안내문 -->	
 	<div class="row center"><p>여러분들이 자주 문의하시는 질문과 답변을 정리하였습니다.<br>
@@ -72,7 +77,7 @@
 				<td>조회수</td>
 			</tr>
 			</thead>
-			<tbody align="center">
+			<tbody class="cl" align="center">
 			<%for(CsDto cdto : list){ %>
 			<tr>
 				<td><%=cdto.getCs_no()%></td>

@@ -41,7 +41,7 @@
 %>    
 
 <jsp:include page="/template/header.jsp"></jsp:include>
-<article class="w-90">
+<article class="w-90 cl">
 	<!-- 제목 -->
 	<div class="row"><h2>게시글 상세보기</h2></div>
 	<!-- 표 -->	

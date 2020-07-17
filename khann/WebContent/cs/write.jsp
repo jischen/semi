@@ -49,7 +49,7 @@
 </script>
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<article class="w-90">
+<article class="w-90 cl">
 	<div class="row"><h2>게시글 작성</h2></div>
 	<form action="write.do" method="post" onsubmit="return formCheck();">
 	<div class="row">
