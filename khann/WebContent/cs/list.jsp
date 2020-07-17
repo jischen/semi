@@ -26,6 +26,8 @@
 	MemberDto user = (MemberDto)session.getAttribute("userinfo");
 	
 	String rootPath = request.getContextPath();
+	
+	
 %>    
     
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -41,7 +43,6 @@
 	<!-- 검색창 -->	
 	<div class="row center">
 		<form action="list.jsp" method="get">
-			<label>FAQ 검색</label>
 			<!-- 검색어 -->
 			<input class="form-input form-inline" type="text" name="keyword" placeholder="검색어를 입력해주세요" required>
 			<!-- 전송버튼 -->
@@ -51,27 +52,27 @@
 	
 	<!-- 말머리 버튼 -->	
 	<div class="menu-list float-box float-left">
-		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="영화예매"><input type="submit" value="영화예매"></form></div>
-		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원제도"><input type="submit" value="회원제도"></form></div>
-		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원정보"><input type="submit" value="회원정보"></form></div>
-		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="카드할인"><input type="submit" value="카드할인"></form></div>
-		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="기타"><input type="submit" value="기타"></form></div>
+		<div class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="영화예매"><input class="form-btn form-inline" type="submit" value="영화예매"></form></div>
+		<div style="margin-left:10px" class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원제도"><input class="form-btn form-inline" type="submit" value="회원제도"></form></div>
+		<div style="margin-left:10px" class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="회원정보"><input class="form-btn form-inline" type="submit" value="회원정보"></form></div>
+		<div style="margin-left:10px" class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="카드할인"><input class="form-btn form-inline" type="submit" value="카드할인"></form></div>
+		<div style="margin-left:10px" class="menu-item"><form action="list.jsp" method="get"><input type="hidden" name="head" value="기타"><input class="form-btn form-inline" type="submit" value="기타"></form></div>
 	</div>
 	
 	
 	<!-- 표 -->	
 	<div class="row">
 		<table class="table table-border">
-		<thead align="center">
-			<tr>
+			<thead align="center">
+			<tr bgcolor="#f5f5f5">
 				<td>번호</td>
 				<td width="600">제목</td>
 				<td>작성자</td>
 				<td>작성일</td>
 				<td>조회수</td>
 			</tr>
-		</thead>
-		<tbody align="center">
+			</thead>
+			<tbody align="center">
 			<%for(CsDto cdto : list){ %>
 			<tr>
 				<td><%=cdto.getCs_no()%></td>
@@ -83,18 +84,7 @@
 				<td><%=cdto.getCs_read()%></td>
 			</tr>
 			<%} %>
-		</tbody>
-		<%if(user != null) {
-			if(user.getGrade().equals("관리자")){ %>
-		<tfoot>
-			<tr>
-				<td colspan="5" align="right">
-					<a href="write.jsp"><input type="button" value="글쓰기"></a>
-				</td>
-			</tr>
-		</tfoot>
-			<%} 
-			} %>
+			</tbody>
 		</table>
 	</div>
 	
