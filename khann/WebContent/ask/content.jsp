@@ -29,11 +29,12 @@
 %>    
 
 <jsp:include page="/template/header.jsp"></jsp:include>
-
-<div align="center">
-	<h2>게시글 상세보기</h2>
+<article class="w-90">
+	<div class="row"><h2>게시글 상세보기</h2></div>
 	
-	<table border="1" width="60%">
+	<!-- 표 -->
+	<div class="row">
+	<table class="table table-border">
 		<tbody>
 			<tr>
 				<td><%=adto.getAsk_title()%></td>
@@ -52,7 +53,7 @@
 			if(replyList != null){%>
 			<tr>
 				<td>
-					<table width="99%">
+					<table class="table">
 						<tbody>
 							<tr>
 								<td>
@@ -61,7 +62,7 @@
 									<div><%=rdto.getReply_date()%></div>
 								</td>
 								<%if(isAdmin){%>
-								<td width="15%">
+								<td align="right">
 									<a href="reply_content.jsp?ask_no=<%=rdto.getReply_origin()%>&reply_no=<%=rdto.getReply_no()%>">
 									수정</a> | 
 									<a href="reply_delete.do?reply_no=<%=rdto.getReply_no()%>&reply_origin=<%=ask_no%>">
@@ -81,31 +82,29 @@
 				<td align="right">
 					<form action="reply_insert.do" method="post">
 						<input type="hidden" name="reply_origin" value="<%=ask_no%>">
-						<textarea name="reply_content" rows="4" cols="120" placeholder="댓글 작성"></textarea>
-						<input type="submit" value="등록">
+						<textarea name="reply_content" rows="5" cols="120" placeholder="댓글 작성"></textarea>
+						<input class="form-btn form-inline" type="submit" value="등록">
 					</form>
 				</td>
 			</tr>
 			<%}%>
 		</tbody>
-		<tfoot>
-			<tr>
-				<td align="right">
-					<%if(user!=null){ 
-						if(isAdmin || isMine){ %>
-					<a href="write.jsp"><input type="button" value="글쓰기"></a>
-					<a href="edit.jsp?ask_no=<%=ask_no%>"><input type="button" value="수정"></a>
-					<a href="<%=request.getContextPath()%>/member/check.jsp?go=<%=request.getContextPath()%>/ask/delete.do?ask_no=<%=ask_no%>">
-					<input type="button" value="삭제">
-					</a>
-					<%} 
-					} %>
-					
-					<a href="list.jsp"><input type="button" value="목록"></a>
-				</td>
-			</tr>
-		</tfoot>
 	</table>
-</div>
+	</div>
+	
+	<!-- 하단 버튼 -->
+	<%if(user!=null){ 
+						if(isAdmin || isMine){ %>
+	<div class="row right">
+	<a href="write.jsp"><input class="form-btn form-inline" type="button" value="글쓰기"></a>
+					<a href="edit.jsp?ask_no=<%=ask_no%>"><input class="form-btn form-inline" type="button" value="수정"></a>
+					<a href="<%=request.getContextPath()%>/member/check.jsp?go=<%=request.getContextPath()%>/ask/delete.do?ask_no=<%=ask_no%>">
+					<input class="form-btn form-inline" type="button" value="삭제">
+					</a>
+		<%} 
+	} %>
+	<a href="list.jsp"><input class="form-btn form-inline" type="button" value="목록"></a>
+	</div>
+</article>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

@@ -49,25 +49,18 @@
 </script>
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div align="center">
-	<h2>게시글 작성</h2>
+<article class="w-90">
+	<div class="row"><h2>게시글 작성</h2></div>
+	
+	<!-- 표 -->
 	<form action="write.do" method="post" onsubmit="return formCheck();">
+	<div class="row">
 	<input type="hidden" name="ask_head" value="미답변">
-	<table border="1">
+	<table class="table table-border">
 		<tbody>
-				<!-- <tr>
-					<th>말머리</th>
-					<td>
-						<select name="ask_head">
-							<option value="">말머리 선택</option>
-							<option value="미답변">미답변</option>
-							<option value="답변완료">답변완료</option>
-						</select>
-					</td>
-				</tr> -->
 				<tr>
 					<th>제목</th>
-					<td><input type="text" name="ask_title" size="75" required></td>
+					<td><input type="text" name="ask_title" size="90%" required></td>
 				</tr>
 				
 				<tr>
@@ -75,15 +68,14 @@
 					<td><textarea name="ask_content" rows="15" cols="77" id="sample"></textarea>
 				</tr>
 		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" value="작성">
-				</td>
-			</tr>
-		</tfoot>
 	</table>
+	</div>
+	
+	<!-- 버튼 -->
+	<div class="row right">
+		<input class="form-btn form-inline" type="submit" value="작성">
+	</div>
 	</form>
-</div>
+</article>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

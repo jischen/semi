@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%
 	String keyword = request.getParameter("keyword");
 	String head = request.getParameter("head");
@@ -26,31 +27,24 @@
 %>    
     
 <jsp:include page="/template/header.jsp"></jsp:include>
-
-<div align="center">
-	<a href="<%=rootPath%>/ask/list.jsp"><h2>문의하기</h2></a>
-	
-		<%if(user != null) {
+<article class="w-90">
+	<div class="row"><a href="<%=rootPath%>/ask/list.jsp"><h2>문의하기</h2></a></div>
+	<!-- 답변 종류 버튼 -->
+	<%if(user != null) {
 		if(isAdmin){ %>
-	<table>
-		<tbody>
-			<tr>
-				<td>
-					<form action="list.jsp" method="get">
-					<input type="hidden" name="head" value="미답변"><input type="submit" value="미답변"></form>
-				</td>
-				<td>
-					<form action="list.jsp" method="get">
-					<input type="hidden" name="head" value="답변완료"><input type="submit" value="답변완료"></form>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-				<%} 
-			} %>
-	<table border="1">
+	<div class="menu-list float-box float-right">
+		<div class="menu-item"><form action="list.jsp" method="get">
+					<input type="hidden" name="head" value="답변완료"><input class="form-btn form-inline" type="submit" value="답변완료"></form></div>			
+		<div class="menu-item" style="margin-right:10px"><form action="list.jsp" method="get">
+					<input type="hidden" name="head" value="미답변"><input class="form-btn form-inline" type="submit" value="미답변"></form></div>
+	</div>
+		<%} 
+	} %>
+	<!-- 테이블 -->
+	<div class="row">
+	<table class="table table-border">
 		<thead align="center">
-			<tr>
+			<tr bgcolor="#f5f5f5">
 				<th>번호</th>
 				<th width="600">제목</th>
 				<th>작성자</th>
@@ -84,19 +78,11 @@
 			
 			
 		</tbody>
-
-		<tfoot>
-			<tr>
-				<td colspan="5" align="right">
-					<a href="write.jsp"><input type="button" value="글쓰기"></a>
-				</td>
-			</tr>
-		</tfoot>
-		
-
 	</table>
-
-			
-</div>
+	</div>
+	
+	<!-- 하단 버튼 -->
+	<div class="row right"><a href="write.jsp"><input class="form-btn form-inline" type="button" value="글쓰기"></a></div>
+</article>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

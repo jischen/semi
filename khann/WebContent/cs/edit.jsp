@@ -54,14 +54,16 @@
 </script>    
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div align="center">
-	<h2>게시글 수정</h2>
+<article class="w-90">
+	<div class="row"><h2>게시글 수정</h2></div>
 	
+	<!-- 테이블 -->
 	<form action="edit.do" method="post" onsubmit="return formCheck();">
+	<div class="row">
 	
 		<input type="hidden" name="cs_no" value="<%=cs_no%>">
 		
-		<table border="1">
+		<table class= "table table-border">
 			<tbody>
 				<tr>
 					<th>말머리</th>
@@ -89,14 +91,11 @@
 					</td>
 				</tr>
 			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="수정"></td>
-				</tr>
-			</tfoot>
 		</table>
-	
+	</div>
+	<!-- 수정 버튼 -->
+	<div class="row right"><input class="form-btn form-inline" type="submit" value="수정"></div>
 	</form>
-</div>
+</article>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
