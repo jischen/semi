@@ -492,6 +492,11 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 	width: auto;
 }
 
+/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
+.left {text-align: left !important;}
+.center {text-align: center !important;}
+.right {text-align: right !important;}
+
 
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {
