@@ -1,3 +1,4 @@
+<%@page import="beans.dao.MovieFileDao"%>
 <%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.MovieDto"%>
 <%@page import="java.util.List"%>
@@ -8,6 +9,7 @@
 
 <%
 	MovieDao mdao = new MovieDao();
+	MovieFileDao mfdao = new MovieFileDao();
 	List<MovieDto> list = mdao.getList();
 	//로그인 정보 확인 
 	MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
@@ -24,16 +26,15 @@
 
 
 	<%
-		for (MovieDto moivedto : list) {
+		for (MovieDto moviedto : list) {
+			int movie_img_no = mfdao.getMovieImgNo(moviedto.getMovie_no());
 	%>
 
-	<a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> <img
-		src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="286"
+	<a href="movie_content.jsp?movie_no=<%=moviedto.getMovie_no()%>"> <img
+		src="download.do?movie_file_no=<%=movie_img_no%>" width="286"
 		height="408" style="margin: 50px;">
 	</a>
 	</td>
-	<%-- <img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" heigh="250"> --%>
-
 
 	</a>
 
