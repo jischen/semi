@@ -138,4 +138,32 @@ public class MovieDao {
 		return seq;
 	}
 
+	public MovieDto getMovieName(String movie_name) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM movie WHERE movie_name=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, movie_name);
+		ResultSet rs = ps.executeQuery();
+		
+
+		MovieDto mdto;
+		if(rs.next()) {
+			mdto = new MovieDto(rs);
+			
+			
+		}
+		else {
+			mdto = null;
+		}
+		
+		con.close();
+		
+		return mdto;
+	}
+	
+	
+	
+
+
 }

@@ -13,13 +13,18 @@
 	
 	int movie_no = Integer.parseInt(request.getParameter("movie_no"));
 	System.out.println(movie_no);
+	//무비컨텐츠 //
+	
 	
 	mdto = mdao.get(movie_no);
 	
 	MovieFileDao mfdao = new MovieFileDao();
 	List<MovieFileDto> fileList = mfdao.getList(movie_no);
 	
+	
+	
 	int movie_file_no = mfdao.getMovieImgNo(movie_no);
+	
 	System.out.println("영화 파일 번호 : " + movie_file_no);
 
 	
@@ -41,7 +46,7 @@
 			<td rowspan="4">
 				<!-- <img src="http://placehold.it/250x250?text=movie" /> -->
 				<!-- 다운로드 버튼을 누른다면 해당 파일을 다운로드 할 수 있도록 링크 -->
-				<img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" heigh="250">
+				<img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" height="250">
 			</td>
 			<td>
 				제목
