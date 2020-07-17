@@ -40,7 +40,7 @@
 				<td><%=rdto.getReview_writer()%></td>
 			</tr>
 			<tr>
-				<th>영화번호</th>
+				<th>영화제목</th>
 				<td><%=rdto.getReview_movie()%></td>
 			</tr>
 

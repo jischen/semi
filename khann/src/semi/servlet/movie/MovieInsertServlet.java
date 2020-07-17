@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.dao.MovieDao;
 import beans.dto.MovieDto;
 
-@WebServlet(urlPatterns = "/movie/insert.do")
+//@WebServlet(urlPatterns = "/movie/insert.do")
 public class MovieInsertServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -19,6 +19,7 @@ public class MovieInsertServlet extends HttpServlet{
 		req.setCharacterEncoding("UTF-8");
 		MovieDto mdto = new MovieDto();
 		
+		mdto.setMovie_no(Integer.parseInt(req.getParameter("movie_no")));
 		mdto.setMovie_name(req.getParameter("movie_name"));
 		mdto.setMovie_type(req.getParameter("movie_type"));
 		mdto.setMovie_age(req.getParameter("movie_age"));
@@ -30,11 +31,14 @@ public class MovieInsertServlet extends HttpServlet{
 		
 		
 		MovieDao mdao = new MovieDao();
-	
+		int movie_no = mdao.getSequence();//영화 번호 추출
+		mdto.setMovie_no(movie_no);//번호 설정
+		mdao.insert(mdto);//등록 
 		
-		mdao.insert(mdto);
-		
+
 		resp.sendRedirect("movie_chart.jsp");
+		
+
 	
 		
 	} catch (Exception e) {

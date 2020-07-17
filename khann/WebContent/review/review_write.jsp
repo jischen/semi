@@ -86,7 +86,7 @@ main {
 					리뷰 작성자 <br> <input type="text" id="rw" name="review_writer">
 				</div>
 				<div class="review_amount">
-					영화 번호 <br> <input type="text" id="rw" name="review_movie">
+					영화 제목 <br> <input type="text" id="rw" name="review_movie">
 				</div>
 
 				<div class="review_amount">

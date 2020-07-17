@@ -3,6 +3,16 @@
 	
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/base.css">
 
+<style>
+span,a,p,h1,input{
+  font-family: cm;
+  }
+  
+ div>input{
+  font-family: cm;
+  } 
+  
+</style>
 <body style="margin-top:100px">
 
 
@@ -14,7 +24,7 @@
 				<h1>로그인</h1>
 </div>
 <hr>
-<div style="text-align:left;color:gray;"><a class="decox" href="<%=request.getContextPath()%>">홈</a>>로그인</div>
+<div style="text-align:left;color:gray;"><a class="decox" href="<%=request.getContextPath()%>">홈</a>><span>로그인</span></div>
 
 	 
 
@@ -41,12 +51,12 @@
             
 			<div class="login-checkbox-wrap">
 				<input class="login-checkbox" type="checkbox" name="autologin">
-				자동로그인
+				<span>자동로그인</span>
 			</div>
 			
 			<div>
 			<!-- 로그인 버튼 -->
-			<input class="form-input login-submit" type="submit" value="로그인">
+			<input class="cm form-input login-submit" type="submit" value="로그인">
 		</div>	
 					</form>
 		
@@ -59,7 +69,7 @@
 			</li>
 			<li>
 			<button class="button-form" type="button"
-			onclick="location.href='../member/join_term_check.jsp' ">회원가입</button>
+			onclick="location.href='../member/join_term_check.jsp' "><span>회원가입</span></button>
 			</li>
 			</ul>
 			<br>

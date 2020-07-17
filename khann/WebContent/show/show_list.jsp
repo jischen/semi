@@ -13,7 +13,9 @@
 	List<ShowDto>list=sdao.getList();
 
 	ShowDto edto=new ShowDto();
-
+	
+	
+	
 
 %>
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -28,15 +30,15 @@
 			<%for(ShowDto sdto:list) {%>
 				<tr>
 					<th>상영 번호</th>
-					<th>영화 제목</th>
-					<th>상영관명</th>
+					<th>영화 번호</th>
+					<th>상영번호</th>
 					<th>상영 시작 시간</th>
 				</tr>
 
 				<tr>
 					<td><%=sdto.getShow_no() %></td>
-					<td><%=sdto.getMovie_name() %></td>
-					<td><%=sdto.getTheater_name() %></td>
+					<td><%=sdto.getMovie_no() %></td>
+					<td><%=sdto.getTheater_no() %></td>
 					<td><%=sdto.getShow_start() %></td>
 				</tr>
 

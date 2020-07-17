@@ -7,14 +7,14 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <%
-	int show_no = Integer.parseInt(request.getParameter("show_no"));
+int show_no = Integer.parseInt(request.getParameter("show_no"));
 
 MemberDto user = (MemberDto) session.getAttribute("userinfo");
 boolean isLogin = user != null;
 
 
-	ShowDao sdao = new ShowDao();
-	ShowDto sdto = sdao.get(show_no);
+ShowDao sdao = new ShowDao();
+ShowDto sdto = sdao.get(show_no);
 	
 	
 %>
@@ -32,12 +32,12 @@ boolean isLogin = user != null;
 					<td><%=show_no%></td>
 				</tr>
 				<tr>
-					<th>영화 제목</th>
-					<td><%=sdto.getMovie_name()%></td>
+					<th>영화 번호</th>
+					<td><%=sdto.getMovie_no() %></td>
 				</tr>
 				<tr>
-					<th>상영관 이름</th>
-					<td><%=sdto.getTheater_name()%></td>
+					<th>상영관 번호</th>
+					<td><%=sdto.getTheater_no()%></td>
 				</tr>
 				<tr>
 					<th>상영 시작시간</th>

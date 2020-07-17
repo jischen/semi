@@ -112,19 +112,20 @@ public class TicketingDao {
 	
 	
 	
-	public List<Integer> showList(int show_no) throws Exception {
+	public List<TicketingDto> choiceSeat(int show_no) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "SELECT TICKETING_NO FROM TICKETING WHERE show_no=?";
+		String sql = "SELECT *" 
+				 + " FROM TICKETING T INNER JOIN seat S "
+				 + " ON t.SEAT_NO = s.SEAT_NO WHERE show_no =?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, show_no);
 		ResultSet rs = ps.executeQuery();
 
-		List<Integer> list = new ArrayList<Integer>();
+		List<TicketingDto> list = new ArrayList<>();
 		while (rs.next()) {
-			Integer ticketing_no = rs.getInt(1);
-			
-			list.add(ticketing_no);
+			TicketingDto tdto = new TicketingDto(rs);
+			list.add(tdto);
 		}
 
 		con.close();

@@ -17,16 +17,11 @@ public class MovieDto {
 	
 	
 	
-	
 	public MovieDto() {
 		super();
 	}
+	
 
-
-	/**
-	 * @param rs
-	 * @throws SQLException
-	 */
 	public MovieDto(ResultSet rs) throws SQLException {
 		this.setMovie_no(rs.getInt("movie_no"));
 		this.setMovie_name(rs.getString("movie_name"));
