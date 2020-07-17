@@ -16,15 +16,18 @@ public class EventEditServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 				
+			req.setCharacterEncoding("UTF-8");
+			
 			EventDto edto=new EventDto();
 			edto.setEvent_no(Integer.parseInt(req.getParameter("event_no")));
 			edto.setEvent_title(req.getParameter("event_title"));
-			edto.setEvent_date(req.getParameter("event_date"));
 			edto.setEvent_content(req.getParameter("event_content"));
 			edto.setEvent_condition(req.getParameter("event_condition"));
 			
 			EventDao edao=new EventDao();
 			edao.edit(edto);
+			
+			resp.sendRedirect("content.jsp?event_no="+edto.getEvent_no());
 			
 		}
 		catch(Exception e) {

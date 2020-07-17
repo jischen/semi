@@ -1,3 +1,4 @@
+event_list.jsp
 <%@page import="java.io.Console"%>
 <%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.EventDto"%>
@@ -5,6 +6,10 @@
 <%@page import="beans.dao.EventDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<style>
+
+</style>
 <%
 	String type = request.getParameter("type");
 	String keyword = request.getParameter("keyword");
@@ -83,9 +88,9 @@
 	<div class="row">
 
 		<!-- 테이블 -->
-		<table class="table table-border">
+		<table class="table table-border" >
 			<thead align="center">
-				<tr>
+				<tr bgcolor="#f5f5f5">
 					<th>번호</th>
 					<th width="500">제목</th>
 					<th>작성일</th>

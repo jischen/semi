@@ -1,3 +1,4 @@
+<%@page import="beans.dto.EventFileDto"%>
 <%@page import="beans.dto.EventDto"%>
 <%@page import="beans.dao.EventDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,6 +12,7 @@ int event_no=Integer.parseInt(request.getParameter("event_no"));
 EventDao edao=new EventDao();
 EventDto edto=edao.get(event_no);
  
+EventFileDto efdto = new EventFileDto();
  %>
  
  
@@ -31,9 +33,9 @@ EventDto edto=edao.get(event_no);
 					<td>
 						<select name="event_condition" >
 							<option value="<%=edto.getEvent_condition()%>">상황 선택</option>
-							<option value="정보">예정</option>
-							<option value="공지">진행</option>
-							<option value="유머">마감</option>
+							<option value="예정">예정</option>
+							<option value="진행">진행</option>
+							<option value="마감">마감</option>
 						</select>
 					</td>
 				</tr>
@@ -57,16 +59,15 @@ EventDto edto=edao.get(event_no);
 				<tr>
 					<th>첨부파일</th>
 					<td>
-						<input type="file" name="event_file" multiple accept=".jpg, .png, .gif">
+						<input type="file" name="event_file_no" multiple accept=".jpg, .png, .gif"
+						value="<%=efdto.getEvent_file_no()%>">
 					</td>
 				</tr>
 			</tbody>
 			<tfoot>
 				<tr>
 					<td colspan="3" align="center">
-						<a href="list.jsp">
-						<input type="button" value="작성">
-						</a>
+						<input type="submit" value="작성">
 					</td>
 				</tr>
 			</tfoot>
