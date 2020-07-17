@@ -50,7 +50,11 @@
             
             
     </script>
+<<style>
+.h1{
 
+}
+</style>
 
 
 
@@ -58,28 +62,22 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <div align="center">
-	<h2>회원이용약관</h2>
-
-
+	<h2 class=cb>회원이용약관</h2>
 
 	<br>
 	<form name="termcheck" method="post" action="http://localhost:8080/khann/member/join.jsp" onSubmit="return CheckForm()" >
-		<table border="0" cellpadding="0" cellspacing="0" class="굴림">
-			<tbody>
-				<tr>
-					<td><font color="#207DBB"> 회원 가입 전 아래의 대한극장 홈페이지 이용 약관을
-							읽어 보시기 바랍니다. 약관에 동의하신다면 아래의 [동의] 버튼을 눌러 주세요.</font></td>
-				</tr>
-				<tr>
-					<td align="center"></td>
-				</tr>
-			</tbody>
-		</table>
+		
+		
+		<div style="margin-bottom:30px"><font style="margin-bottom:10px;"  class="cb" color="#207DBB"> 회원 가입 전 아래의 시네마칸의 이용 약관을
+							읽어 보시기 바랍니다. 약관에 동의하신다면 아래의 [동의] 버튼을 눌러 주세요.</font></div>
+			
+				
+		
 		<table border="0" cellpadding="10" cellspacing="0">
 			<tbody>
 				<tr>
 
-					<td><textarea name="" cols="71" rows="12" class="굴림">																						■ 개인정보의 수집 및 이용목적
+					<td><textarea  name="" cols="71" rows="12" class="">																						■ 개인정보의 수집 및 이용목적
 																						회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
 																						ο 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 - 콘텐츠 제공 , 구매 및 요금 결제
 																						ο 회원 관리 - 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 가입 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인 , 불만처리 등 민원처리
@@ -154,8 +152,8 @@
 
 			</tbody>
 		</table>
-		<input type="submit" value="동의">
-		<button type="button" onclick="location.href= 'http://localhost:8080/khann/index.jsp' ">동의안함</button>
+		<input style="padding:0.5rem" type="submit" value="동의">
+		<button  style="padding:0.5rem" type="button" onclick="location.href= 'http://localhost:8080/khann/index.jsp' ">동의안함</button>
 		
 
 	</form>
