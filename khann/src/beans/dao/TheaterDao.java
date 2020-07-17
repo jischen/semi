@@ -102,11 +102,7 @@ public class TheaterDao {
 		TheaterDto tdto;
 		if(rs.next()) {
 			tdto = new TheaterDto(rs);
-			tdto.setTheater_no(Integer.parseInt(rs.getString("theater_no")));
-			tdto.setTheater_name(rs.getString("theater_name"));
-			tdto.setTheater_type(rs.getString("theater_type"));
-			tdto.setTheater_row(Integer.parseInt(rs.getString("theater_row")));
-			tdto.setTheater_col(Integer.parseInt(rs.getString("theater_col")));
+			
 		}
 		else {
 			tdto = null;
@@ -161,6 +157,12 @@ public class TheaterDao {
 		
 	
 	
+		
+		
+		
+		
+		
+		
 	
 
 
