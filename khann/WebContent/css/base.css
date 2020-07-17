@@ -567,7 +567,7 @@ ul, li, ol{
 
 
 /*  */
-#dh-container {
+  #dh-container {
 	width: 1240px;
 	margin: 10px auto;
 	padding: 20px;
@@ -618,7 +618,6 @@ ul, li, ol{
 
 /*  */
 #dh-header {
-	padding: 20px;
 	margin-bottom: 20px;
 	/*  border: 1px solid #bcbcbc; */
 }

@@ -5,18 +5,16 @@
 
 
 
-<jsp:include page="/template/header.jsp"></jsp:include>
 
 
 
 <div align="center">
 
-	<h2>일시적인 오류가 발생했습니다.</h2>
-
-	<img src="<%=request.getContextPath()%>/image/404.jpg" width="700" height="400">
-
+	<h2>쉿.......★ 에러난건 우리 둘만의 비밀 ....  >_0</h2>
+	<a href="<%=request.getContextPath()%>">
+	<img src="<%=request.getContextPath()%>/img/404.png" width="700" height="400">
+	</a>
 </div>
 
 
 
-<jsp:include page="/template/footer.jsp"></jsp:include>
