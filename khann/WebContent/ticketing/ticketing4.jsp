@@ -43,13 +43,15 @@
    
    
    
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.9/cinema/hacademy-cinema.css">
-<script src="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.9/cinema/hacademy-cinema.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.10/cinema/hacademy-cinema.css">
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.10/cinema/hacademy-cinema.js"></script>
 
 <script>
    window.onload = function(){
       var cinema = new Hacademy.Reservation(".cinema-wrap");
-      window.dispatchEvent(new Event('resize'));
+		setTimeout(function(){
+			window.dispatchEvent(new Event('resize'));
+		}, 10);       
    };
 </script>
       
@@ -71,39 +73,39 @@
                    data-mode="manual">
                
                
- 
-            
-               
-                  
-                   
-                    <% for(SeatDto seatDto : list){ %>
+                <% for(SeatDto seatDto : list){ %>
                     <% 
 							int index = 0; 
 							//좌석 번호 찾기
 							boolean flag = false;
 							while(index < ttdto.size()){
 								TicketingDto ticketingDto = ttdto.get(index);
-								System.out.println(ticketingDto.getSeat_no()+", "+seatDto.getSeat_no());
+// 								System.out.println(ticketingDto.getSeat_no()+", "+seatDto.getSeat_no());
 								if(ticketingDto.getSeat_no() == seatDto.getSeat_no()){
 									flag = true;
 									break;
 								}
 								index++;
-								} 
+							} 
+							
+							System.out.println(seatDto.getSeat_row()+", "+seatDto.getSeat_col()+" : "+flag);
 					 %>
                		 <%if(flag){ %>
                	  	 <!-- 예매 완료 좌석  -->
-                         <div class="cinema-seat disabled" 
-                                data-row=" <%=seatDto.getSeat_row()%>" 
-                           	    data-col="<%=seatDto.getSeat_col()%>">
+                         <div class="cinema-seat" 
+                                data-row="<%=seatDto.getSeat_row()%>"  
+                           	    data-col="<%=seatDto.getSeat_col()%>"
+                           	    data-state="disabled">
                          </div>  
               	 	<%} else { %>
                	    <!-- 예매 가능 좌석 -->
                          <div class="cinema-seat" 
                          	   data-row="<%=seatDto.getSeat_row()%>" 
-                       	   	   data-col="<%=seatDto.getSeat_col()%>"  >
+                       	   	   data-col="<%=seatDto.getSeat_col()%>"
+                       	   	   data-state="normal">
                          </div>
-         			<%} }%>
+         			<%} }%>   
+                    
 					
                
                
