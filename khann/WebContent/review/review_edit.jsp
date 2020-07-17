@@ -1,15 +1,18 @@
+<%@page import="beans.dto.MovieDto"%>
+<%@page import="beans.dao.MovieDao"%>
 <%@page import="beans.dto.ReviewDto"%>
 <%@page import="beans.dao.ReviewDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
- 
      <% 
      int review_no=Integer.parseInt(request.getParameter("review_no"));
     
     ReviewDao rdao= new ReviewDao();
     ReviewDto rdto=rdao.get(review_no);
     
+    MovieDao mdao=new MovieDao();
+    MovieDto mdto=mdao.get(Integer.parseInt(rdto.getReview_movie()));
     
     %>
  
@@ -36,9 +39,14 @@
         
     </style>
 </head>
+
+
+<body>
+
+
  
 <body>
- 
+
     <div id="dh-content" style="margin-left:320px">
         <div class="review_edit_form">
         <h2>리뷰 수정</h2>
@@ -46,12 +54,18 @@
                 <div class="review_edit_num">
                     <label id="revieweditlabel">리뷰번호</label>
                     <input type="text" class="revieweditform" name="review_no" value="<%=rdto.getReview_no()%>">
- 
+
                 </div>
                 <div class="review_edit">
                     <div class="review_movie_form">
                         <div class="review_movie">
                             <label  id="revieweditlabel">리뷰영화</label>
+
+                            <input type="text" class="revieweditform" name="review_movie" value="<%=mdto.getMovie_name()%>" placeholder="리뷰영화">
+                        </div>
+                    </div>
+
+
                             <input type="text" class="revieweditform" name="review_movie" value="<%=rdto.getReview_movie()%>" placeholder="리뷰영화">
                         </div>
                     </div>
@@ -61,12 +75,20 @@
                             <div class="review_writerc">
                                 <label  id="revieweditlabel">작성자ID</label>
                                 <input type="text" class="revieweditform" name="review_id" value="<%=rdto.getReview_writer()%>" placeholder="작성자ID">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
  
                             </div>
  
                         </div>
                     </div>
- 
+
                     <div class="review_edit">
                         <div class="review_content_form">
                             <label  id="revieweditlabel">리뷰내용</label>
@@ -75,9 +97,12 @@
               
                     </textarea>
                         </div>
+
+
+                    </div>
+
  
                     </div>
- 
  
  
                     <div class="review_score_form">
