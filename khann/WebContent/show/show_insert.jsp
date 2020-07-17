@@ -1,11 +1,13 @@
+<%@page import="beans.dao.ShowDao"%>
 <%@page import="beans.dto.ShowDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <%
-ShowDto sdto=new ShowDto();
-
+	
+	
+	
 %>
 
 <div align="center">
@@ -17,15 +19,15 @@ ShowDto sdto=new ShowDto();
 				<tr>
 				
 			
-					<th>영화 번호</th>
-					<th>상영관 번호</th>
+					<th>영화 이름</th>
+					<th>상영관 이름</th>
 					<th>상영 시작 시간</th>
 				</tr>
 
 				<tr>
 				
-					<td><input type="text" name="movie_no"></td>
-					<td><input type="text" name="theater_no"></td>
+					<td><input type="text" name="movie_name" value="movie_name"></td>
+					<td><input type="text" name="theater_name" value="theater_name"></td>
 					<td><input type="text" name="show_start" placeholder="2017-01-01 00:00:00"></td>
 				</tr>
 

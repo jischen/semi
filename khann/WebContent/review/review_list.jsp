@@ -32,13 +32,17 @@
 	로그인이 필요한 페이지입니다.
 		<table border="1">
 		
+<thead>
 
-			<tbody>
+		
+
+
 			<tr>
+
+
 
 			<%for(ReviewDto rdto : list) { %>
 			
-<thead>
 
 <tr>
 <td align="left" colspan="8">
@@ -46,13 +50,14 @@
 </td>
 </tr>
 </thead>
-<%
-				if (isLogin) {
+	<tbody>
+
+
+			<% if (isLogin) {
 			%>
 			<%
 				if (mdto.getGrade().equals("관리자")) {
 			%>
-
 				<tr>
 					<th>작성자</th>
 					<td width="100"><%=rdto.getReview_writer() %></td>
