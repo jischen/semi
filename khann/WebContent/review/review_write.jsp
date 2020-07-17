@@ -79,12 +79,15 @@ main {
 
 			<div class="review_wrap">
 
-				<div class="review_title">리뷰작성</div>
+				<div class="review_title">
+					리뷰작성
+				</div>
 				<hr>
 
 				<div class="review_amount">
 					리뷰 작성자 <br> <input type="text" id="rw" name="review_writer">
 				</div>
+				
 				<div class="review_amount">
 					영화 제목 <br> <input type="text" id="rw" name="review_movie">
 				</div>
@@ -92,19 +95,22 @@ main {
 				<div class="review_amount">
 					리뷰 내용 <br>
 					<textarea name="review_content" id="rw" rows="10" cols="70"
-						placeholder="운영원칙에 어긋나는 게시물로 판단되는 글은 제재 조치를 받을 수 있습니다."></textarea>
+					placeholder="운영원칙에 어긋나는 게시물로 판단되는 글은 제재 조치를 받을 수 있습니다.">
+					</textarea>
 				</div>
 
 				<div class="review_select">
-					리뷰 점수 <select class="review_score">
-						<option value="5점">5점</option>
+						리뷰 점수
+						<select name="review_score">
+						<option value="5점" >5점</option>
 						<option value="4점">4점</option>
 						<option value="3점">3점</option>
 						<option value="2점">2점</option>
 						<option value="1점">1점</option>
-					</select>
+						</select>
 				</div>
 				<hr>
+				
 				<div class="review_button">
 					<input type="submit" class="review_submit" value="작성완료">
 				</div>
