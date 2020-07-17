@@ -1,3 +1,5 @@
+<%@page import="org.apache.commons.fileupload.RequestContext"%>
+<%@page import="javax.security.auth.message.callback.PrivateKeyCallback.Request"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!--스와이퍼 스크립트-->
@@ -52,10 +54,34 @@
 
 
 
+		<h1 align="center" style="
+    margin-bottom: 10px;
+">현 재 상 영 중 인 영 화 </h1>
+		
+<div>
+	<a href="#"> <img
+		src="<%=request.getContextPath()%>/image/poster/도라에몽극장판.jpg" width="286"
+		height="408" style="margin: 50px;">
+	</a>
+	
+	<a href="#"> <img
+		src="<%=request.getContextPath()%>/image/poster/코난극장판.jpg" width="286"
+		height="408" style="margin: 50px;">
+	</a>
+	
+	<a href="#"> <img
+		src="<%=request.getContextPath()%>/image/poster/짱구.jpg" width="286"
+		height="408" style="margin: 50px;">
+	</a>
+</div>
+
+		<h1 align="center" style="
+    margin-bottom: 50px; margin-top:50px;
+">E V E N T  @=(^ㅇ ^)@</h1> 
 
 
 
-<div id="dh-content">
+<div>
 
 	<!-- 이미지 슬라이더 영역 -->
 	<div class="swiper-container">
@@ -63,13 +89,13 @@
 		<div class="swiper-wrapper">
 			<!-- 배치되는 이미지 또는 화면 -->
 			<div class="swiper-slide">
-				<img src="<%=request.getContextPath()%>/img/swiper.png"  style="width: 600px; height: 300px;">
+				<img src="<%=request.getContextPath()%>/img/showing.jpg"  style="width: 1200px; height: 600px;">
 			</div>
 			<div class="swiper-slide">
-				<img src="<%=request.getContextPath()%>/img/swiper2.png" style="width: 600px; height: 300px;">
+				<img src="<%=request.getContextPath()%>/img/showing.jpg" style="width: 1200px; height: 600px;">
 			</div>
 			<div class="swiper-slide">
-				<img src="https://placeimg.com/600/300/people" style="width: 1160px; height: 300px;">
+				<img src="<%=request.getContextPath()%>/img/showing3.jpg" style="width: 1200px; height: 600px;">
 			</div>
 		</div>
 

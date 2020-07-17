@@ -10,6 +10,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import beans.dto.MemberDto;
+import beans.dto.MovieDto;
 
 public class MemberDao {
 	// context.mxl에서 관리하는 자원 객체를 참조할 수 있도록 연결 코드 구현
@@ -208,6 +209,47 @@ public class MemberDao {
 		return mdto;
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	public MemberDto getID(String member_id) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM member WHERE member_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, member_id);
+		ResultSet rs = ps.executeQuery();
+		
+
+		MemberDto mdto;
+		if(rs.next()) {
+			mdto = new MemberDto(rs);
+			
+			
+		}
+		else {
+			mdto = null;
+		}
+		
+		con.close();
+		
+		return mdto;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

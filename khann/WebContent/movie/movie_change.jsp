@@ -24,7 +24,7 @@
 
  	<table border="1">
  	<thead>
-	<h2>영화 정보 수정(관리자)</h2>
+	<h2>영화 정보 수정</h2>
 	</thead>
 	<tbody>
 

@@ -36,73 +36,70 @@
 			</div>
 			<!--로고-->
 			<div class="flex-container" style="background-color: #e8f0f3">
-	
-			<!-- 헤더메뉴좌측 SNS로고-->
-			<div>		
-						<ul class="flex-container">
-						<li>
-						<a href="https://www.facebook.com/seoulcinema">
-						<img src="<%=request.getContextPath()%>/img/sns_fb.png">
-						</a>
-						</li>
-						<li>
-						<a href="#">
-						<img src="<%=request.getContextPath()%>/img/sns_insta.png">
-						</a>
-						</li>
-						<li>
-						<a href="#">
-						<img src="<%=request.getContextPath()%>/img/sns_tw.png">
-						</a>
-						</li>						
-						<li>
-						<a href="#">
-						<img src="<%=request.getContextPath()%>/img/sns_kakao.png">
-						</a>
-						</li>								
+
+				<!-- 헤더메뉴좌측 SNS로고-->
+				<div>
+					<ul class="flex-container">
+						<li><a href="https://www.facebook.com/seoulcinema"> <img
+								class="sns" src="<%=request.getContextPath()%>/img/sns_fb.png">
+						</a></li>
+						<li><a href="#"> <img class="sns"
+								src="<%=request.getContextPath()%>/img/sns_insta.png">
+						</a></li>
+						<li><a href="#"> <img class="sns"
+								src="<%=request.getContextPath()%>/img/sns_tw.png">
+						</a></li>
+						<li><a href="#"> <img class="sns"
+								src="<%=request.getContextPath()%>/img/sns_kakao.png">
+						</a></li>
 					</ul>
-				</div>	
-			<!--헤더메뉴우측 로그인/회원가입/내정보-->
-			<div class="flex_item" id="lojoin">
-				<%
-					if (!isLogin) {
-				%>
-				<a class="CM" href="<%=rootPath%>/member/login.jsp">로그인</a> <a
-					href="<%=rootPath%>/member/join_term_check.jsp">회원가입</a>
+				</div>
+				<!--헤더메뉴우측 로그인/회원가입/내정보-->
+				<div class="flex_item" id="lojoin">
+					<%
+						if (!isLogin) {
+					%>
+					<a class="CM" href="<%=rootPath%>/member/login.jsp">로그인</a>
+					<span>|</span> 
+					<a href="<%=rootPath%>/member/join_term_check.jsp">회원가입</a>
 
-				<%
-					}
-				%>
+					<%
+						}
+					%>
 
-				<%
-					if (isLogin) {
-				%>
-				<!-- 로그인 상태일 경우 -->
-				<a href="<%=rootPath%>/member/logout.do">로그아웃</a> <a
-					href="<%=rootPath%>/member/info.jsp">내정보</a>
-				<!-- 로그인 된 사용자 중에서도 "관리자" 인 경우만 나와야 하는 메뉴 -->
-				<%
-					if (mdto.getGrade().equals("관리자")) {
-				%>
-				<a href="<%=rootPath%>/theater/insert1.jsp">상영관등록</a>
-				<a href="<%=rootPath%>/show/show_insert.jsp">영화 등록</a>
-				<%
-					} else {
-				%>
+					<%
+						if (isLogin) {
+					%>
+					<!-- 로그인 상태일 경우 -->
+					<a href="<%=rootPath%>/member/logout.do">로그아웃</a> <span>|</span> <a
+						href="<%=rootPath%>/member/info.jsp">내정보</a> <span>|</span> <a
+						href="<%=rootPath%>">예매 내역</a> <span>|</span>
+					<!-- 로그인 된 사용자 중에서도 "관리자" 인 경우만 나와야 하는 메뉴 -->
+					<%
+						if (mdto.getGrade().equals("관리자")) {
+					%>
+					<a href="<%=rootPath%>/theater/insert1.jsp">상영관등록</a> <span>|</span>
+					<a href="<%=rootPath%>/show/show_insert.jsp">상영시간등록</a> <span>|</span>
+					<a href="<%=rootPath%>/movie/movie_insert.jsp">영화 등록</a> <span>|</span>
+					<a href="<%=rootPath%>/movie/movie_delete.jsp">영화 삭제</a>
+
+					<%
+						} else {
+					%>
 
 
-				<%
-					}
-					}
-				%>
-
+					<%
+						}
+						}
+					%>
+				
 			</div>
 		</div>
 
-			<!-- 메인 메뉴(navigation) 영역 -->
+		<!-- 메인 메뉴(navigation) 영역 -->
 
-			<jsp:include page="/template/menu.jsp"></jsp:include>
-			<hr>
+		<jsp:include page="/template/menu.jsp"></jsp:include>
+		<hr>
 
-			<!-- 본문(section) 영역 -->
-		</div>
+		<!-- 본문(section) 영역 -->
+	</div>

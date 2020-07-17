@@ -7,8 +7,35 @@
 @charset "UTF-8";
 
 /*
-	웹 폰트 등록
-*/
+	웹 폰트 등록*/
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+       		@font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+      		@font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
+
+	
+	
+	
+
 
 
 /* 
@@ -35,8 +62,8 @@
     - .img-circle : 이미지가 원형으로 처리되도록 구현
     - .img-round : 이미지가 둥근 모서리를 갖도록 구현
 */
-.img {
-	
+.sns {
+	height:25px;
 }
 
 .img.img-border {
@@ -236,6 +263,19 @@
 	background-color: #9D3434;
 }
 
+.menu li>ul {
+	width: 100%;
+}
+
+.menu li>ul>li {
+	width: 100%;
+}
+
+.menu{
+	display: flex;
+	width: 100%;
+}
+
 /* 모든 li는 relative 설정 */
 .menu li {
 	position: relative;
@@ -243,6 +283,7 @@
 	width: 180px;
 	text-align: center;
 	cursor: pointer;
+	flex: 1;
 }
 /* 2단계 메뉴부터는 position을 absolute로 설정 */
 /* .menu li > ul {*/
@@ -451,6 +492,11 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 	width: auto;
 }
 
+/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
+.left {text-align: left !important;}
+.center {text-align: center !important;}
+.right {text-align: right !important;}
+
 
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {
@@ -585,7 +631,7 @@ ul, li, ol{
 	padding: 20px;
 	margin-bottom: 100px;
 	float: left;
-	/*border: 1px solid #bcbcbc; */
+	border: 1px solid #bcbcbc; 
 }
 
 /*사이드 바 로그인창 구현예정*/
@@ -767,7 +813,7 @@ a {
 
 /*스와이퍼 */
 .swiper-container {
-	width: 600px;
+	width: 1200px;
 	height: 300px;
 }
 
@@ -939,32 +985,7 @@ a {
 	cursor:pointer;
 	
 	
-	/*폰트 설정   */
 	
-	        @font-face {
-            font-family: cm;
-            src: url("../font/cm.ttf");
-        }
-        @font-face {
-            font-family: cl;
-            src: url("../font/cl.ttf");
-        }
-        @font-face {
-            font-family: cb;
-            src: url("../font/cb.ttf");
-        }
-        
-        .cm{
-            font-family: cm;
-        }
-        .cl{
-            font-family: cl;
-        }
-        .cb{
-            font-family: cb;
-        }
-
-
 /*
 float 정렬
 left클래스 왼쪽으로 정렬
