@@ -11,14 +11,15 @@ ShowDto sdto=new ShowDto();
   <link rel="stylesheet" type="text/css" href="../base.css">
     <style>
        .showinsert {
-            background-color: lightgray;
+            background-color: #9D3434;
 
 
 
         }
 
+
         .show_form {
-            width: 300px;
+            width: 500px;
            margin: auto;
             border: 1px;
             background-color: whitesmoke;
@@ -45,7 +46,7 @@ ShowDto sdto=new ShowDto();
     </style>
 </head>
 
-<body test>
+<body>
     <div id="dh-content" style="margin-left:320px">
       <form action="show_insert.do" method="post">
        <h2>상영시간 등록</h2>
