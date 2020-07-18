@@ -102,11 +102,7 @@ public class TheaterDao {
 		TheaterDto tdto;
 		if(rs.next()) {
 			tdto = new TheaterDto(rs);
-			tdto.setTheater_no(Integer.parseInt(rs.getString("theater_no")));
-			tdto.setTheater_name(rs.getString("theater_name"));
-			tdto.setTheater_type(rs.getString("theater_type"));
-			tdto.setTheater_row(Integer.parseInt(rs.getString("theater_row")));
-			tdto.setTheater_col(Integer.parseInt(rs.getString("theater_col")));
+			
 		}
 		else {
 			tdto = null;
@@ -131,7 +127,28 @@ public class TheaterDao {
 
 	}
 	
-	
+		public TheaterDto getTheaterNo(String theater_name) throws Exception{
+			Connection con = getConnection();
+			
+			String sql = "SELECT * FROM theater WHERE theater_name=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, theater_name);
+			ResultSet rs = ps.executeQuery();
+			
+
+			TheaterDto tdto;
+			if(rs.next()) {
+				tdto = new TheaterDto(rs);
+				
+			}
+			else {
+				tdto = null;
+			}
+			
+			con.close();
+			
+			return tdto;
+		}
 	
 
 

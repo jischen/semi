@@ -17,38 +17,39 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-
-<div align="center">
-
-
-
-
+<head>
+   <link rel="stylesheet" type="text/css" href="../base.css">
+    <style>
+   
+    
+    </style>
+    
+    
+</head>
+<body>
+     <div id="dh-content">
+   <div class="moviechart">
+     
+           
 	<%
 		for (MovieDto moivedto : list) {
 	%>
 
-	<a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> <img
-		src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="286"
-		height="408" style="margin: 50px;">
+           
+            <a class="moviechart">
+           <label><%=moivedto.getMovie_no() %></label>
+          
+         <a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> <img
+		src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="200"
+		height="300" style="margin: 50px;">
 	</a>
-	</td>
-	<%-- <img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" heigh="250"> --%>
-
-
-	</a>
-
-
-	<%
+      </a>
+         
+       	<%
 		}
 	%>
 
-
-
-
-
-
-
-	<%
+<%
 		if (isLogin) {
 	%>
 	<%
@@ -56,10 +57,10 @@
 	%>
 
 
-	<div align="center" colspan="9">
+<div>
 		<a href="/khann/movie/movie_insert.jsp">영화 등록</a> <a
 			href="/khann/movie/movie_delete.jsp">영화 삭제</a>
-	</div>
+        </div>
 
 	<%
 		}
@@ -69,6 +70,15 @@
 		}
 	%>
 
-</div>
+       
+       
+
+   
+        
+   
+    </div>
+        </div>
+</body>
+</html>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

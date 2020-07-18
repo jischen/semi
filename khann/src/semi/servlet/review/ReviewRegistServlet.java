@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.dao.MovieDao;
 import beans.dao.ReviewDao;
 import beans.dto.MemberDto;
+import beans.dto.MovieDto;
 import beans.dto.ReviewDto;
 
 @WebServlet(urlPatterns = "/review/review_write.do")
@@ -24,9 +26,13 @@ public class ReviewRegistServlet extends HttpServlet {
 			ReviewDto rdto=new ReviewDto();
 			//처리ReviewDto rdto = new ReviewDto();
 
+			String movie_name = req.getParameter("movie_name");
+			MovieDao mdao = new MovieDao();
+			MovieDto mdto = mdao.getMovieno(movie_name);
+			int movie_no = mdto.getMovie_no();
 			
 			rdto.setReview_writer(req.getParameter("review_writer"));
-			rdto.setReview_movie(req.getParameter("review_movie"));
+			rdto.setReview_movie(movie_no);
 			rdto.setReview_content(req.getParameter("review_content"));
 			rdto.setReview_score(req.getParameter("review_score"));
 			

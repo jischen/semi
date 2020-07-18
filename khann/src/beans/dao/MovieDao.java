@@ -54,15 +54,7 @@ public class MovieDao {
 		if (rs.next()) {
 			mdto = new MovieDto(rs);
 
-			mdto.setMovie_no(Integer.parseInt(rs.getString("movie_no")));
-			mdto.setMovie_name(rs.getString("movie_name"));
-			mdto.setMovie_type(rs.getString("movie_type"));
-			mdto.setMovie_age(rs.getString("movie_age"));
-			mdto.setMovie_runtime(rs.getString("movie_runtime"));
-			mdto.setMovie_open(rs.getString("movie_open"));
-			mdto.setMovie_director(rs.getString("movie_director"));
-			mdto.setMovie_ac(rs.getString("movie_ac"));
-			mdto.setMovie_content(rs.getString("movie_content"));
+			
 		} else {
 			mdto = null;
 		}
@@ -137,5 +129,44 @@ public class MovieDao {
 
 		return seq;
 	}
+	
+	public MovieDto getMovieno(String movie_name) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "SELECT * FROM movie WHERE movie_name=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, movie_name);
+		ResultSet rs = ps.executeQuery();
+
+		MovieDto mdto;
+		if (rs.next()) {
+			mdto = new MovieDto(rs);
+
+			
+		} else {
+			mdto = null;
+		}
+
+		con.close();
+
+		return mdto;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

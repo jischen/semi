@@ -106,17 +106,12 @@ public class ShowDao {
 			ShowDto sdto;
 			if(rs.next()) {
 				sdto=new ShowDto(rs);
-				sdto.setShow_no(Integer.parseInt(rs.getString("show_no")));
-				sdto.setMovie_no(Integer.parseInt(rs.getString("movie_no")));
-				sdto.setTheater_no(Integer.parseInt(rs.getString("theater_no")));
-				sdto.setShow_start(rs.getString("show_start"));
 				
 			}
 			
 			else {
 				
 				sdto=null;
-				
 				
 			}
 			con.close();

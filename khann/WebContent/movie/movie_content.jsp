@@ -34,109 +34,108 @@
 	
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div align="center">
+<head>
+     <link rel="stylesheet" type="text/css" href="../base.css">
 
-	<table border="1" >
-		<tbody>
-		
+<style>
+    .mvcontent-form{
+        border:1px solid black;
+    }
+    #movielabel{
+        font-weight: 800;
+      
+      
+    }
+    #movietext:hover{
+        background-color: lightgray;
+    }
+    .mvbutton{
+   
+        height: 40px;
+         border:1px solid black;
+        background-color: #9D3434;
+        text-align: right;
+    }
+    
+    .moviemain{
+    height:40px;
+    background-color: #9D3434;
+    }
+    </style>
+</head>
 
-		
-		<tr>
-		
-			<td rowspan="4">
-				<!-- <img src="http://placehold.it/250x250?text=movie" /> -->
-				<!-- 다운로드 버튼을 누른다면 해당 파일을 다운로드 할 수 있도록 링크 -->
-				<img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" height="250">
-			</td>
-			<td>
-				제목
-				: <%=mdto.getMovie_name()%>
-			</td>
-			
-		</tr>
-		
-		<tr>
-			<td>
-				감독/배우
-				: <%=mdto.getMovie_director()%>/<%=mdto.getMovie_ac()%>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>
-				장르/상영등급
-				: <%=mdto.getMovie_type()%>/<%=mdto.getMovie_age() %>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>
-				개봉일
-				: <%=mdto.getMovie_open() %>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-				줄거리
-				
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">
-				<textarea rows="3" cols="70"><%=mdto.getMovie_content() %></textarea>	
-			</td>
-			
-		</tr>
-		
 
-		<tr>
-			<td>첨부파일 
-			</td>
-			<td>
-						<%if(!fileList.isEmpty()){%>
+<body>
+
+
+    <div id="dh-content" style="margin-left: 320px">
+
+       
+      <div class="mvcontent-form">
+
+<div class="moviemain">
+
+</div>
+       <div>
+    <img src="download.do?movie_file_no=<%=movie_file_no%>" width="250" height="250">       
+       </div>
+ 
+        <div class="movie_content">
+            <label id="movielabel"> 제목</label>
+             <%=mdto.getMovie_name()%>
+        </div>
+        <br>
+
+       
+        <div class="movie_content">
+            <label id="movielabel"> 감독/배우</label>
+             <%=mdto.getMovie_director()%>/<%=mdto.getMovie_ac()%>
+        </div>
+
+        <div class="movie_content">
+            <label id="movielabel">  장르,상영등급</label>
+            <%=mdto.getMovie_type()%>/<%=mdto.getMovie_age() %>
+        </div>
+ 
+
+        <div class="movie_content">
+           <label id="movielabel">  개봉일 </label>
+            <%=mdto.getMovie_open() %>
+        </div>
+<br>
+        <div class="movie_content">
+           <label id="movielabel">  줄거리</label>
+            <textarea id="movietext" rows="3" cols="70"><%=mdto.getMovie_content() %></textarea>
+        </div>
+        
+<br>
+        <div class="movie_content">
+            <label> 첨부파일</label>
+           <%if(!fileList.isEmpty()){%>
 						<%for(MovieFileDto mfdto2 : fileList){ %>
 						<%=mfdto2.getMovie_file_name()%>
 						(<%=mfdto2.getMovie_file_size()%> bytes)
-						<!-- 다운로드 버튼을 누른다면 해당 파일을 다운로드 할 수 있도록 링크 -->
-						<%-- <a href="download.do?movie_file_no=<%=mfdto.getMovie_file_no()%>">다운로드</a> --%>
+					
 						<%} %>
 						<%} %>
 				
-				
-			</td>
-		</tr>
-		
-		<tr>
-			<td rowspan="2">
-				리뷰1
-			</td>
-			<td>
-				<input type="text" name="review_no">
-
-	
-		</tbody>
-		<tfoot>
-			<tr>
-			<td>[이전]  [다음]</td>
-			<td align="right" >
-			<a href="/khann/movie/movie_change.jsp?movie_no=<%=mdto.getMovie_no()%>"><input type="submit" value="영화수정"></a>
+            
+        </div>
+            <div class="mvbutton">
+            <a href="/khann/movie/movie_change.jsp?movie_no=<%=mdto.getMovie_no()%>"><input type="submit" value="영화수정"></a>
 			<a href="/khann/review/review_write.jsp"><input type="submit" value="리뷰작성"></a>
 
 			<a href="/khann/review/review_list.jsp"><input type="submit" value="리뷰 더보기"></a>
+           
+            
 
-			</td>
-			</tr>
-		</tfoot>
-			
-		
-	</table>
+            </div>
+            </div>
+                            </div>
 
 
-</div>
+</body></html>
 
-<jsp:include page="/template/footer.jsp"></jsp:include>
 
 
 

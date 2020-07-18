@@ -15,6 +15,8 @@ List<ReviewDto> list = rdao.getList();
 
 MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
 boolean isLogin = mdto != null;
+
+
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
