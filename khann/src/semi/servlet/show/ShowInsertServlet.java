@@ -24,17 +24,29 @@ public class ShowInsertServlet extends HttpServlet {
 
 			req.setCharacterEncoding("UTF-8");
 			
+
 			
-			
+
 			String movie_name = req.getParameter("movie_name");
 			String theater_name = req.getParameter("theater_name");
 			
 			MovieDao mdao = new MovieDao();
+
 			MovieDto mdto = mdao.getMovieno(movie_name);
 			
 			
 			TheaterDao tdao = new TheaterDao();
 			TheaterDto tdto = tdao.getTheaterNo(theater_name);
+
+			MovieDto mdto = mdao.getMovieName(movie_name);
+			
+			TheaterDao tdao = new TheaterDao();
+			TheaterDto tdto = tdao.getTheaterName(theater_name);
+			
+			System.out.println("영화 ="+ mdto.getMovie_no());
+			System.out.println("좌석 = " + tdto.getTheater_no());
+			
+
 			
 			
 			ShowDto sdto = new ShowDto();

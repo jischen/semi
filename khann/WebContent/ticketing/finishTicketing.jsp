@@ -1,3 +1,5 @@
+<%@page import="beans.dao.TheaterDao"%>
+<%@page import="beans.dto.TheaterDto"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="beans.dto.SeatDto"%>
 <%@page import="beans.dao.SeatDao"%>
@@ -40,76 +42,92 @@
 	
 	MovieDao mdao = new MovieDao();
 		
-		
+	TheaterDao ttdao = new TheaterDao();	
 	SeatDao seat = new SeatDao();
 	
 	
-	
-	
-	
-	
+
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div id="dh-content">
-	<%for(TicketingDto tdto : list){ %>
+<div>
+<head>
+ 
+    <style>
+        article{
+            height: 650px;
+            width: 350px;
+            background-color: #e8f0f3;
+            margin-top: 150px; 
+            margin-left: 350px;
+            text-align: center;
+            font-family : "굴림";
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .ticket{
+            color: black;
+        }
+        hr{
+            border-bottom-style: dotted;       
+        }
+    </style>
+    
+</head>
+<body>
+   <article>
+   	<%for(TicketingDto tdto : list){ %>
 	<%if(tdto.getTickekting_no() == (ticket_no-1)){ %>
-	<table border="1">
-		<tr>
-			<td>영화 제목</td>	
-			<td>
-	            <% 
-	            ShowDto sdto = show.get(tdto.getShow_no());
-	            MovieDto mdto = mdao.get(sdto.getMovie_no());
-	            %>
-				<input type="text"  value="<%=mdto.getMovie_name() %>" >
-			</td>
-		<tr>
-	
-		<tr>
-			<td>티켓 구매자 아이디</td>	
-			<td><input type="text"  value="<%=user.getMember_id() %>" ><td>
-		<tr>
-		
-		<tr>
-			<%
-			
+    	<div>
+    		<img src="<%=request.getContextPath()%>/img/logo2.png" width="150px" height="150px">
+    	</div>
+   		<hr>
+   		<div id="ticket">
+             <% 
+	         ShowDto sdto = show.get(tdto.getShow_no());
+	         MovieDto mdto = mdao.get(sdto.getMovie_no());
+	  	     %>
+		</div>
+    	<hr>
+    	<div id="ticket">
+    		<%=user.getMember_id() %>
+    	</div>
+    	<hr>
+    	<div id="ticket">
+    		<%
 			String movieStartDay = sdto.getShow_start().substring(2,10);
 			String movieStartTime = sdto.getShow_start().substring(11,16);
 			%>
-			<td>상영 날짜 / 시간</td>
-			<td><input type="text"  value="<%=movieStartDay + " / " + movieStartTime %>" ><td>
-		<tr>
-		
-		<tr>
-			<%List<SeatDto> seatList = seat.seat(tdto.getSeat_no()); %>
-			<td>좌석</td>	
-			<td>
-			<%for(SeatDto seatno : seatList){ %>
-			
-			<input type="text"  value="<%=seatno.getSeat_row()+"-"+seatno.getSeat_col()%>" >
-			<td>
-			<%} %>
-			
-		<tr>
-		
-		<tr>
-			<td>티켓 구매 일자</td>	
-			<td>
-			<input type="text" value="<%=(year)/100+"년 "+ month + "월 "+ day + "일" + hour+":"+ min%>">
-			</td>
-		<tr>
-		
-		<tr>
-			<td>금액</td>	
-			<td>
-			<input type="text" value="<%=tdto.getTicketing_price()*tdto.getTicketing_peoplenum()+"원"%>">
-			</td>
-		<tr>
-	
-	</table>
-	<%} }%>
+			<%=movieStartDay + " / " + movieStartTime %>
+    	</div>
+    	<hr>
+    	<%List<SeatDto> seatList = seat.seat(tdto.getSeat_no()); %>
+    	<%
+    	  int theater_no = sdto.getTheater_no(); 
+    	  TheaterDto ttdto = ttdao.get(theater_no); %>
+    	<%for(SeatDto seatno : seatList){ %>
+   		<div id="ticket">
+   			<%=ttdto.getTheater_name()%> / <%=seatno.getSeat_row()+"-"+seatno.getSeat_col()%>
+   		</div>
+   		<%} %>
+    	<hr>
+    	<div id="ticket">
+    		<%=(year)/100+"년 "+ month + "월 "+ day + "일" + hour+":"+ min%>
+    	</div>
+    	<hr>
+    	<div id="ticket">
+    		<%=tdto.getTicketing_price()*tdto.getTicketing_peoplenum()+"원"%>
+    	</div>
+    	<hr>
+    	<div id="ticket">
+    		<img src="<%=request.getContextPath()%>/img/barcode.png" width="200px" height="80">
+    	</div>
+   <%}} %>
+   </article> 
+</body>
+
 </div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

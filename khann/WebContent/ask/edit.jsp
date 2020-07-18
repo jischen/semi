@@ -61,25 +61,25 @@
 </script>   
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div align="center">
-	<h2>게시글 수정</h2>
+<article class="w-90">
+	<div class="row"><h2>게시글 수정</h2></div>
 	
+	<!-- 테이블 -->
 	<form action="edit.do" method="post" onsubmit="return formCheck();">
-	
+	<div class="row">
 		<input type="hidden" name="ask_no" value="<%=ask_no%>">
 		<%if(!isAdmin){ %>
 		<input type="hidden" name="ask_head" value="미답변">
 		<%} %>
-		<table border="1">
+		<table class= "table table-border">
 			<tbody>
 				<%if(isAdmin){ %>
 				<tr>
 					<th>말머리</th>
 					<td>
 						<select name="ask_head">
-							<option value="">말머리 선택</option>
-							<option value="미답변">미답변</option>
 							<option value="답변완료">답변완료</option>
+							<option value="미답변">미답변</option>
 						</select>
 					</td>
 				</tr>
@@ -97,14 +97,14 @@
 					</td>
 				</tr>
 			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="수정"></td>
-				</tr>
-			</tfoot>
 		</table>
+	</div>
 	
+	<!-- 수정 버튼 -->
+	<div class="row right">
+		<input class="form-btn form-inline" type="submit" value="수정">
+	</div>
 	</form>
-</div>
+</article>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

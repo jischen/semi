@@ -9,6 +9,12 @@
 	window.open("id_overlap_check.jsp", "idwin", "width=400, height=350"); }
 
 </script>
+<style>
+	th {
+	font-family:cl
+	}
+</style>
+
 
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -70,7 +76,7 @@
 
 <div align="center">
 	
-	<h2>회원가입</h2>    
+	<div style="margin-bottom:30px"><h2 class="cb">회원가입</h2></div>
     
 <!-- 	<form action="/home/member/join.do"> -->
 	<!-- 
@@ -148,7 +154,7 @@
 			<tfoot>
 				<tr>
 					<th colspan="2">
-						<input type="submit" value="가입">
+						<input style="padding:0.5rem"  type="submit" value="가입">
 					</th>
 				</tr>
 			</tfoot>
