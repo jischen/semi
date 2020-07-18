@@ -1,3 +1,4 @@
+<%@page import="org.apache.catalina.User"%>
 <%@page import="beans.dao.ReviewDao"%>
 <%@page import="beans.dto.ReviewDto"%>
 <%@page import="beans.dto.MemberDto"%>
@@ -5,7 +6,8 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
+	MemberDto mem = (MemberDto) session.getAttribute("userinfo");
+
 %>
 
 
@@ -15,16 +17,15 @@
 
 
 <title>리뷰 작성</title>
-<link rel="stylesheet" type="text/css" href="../base">
+ <link rel="stylesheet" type="text/css" href="../css/base.css">
 <style>
 main {
-	background-color: azure;
+
 	width: 600px;
 }
 
 .review_title {
 	position: relative;
-	border: 0px solid gray;
 	top: 2px;
 	font-size: 26px;
 	font-weight: 600;
@@ -89,7 +90,7 @@ main {
 				</div>
 				
 				<div class="review_amount">
-					영화 제목 <br> <input type="text" id="rw" name="review_movie">
+					영화 제목 <br> <input type="text" id="rw" name="movie_name">
 				</div>
 
 				<div class="review_amount">

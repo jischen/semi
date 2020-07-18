@@ -23,10 +23,121 @@ MovieFileDao mfdao = new MovieFileDao();
 
 
 
+ <link rel="stylesheet" type="text/css" href="../base.css">
 
-<div id="dh-content" >							
-	<form action="insert.do" method="post" enctype="multipart/form-data">
+<style>
+    .mvcontent-form{
+        border:1px solid black;
+    }
+    #movielabel{
+        font-weight: 800;
+      
+      
+    }
+    #movietext:hover{
+        background-color: lightgray;
+    }
+    .mvbutton{
+   
+        height: 40px;
+         border:1px solid black;
+        background-color: #9D3434;
+        text-align: right;
+    }
+    
+    .moviemain{
+    height:40px;
+    background-color: #9D3434;
+    }
+    </style>
+</head>
+
+
+<body>
+
+
+    <div id="dh-content" style="margin-left: 320px">
+<form action="insert.do" method="post" enctype="multipart/form-data">
+ 
 	 <input type="hidden" name="movie_no" value="<%=request.getParameter("movie_no")%>">
+       
+       영화 삽입
+      <div class="mvcontent-form">
+
+
+ 
+        <div class="movie_content">
+            <label id="movielabel"> 제목</label>
+             <br>
+           <input type="text" name="movie_name" required>
+        </div>
+       
+
+        <div class="movie_content">
+            <label id="movielabel">  장르</label>
+             <br>
+           <input name="movie_type" type="text" required>
+        </div>
+ 
+       
+        <div class="movie_content">
+            <label id="movielabel">  상영등급</label>
+             <br>
+           <input name="movie_age" type="text" required>
+        </div>
+ 
+        <div class="movie_content">
+            <label id="movielabel"> 상영시간</label>
+             <br>
+          <input name="movie_runtime" type="text" required>
+        </div>
+
+      
+       
+
+        <div class="movie_content">
+           <label id="movielabel">  개봉일 </label>
+            <br>
+         <input name="movie_open" type="text" required>
+        </div>
+
+             <div class="movie_content">
+            <label id="movielabel"> 감독</label>
+             <br>
+         <input name="movie_director" type="text">
+        </div>
+
+
+             <div class="movie_content">
+            <label id="movielabel"> 배우</label>
+                 <br>
+       <input name="movie_ac" type="text">
+        </div>
+
+        <div class="movie_content">
+           <label id="movielabel">  줄거리</label>
+                <br>
+          <textarea name="movie_content"  rows="7" cols="70"></textarea>
+        </div>
+        
+        
+        <div class="movie_content">
+   <label>첨부파일</label>
+           첨부파일
+	<input type="file" name="movie_file" multiple accept=".jpg, .png, .gif"> 
+            
+        </div>
+            <div class="mvbutton">
+            <input type="submit" value="등록">
+           
+            
+
+            </div>
+            </div>
+                           	</form>
+                            </div>
+
+
 
 	<div>제목
 	<input type="text" name="movie_name" required>
@@ -81,6 +192,7 @@ MovieFileDao mfdao = new MovieFileDao();
 	
 	</form>	
 </div>
+
 <jsp:include page="/template/footer.jsp"></jsp:include>
 
 

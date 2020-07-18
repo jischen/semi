@@ -886,7 +886,7 @@ a {
 }
 /*리뷰 css*/
 .review_wrap {
-	background-color: azure;
+
 	width: 600px;
 }
 
@@ -899,6 +899,7 @@ a {
 	font-weight: 600;
 	padding: 1rem;
 	letter-spacing: -2px;
+	width: 500px;
 }
 
 .review_amount {
@@ -960,6 +961,33 @@ a {
 	border-bottom: 1px solid;
 }
 
+
+.review_content_wrap {
+	border: 1px solid black;
+}
+
+#revieweditlabel {
+	background-color: lightgray;
+}
+
+.revieweditform {
+	border: 1px;
+	background-color: whitesmoke;
+}
+
+
+.button-form {
+	color: gray;
+	border: 0;
+	outline: 0;
+	background-color: white;
+	text-align: left;
+	padding: 0;
+	font-size: 15;
+	cursor: pointer;
+}
+
+
 .listw {
 	height: 30px;
 }
@@ -996,6 +1024,7 @@ a {
 	
 	
 	
+
 /*
 float 정렬
 left클래스 왼쪽으로 정렬
@@ -1020,5 +1049,28 @@ right클래스 오른쪽으로 정렬
 }	
 
 
+
+#util ul:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*show*/
+.showlist {
+	margin: auto;
+	padding: 1px;
+	width: 400px;
+	height: 30px;
+}
+
+.show_span {
+	border: 1px solid black;
+	background-color: firebrick;
+	color: white;
+	font-size: 16px;
+}
+
 	
 	
+

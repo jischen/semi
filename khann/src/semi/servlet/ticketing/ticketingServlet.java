@@ -71,6 +71,8 @@ public class ticketingServlet extends HttpServlet{
 			}
 			
 			
+			
+			
 			resp.sendRedirect("finishTicketing.jsp");
 			
 			
