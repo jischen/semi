@@ -73,7 +73,7 @@
 	</a>
 	
 	<a href="#"> <img
-		src="<%=request.getContextPath()%>/image/poster/코난극장판.jpg" width="286"
+		src="<%=request.getContextPath()%>/image/poster/반도.jpg" width="286"
 		height="408" style="margin: 50px;">
 	</a>
 	
