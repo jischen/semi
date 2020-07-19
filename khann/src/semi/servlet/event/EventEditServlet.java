@@ -2,7 +2,6 @@ package semi.servlet.event;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 
@@ -26,9 +25,10 @@ public class EventEditServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 
+
 			String charset = "UTF-8";
 			int limit = 10 * 1024 * 1024;
-			File baseDir = new File("D:/upload/event");
+			File baseDir = new File("D:/upload/board");
 
 			DiskFileItemFactory factory = new DiskFileItemFactory(limit, baseDir);
 			factory.setDefaultCharset(charset);
@@ -82,6 +82,7 @@ public class EventEditServlet extends HttpServlet {
 
 		catch (Exception e) {
 			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 			resp.sendError(500);
 		}

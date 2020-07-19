@@ -1,3 +1,7 @@
+<%@page import="beans.dto.TheaterDto"%>
+<%@page import="beans.dao.TheaterDao"%>
+<%@page import="beans.dto.MovieDto"%>
+<%@page import="beans.dao.MovieDao"%>
 <%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.ShowDto"%>
 <%@page import="beans.dao.ShowDao"%>
@@ -11,6 +15,14 @@
 
 	ShowDao sdao = new ShowDao();
 	ShowDto sdto = sdao.get(show_no);
+	
+
+MovieDao mdao = new MovieDao();
+MovieDto mdto = mdao.get(sdto.getMovie_no());
+
+TheaterDao tdao = new TheaterDao();
+TheaterDto tdto = tdao.get(sdto.getTheater_no());
+
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -25,7 +37,7 @@
 			<tbody>
 				<tr>
 					<th>상영 번호</th>
-					<th>영화 번호</th>
+					<th>영화 제목</th>
 					<th>상영관 번호</th>
 					<th>상영 시작 시간</th>
 				</tr>
@@ -34,8 +46,8 @@
 				<tr>
 
 					<td><input type="text" name="show_no" value="<%=show_no%>"></td>
-					<td><input type="text" name="movie_no" value="<%=sdto.getMovie_no()%>"></td>
-					<td><input type="text" name="theater_no" value="<%=sdto.getTheater_no()%>"></td>
+					<td><input type="text" name="movie_name" value="<%=mdto.getMovie_name()%>"></td>
+					<td><input type="text" name="theater_name" value="<%=tdto.getTheater_name()%>"></td>
 					<td><input type="text" name="show_start"
 						value="<%=sdto.getShow_start()%>"></td>
 				</tr>

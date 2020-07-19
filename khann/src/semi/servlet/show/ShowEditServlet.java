@@ -8,8 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.dao.MovieDao;
 import beans.dao.ShowDao;
+import beans.dao.TheaterDao;
+import beans.dto.MovieDto;
 import beans.dto.ShowDto;
+import beans.dto.TheaterDto;
 
 @WebServlet(urlPatterns = "/show/show_edit.do")
 public class ShowEditServlet extends HttpServlet {
@@ -19,6 +23,9 @@ public class ShowEditServlet extends HttpServlet {
 		try {
 			resp.setCharacterEncoding("UTF-8");
 
+			
+			
+			
 			ShowDto sdto = new ShowDto();
 			sdto.setShow_no(Integer.parseInt(req.getParameter("show_no")));
 			sdto.setMovie_no(Integer.parseInt(req.getParameter("movie_no")));
