@@ -122,8 +122,8 @@ public class EventFileDao {
 
 		rs.next();
 
-		int result = rs.getInt(1);
-
+		int result = rs.getInt(1);	
+		
 		con.close();
 
 		return result;

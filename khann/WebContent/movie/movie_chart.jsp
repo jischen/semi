@@ -41,23 +41,21 @@
 
            
             <a class="moviechart">
-           <label><%=moivedto.getMovie_no() %></label>
+           <label><%=moviedto.getMovie_no() %></label>
+      		</a>
           
-         <a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> <img
-		src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="200"
+         <a href="movie_content.jsp?movie_no=<%=moviedto.getMovie_no()%>"> <img
+		src="/khann/image/<%=moviedto.getMovie_no()%>.jpg" width="200"
 		height="300" style="margin: 50px;">
-	</a>
-      </a>
+		</a>
          
-       	<%
+      
 
 	<a href="movie_content.jsp?movie_no=<%=moviedto.getMovie_no()%>"> <img
 		src="download.do?movie_file_no=<%=movie_img_no%>" width="286"
 		height="408" style="margin: 50px;">
 	</a>
-	</td>
 
-	</a>
 
 
 	<%

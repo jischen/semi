@@ -2,6 +2,7 @@ package semi.servlet.event;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +29,11 @@ public class EventFileDownloadServlet extends HttpServlet {
 				resp.sendError(404);
 				return;
 			}
+			
+		      resp.setHeader("Content-Type", "application/octet-stream; charset=UTF-8");
+		      resp.setHeader("Content-Disposition", "attachment; filename=\""+URLEncoder.encode(efdto.getEvent_file_name(), "UTF-8")+"\"");
+		      resp.setHeader("Content-Length", String.valueOf(efdto.getEvent_file_size()));
+
 			
 			File target = new File("D:/upload/board", String.valueOf(efdto.getEvent_file_no()));
 			byte[] data = FileUtils.readFileToByteArray(target);//파일 데이터 로드
