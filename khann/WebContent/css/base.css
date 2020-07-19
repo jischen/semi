@@ -8,32 +8,35 @@
 
 /*
 	웹 폰트 등록*/
-@font-face {
-	font-family: cm;
-	src: url("../font/cm.ttf");
-}
+	
+	        @font-face {
+            font-family: cm;
+            src: url("../font/cm.ttf");
+        }
+        @font-face {
+            font-family: cl;
+            src: url("../font/cl.ttf");
+        }
+        @font-face {
+            font-family: cb;
+            src: url("../font/cb.ttf");
+        }
+        
+        .cm{
+            font-family: cm;
+        }
+        .cl{
+            font-family: cl;
+        }
+        .cb{
+            font-family: cb;
+        }
 
-@font-face {
-	font-family: cl;
-	src: url("../font/cl.ttf");
-}
+	
+	
+	
 
-@font-face {
-	font-family: cb;
-	src: url("../font/cb.ttf");
-}
 
-.cm {
-	font-family: cm;
-}
-
-.cl {
-	font-family: cl;
-}
-
-.cb {
-	font-family: cb;
-}
 
 /* 
 공통적으로 적용될 스타일 
@@ -46,7 +49,6 @@
 */
 * {
 	box-sizing: border-box;
-	font-family: nanumBarunPen;
 }
 
 /*
@@ -60,7 +62,7 @@
     - .img-round : 이미지가 둥근 모서리를 갖도록 구현
 */
 .sns {
-	height: 25px;
+	height:25px;
 }
 
 .img.img-border {
@@ -115,11 +117,15 @@
 	padding: 0.5rem;
 	text-align: center;
 }
+.table a{
+	text-decoration : none;
+   	color: black;
+}
 
 /* 확장 스타일 1번 : .table-border 로 테두리를 부여 */
 .table.table-border {
 	/* 테이블에 테두리를 부여*/
-	border: 1px solid black;
+	border: 0.5px solid #c0c0c0;
 	/* 테두리 병합 */
 	border-collapse: collapse;
 }
@@ -128,7 +134,7 @@
 	.table.table-border>tbody>tr>td, .table.table-border>tfoot>tr>th,
 	.table.table-border>tfoot>tr>td {
 	/* 칸에 테두리를 부여 */
-	border: 1px solid black;
+	border: 0.5px solid #c0c0c0;
 }
 
 /* 확장 스타일 2번 : .table-stripe 로 줄무늬 부여 */
@@ -268,7 +274,7 @@
 	width: 100%;
 }
 
-.menu {
+.menu{
 	display: flex;
 	width: 100%;
 }
@@ -313,7 +319,7 @@
 	display: none;
 }
 
-.menu li:hover>ul {
+.menu li:hover > ul {
 	display: block;
 }
 
@@ -489,6 +495,12 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 	width: auto;
 }
 
+/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
+.left {text-align: left !important;}
+.center {text-align: center !important;}
+.right {text-align: right !important;}
+
+
 /* textarea는 수직으로만 크기조정이 가능하도록 구현 */
 textarea.form-input {
 	resize: vertical;
@@ -542,22 +554,20 @@ textarea.form-input {
 .float-box>.float-right {
 	float: right;
 }
-
-body, div, dl, dt, dd, th, td, ul, ol, li, h1, h2, h3, h4, h5, h6, form,
-	fieldset, p, blockquote, button, input, textarea {
+body, div, dl, dt, dd, th, td, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, blockquote, button, input, textarea{
 	margin: 0;
-	padding: 0;
+	padding:0;
 }
 
-ul, li, ol {
+ul, li, ol{
 	list-style: none;
 }
-
-.margin-auto {
+.margin-auto{
 	position: relative;
 	margin: 0 auto;
 	width: 1060px;
-}
+}	
+
 
 /*  */
 #dh-container {
@@ -567,62 +577,63 @@ ul, li, ol {
 	/* border: 1px solid #bcbcbc;*/
 }
 
-#dh-container-flex {
-	width: 1240px;
-	display: flex;
+#dh-container-flex{
+	width:1240px;
+	display:flex;
 }
 
-.map-flex-item {
+.map-flex-item{
 	margin: 10px auto;
 	padding: 20px;
+
 }
 
-.map-flex-item:nth-child(1) {
+.map-flex-item:nth-child(1){
 	padding: 20px;
 	flex-grow: 2;
 	text-align: "center";
 }
-
-.map-flex-item:nth-child(2) {
+.map-flex-item:nth-child(2){
 	padding: 20px;
 	flex-grow: 1;
 	text-align: "center";
-	flex-direction: column;
-	display: flex;
+		flex-direction:column;
+	display:flex;
+	
+	 
 }
-
-.map-flex-item-column {
+.map-flex-item-column{
 	flex-grow: 1;
 }
 
+
 .flex-container {
-	display: flex;
+	display:flex;
 }
 /*li에 동그라미 ㄴㄴ*/
-#no-disc {
-	list-style-type: none;
+#no-disc{
+	list-style-type:none;
 }
 
-.ul-none>li {
-	list-style-type: none;
+.ul-none>li{
+	list-style-type:none;
 }
 
 /*  */
 #dh-header {
-	padding: 20px;
 	margin-bottom: 20px;
 	/*  border: 1px solid #bcbcbc; */
 }
 
 #dh-header2 {
-	position: relative;
+	position:relative;
 }
 /*  */
 #dh-content {
 	padding: 20px;
 	margin-bottom: 100px;
 	float: left;
-	border: 1px solid #bcbcbc;
+	border: 1px solid #bcbcbc; 
 }
 
 /*사이드 바 로그인창 구현예정*/
@@ -711,6 +722,8 @@ ul, li, ol {
 }
 /*헤더메뉴좌측 SNS로고 */
 
+
+
 /*헤더메뉴우측 로그인/회원가입/내정보-->*/
 #lojoin {
 	text-align: right;
@@ -723,16 +736,15 @@ ul, li, ol {
 	font-weight: bold;
 }
 
+
 span a {
 	text-decoration: none;
 	color: white;
 }
-
 a {
 	text-decoration: none;
 }
-
-.decox {
+.decox{
 	text-decoration: none;
 	color: gray;
 }
@@ -742,6 +754,7 @@ a {
 }
 /*로그인*/
 .login-wrap {
+
 	width: 460px;
 	text-align: center;
 	margin: 0px auto;
@@ -757,13 +770,15 @@ a {
 }
 
 /* 공통점이 아닌 차이점은 각각의 영역에 구현 */
+
 .login-logo {
-	text-align: left;
+	text-align:left;
 }
 
 .login-id {
 	padding-left: 50px;
-	background-image: url("../img/login_id.png");
+	background-image:
+		url("../img/login_id.png");
 	background-repeat: no-repeat;
 	background-size: 35px;
 	background-position: 4px 4px;
@@ -771,7 +786,8 @@ a {
 
 .login-pw {
 	padding-left: 50px;
-	background-image: url("../img/login_pw.png");
+	background-image:
+		url("../img/login_pw.png");
 	background-repeat: no-repeat;
 	background-size: 35px;
 	background-position: 4px 4px;
@@ -794,6 +810,15 @@ a {
 
 .login-checkbox-wrap {
 	text-align: left;
+}
+
+.button-sytle{
+	color: white;
+	background-color: #9D3434;
+	border-width: 1px;
+	border-style: solid;
+	font-family: cm;
+	font-size:15px;
 }
 
 /*스와이퍼 */
@@ -828,7 +853,7 @@ a {
 	display: inline-block;
 	width: 50%; /*몇개를 만들거냐? 1/갯수*/
 	height: 100%;
-	border: 1px solid;
+	border: 1px solid;	
 }
 
 .flex_item {
@@ -889,6 +914,7 @@ a {
 	color: black;
 }
 
+
 .review_submit {
 	width: 170px;
 	height: 40px;
@@ -903,6 +929,7 @@ a {
 	font-size: 14px;
 	background-color: black;
 	color: white;
+
 }
 
 .review_score {
@@ -934,6 +961,7 @@ a {
 	border-bottom: 1px solid;
 }
 
+
 .review_content_wrap {
 	border: 1px solid black;
 }
@@ -959,22 +987,68 @@ a {
 	cursor: pointer;
 }
 
+
+.listw {
+	height: 30px;
+}
+
+.listm {
+	height: 30px;
+}
+
+.lists {
+	height: 30px;
+}
+
+.listc {
+	height: 30px;
+}
+
+.listd {
+	height: 30px;
+}
+
+.listimg img {
+	width: 30px;
+}
+
+.button-form{
+	color:gray;
+	border:0;
+	outline:0;
+	background-color:white;
+	text-align:left;
+	padding:0;
+	font-size:15;
+	cursor:pointer;
+	
+	
+	
+
 /*
 float 정렬
 left클래스 왼쪽으로 정렬
 right클래스 오른쪽으로 정렬
-*/
-.left {
-	float: left;
-}
+*/	
+.left{
+	float:left;
+}	
+.right{
+	float:right;
+}	
 
-.right {
-	float: right;
-}
-
-#util {
+	
+#util{
 	background-color: #e8f0f3;
 }
+
+#util ul:after{
+    content: "";
+    display: block;
+    clear: both;	
+}	
+
+
 
 #util ul:after {
 	content: "";
@@ -996,3 +1070,7 @@ right클래스 오른쪽으로 정렬
 	color: white;
 	font-size: 16px;
 }
+
+	
+	
+

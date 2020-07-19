@@ -16,13 +16,11 @@
      ReviewDto rdto=rdao.get(review_no);
      
    
-
     
    
     
     MovieDao mdao=new MovieDao();
     MovieDto mdto=mdao.get((rdto.getReview_movie()));
-
    
     %>
 

@@ -181,6 +181,12 @@ public class EventDao {
 		Connection con = getConnection();
 
 		String sql = "UPDATE event SET event_condition=?, event_title=?, event_content=? WHERE event_no=?";
+		
+//		System.out.println(edto.getEvent_condition());
+//		System.out.println(edto.getEvent_title());
+//		System.out.println(edto.getEvent_condition());
+//		System.out.println(edto.getEvent_content());
+//		System.out.println(edto.getEvent_no());
 
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, edto.getEvent_condition());
@@ -188,7 +194,8 @@ public class EventDao {
 		ps.setString(3, edto.getEvent_content());
 		ps.setInt(4, edto.getEvent_no());
 		ps.execute();
-
+		
+		
 		con.close();
 	}
 

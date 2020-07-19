@@ -1,3 +1,4 @@
+event_list.jsp
 <%@page import="java.io.Console"%>
 <%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.EventDto"%>
@@ -5,6 +6,10 @@
 <%@page import="beans.dao.EventDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<style>
+
+</style>
 <%
 	String type = request.getParameter("type");
 	String keyword = request.getParameter("keyword");
@@ -69,7 +74,8 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<div id="dh-content">
+
+<div align="center">
 <article class="w-90" align="center">
 	<!-- 제목 -->
 	<div class="row">
@@ -78,19 +84,20 @@
 
 
 	<!-- 글 목록 -->
+
 	<div class="row">
 
 		<!-- 테이블 -->
-		<table border="1" align="center" width="60%" height="80px">
+		<table class="table table-border" >
 			<thead align="center">
-				<tr>
+				<tr bgcolor="#f5f5f5">
 					<th>번호</th>
-					<th width="40%">제목</th>
+					<th width="500">제목</th>
 					<th>작성일</th>
 					<th>진행</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody align = "center">
 				<%
 					for (EventDto edto : list) {
 				%>

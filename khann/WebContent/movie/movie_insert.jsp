@@ -107,6 +107,7 @@ MovieFileDao mfdao = new MovieFileDao();
          <input name="movie_director" type="text">
         </div>
 
+
              <div class="movie_content">
             <label id="movielabel"> 배우</label>
                  <br>
@@ -136,6 +137,61 @@ MovieFileDao mfdao = new MovieFileDao();
                            	</form>
                             </div>
 
+
+
+	<div>제목
+	<input type="text" name="movie_name" required>
+	</div>
+	<br>
+	
+	<div>장르
+	<input name="movie_type" type="text" required>
+	</div>	
+	<br>
+		
+	<div>상영등급
+	<input name="movie_age" type="text" required>
+	</div>
+	<br>
+	
+	<div>상영시간
+	<input name="movie_runtime" type="text" required>
+	</div>
+	<br>
+	
+	<div>개봉일
+	<input name="movie_open" type="text" required>
+	</div>
+	<br>
+	
+	<div>감독
+	<input name="movie_director" type="text">
+	</div>
+	<br>
+	
+	<div>배우
+	<input name="movie_ac" type="text">
+	</div>
+	<br>
+	
+	<div>줄거리
+		<textarea name="movie_content"  rows="7" cols="70"></textarea>
+	</div>	
+	
+	<div>첨부파일
+	<input type="file" name="movie_file" multiple accept=".jpg, .png, .gif"> 
+	
+				
+	</div>
+	
+	<div colspan="2" align="center">
+			<input type="submit" value="등록">
+	</div>
+	
+
+	
+	</form>	
+</div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
 

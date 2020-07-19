@@ -9,14 +9,9 @@
 <!-- 리뷰 목록 페이지 -->
 <%
 	ReviewDao rdao = new ReviewDao();
-
 List<ReviewDto> list = rdao.getList();
-
-
 MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
 boolean isLogin = mdto != null;
-
-
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
@@ -28,8 +23,6 @@ boolean isLogin = mdto != null;
         background-color: lightgray;
         
     }
-
-
 </style>
 
 </head>
