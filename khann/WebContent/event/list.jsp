@@ -1,4 +1,3 @@
-event_list.jsp
 <%@page import="java.io.Console"%>
 <%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.EventDto"%>

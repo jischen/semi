@@ -13,15 +13,18 @@ EventDao edao = new EventDao();
 
 int event_no=Integer.parseInt(request.getParameter("event_no"));
 
-// 게시글 번호로 글 조회
+// 게시글 번호로 이미지 조회
 EventFileDao efdao = new EventFileDao();
 List<EventFileDto> fileList = efdao.getList(event_no);
 
-EventDto edto = edao.get(event_no);
 int event_img_no = efdao.getEventImgNo(event_no);
+
+EventDto edto = edao.get(event_no);
 
 //관리자만 글 작성,삭제 가능
 MemberDto user=(MemberDto) session.getAttribute("userinfo");
+
+List<EventDto> list = edao.list();
 
 //첨부파일 목록을 구해오는 코드
 
@@ -50,11 +53,20 @@ MemberDto user=(MemberDto) session.getAttribute("userinfo");
 				<td colspan="2" valign="top">
 					<%=edto.getEvent_content()%>
 						<!-- 다운로드 주소를 img 태그로 지정하면 미리보가 가능 -->
-				
- <img align="center" src="download.do?event_file_no=<%=event_img_no%>" width="300px" height="300px">  --%>
+					<br>
+					
+
+<%--  					<%
+		for (EventDto eventdto : list) {
+			int event_img_no = efdao.getEventImgNo(eventdto.getEvent_no());
+	%> --%>
+	
+	
+ <img align="center" src="download.do?event_file_no=<%=event_img_no%>" width="auto" height="auto">
+
 				</td>  
 			</tr>
-			
+
 			
 			<%-- <!-- 첨부파일 출력 영역 : 첨부파일이 있는 경우만 출력 -->
 			<tr>
