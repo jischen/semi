@@ -10,21 +10,23 @@
 %>
 
 
-<link rel="stylesheet" type="text/css" href="../base.css">
+<link rel="stylesheet" type="text/css" href="../css/base.css">
 <style>
 .showinsert {
-	background-color: lightgray;
+	background-color: #9D3434;
 }
 
 .show_form {
-	width: 300px;
+	width: 500px;
 	margin: auto;
-	border: 1px;
+	border: 2px solid black;
 	background-color: whitesmoke;
 }
 
-.submitclick {
-	width: 200px;
+.showform {
+	width: 300px;
+	border: 2px solid black;
+	height: 30px;
 }
 
 .submitclick {

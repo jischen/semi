@@ -14,72 +14,94 @@
 	boolean isLogin = mdto != null;
 %>
 
-
 <jsp:include page="/template/header.jsp"></jsp:include>
 
+
 <head>
-   <link rel="stylesheet" type="text/css" href="../base.css">
-    <style>
    
+    <title>MovieName</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <style>
+        
+        
+        
+        table {
+            margin: auto;
+            text-align: center;
+            
+        
+        }
+        
+        td	{
+        	width: 300px;
+        }
+        
+        
     
     </style>
-    
-    
+ 
 </head>
 <body>
-     <div id="dh-content">
-   <div class="moviechart">
-     
-           
-	<%
-		for (MovieDto moivedto : list) {
-	%>
+    
+    
+    <table >
+        	<tr>
+    		<%for (MovieDto moivedto : list){%>
+            		<td>
+            		<label><%=moivedto.getMovie_name()%></label>
+            		<br>
+            		<a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> 
+            		<img src="/khann/image/<%=moivedto.getMovie_name()%>.jpg" 
+            			width="280px" height="250px">
+            		</a>
+            		</td>
+            		
+        	<%}%>  
+        	</tr>
+        	         
+    </table>
+    <%if (isLogin) {%>
+			<%if (mdto.getGrade().equals("관리자")) {%>
+			<div>
+			<a href="/khann/movie/movie_insert.jsp">영화 등록</a> 
+			<a href="/khann/movie/movie_delete.jsp">영화 삭제</a>
+       		</div>
 
-           
-            <a class="moviechart">
-           <label><%=moivedto.getMovie_no() %></label>
-          
-         <a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> <img
-		src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="200"
-		height="300" style="margin: 50px;">
-	</a>
-      </a>
-         
-       	<%
-		}
-	%>
-
-<%
-		if (isLogin) {
-	%>
-	<%
-		if (mdto.getGrade().equals("관리자")) {
-	%>
-
-
-<div>
-		<a href="/khann/movie/movie_insert.jsp">영화 등록</a> <a
-			href="/khann/movie/movie_delete.jsp">영화 삭제</a>
-        </div>
-
-	<%
-		}
-	%>
-
-	<%
-		}
-	%>
-
-       
-       
-
-   
-        
-   
-    </div>
-        </div>
+			<%}%>
+	<%} %>
+    
+    
+    
 </body>
-</html>
+
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<jsp:include page="/template/footer.jsp"></jsp:include>
+
 

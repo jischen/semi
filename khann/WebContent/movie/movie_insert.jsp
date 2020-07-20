@@ -23,7 +23,7 @@ MovieFileDao mfdao = new MovieFileDao();
 
 
 
- <link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="../css/base.css">
 
 <style>
     .mvcontent-form{
@@ -49,6 +49,12 @@ MovieFileDao mfdao = new MovieFileDao();
     height:40px;
     background-color: #9D3434;
     }
+    .moviein{
+    height: 30px;
+    font-size:20px;
+    
+  
+    }
     </style>
 </head>
 
@@ -57,11 +63,18 @@ MovieFileDao mfdao = new MovieFileDao();
 
 
     <div id="dh-content" style="margin-left: 320px">
-<form action="insert.do" method="post" enctype="multipart/form-data">
+<form action="movie_insert.do" method="post" enctype="multipart/form-data">
  
+
+	 <input type="hidden" name="movie_no" value="<%=request.getParameter("movie_no")%>">
+     
+      <div class="moviein"> 
+
     <input type="hidden" name="movie_no" value="<%=request.getParameter("movie_no")%>">
        
+
        영화 삽입
+       </div>
       <div class="mvcontent-form">
 
 
