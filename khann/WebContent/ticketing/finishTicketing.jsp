@@ -89,6 +89,7 @@
 	         ShowDto sdto = show.get(tdto.getShow_no());
 	         MovieDto mdto = mdao.get(sdto.getMovie_no());
 	  	     %>
+	  	     <%=mdto.getMovie_name() %>
 		</div>
     	<hr>
     	<div id="ticket">

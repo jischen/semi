@@ -23,7 +23,7 @@ MovieFileDao mfdao = new MovieFileDao();
 
 
 
- <link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="../css/base.css">
 
 <style>
     .mvcontent-form{
@@ -49,6 +49,12 @@ MovieFileDao mfdao = new MovieFileDao();
     height:40px;
     background-color: #9D3434;
     }
+    .moviein{
+    height: 30px;
+    font-size:20px;
+    
+  
+    }
     </style>
 </head>
 
@@ -57,11 +63,13 @@ MovieFileDao mfdao = new MovieFileDao();
 
 
     <div id="dh-content" style="margin-left: 320px">
-<form action="insert.do" method="post" enctype="multipart/form-data">
+<form action="movie_insert.do" method="post" enctype="multipart/form-data">
  
 	 <input type="hidden" name="movie_no" value="<%=request.getParameter("movie_no")%>">
-       
+     
+      <div class="moviein"> 
        영화 삽입
+       </div>
       <div class="mvcontent-form">
 
 
@@ -138,60 +146,6 @@ MovieFileDao mfdao = new MovieFileDao();
                             </div>
 
 
-
-	<div>제목
-	<input type="text" name="movie_name" required>
-	</div>
-	<br>
-	
-	<div>장르
-	<input name="movie_type" type="text" required>
-	</div>	
-	<br>
-		
-	<div>상영등급
-	<input name="movie_age" type="text" required>
-	</div>
-	<br>
-	
-	<div>상영시간
-	<input name="movie_runtime" type="text" required>
-	</div>
-	<br>
-	
-	<div>개봉일
-	<input name="movie_open" type="text" required>
-	</div>
-	<br>
-	
-	<div>감독
-	<input name="movie_director" type="text">
-	</div>
-	<br>
-	
-	<div>배우
-	<input name="movie_ac" type="text">
-	</div>
-	<br>
-	
-	<div>줄거리
-		<textarea name="movie_content"  rows="7" cols="70"></textarea>
-	</div>	
-	
-	<div>첨부파일
-	<input type="file" name="movie_file" multiple accept=".jpg, .png, .gif"> 
-	
-				
-	</div>
-	
-	<div colspan="2" align="center">
-			<input type="submit" value="등록">
-	</div>
-	
-
-	
-	</form>	
-</div>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>
 

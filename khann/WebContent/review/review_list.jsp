@@ -15,14 +15,19 @@ boolean isLogin = mdto != null;
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
-
-<link rel="stylesheet" type="text/css" href="../base.css">
+ <link rel="stylesheet" type="text/css" href="../css/base.css">
 <style>
   .list_num{
         border:2px solid black;
-        background-color: lightgray;
+        background-color: #9D3434;
+        font-weight: 800;
         
     }
+    .rlist{
+     
+    background-color:lightgray;
+    }
+  
 </style>
 
 </head>
@@ -51,30 +56,36 @@ boolean isLogin = mdto != null;
 			<div class="review_list" >
 
 			<div>
-				작성자
-				<%=rdto.getReview_writer()%>
+				<label class="rlist">작성자</label>
+			<%=rdto.getReview_writer()%>
 			</div>
+			<hr>
 			<div>
-				관람영화
+				<div><label class="rlist">관람영화</label></div>
 				<%=rdto.getReview_movie()%>
 			</div>
 			
 			<div>
-				리뷰점수
-				<%=rdto.getReview_score()%>
+				<label class="rlist">리뷰점수</label>
+				<div><%=rdto.getReview_score()%></div>
 			</div>
 				
 			<div>
-				리뷰내용:
+				<label class="rlist">리뷰내용</label>
 				<br>
-				<%=rdto.getReview_content()%>
+				<div><%=rdto.getReview_content()%></div>
 			</div>
 		
 		
 		</div>
 
 			<%} } %>
-			<%-- <%} %> --%>
+			<div class="rbutton"> 
+			 	<a href="/khann/review/review_write.jsp"><input type="button" value="리뷰작성"></a>
+			 	 	<a href="/khann/index.jsp"><input type="button" value="홈으로 돌아가기"></a>
+
+			</div>
+			
 		</form>
 	</div>
 </body>
