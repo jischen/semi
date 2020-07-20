@@ -37,7 +37,7 @@
 
            
             <a class="moviechart">
-           <label><%=moivedto.getMovie_no() %></label>
+
           
          <a href="movie_content.jsp?movie_no=<%=moivedto.getMovie_no()%>"> <img
 		src="/khann/image/<%=moivedto.getMovie_no()%>.jpg" width="200"

@@ -135,7 +135,24 @@ public class TicketingDao {
 	
 	
 	
-	
+	public List<TicketingDto> get(int member_no) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "SELECT * FROM TICKETING WHERE member_no=? ORDER BY member_no asc;";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, member_no);
+		ResultSet rs = ps.executeQuery();
+
+		List<TicketingDto> list = new ArrayList<>();
+		while (rs.next()) {
+			TicketingDto tdto = new TicketingDto(rs);
+			list.add(tdto);
+		}
+
+		con.close();
+		return list;
+
+	}
 	
 	
 	

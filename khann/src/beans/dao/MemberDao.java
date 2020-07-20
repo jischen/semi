@@ -242,7 +242,17 @@ public class MemberDao {
 	
 	
 	
-	
+	public void changePoint(MemberDto mdto) throws Exception {
+		Connection con = getConnection();
+
+		String sql = "UPDATE member SET member_point=? WHERE member_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, mdto.getMember_point());
+		ps.setString(2, mdto.getMember_id());
+		ps.execute();
+
+		con.close();
+	}
 	
 	
 	
