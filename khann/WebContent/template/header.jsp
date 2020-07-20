@@ -71,11 +71,9 @@
 						if (isLogin) {
 					%>
 					<!-- 로그인 상태일 경우 -->
-					<a href="<%=rootPath%>/member/logout.do">예매내역</a> <span>|</span> 
 					
 					<a href="<%=rootPath%>/member/logout.do">로그아웃</a> <span>|</span> <a
-						href="<%=rootPath%>/member/info.jsp">내정보</a> <span>|</span> <a
-						href="<%=rootPath%>">예매 내역</a> <span>|</span>
+						href="<%=rootPath%>/member/info.jsp">내정보</a> <span>|</span> 
 					<!-- 로그인 된 사용자 중에서도 "관리자" 인 경우만 나와야 하는 메뉴 -->
 					<%
 						if (mdto.getGrade().equals("관리자")) {

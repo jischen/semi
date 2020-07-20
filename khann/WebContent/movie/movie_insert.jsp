@@ -65,9 +65,14 @@ MovieFileDao mfdao = new MovieFileDao();
     <div id="dh-content" style="margin-left: 320px">
 <form action="movie_insert.do" method="post" enctype="multipart/form-data">
  
+
 	 <input type="hidden" name="movie_no" value="<%=request.getParameter("movie_no")%>">
      
       <div class="moviein"> 
+
+    <input type="hidden" name="movie_no" value="<%=request.getParameter("movie_no")%>">
+       
+
        영화 삽입
        </div>
       <div class="mvcontent-form">
@@ -132,7 +137,7 @@ MovieFileDao mfdao = new MovieFileDao();
         <div class="movie_content">
    <label>첨부파일</label>
            첨부파일
-	<input type="file" name="movie_file" multiple accept=".jpg, .png, .gif"> 
+   <input type="file" name="movie_file" multiple accept=".jpg, .png, .gif"> 
             
         </div>
             <div class="mvbutton">
@@ -142,9 +147,8 @@ MovieFileDao mfdao = new MovieFileDao();
 
             </div>
             </div>
-                           	</form>
+                              </form>
                             </div>
-
 
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

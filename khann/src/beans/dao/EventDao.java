@@ -36,15 +36,13 @@ public class EventDao {
 	public List<EventDto> getList(int start, int finish) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "SELECT * FROM (SELECT ROWNUM rn, E.* FROM( "
-					+"SELECT * FROM event ORDER BY event_no DESC )E "
-				    +") WHERE rn BETWEEN ? AND ? ";
-
+		String sql = "SELECT * FROM (SELECT ROWNUM rn, E.* FROM( " + "SELECT * FROM event ORDER BY event_no DESC )E "
+				+ ") WHERE rn BETWEEN ? AND ? ";
 
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, start);
 		ps.setInt(2, finish);
-		
+
 		ResultSet rs = ps.executeQuery();
 
 		List<EventDto> list = new ArrayList<>();
@@ -58,7 +56,6 @@ public class EventDao {
 		return list;
 
 	}
-
 
 	public List<EventDto> test(String column, String keyword, int start, int finish) throws Exception {
 		Connection con = getConnection();
@@ -76,18 +73,17 @@ public class EventDao {
 		ResultSet rs = ps.executeQuery();
 
 		List<EventDto> list = new ArrayList<EventDto>();
-		
+
 		while (rs.next()) {
 			EventDto edto = new EventDto(rs);
-			
+
 			list.add(edto);
 		}
 
 		con.close();
-		
+
 		return list;
 	}
-
 
 	// 단일조회
 	public EventDto get(int event_no) throws Exception {
@@ -137,7 +133,6 @@ public class EventDao {
 		return count;
 	}
 
-
 	// 시퀀스 생성
 	// - dual 테이블은 오라클이 제공하는 임시 테이블
 	public int getSequence() throws Exception {
@@ -164,7 +159,7 @@ public class EventDao {
 				+ "VALUES(?,?,SYSDATE,?,?)";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		
+
 		ps.setInt(1, edto.getEvent_no());
 		ps.setString(2, edto.getEvent_title());
 		ps.setString(3, edto.getEvent_condition());
@@ -181,7 +176,7 @@ public class EventDao {
 		Connection con = getConnection();
 
 		String sql = "UPDATE event SET event_condition=?, event_title=?, event_content=? WHERE event_no=?";
-		
+
 //		System.out.println(edto.getEvent_condition());
 //		System.out.println(edto.getEvent_title());
 //		System.out.println(edto.getEvent_condition());
@@ -194,8 +189,7 @@ public class EventDao {
 		ps.setString(3, edto.getEvent_content());
 		ps.setInt(4, edto.getEvent_no());
 		ps.execute();
-		
-		
+
 		con.close();
 	}
 
@@ -210,5 +204,22 @@ public class EventDao {
 		ps.execute();
 
 		con.close();
+	}
+
+	public List<EventDto> list() throws Exception {
+		Connection con = getConnection();
+
+		String sql = "SELECT * FROM event order by event_no ASC";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+
+		List<EventDto> list = new ArrayList<>();
+		while (rs.next()) {
+			EventDto edto = new EventDto(rs);
+			list.add(edto);
+			
+		}
+			con.close();
+			return list;
 	}
 }
