@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.dto.MemberDto;
 @WebFilter(urlPatterns = {
-		 "/ask/list.jsp",
 		 "/cs/write.jsp",
 		 "/movie/movie_insert.jsp",
 		 "/movie/movie_delete.jsp",

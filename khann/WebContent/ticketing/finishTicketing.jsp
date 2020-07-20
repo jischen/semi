@@ -125,8 +125,21 @@
     	<div id="ticket">
     		<img src="<%=request.getContextPath()%>/img/barcode.png" width="200px" height="80">
     	</div>
+    	<hr>
+    	<div>
+    		<%if(0 < user.getMember_point() && user.getMember_point()<tdto.getTicketing_price()) {%>
+    		<form action="tiecket.do" method="post">
+    		<input type="submit" value="예매">
+    		</form>
+    		<%}else{ %>
+    		<a href="<%=request.getContextPath()%>/ticketing/nopoint.jsp">
+    		<input type="button" value="예매">
+    		</a>
+    		<%} %>
+    	</div>
    <%}} %>
    </article> 
+   
 </body>
 
 </div>

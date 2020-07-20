@@ -7,11 +7,11 @@
 <%@page import="beans.dto.ShowDto"%>
 <%@page import="beans.dao.ShowDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 
 
 <%
-	int show_no = Integer.parseInt(request.getParameter("show_no"));
+   int show_no = Integer.parseInt(request.getParameter("show_no"));
 
 MemberDto user = (MemberDto) session.getAttribute("userinfo");
 boolean isLogin = user != null;
@@ -19,7 +19,7 @@ boolean isLogin = user != null;
 ShowDao sdao = new ShowDao();
 ShowDto sdto = sdao.get(show_no);
 
-//movie_no	
+//movie_no   
 
 MovieDao mdao = new MovieDao();
 MovieDto mdto = mdao.get(sdto.getMovie_no());
@@ -33,14 +33,14 @@ TheaterDto tdto = tdao.get(sdto.getTheater_no());
 <link rel="stylesheet" type="text/css" href="../css/base.css">
 <style>
 article {
-	border: 2px solid black;
-	height: 200px;
+   border: 2px solid black;
+   height: 200px;
 }
 
 .sedit {
-	width: 200px;
-	font-weight: 700;
-	background-color: firebrick;
+   width: 200px;
+   font-weight: 700;
+   background-color: firebrick;
 }
 </style>
 </head>
@@ -49,55 +49,59 @@ article {
 
 
 
-	<div id="dh-content" style="margin-left: 320px">
-		<form action="show_content.do" method="post">
+   <div id="dh-content" style="margin-left: 320px">
+      <form action="show_content.do" method="post">
 
 
 
-			<h2>상영 등록이 완료되었습니다!</h2>
+         <h2>상영 등록이 완료되었습니다!</h2>
 
-			<div>
+         <div>
 
-				<br>
+            <br>
 
-				<div class="sedit">영화제목</div>
-				<div>
-					<%=mdto.getMovie_name()%>
+            <div class="sedit">영화제목</div>
+            <div>
+               <%=mdto.getMovie_name()%>
 
-				</div>
+            </div>
 
-				<div class="sedit">상영관 이름</div>
-				<div>
-					<%=tdto.getTheater_name()%>
-				</div>
+            <div class="sedit">상영관 이름</div>
+            <div>
+               <%=tdto.getTheater_name()%>
+            </div>
 
-				<div class="sedit">상영 시작시간</div>
+            <div class="sedit">상영 시작시간</div>
 
-				<div><%=sdto.getShow_start()%>
-				</div>
-			</div>
+            <div><%=sdto.getShow_start()%>
+            </div>
+         </div>
 
 
-			<div>
-				<%
-					if (isLogin) {
-				%>
-				<div>
-					<a href="/khann/show/show_edit.jsp?show_no=<%=sdto.getShow_no()%>">수정하기</a>
-				</div>
-				<div>
-					<a
-						href="/khann/show/show_delete.jsp?show_no=<%=sdto.getShow_no()%>">삭제하기</a>
-				</div>
-				<%
-					}
-				%>
-			</div>
-	</div>
+         <div>
+            <%
+               if (isLogin) {
+            %>
+            <div>
+               <a
+                  href="/khann/show/show_list.jsp">상영리스트 확인하기</a>
+            </div>
+            <div>
+               <a href="/khann/show/show_edit.jsp?show_no=<%=sdto.getShow_no()%>">수정하기</a>
+            </div>
+            <div>
+               <a
+                  href="/khann/show/show_delete.jsp?show_no=<%=sdto.getShow_no()%>">삭제하기</a>
+            </div>
+            <%
+               }
+            %>
+         </div>
+   </div>
 
-	</form>
+   </form>
 
-	</div>
+   </div>
 </body>
 </html>
 
