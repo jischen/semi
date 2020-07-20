@@ -25,7 +25,7 @@
 	
 	int movie_file_no = mfdao.getMovieImgNo(movie_no);
 	
-	System.out.println("영화 파일 번호 : " + movie_file_no);
+	//System.out.println("영화 파일 번호 : " + movie_file_no);
 
 	
 %>
@@ -35,7 +35,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <head>
-     <link rel="stylesheet" type="text/css" href="../base.css">
+   <link rel="stylesheet" type="text/css" href="../css/base.css">
 
 <style>
     .mvcontent-form{

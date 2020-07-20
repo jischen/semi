@@ -6,7 +6,8 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	MemberDto mem = (MemberDto) session.getAttribute("userinfo");
+MemberDto mdto = (MemberDto) session.getAttribute("userinfo");
+boolean isLogin = mdto != null;
 
 %>
 
@@ -79,7 +80,7 @@ main {
 
 
 			<div class="review_wrap">
-
+<%if (isLogin) {%>
 				<div class="review_title">
 					리뷰작성
 				</div>
@@ -117,6 +118,7 @@ main {
 				</div>
 
 			</div>
+			<%} %>
 		</form>
 	</div>
 
