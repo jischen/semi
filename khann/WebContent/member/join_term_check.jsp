@@ -65,7 +65,7 @@
 	<h2 class=cb>회원이용약관</h2>
 
 	<br>
-	<form name="termcheck" method="post" action="http://localhost:8080/khann/member/join.jsp" onSubmit="return CheckForm()" >
+	<form name="termcheck" method="post" action="<%=request.getContextPath()%>/member/join.jsp" onSubmit="return CheckForm()" >
 		
 		
 		<div style="margin-bottom:30px"><font style="margin-bottom:10px;"  class="cb" color="#207DBB"> 회원 가입 전 아래의 시네마칸의 이용 약관을
