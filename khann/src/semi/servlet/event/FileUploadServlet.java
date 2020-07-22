@@ -20,7 +20,7 @@ public class FileUploadServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			//파일 저장될 위치
-			File baseDir = new File("D:/upload/board");
+			File baseDir = new File("D:/upload/kh31");
 			baseDir.mkdirs(); 
 			
 			int limit = 10 * 1024 * 1024 ; //10MB

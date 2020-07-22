@@ -35,7 +35,7 @@ public class EventFileDownloadServlet extends HttpServlet {
 		      resp.setHeader("Content-Length", String.valueOf(efdto.getEvent_file_size()));
 
 			
-			File target = new File("D:/upload/board", String.valueOf(efdto.getEvent_file_no()));
+			File target = new File("D:/upload/kh31", String.valueOf(efdto.getEvent_file_no()));
 			byte[] data = FileUtils.readFileToByteArray(target);//파일 데이터 로드
 			resp.getOutputStream().write(data);
 			

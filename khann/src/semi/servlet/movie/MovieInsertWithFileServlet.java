@@ -27,7 +27,7 @@ public class MovieInsertWithFileServlet extends HttpServlet {
 		 try {
 			 String charset = "UTF-8";
 			 int limit = 10*1024*1024; //최대 용량
-			 File baseDir = new File("D:/upload/movie");
+			 File baseDir = new File("D:/upload/kh31");
 		 
 			 DiskFileItemFactory factory = new DiskFileItemFactory();//공장
 			 factory.setDefaultCharset(charset);

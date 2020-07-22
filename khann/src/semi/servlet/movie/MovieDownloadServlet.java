@@ -29,7 +29,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 			return;
 		}
 		
-		File target = new File("D:/upload/movie", String.valueOf(mfdto.getMovie_file_no()));
+		File target = new File("D:/upload/kh31", String.valueOf(mfdto.getMovie_file_no()));
 		byte[] data = FileUtils.readFileToByteArray(target); //파일 데이터 로드
 		resp.getOutputStream().write(data);
 	}
