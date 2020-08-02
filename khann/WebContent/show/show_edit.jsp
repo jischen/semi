@@ -26,7 +26,7 @@ TheaterDto tdto = tdao.get(sdto.getTheater_no());
 %>
 
 <jsp:include page="/template/header.jsp"></jsp:include>
-
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
 <div align="center">
 
 

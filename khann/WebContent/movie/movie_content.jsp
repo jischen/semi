@@ -1,3 +1,5 @@
+<%@page import="java.nio.channels.SeekableByteChannel"%>
+<%@page import="beans.dto.MemberDto"%>
 <%@page import="beans.dto.MovieFileDto"%>
 <%@page import="java.util.List"%>
 <%@page import="beans.dao.MovieFileDao"%>
@@ -25,7 +27,10 @@
 	
 	int movie_file_no = mfdao.getMovieImgNo(movie_no);
 	
-	System.out.println("영화 파일 번호 : " + movie_file_no);
+	//System.out.println("영화 파일 번호 : " + movie_file_no);
+	MemberDto mbdto=(MemberDto) session.getAttribute("userinfo");
+	boolean isLogin = mbdto!=null;
+	
 
 	
 %>
@@ -35,7 +40,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <head>
-     <link rel="stylesheet" type="text/css" href="../base.css">
+   <link rel="stylesheet" type="text/css" href="../css/base.css">
 
 <style>
     .mvcontent-form{
@@ -109,7 +114,7 @@
         </div>
         
 <br>
-        <div class="movie_content">
+   <%--      <div class="movie_content">
             <label> 첨부파일</label>
            <%if(!fileList.isEmpty()){%>
 						<%for(MovieFileDto mfdto2 : fileList){ %>
@@ -118,11 +123,14 @@
 					
 						<%} %>
 						<%} %>
-				
-            
-        </div>
+				</div> --%>
+              <%if (isLogin) {%>
+			<%if (mbdto.getGrade().equals("관리자")) {%>
+        
             <div class="mvbutton">
             <a href="/khann/movie/movie_change.jsp?movie_no=<%=mdto.getMovie_no()%>"><input type="submit" value="영화수정"></a>
+            <%} %>
+            <%} %>
 			<a href="/khann/review/review_write.jsp"><input type="submit" value="리뷰작성"></a>
 
 			<a href="/khann/review/review_list.jsp"><input type="submit" value="리뷰 더보기"></a>
